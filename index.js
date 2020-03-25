@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -54,19 +53,86 @@ var coef = [
 const BASE_API_URL = "/api/v1";
 
 
+// GET coef
 
 app.get(BASE_API_URL+"/coef", (req,res) =>{
 	res.send(JSON.stringify(coef,null,2));
-=======
-const cool = require("cool-ascii-faces");
-const express=require("express");
-var app= express();
-var port = process.env.PORT || 80;
+	console.log("Data sent:"+JSON.stringify(coef,null,2));
+});
 
-app.use("/", express.static("./public"));
-app.get("/cool", (request, response)=>{
-	response.send("<html>"+cool()+"</html>");
->>>>>>> 789d5f716f0bba3acd39d71c1569fa047daa7b6d
+
+// POST coef
+
+app.post(BASE_API_URL+"/coef",(req,res) =>{
+	
+	var newTeam = req.body;
+	
+	if((newTeam == "") || (newTeam.team == null)){
+		res.sendStatus(400,"BAD REQUEST");
+	} else {
+		coef.push(newTeam); 	
+		res.sendStatus(201,"CREATED");
+	}
+});
+
+// DELETE CONTACTS
+
+// GET CONTACT/XXX
+
+app.get(BASE_API_URL+"/coef/:team", (req,res)=>{
+	
+	var team = req.params.team;
+	
+	var filteredCoef = coef.filter((c) => {
+		return (c.team == team);
+	});
+	
+	
+	if(filteredCoef.length >= 1){
+		res.send(filteredCoef[0]);
+	}else{
+		res.sendStatus(404,"COEF NOT FOUND");
+	}
+});
+
+// PUT CONTACT/XXX
+
+// DELETE CONTACT/XXX
+
+app.delete(BASE_API_URL+"/coef/:team", (req,res)=>{
+	
+	var team = req.params.team;
+	
+	var filteredCoef = coef.filter((c) => {
+		return (c.team != team);
+	});
+	
+	
+	if(filteredCoef.length < coef.length){
+		coef = filteredCoef;
+		res.sendStatus(200);
+	}else{
+		res.sendStatus(404,"COEF NOT FOUND");
+	}
+	
+	
+});
+
+
+app.listen(port, () => {
+	console.log("Server ready");
+});
+
+console.log("Starting server...");
+
+
+
+
+
+
+/*
+app.get(BASE_API_URL+"/coef", (req,res) =>{
+	res.send(JSON.stringify(coef,null,2));
 });
 
 app.post(BASE_API_URL+"/coef",(req,res) =>{
@@ -78,11 +144,6 @@ app.listen(port, () => {
 	console.log("Server ready");
 });
 
-<<<<<<< HEAD
 console.log("Starting server...");
+*/
 
-
-
-=======
-console.log("Starting server...");
->>>>>>> 789d5f716f0bba3acd39d71c1569fa047daa7b6d
