@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -56,6 +57,16 @@ const BASE_API_URL = "/api/v1";
 
 app.get(BASE_API_URL+"/coef", (req,res) =>{
 	res.send(JSON.stringify(coef,null,2));
+=======
+const cool = require("cool-ascii-faces");
+const express=require("express");
+var app= express();
+var port = process.env.PORT || 80;
+
+app.use("/", express.static("./public"));
+app.get("/cool", (request, response)=>{
+	response.send("<html>"+cool()+"</html>");
+>>>>>>> 789d5f716f0bba3acd39d71c1569fa047daa7b6d
 });
 
 app.post(BASE_API_URL+"/coef",(req,res) =>{
@@ -67,7 +78,11 @@ app.listen(port, () => {
 	console.log("Server ready");
 });
 
+<<<<<<< HEAD
 console.log("Starting server...");
 
 
 
+=======
+console.log("Starting server...");
+>>>>>>> 789d5f716f0bba3acd39d71c1569fa047daa7b6d
