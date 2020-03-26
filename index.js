@@ -3,6 +3,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+app.use("/", express.static("./public"));
+
 var app = express();
 
 app.use(bodyParser.json());
