@@ -154,7 +154,52 @@ app.delete(BASE_API_URL+"/top-goalscorers/:name", (req,res)=>{
 
 
 //----------------TRANSFERS----------------
-var transfers = [];
+
+
+var transfers = [
+    { 
+        country: "spain",
+        year: 2019,
+        team: "real-madrid",
+        signing: 51,
+        sale: 35,
+        balance: -236.15
+    },
+	{
+		country: "spain",
+        year: 2018,
+        team: "fc-barcelona",
+        signing: 39,
+        sale: 32,
+        balance: -137.05	
+	},
+	{
+		country: "england",
+        year: 2017,
+        team: "manchester-city",
+        signing: 68,
+        sale: 56,
+        balance: -404.3	
+	},
+	{
+		country: "england",
+        year: 2016,
+        team: "manchester-city",
+        signing: 62,
+        sale: 47,
+        balance: -318.91	
+	},
+	{
+		country: "england",
+        year: 2015,
+        team: "manchester-united",
+        signing: 50,
+        sale: 52,
+        balance: -200.02	
+	}];
+	
+
+
 //LOADING INITIAL DATA
 
 app.get(BASE_API_URL + "/transfers/loadInitialData", (req, res) => {
@@ -329,10 +374,7 @@ app.delete(BASE_API_URL+"/transfers/:year", (req,res)=>{
 	
 });
 
-//--------------END TRANSFERS--------------
-
-
-app.listen(port, ()=> {
+app.listen(port, () => {
 	console.log("Server ready");
 });
 
