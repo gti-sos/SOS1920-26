@@ -7,6 +7,8 @@ var port = process.env.PORT || 80;
 const BASE_API_URL = "/api/v1";
 
 app.use("/", express.static("./public"));
+app.use(bodyParser.json());
+
 
 //-------------TOP-GOALSCORERS-------------
 var topGoalscorers = [];
@@ -517,7 +519,7 @@ app.get(BASE_API_URL+"/coef/:team/:year", (req,res)=>{
 	}
 });
 
-// update coef/team/year
+// PUT coef/team/year
 
 app.put(BASE_API_URL+"/coef/:team/:year", (req, res) =>{
   
