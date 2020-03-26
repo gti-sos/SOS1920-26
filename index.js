@@ -422,7 +422,7 @@ var coef = [
 	}
 ];
 
-const BASE_API_URL = "/api/v1";
+
 
 
 //LOADINITIALDATA
