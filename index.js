@@ -268,7 +268,7 @@ app.post(BASE_API_URL+"/transfers",(req,res) =>{
 	
 	var newTransfer = req.body;
 	
-	if((newTransfer == "") || (newTransfer.year == null)){
+	if((newTransfer == "") || (newTransfer.team == null)){
 		res.sendStatus(400,"BAD REQUEST");
 	} else {
 		transfers.push(newTransfer); 	
@@ -296,7 +296,7 @@ app.put(BASE_API_URL + "/transfers/", (req, res) => {
 
 //POST TRANSFERS/XXX
 
-app.post(BASE_API_URL+"/transfers/:year",(req,res) => {
+app.post(BASE_API_URL+"/transfers/:team",(req,res) => {
 	res.sendStatus(405);
 });
 
@@ -304,12 +304,13 @@ app.post(BASE_API_URL+"/transfers/:year",(req,res) => {
 
 // GET TRANSFER/XXX
 
-app.get(BASE_API_URL+"/transfers/:year", (req,res)=>{
+app.get(BASE_API_URL+"/transfers/:year/:team", (req,res)=>{
 	
 	var year = req.params.year;
+	var team = req.params.team;
 	
 	var filteredtransfers = transfers.filter((c) => {
-		return (c.year == year);
+		return (c.year == year && c.team == team);
 	});
 	
 	
@@ -357,12 +358,13 @@ app.put(BASE_API_URL+"/transfers/:year/:team", (req, res) =>{
 
 // DELETE TRANSFER/XXX
 
-app.delete(BASE_API_URL+"/transfers/:year", (req,res)=>{
+app.delete(BASE_API_URL+"/transfers/:year/:team", (req,res)=>{
 	
 	var year = req.params.year;
+	var team = req.params.team;
 	
 	var filteredtransfers = transfers.filter((c) => {
-		return (c.year != year);
+		return (c.year == year && c.team == team);
 	});
 	
 	
