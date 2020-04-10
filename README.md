@@ -16,3 +16,5 @@
     - [http://sos1920-26.herokuapp.com/api/v1/transfers] (developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
 -  **Portales de documentación de Postman**:
 	- [https://documenter.getpostman.com/view/10847476/SzYUZgTA] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
+	- [https://documenter.getpostman.com/view/10847476/SzYUa2AE] (developed by [Jose García Creus](https://github.com/jgcreus))
+	- [https://documenter.getpostman.com/view/10637393/SzYUa2Ee] (developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
