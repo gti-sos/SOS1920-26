@@ -460,6 +460,43 @@ app.put(BASE_API_URL + "/coef", (req, res) => {
 });
 
 
+//Búsqueda por todos los campos del recurso
+
+app.get(BASE_API_URL+"/coef",(req, res) => {
+ console.log("GET GLOBAL COEF");
+ 
+ var request = {};
+ if(req.query.country) request["country"] = req.query.country;
+ if(req.query.year) request["year"] = parseFloat(req.query.year);
+ if(req.query.team) request["team"] = parseFloat(req.query.team);
+ if(req.query.coefficient) request["coefficient"] = parseInt(req.query.coefficient);
+ if(req.query.fed) request["fed"] = parseFloat(req.query.fed);
+ if(req.query.classification) request["classification"] = parseFloat(req.query.classification);
+ 
+ const offset =  0;
+ const limit = Number.MAX_SAFE_INTEGER;
+ 
+ globalCoefDb.find(request,{}).skip(offset).limit(limit).exec((err, coef) => {
+  //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+  coef.forEach((c) => {
+   delete c._id;
+  });
+  
+  console.log("New GET_0.2  coef");
+  
+  res.send(JSON.stringify(coef,null,2));
+  
+  console.log("Data sent: "+JSON.stringify(coef,null,2));
+ });
+ 
+});
+
+
+
+
+
+
+
 app.listen(port, () => {
 	console.log("Server ready");
 });
