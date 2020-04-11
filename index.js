@@ -11,16 +11,15 @@ const BASE_API_URL = "/api/v1";
 const port = process.env.PORT || 80;
 
 //----------------------------------coef
-
 const coefAPI = require(path.join(__dirname, "coefAPI"));
-/*const dbCoef = path.join(__dirname,"coefAPI/coef.db");
+const dbCoef = path.join(__dirname,"coefAPI/coef.db");
 
-const globalCoef = new dataStore({							//objeto
+/*const globalCoef = new dataStore({							//objeto
 		filename: dbCoef,
 		autoload: true
-});
+});*/
 
-*/
+
 coefAPI(app);
 //coefAPI(app, path, BASE_API_URL, dataStore);
 

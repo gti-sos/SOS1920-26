@@ -4,10 +4,10 @@
 module.exports = function (app) {
     console.log("Registering coef API....");
     const dataStore = require ("nedb");
-    const path = require ("path"); //para que podamos trabajar de manera standar con las direcciones (No haya problema entre Unix y Windows )
+    const path = require ("path");
 
     const dbFileName =path.join(__dirname,"./coef.db");   //archivo donde almacenamos los datos que vamos a persistir
-    const BASE_API_URL="/api/v1";   // ESta es la URL base
+    const BASE_API_URL="/api/v1";   
 
     const dbCoef = new dataStore({
         filename: dbFileName,
@@ -77,7 +77,7 @@ var initialCoef = [
     });
 	
 
- //GET coef
+ /*//GET coef
     
     app.get(BASE_API_URL+"/global-coef",(req,res) =>{
         console.log("New GET... /global-coef");
@@ -89,7 +89,7 @@ var initialCoef = [
             console.log("Data sent: " + JSON.stringify(coef,null,2));
         });
     });
-
+*/
 	
 // POST GLOBAL-coef
 
@@ -204,33 +204,38 @@ app.put(BASE_API_URL + "/global-coef", (req, res) => {
 });  
 
 
+	
+	
+	
+	
 //Búsqueda por todos los campos del recurso
 
 app.get(BASE_API_URL+"/global-coef",(req, res) => {
  console.log("GET GLOBAL COEF");
  
- var request = {};
- if(req.query.country) request["country"] = req.query.country;
- if(req.query.year) request["year"] = parseInt(req.query.year);
- if(req.query.team) request["team"] = req.query.team;
- if(req.query.coefficient) request["coefficient"] = parseFloat(req.query.coefficient);
- if(req.query.fed) request["fed"] = parseFloat(req.query.fed);
- if(req.query.classification) request["classification"] = parseInt(req.query.classification);
  
- const offset =  0;
- const limit = Number.MAX_SAFE_INTEGER;
+ //if(req.query.country) request["country"] = req.query.country;
+ if(req.query.year) req.query.year = parseInt(req.query.year);
+ //if(req.query.team) request["team"] = req.query.team;
+ if(req.query.coefficient) req.query.coefficient = parseFloat(req.query.coefficient);
+ if(req.query.fed) req.query.fed = parseFloat(req.query.fed);
+ if(req.query.classification) req.query.classification = parseInt(req.query.classification);
  
- dbCoef.find(request,{}).skip(offset).limit(limit).exec((err, coef) => {
-  //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
+	var parametros = req.query;
+	console.log(parametros);
+ 
+ 
+ dbCoef.find(parametros,(err, coef) => {
+  
   coef.forEach((c) => {
    delete c._id;
   });
   
-  console.log("New GET_0.2  coef");
+  //console.log("New GET_0.2  coef");
   
   res.send(JSON.stringify(coef,null,2));
   
-  console.log("Data sent: "+JSON.stringify(coef,null,2));
+  //console.log("Data sent: "+JSON.stringify(coef,null,2));
  });
  
 });
