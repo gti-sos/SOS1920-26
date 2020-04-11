@@ -230,7 +230,7 @@ app.put(BASE_API_URL + "/coef", (req, res) => {
 
 //Búsqueda por todos los campos del recurso
 
-app.get(BASE_API_URL+"/global-coef",(req, res) => {
+app.get(BASE_API_URL+"/coef",(req, res) => {
  console.log("GET GLOBAL COEF");
  
  var request = {};
@@ -244,7 +244,7 @@ app.get(BASE_API_URL+"/global-coef",(req, res) => {
  const offset =  0;
  const limit = Number.MAX_SAFE_INTEGER;
  
- coefDb.find(request,{}).skip(offset).limit(limit).exec((err, coef) => {
+ coef.find(request,{}).skip(offset).limit(limit).exec((err, coef) => {
   //la query se pone entre llaves, para que devuelva todo se deja vacío si se pone name: "nono"  sólo devuelve los nono
   coef.forEach((c) => {
    delete c._id;
@@ -258,4 +258,6 @@ app.get(BASE_API_URL+"/global-coef",(req, res) => {
  });
  
 });
+	
+}
 
