@@ -462,7 +462,7 @@ app.put(BASE_API_URL + "/coef", (req, res) => {
 
 //Búsqueda por todos los campos del recurso
 
-app.get(BASE_API_URL+"/coef",(req, res) => {
+app.get(BASE_API_URL+"/global-coef",(req, res) => {
  console.log("GET GLOBAL COEF");
  
  var request = {};
