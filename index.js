@@ -3,19 +3,30 @@ const bodyParser = require("body-parser");
 const dataStore = require("nedb");
 const path = require("path");
 const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
-const coefAPI = require(path.join(__dirname, "coefAPI"));
+
+const app = express();
+app.use(bodyParser.json());
 
 const BASE_API_URL = "/api/v1";
 const port = process.env.PORT || 80;
 
+//----------------------------------coef
 
-const dbCoef = path.join(__dirname,"coefAPI/coef.db");
+const coefAPI = require(path.join(__dirname, "coefAPI"));
+/*const dbCoef = path.join(__dirname,"coefAPI/coef.db");
 
+const globalCoef = new dataStore({							//objeto
+		filename: dbCoef,
+		autoload: true
+});
+
+*/
+coefAPI(app);
+//coefAPI(app, path, BASE_API_URL, dataStore);
+
+//----------------------------------fin-coef
 
 //const dbFileName = path.join(__dirname, "goalscorers.db");
-
-const app = express();
-app.use(bodyParser.json());
 
 /*const db = new dataStore({
 				filename: dbFileName,
@@ -25,19 +36,10 @@ app.use(bodyParser.json());
 
 
 
-const globalCoef = new dataStore({							//objeto
-		filename: dbCoef,
-		autoload: true
-});
-
-
-coefAPI(app, globalCoef);
-
 
 app.use("/", express.static("./public"));
 
 goalscorersAPI(app, path, BASE_API_URL, dataStore);
-//coefAPI(app, path, BASE_API_URL, dataStore);
 
 //----------------TRANSFERS----------------
 
