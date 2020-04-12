@@ -100,6 +100,7 @@ var initialCoef = [
              || (coef.year == null) 
 			 || (coef.team == null) 
 			 || (coef.coefficient == null) 
+		     || (coef.fed == null)
              || (coef.classification == null)){	
 			res.sendStatus(400,"BAD REQUEST");
 		} else {
@@ -208,7 +209,7 @@ app.put(BASE_API_URL + "/global-coef", (req, res) => {
 	
 	
 //Búsqueda por todos los campos del recurso----------------------------
-
+/*
 app.get(BASE_API_URL+"/global-coef",(req, res) => {
  console.log("GET GLOBAL COEF");
  
@@ -261,7 +262,50 @@ app.get(BASE_API_URL+"/global-coef",(req, res) => {
 			//res.send(JSON.stringify(routes,null,2));
 			console.log("RESOURCES DISPLAYED");
 		});
+	*/	
+//-------------------------------------------------------------------------------------
+	
+	app.get(BASE_API_URL+"/global-coef",(req, res) => {
+ console.log("GET GLOBAL COEF");
+ 
+ 
+ //if(req.query.country) request["country"] = req.query.country;
+ if(req.query.year) req.query.year = parseInt(req.query.year);
+ //if(req.query.team) request["team"] = req.query.team;
+ if(req.query.coefficient) req.query.coefficient = parseFloat(req.query.coefficient);
+ if(req.query.fed) req.query.fed = parseFloat(req.query.fed);
+ if(req.query.classification) req.query.classification = parseInt(req.query.classification);
+ 
+	var parametros = req.query;
+	console.log(parametros);
+
+ 		let offset = null;
+		let limit = null;
 		
+		
+		if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }		
+		dbCoef.find(parametros).skip(offset).limit(limit).exec((err, coef) => {
+  
+  			coef.forEach((c) => {
+  			 delete c._id;
+  			});
+			
+  //.sort({team:1,year:-1})
+  //console.log("New GET_0.2  coef");
+  
+  res.send(JSON.stringify(coef,null,2));
+  console.log("RESOURCES DISPLAYED");
+  //console.log("Data sent: "+JSON.stringify(coef,null,2));
+ });
+ 
+
 	
 	
 	
