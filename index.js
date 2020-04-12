@@ -49,4 +49,4 @@ app.listen(port, () => {
 	console.log("Server ready");
 });
 
-console.log("Starting server..."); 
+console.log("Starting server...");

@@ -75,7 +75,6 @@ var initialTransfers = [
 		dbTransfers.remove({})
         console.log("New GET .../loadInitialData")
         dbTransfers.insert(initialTransfers);
-        res.sendStatus(200);
         console.log("Initial transfers loaded: " + JSON.stringify(initialTransfers, null, 2));
 		res.send(JSON.stringify(initialTransfers,null,2));
     });
