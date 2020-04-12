@@ -243,7 +243,7 @@ app.get(BASE_API_URL+"/global-coef",(req, res) => {
         
 	
 		let offset = 0;
-		let limit = 0;
+		let limit = Number.MAX_SAFE_INTEGER;
 	
 		if (req.query.offset) {
             offset = parseInt(req.query.offset);
