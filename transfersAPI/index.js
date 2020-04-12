@@ -72,6 +72,7 @@ var initialTransfers = [
 
 //LOADINITIALDATA
     app.get(BASE_API_URL + "/global-transfers/loadInitialData", (req, res) => {
+		dbTransfers.remove({})
         console.log("New GET .../loadInitialData")
         dbTransfers.insert(initialTransfers);
         res.sendStatus(200);
