@@ -188,7 +188,7 @@ app.delete(BASE_API_URL+"/global-transfers/:year/:team", (req,res)=>{
 
 	
 	
-/*app.get(BASE_API_URL+"/global-transfers",(req, res) => {
+app.get(BASE_API_URL+"/global-transfers",(req, res) => {
  console.log("GET GLOBAL TRANSFERS");
  
  
@@ -225,5 +225,5 @@ app.delete(BASE_API_URL+"/global-transfers/:year/:team", (req,res)=>{
 
 });
 });
-*/
+
 }
