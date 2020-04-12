@@ -5,15 +5,14 @@ module.exports = function (app) {
     console.log("Registering coef API....");
     const dataStore = require ("nedb");
     const path = require ("path");
-
-    const dbFileName =path.join(__dirname,"./coef.db");   //archivo donde almacenamos los datos que vamos a persistir
+    const dbFileName =path.join(__dirname,"./coef.db"); 
     const BASE_API_URL="/api/v1";   
 
     const dbCoef = new dataStore({
         filename: dbFileName,
         autoload:true
     });
-//---------------------------------------                        ------------------------------------------
+//------------------------------------------------------------------------
 	
 var initialCoef = [
 	{ 
@@ -68,7 +67,7 @@ var initialCoef = [
 
 
 
-//LOADINITIALDATA coefBD
+//LOADINITIALDATA coefBD-----------------------------------------------
     app.get(BASE_API_URL + "/global-coef/loadInitialData", (req, res) => {
         console.log("New GET .../loadInitialData")
         dbCoef.insert(initialCoef);
@@ -91,7 +90,7 @@ var initialCoef = [
     });
 */
 	
-// POST GLOBAL-coef
+// POST GLOBAL-coef----------------------------------------------------
 
 	app.post(BASE_API_URL+"/global-coef", (req, res) => {
         var coef = req.body;
@@ -112,7 +111,7 @@ var initialCoef = [
 	
 	
 	
-// DELETE global-coef
+// DELETE global-coef-----------------------------------------------
 app.delete(BASE_API_URL + "/global-coef", (req,res)=>{
 		dbCoef.remove({}, { multi: true }, function (err, numRemoved) {
             if (numRemoved>=1) {
@@ -125,7 +124,7 @@ app.delete(BASE_API_URL + "/global-coef", (req,res)=>{
     });
 	
 	
-//GET GLOBAL-coef/team/year
+//GET GLOBAL-coef/team/year----------------------------------------------
 
 	app.get(BASE_API_URL+"/global-coef/:team/:year", (req,res)=>{
 	
@@ -147,7 +146,7 @@ app.delete(BASE_API_URL + "/global-coef", (req,res)=>{
 
 
 	
-// PUT coef/team/year
+// PUT global-coef/team/year--------------------------------------------------
 
 app.put(BASE_API_URL+"/global-coef/:team/:year", (req, res) =>{
   
@@ -171,7 +170,7 @@ app.put(BASE_API_URL+"/global-coef/:team/:year", (req, res) =>{
 
 
 
-// DELETE coef/team/year
+// DELETE global-coef/team/year------------------------------------------------
 
 app.delete(BASE_API_URL+"/global-coef/:team/:year", (req,res)=>{
 	
@@ -193,12 +192,12 @@ app.delete(BASE_API_URL+"/global-coef/:team/:year", (req,res)=>{
 	
 	
 	
-//POST error
+//POST error-----------------------------------------------------------
 app.post(BASE_API_URL + "/global-coef/:team/:year", (req, res) => {
     res.sendStatus(405);
 });
 
-//PUT error
+//PUT error--------------------------------------------------------------
 app.put(BASE_API_URL + "/global-coef", (req, res) => {
     res.sendStatus(405);
 });  
@@ -208,7 +207,7 @@ app.put(BASE_API_URL + "/global-coef", (req, res) => {
 	
 	
 	
-//Búsqueda por todos los campos del recurso
+//Búsqueda por todos los campos del recurso----------------------------
 
 app.get(BASE_API_URL+"/global-coef",(req, res) => {
  console.log("GET GLOBAL COEF");
@@ -238,6 +237,40 @@ app.get(BASE_API_URL+"/global-coef",(req, res) => {
   //console.log("Data sent: "+JSON.stringify(coef,null,2));
  });
  
-});
+
+	
+//Paginacion-------------------------------------------------------------
+        
+	
+		let offset = 0;
+		let limit = 0;
+	
+		if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }		
+		dbCoef.find({}).sort({team:1,year:-1}).skip(offset).limit(limit).exec((error, routes) =>{
+			routes.forEach((c)=>{
+				delete c._id
+			});
+
+			//res.send(JSON.stringify(routes,null,2));
+			console.log("RESOURCES DISPLAYED");
+		});
+		
+	
+	
+	
+	});
 	
 }
+	
+	
+	
+	
+	
+	

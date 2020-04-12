@@ -13,16 +13,7 @@ const port = process.env.PORT || 80;
 //----------------------------------coef
 const coefAPI = require(path.join(__dirname, "coefAPI"));
 const dbCoef = path.join(__dirname,"coefAPI/coef.db");
-
-/*const globalCoef = new dataStore({							//objeto
-		filename: dbCoef,
-		autoload: true
-});*/
-
-
 coefAPI(app);
-//coefAPI(app, path, BASE_API_URL, dataStore);
-
 //----------------------------------fin-coef
 
 //const dbFileName = path.join(__dirname, "goalscorers.db");
