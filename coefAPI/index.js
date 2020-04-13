@@ -69,10 +69,12 @@ var initialCoef = [
 
 //LOADINITIALDATA coefBD-----------------------------------------------
     app.get(BASE_API_URL + "/global-coef/loadInitialData", (req, res) => {
-        console.log("New GET .../loadInitialData")
+		dbCoef.remove({});
+        	console.log("New GET .../loadInitialData")
         dbCoef.insert(initialCoef);
         res.sendStatus(200);
-        console.log("Initial coef loaded: " + JSON.stringify(initialCoef, null, 2));
+        	console.log("Initial coef loaded: " + JSON.stringify(initialCoef, null, 2));
+				res.send(JSON.stringify(initialCoef,null,2));
     });
 	
 
