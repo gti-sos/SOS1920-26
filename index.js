@@ -31,15 +31,9 @@ transfersAPI(app);
 */
 
 
-
-
 app.use("/", express.static("./public"));
 
 goalscorersAPI(app, path, BASE_API_URL, dataStore);
-
-
-
-
 
 
 
