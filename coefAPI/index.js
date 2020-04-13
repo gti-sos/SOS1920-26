@@ -1,4 +1,5 @@
 
+
 //------COEF--------------------------------------------------------------------------
 
 module.exports = function (app) {
@@ -72,25 +73,11 @@ var initialCoef = [
 		dbCoef.remove({});
         	console.log("New GET .../loadInitialData")
         dbCoef.insert(initialCoef);
-        res.sendStatus(200);
-        	console.log("Initial coef loaded: " + JSON.stringify(initialCoef, null, 2));
+            console.log("Initial coef loaded: " + JSON.stringify(initialCoef, null, 2));
 				res.send(JSON.stringify(initialCoef,null,2));
     });
 	
 
- /*//GET coef
-    
-    app.get(BASE_API_URL+"/global-coef",(req,res) =>{
-        console.log("New GET... /global-coef");
-    
-        dbCoef.find({},(err,coef)=>{    // la variable coef tendra guardado lo que se ha encontrado en la consulta a la base de datos con los datos 
-                                        // especificados en {}
-            deleteIDs(coef);
-            res.send(JSON.stringify(coef,null,2));
-            console.log("Data sent: " + JSON.stringify(coef,null,2));
-        });
-    });
-*/
 	
 // POST GLOBAL-coef----------------------------------------------------
 
@@ -115,7 +102,7 @@ var initialCoef = [
 	
 	
 // DELETE global-coef-----------------------------------------------
-app.delete(BASE_API_URL + "/global-coef", (req,res)=>{
+	app.delete(BASE_API_URL + "/global-coef", (req,res)=>{
 		dbCoef.remove({}, { multi: true }, function (err, numRemoved) {
             if (numRemoved>=1) {
                 res.sendStatus(200, "OK");
@@ -210,62 +197,9 @@ app.put(BASE_API_URL + "/global-coef", (req, res) => {
 	
 	
 	
-//Búsqueda por todos los campos del recurso----------------------------
-/*
-app.get(BASE_API_URL+"/global-coef",(req, res) => {
- console.log("GET GLOBAL COEF");
- 
- 
- //if(req.query.country) request["country"] = req.query.country;
- if(req.query.year) req.query.year = parseInt(req.query.year);
- //if(req.query.team) request["team"] = req.query.team;
- if(req.query.coefficient) req.query.coefficient = parseFloat(req.query.coefficient);
- if(req.query.fed) req.query.fed = parseFloat(req.query.fed);
- if(req.query.classification) req.query.classification = parseInt(req.query.classification);
- 
-	var parametros = req.query;
-	console.log(parametros);
- 
- 
- dbCoef.find(parametros,(err, coef) => {
-  
-  coef.forEach((c) => {
-   delete c._id;
-  });
-  
-  //console.log("New GET_0.2  coef");
-  
-  res.send(JSON.stringify(coef,null,2));
-  
-  //console.log("Data sent: "+JSON.stringify(coef,null,2));
- });
- 
+//Búsqueda por todos los campos del recurso------------------------------
 
-	
-//Paginacion-------------------------------------------------------------
-        
-	
-		let offset = 0;
-		let limit = Number.MAX_SAFE_INTEGER;
-	
-		if (req.query.offset) {
-            offset = parseInt(req.query.offset);
-            delete req.query.offset;
-        }
-        if (req.query.limit) {
-            limit = parseInt(req.query.limit);
-            delete req.query.limit;
-        }		
-		dbCoef.find({}).sort({team:1,year:-1}).skip(offset).limit(limit).exec((error, routes) =>{
-			routes.forEach((c)=>{
-				delete c._id
-			});
 
-			//res.send(JSON.stringify(routes,null,2));
-			console.log("RESOURCES DISPLAYED");
-		});
-	*/	
-//-------------------------------------------------------------------------------------
 	
 	app.get(BASE_API_URL+"/global-coef",(req, res) => {
  console.log("GET GLOBAL COEF");
@@ -308,9 +242,6 @@ app.get(BASE_API_URL+"/global-coef",(req, res) => {
  });
  
 
-	
-	
-	
 	});
 	
 }
