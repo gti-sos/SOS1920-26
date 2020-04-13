@@ -55,6 +55,14 @@ var initialCoef = [
 		coefficient: 104.000,
 		fed: 20.713,
 		classification: 7
+	},
+	{ 
+		country: "france",
+		year: 2017,
+		team: "psg",
+		coefficient: 109.000,
+		fed: 11.283,
+		classification: 7
 	}
 ];
 
