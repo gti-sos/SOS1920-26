@@ -26,6 +26,15 @@ var initialTransfers = [
         sale: 35,
         balance: -236.15
     },
+    {
+		country: "italy",
+        year: 2019,
+        team: "juventus",
+        signing: 72,
+        sale: 61,
+        balance: -174.55	
+	},
+
 	{
 		country: "spain",
         year: 2018,

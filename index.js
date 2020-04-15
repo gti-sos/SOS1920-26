@@ -20,6 +20,7 @@ const dbTransfers = path.join(__dirname,"transfersAPI/transfers.db");
 transfersAPI(app);
 //----------------------------------transfers//
 
+<<<<<<< HEAD
 //-----------------------------------goalscorersAPI
 const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
 goalscorersAPI(app);
@@ -27,6 +28,25 @@ goalscorersAPI(app);
 
 app.use("/", express.static("./public"));
 
+=======
+//const dbFileName = path.join(__dirname, "goalscorers.db");
+
+/*const db = new dataStore({
+				filename: dbFileName,
+				autoload: true
+	});
+*/
+
+
+app.use("/", express.static("./public"));
+
+goalscorersAPI(app, path, BASE_API_URL, dataStore);
+
+
+
+
+
+>>>>>>> 14d226b4c39d0e6237706e93a0676418bedf6f57
 app.listen(port, () => {
 	console.log("Server ready");
 });
