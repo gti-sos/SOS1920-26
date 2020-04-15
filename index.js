@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dataStore = require("nedb");
 const path = require("path");
-const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
 
 const app = express();
 app.use(bodyParser.json());
