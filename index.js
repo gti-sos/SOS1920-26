@@ -1,8 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const dataStore = require("nedb");
 const path = require("path");
-const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
 
 const app = express();
 app.use(bodyParser.json());
@@ -22,28 +20,12 @@ const dbTransfers = path.join(__dirname,"transfersAPI/transfers.db");
 transfersAPI(app);
 //----------------------------------transfers//
 
-//const dbFileName = path.join(__dirname, "goalscorers.db");
-
-/*const db = new dataStore({
-				filename: dbFileName,
-				autoload: true
-	});
-*/
-
-
-
+//-----------------------------------goalscorersAPI
+const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
+goalscorersAPI(app);
+//----------------------------------end-goalscorers
 
 app.use("/", express.static("./public"));
-
-goalscorersAPI(app, path, BASE_API_URL, dataStore);
-
-
-
-
-
-
-
-
 
 app.listen(port, () => {
 	console.log("Server ready");
