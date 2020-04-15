@@ -1,6 +1,12 @@
-module.exports = function(app, path, BASE_API_URL, dataStore) {
+//-----------------GOALSCORERS-------------
+module.exports = function(app) {
     console.log("Registering goalscorers API...");
-    const dbFileName = path.join(__dirname, "goalscorers.db");
+    const dataStore = require("nedb");
+    const path = require("path");
+    const dbFileName = path.join(__dirname, "./goalscorers.db");
+    const BASE_API_URL = "/api/v1";
+
+
     const db = new dataStore({
         filename: dbFileName,
         autoload: true
@@ -33,6 +39,13 @@ module.exports = function(app, path, BASE_API_URL, dataStore) {
         }
     ];
 
+    function deleteIDs(goalscorers) {
+        goalscorers.forEach((m) => {
+            delete m._id;
+        });
+    }
+
+
     //LOADINITIALDATA GOALSCORERS
     app.get(BASE_API_URL + "/goalscorers/loadInitialData", (req, res) => {
         console.log("New GET .../goalscorers/loadInitialData")
@@ -47,53 +60,79 @@ module.exports = function(app, path, BASE_API_URL, dataStore) {
     app.post(BASE_API_URL + "/goalscorers", (req, res) => {
         var newGoalscorer = req.body;
 
-
-        if ((newGoalscorer == "") || newGoalscorer.name == null) {
+        if ((newGoalscorer == {}) ||
+            (newGoalscorer.name == null) ||
+            (newGoalscorer.country == null) ||
+            (newGoalscorer.debut == null) ||
+            (newGoalscorer.goals == null) ||
+            (newGoalscorer.matches == null) ||
+            (newGoalscorer.teams == null)) {
             res.sendStatus(400, "BAD REQUEST");
         } else {
-            topGoalscorers.push(newGoalscorer);
+            db.insert(newGoalscorer);
+
             res.sendStatus(201, "CREATED");
         }
-
     });
 
     //GET GOALSCORERS
-    /*
-    app.get(BASE_API_URL+"/goalscorers", (req,res) =>{
-    	res.send(JSON.stringify(topGoalscorers,null,2));
-    });
-    */
-
     app.get(BASE_API_URL + "/goalscorers", (req, res) => {
-        console.log("New GET .../goalscorers");
+        console.log("NEW GET .../goalscorers");
 
-        db.find({}, (err, goalscorers) => {
+        if (req.query.debut) req.query.debut = parseInt(req.query.debut);
+        if (req.query.goals) req.query.goals = parseInt(req.query.goals);
+        if (req.query.matches) req.query.matches = parseInt(req.query.matches);
+        if (req.query.teams) req.query.teams = parseFloat(req.query.teams);
+
+        var parametros = req.query;
+        console.log(parametros);
+        let offset = null;
+        let limit = null;
+
+
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }
+		
+        db.find(parametros).skip(offset).limit(limit).exec((err, goalscorers) => {
+
+            deleteIDs(goalscorers);
+			
             res.send(JSON.stringify(goalscorers, null, 2));
-            console.log("Data sent: " + JSON.stringify(goalscorers, null, 2));
-        })
+            console.log("RESOURCES DISPLAYED");
+
+        });
     });
 
     //PUT GOALSCORERS
     app.put(BASE_API_URL + "/goalscorers", (req, res) => {
-        res.sendStatus(405, "IT IS NOT ALLOWED");
+        res.sendStatus(405);
     });
 
 
     //DELETE GOALSCORERS
 
     app.delete(BASE_API_URL + "/goalscorers", (req, res) => {
-        var name = req.params.name;
-        if (topGoalscorers.length > 0 && name == null) {
-            topGoalscorers = [];
-            res.sendStatus(200, "TOPGOALSCORERS DELETED");
-        } else {
-            res.sendStatus(404, "THERE IS NO TOPSCORER TO CLEAR");
-        }
+        db.remove({}, {
+            multi: true
+        }, function(err, numRemoved) {
+            if (numRemoved >= 1) {
+                res.sendStatus(200);
+            } else {
+                res.sendStatus(404);
+            }
+
+        });
     });
 
     //POST GOALSCORERS/XXXXX
     app.post(BASE_API_URL + "/goalscorers/:name", (req, res) => {
-        res.sendStatus(405, "IT IS NOT ALLOWED");
+        res.sendStatus(405);
     });
 
     //GET GOALSCORERS/XXXXX
@@ -101,15 +140,18 @@ module.exports = function(app, path, BASE_API_URL, dataStore) {
 
         var name = req.params.name;
 
-        var filteredScorers = topGoalscorers.filter((c) => {
-            return (c.name == name);
+        db.find({
+            "name": name
+        }, (err, goalscorers) => {
+            console.log(goalscorers);
+            if (goalscorers.length != 0) {
+                deleteIDs(goalscorers);
+                res.send(JSON.stringify(goalscorers[0], null, 2));
+                console.log("Data sent: " + JSON.stringify(goalscorers[0], null, 2));
+            } else {
+                res.sendStatus(404);
+            }
         })
-
-        if (filteredScorers.length >= 1) {
-            res.send(filteredScorers[0]);
-        } else {
-            res.sendStatus(404, "GOALSCORER NOT FOUND");
-        }
     });
 
 
@@ -117,32 +159,15 @@ module.exports = function(app, path, BASE_API_URL, dataStore) {
     app.put(BASE_API_URL + "/goalscorers/:name", (req, res) => {
         var name = req.params.name;
         var updateGoalscorer = req.body;
-
-        filteredGoalscorer = topGoalscorers.filter((c) => {
-            return (c.name == name);
-        });
-
-        if (filteredGoalscorer.length == 0) {
-            res.sendStatus(404, "GOALSCORER NOT FOUND");
-            return;
-        }
-
-        if (!updateGoalscorer.name || !updateGoalscorer.country || !updateGoalscorer.debut || !updateGoalscorer.matches ||
-            !updateGoalscorer.goals || !updateGoalscorer.teams) {
-            res.sendStatus(400, "NOT VALID FIELDS");
-            return;
-        }
-
-        topGoalscorers = topGoalscorers.map((c) => {
-            if (c.name == updateGoalscorer.name) {
-                return updateGoalscorer;
+        db.update({
+            name: name
+        }, updateGoalscorer, (error, numRemoved) => {
+            if (numRemoved == 0) {
+                res.sendStatus(404);
             } else {
-                return c;
+                res.sendStatus(200);
             }
-
         });
-        res.sendStatus(200, "GOALSCORER UPDATED");
-
     });
 
     //DELETE GOALSCORERS/XXXXX
@@ -150,16 +175,19 @@ module.exports = function(app, path, BASE_API_URL, dataStore) {
 
         var name = req.params.name;
 
-        var filteredScorers = topGoalscorers.filter((c) => {
-            return (c.name != name);
-        })
+        var query = {
+            name: name
+        };
 
-        if (filteredScorers.length < topGoalscorers.length) {
-            topGoalscorers = filteredScorers;
-            res.sendStatus(200, "GOALSCORER DELETED");
-        } else {
-            res.sendStatus(404, "GOALSCORER NOT FOUND");
-        }
+        db.remove(query, {
+            multi: true
+        }, (error, numRemoved) => {
+            if (numRemoved == 0) {
+                res.sendStatus(404);
+            } else {
+                res.sendStatus(200);
+            }
+        });
     });
 
 
