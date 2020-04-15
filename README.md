@@ -11,7 +11,7 @@
 - **URL**: [http://sos1920-26.herokuapp.com](http://sos1920-26.herokuapp.com)
 
 -  **APIs**:
-    - [http://sos1920-26.herokuapp.com/api/v1/top-goalscorers] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
+    - [http://sos1920-26.herokuapp.com/api/v1/goalscorers] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
     - [http://sos1920-26.herokuapp.com/api/v1/coef] (developed by [Jose García Creus](https://github.com/jgcreus))
     - [http://sos1920-26.herokuapp.com/api/v1/transfers] (developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
 -  **Portales de documentación de Postman**:
