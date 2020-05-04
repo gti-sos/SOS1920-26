@@ -6,6 +6,9 @@
 	import globalCoef from './CoefGUI/App.svelte';  
 	import EditCoef from './CoefGUI/EditCoef.svelte';
 
+	import globalTransfers from './TransfersGUI/App.svelte'; 
+	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
+
 	import NotFound from './NotFound.svelte';
 
 	
@@ -14,9 +17,12 @@
 	const routes = {
 		"/": Home,
 		"/global-Coef/:country/:year": EditCoef,
-		"/globalCoefAPI":globalCoef, 
+		"/globalCoefAPI":globalCoef,
+		"/global-transfers/:country/:year": EditTransfer,
+		"/globaltransfersAPI":globalTransfers,  
 		"*": NotFound
 	};
+
 </script>
 
 <main>

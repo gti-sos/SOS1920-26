@@ -1460,20 +1460,35 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let main;
     	let div;
-    	let button;
+    	let button0;
+    	let t1;
+    	let button1;
+    	let i;
+    	let t2;
 
     	const block = {
     		c: function create() {
     			main = element("main");
     			div = element("div");
-    			button = element("button");
-    			button.textContent = "API de coef globales";
-    			attr_dev(button, "type", "button");
-    			attr_dev(button, "class", "btn btn-outline-success");
-    			attr_dev(button, "onclick", "window.location.href='#/globalCoefAPI'");
-    			add_location(button, file, 3, 2, 34);
+    			button0 = element("button");
+    			button0.textContent = "API de\r\n\t\t\tcoef globales";
+    			t1 = space();
+    			button1 = element("button");
+    			i = element("i");
+    			t2 = text(" API de las transferencias del mercado de fichajes");
+    			attr_dev(button0, "type", "button");
+    			attr_dev(button0, "class", "btn btn-outline-success");
+    			attr_dev(button0, "onclick", "window.location.href='#/globalCoefAPI'");
+    			add_location(button0, file, 3, 2, 37);
+    			attr_dev(i, "class", "fa fa-money");
+    			attr_dev(i, "aria-hidden", "true");
+    			add_location(i, file, 5, 111, 287);
+    			attr_dev(button1, "type", "button");
+    			attr_dev(button1, "class", "btn btn-outline-success");
+    			attr_dev(button1, "onclick", "window.location.href='#/globaltransfersAPI'");
+    			add_location(button1, file, 5, 2, 178);
     			attr_dev(div, "class", "div-home");
-    			add_location(div, file, 2, 1, 9);
+    			add_location(div, file, 2, 1, 11);
     			add_location(main, file, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -1482,7 +1497,11 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			append_dev(main, div);
-    			append_dev(div, button);
+    			append_dev(div, button0);
+    			append_dev(div, t1);
+    			append_dev(div, button1);
+    			append_dev(button1, i);
+    			append_dev(button1, t2);
     		},
     		p: noop,
     		i: noop,
@@ -7083,7 +7102,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (1:0) <script>  import {   onMount  }
+    // (1:0) <script>   import {    onMount   }
     function create_catch_block(ctx) {
     	const block = {
     		c: noop,
@@ -7098,7 +7117,7 @@ var app = (function () {
     		block,
     		id: create_catch_block.name,
     		type: "catch",
-    		source: "(1:0) <script>  import {   onMount  }",
+    		source: "(1:0) <script>   import {    onMount   }",
     		ctx
     	});
 
@@ -7280,7 +7299,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*country*/ ctx[34];
     			option.value = option.__value;
-    			add_location(option, file$9, 206, 4, 4770);
+    			add_location(option, file$9, 206, 4, 4976);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7334,7 +7353,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$9, 208, 4, 4813);
+    			add_location(option, file$9, 208, 4, 5021);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7524,7 +7543,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*year*/ ctx[31];
     			option.value = option.__value;
-    			add_location(option, file$9, 216, 4, 5036);
+    			add_location(option, file$9, 216, 4, 5252);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7578,7 +7597,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$9, 218, 4, 5076);
+    			add_location(option, file$9, 218, 4, 5294);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7738,7 +7757,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$9, 222, 109, 5232);
+    			add_location(i, file$9, 222, 109, 5454);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -7888,15 +7907,15 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t12 = space();
     			attr_dev(a, "href", a_href_value = "#/global-coef/" + /*coef*/ ctx[7].country + "/" + /*coef*/ ctx[7].year);
-    			add_location(a, file$9, 251, 7, 6044);
-    			add_location(td0, file$9, 250, 6, 6032);
-    			add_location(td1, file$9, 253, 6, 6132);
-    			add_location(td2, file$9, 254, 6, 6159);
-    			add_location(td3, file$9, 255, 6, 6186);
-    			add_location(td4, file$9, 256, 6, 6220);
-    			add_location(td5, file$9, 257, 6, 6246);
-    			add_location(td6, file$9, 258, 6, 6283);
-    			add_location(tr, file$9, 249, 5, 6021);
+    			add_location(a, file$9, 251, 7, 6295);
+    			add_location(td0, file$9, 250, 6, 6282);
+    			add_location(td1, file$9, 253, 6, 6385);
+    			add_location(td2, file$9, 254, 6, 6413);
+    			add_location(td3, file$9, 255, 6, 6441);
+    			add_location(td4, file$9, 256, 6, 6476);
+    			add_location(td5, file$9, 257, 6, 6503);
+    			add_location(td6, file$9, 258, 6, 6541);
+    			add_location(tr, file$9, 249, 5, 6270);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -8090,34 +8109,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$9, 228, 5, 5327);
-    			add_location(th1, file$9, 229, 5, 5346);
-    			add_location(th2, file$9, 230, 5, 5364);
-    			add_location(th3, file$9, 231, 5, 5385);
-    			add_location(th4, file$9, 232, 5, 5411);
-    			add_location(th5, file$9, 233, 5, 5429);
-    			add_location(th6, file$9, 234, 5, 5457);
-    			add_location(tr0, file$9, 227, 4, 5317);
-    			add_location(thead, file$9, 226, 3, 5305);
-    			add_location(input0, file$9, 240, 9, 5526);
-    			add_location(td0, file$9, 240, 5, 5522);
+    			add_location(th0, file$9, 228, 5, 5555);
+    			add_location(th1, file$9, 229, 5, 5575);
+    			add_location(th2, file$9, 230, 5, 5594);
+    			add_location(th3, file$9, 231, 5, 5616);
+    			add_location(th4, file$9, 232, 5, 5643);
+    			add_location(th5, file$9, 233, 5, 5662);
+    			add_location(th6, file$9, 234, 5, 5691);
+    			add_location(tr0, file$9, 227, 4, 5544);
+    			add_location(thead, file$9, 226, 3, 5531);
+    			add_location(input0, file$9, 240, 9, 5766);
+    			add_location(td0, file$9, 240, 5, 5762);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 241, 9, 5579);
-    			add_location(td1, file$9, 241, 5, 5575);
-    			add_location(input2, file$9, 242, 9, 5643);
-    			add_location(td2, file$9, 242, 5, 5639);
+    			add_location(input1, file$9, 241, 9, 5820);
+    			add_location(td1, file$9, 241, 5, 5816);
+    			add_location(input2, file$9, 242, 9, 5885);
+    			add_location(td2, file$9, 242, 5, 5881);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$9, 243, 9, 5693);
-    			add_location(td3, file$9, 243, 5, 5689);
+    			add_location(input3, file$9, 243, 9, 5936);
+    			add_location(td3, file$9, 243, 5, 5932);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$9, 244, 9, 5764);
-    			add_location(td4, file$9, 244, 5, 5760);
+    			add_location(input4, file$9, 244, 9, 6008);
+    			add_location(td4, file$9, 244, 5, 6004);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$9, 245, 9, 5827);
-    			add_location(td5, file$9, 245, 5, 5823);
-    			add_location(td6, file$9, 246, 5, 5897);
-    			add_location(tr1, file$9, 239, 4, 5512);
-    			add_location(tbody, file$9, 238, 3, 5500);
+    			add_location(input5, file$9, 245, 9, 6072);
+    			add_location(td5, file$9, 245, 5, 6068);
+    			add_location(td6, file$9, 246, 5, 6143);
+    			add_location(tr1, file$9, 239, 4, 5751);
+    			add_location(tbody, file$9, 238, 3, 5738);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -8284,7 +8303,7 @@ var app = (function () {
     	return block;
     }
 
-    // (199:14)    Loading coef...  {:then coef}
+    // (199:14)     Loading coef...   {:then coef}
     function create_pending_block(ctx) {
     	let t;
 
@@ -8307,7 +8326,7 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(199:14)    Loading coef...  {:then coef}",
+    		source: "(199:14)     Loading coef...   {:then coef}",
     		ctx
     	});
 
@@ -8960,7 +8979,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$9, 295, 53, 7474);
+    			add_location(i, file$9, 295, 53, 7769);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -8994,7 +9013,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$9, 296, 61, 7592);
+    			add_location(i, file$9, 296, 61, 7888);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9082,7 +9101,7 @@ var app = (function () {
     			create_component(button0.$$.fragment);
     			t2 = space();
     			create_component(button1.$$.fragment);
-    			add_location(main, file$9, 196, 0, 4509);
+    			add_location(main, file$9, 196, 0, 4705);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9480,12 +9499,12 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			t = text("Administrador de Coef/h1>\n\t");
+    			t = text("Administrador de Coef/h1>\r\n\t");
     			create_component(coeftable.$$.fragment);
     			attr_dev(h1, "class", "display-4");
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$a, 5, 1, 73);
-    			add_location(main, file$a, 4, 0, 65);
+    			add_location(h1, file$a, 5, 1, 78);
+    			add_location(main, file$a, 4, 0, 69);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9556,7 +9575,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$b = "src\\front\\CoefGUI\\EditCoef.svelte";
 
-    // (1:0) <script>     import {         onMount     }
+    // (1:0) <script>      import {          onMount      }
     function create_catch_block$1(ctx) {
     	const block = {
     		c: noop,
@@ -9571,7 +9590,7 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(1:0) <script>     import {         onMount     }",
+    		source: "(1:0) <script>      import {          onMount      }",
     		ctx
     	});
 
@@ -9761,32 +9780,32 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$b, 83, 20, 2221);
-    			add_location(th1, file$b, 84, 20, 2255);
-    			add_location(th2, file$b, 85, 20, 2288);
-    			add_location(th3, file$b, 86, 20, 2324);
-    			add_location(th4, file$b, 87, 20, 2365);
-    			add_location(th5, file$b, 88, 20, 2398);
-    			add_location(th6, file$b, 89, 20, 2441);
-    			add_location(tr0, file$b, 82, 16, 2196);
-    			add_location(thead, file$b, 81, 12, 2172);
-    			add_location(td0, file$b, 94, 20, 2562);
-    			add_location(td1, file$b, 95, 20, 2608);
+    			add_location(th0, file$b, 83, 20, 2304);
+    			add_location(th1, file$b, 84, 20, 2339);
+    			add_location(th2, file$b, 85, 20, 2373);
+    			add_location(th3, file$b, 86, 20, 2410);
+    			add_location(th4, file$b, 87, 20, 2452);
+    			add_location(th5, file$b, 88, 20, 2486);
+    			add_location(th6, file$b, 89, 20, 2530);
+    			add_location(tr0, file$b, 82, 16, 2278);
+    			add_location(thead, file$b, 81, 12, 2253);
+    			add_location(td0, file$b, 94, 20, 2656);
+    			add_location(td1, file$b, 95, 20, 2703);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$b, 96, 24, 2655);
-    			add_location(td2, file$b, 96, 20, 2651);
+    			add_location(input0, file$b, 96, 24, 2751);
+    			add_location(td2, file$b, 96, 20, 2747);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$b, 97, 24, 2733);
-    			add_location(td3, file$b, 97, 20, 2729);
+    			add_location(input1, file$b, 97, 24, 2830);
+    			add_location(td3, file$b, 97, 20, 2826);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$b, 98, 24, 2818);
-    			add_location(td4, file$b, 98, 20, 2814);
+    			add_location(input2, file$b, 98, 24, 2916);
+    			add_location(td4, file$b, 98, 20, 2912);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$b, 99, 24, 2895);
-    			add_location(td5, file$b, 99, 20, 2891);
-    			add_location(td6, file$b, 100, 20, 2979);
-    			add_location(tr1, file$b, 93, 16, 2537);
-    			add_location(tbody, file$b, 92, 12, 2513);
+    			add_location(input3, file$b, 99, 24, 2994);
+    			add_location(td5, file$b, 99, 20, 2990);
+    			add_location(td6, file$b, 100, 20, 3079);
+    			add_location(tr1, file$b, 93, 16, 2630);
+    			add_location(tbody, file$b, 92, 12, 2605);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -9898,7 +9917,7 @@ var app = (function () {
     	return block;
     }
 
-    // (78:17)          Loading coef...     {:then coef}
+    // (78:17)           Loading coef...      {:then coef}
     function create_pending_block$1(ctx) {
     	let t;
 
@@ -9921,7 +9940,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(78:17)          Loading coef...     {:then coef}",
+    		source: "(78:17)           Loading coef...      {:then coef}",
     		ctx
     	});
 
@@ -9940,7 +9959,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[7]);
     			set_style(p, "color", "red");
-    			add_location(p, file$b, 106, 8, 3161);
+    			add_location(p, file$b, 106, 8, 3267);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10045,9 +10064,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t4 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$b, 76, 18, 2037);
-    			add_location(h3, file$b, 76, 4, 2023);
-    			add_location(main, file$b, 75, 0, 2012);
+    			add_location(strong, file$b, 76, 18, 2113);
+    			add_location(h3, file$b, 76, 4, 2099);
+    			add_location(main, file$b, 75, 0, 2087);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10297,11 +10316,3247 @@ var app = (function () {
     	}
     }
 
-    /* src\front\NotFound.svelte generated by Svelte v3.21.0 */
+    /* src\front\TransfersGUI\TransfersTable.svelte generated by Svelte v3.21.0 */
 
-    const file$c = "src\\front\\NotFound.svelte";
+    const { console: console_1$4 } = globals;
+    const file$c = "src\\front\\TransfersGUI\\TransfersTable.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[29] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[32] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_2$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[35] = list[i];
+    	return child_ctx;
+    }
+
+    // (1:0) <script>   import {    onMount   }
+    function create_catch_block$2(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$2.name,
+    		type: "catch",
+    		source: "(1:0) <script>   import {    onMount   }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (199:1) {:then transfers}
+    function create_then_block$2(ctx) {
+    	let t0;
+    	let t1;
+    	let t2;
+    	let current;
+
+    	const formgroup0 = new FormGroup({
+    			props: {
+    				$$slots: { default: [create_default_slot_18$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const formgroup1 = new FormGroup({
+    			props: {
+    				$$slots: { default: [create_default_slot_15$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				class: "button-search",
+    				$$slots: { default: [create_default_slot_14$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*search*/ ctx[11](/*currentYear*/ ctx[3], /*currentTeam*/ ctx[4]))) /*search*/ ctx[11](/*currentYear*/ ctx[3], /*currentTeam*/ ctx[4]).apply(this, arguments);
+    	});
+
+    	const table = new Table({
+    			props: {
+    				bordered: true,
+    				$$slots: { default: [create_default_slot_11$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(formgroup0.$$.fragment);
+    			t0 = space();
+    			create_component(formgroup1.$$.fragment);
+    			t1 = space();
+    			create_component(button.$$.fragment);
+    			t2 = space();
+    			create_component(table.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(formgroup0, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(formgroup1, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(button, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const formgroup0_changes = {};
+
+    			if (dirty[0] & /*currentYear, years*/ 10 | dirty[1] & /*$$scope*/ 128) {
+    				formgroup0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			formgroup0.$set(formgroup0_changes);
+    			const formgroup1_changes = {};
+
+    			if (dirty[0] & /*currentTeam, teams*/ 20 | dirty[1] & /*$$scope*/ 128) {
+    				formgroup1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			formgroup1.$set(formgroup1_changes);
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    			const table_changes = {};
+
+    			if (dirty[0] & /*transfers, newTransfer*/ 129 | dirty[1] & /*$$scope*/ 128) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(formgroup0.$$.fragment, local);
+    			transition_in(formgroup1.$$.fragment, local);
+    			transition_in(button.$$.fragment, local);
+    			transition_in(table.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(formgroup0.$$.fragment, local);
+    			transition_out(formgroup1.$$.fragment, local);
+    			transition_out(button.$$.fragment, local);
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(formgroup0, detaching);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(formgroup1, detaching);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(button, detaching);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(table, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$2.name,
+    		type: "then",
+    		source: "(199:1) {:then transfers}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (202:3) <Label for="selectYear">
+    function create_default_slot_20$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Año");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_20$1.name,
+    		type: "slot",
+    		source: "(202:3) <Label for=\\\"selectYear\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (204:4) {#each years as year}
+    function create_each_block_2$1(ctx) {
+    	let option;
+    	let t_value = /*year*/ ctx[35] + "";
+    	let t;
+    	let option_value_value;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = option_value_value = /*year*/ ctx[35];
+    			option.value = option.__value;
+    			add_location(option, file$c, 204, 4, 4906);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*years*/ 2 && t_value !== (t_value = /*year*/ ctx[35] + "")) set_data_dev(t, t_value);
+
+    			if (dirty[0] & /*years*/ 2 && option_value_value !== (option_value_value = /*year*/ ctx[35])) {
+    				prop_dev(option, "__value", option_value_value);
+    			}
+
+    			option.value = option.__value;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_2$1.name,
+    		type: "each",
+    		source: "(204:4) {#each years as year}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (203:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
+    function create_default_slot_19$1(ctx) {
+    	let t0;
+    	let option;
+    	let each_value_2 = /*years*/ ctx[1];
+    	validate_each_argument(each_value_2);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_2.length; i += 1) {
+    		each_blocks[i] = create_each_block_2$1(get_each_context_2$1(ctx, each_value_2, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t0 = space();
+    			option = element("option");
+    			option.textContent = "-";
+    			option.__value = "-";
+    			option.value = option.__value;
+    			add_location(option, file$c, 206, 4, 4948);
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, option, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*years*/ 2) {
+    				each_value_2 = /*years*/ ctx[1];
+    				validate_each_argument(each_value_2);
+    				let i;
+
+    				for (i = 0; i < each_value_2.length; i += 1) {
+    					const child_ctx = get_each_context_2$1(ctx, each_value_2, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_2$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(t0.parentNode, t0);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_2.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_19$1.name,
+    		type: "slot",
+    		source: "(203:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (201:2) <FormGroup>
+    function create_default_slot_18$1(ctx) {
+    	let t;
+    	let updating_value;
+    	let current;
+
+    	const label = new Label({
+    			props: {
+    				for: "selectYear",
+    				$$slots: { default: [create_default_slot_20$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	function input_value_binding(value) {
+    		/*input_value_binding*/ ctx[17].call(null, value);
+    	}
+
+    	let input_props = {
+    		type: "select",
+    		name: "selectYear",
+    		id: "selectYear",
+    		$$slots: { default: [create_default_slot_19$1] },
+    		$$scope: { ctx }
+    	};
+
+    	if (/*currentYear*/ ctx[3] !== void 0) {
+    		input_props.value = /*currentYear*/ ctx[3];
+    	}
+
+    	const input = new Input({ props: input_props, $$inline: true });
+    	binding_callbacks.push(() => bind(input, "value", input_value_binding));
+
+    	const block = {
+    		c: function create() {
+    			create_component(label.$$.fragment);
+    			t = space();
+    			create_component(input.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(label, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(input, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const label_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				label_changes.$$scope = { dirty, ctx };
+    			}
+
+    			label.$set(label_changes);
+    			const input_changes = {};
+
+    			if (dirty[0] & /*years*/ 2 | dirty[1] & /*$$scope*/ 128) {
+    				input_changes.$$scope = { dirty, ctx };
+    			}
+
+    			if (!updating_value && dirty[0] & /*currentYear*/ 8) {
+    				updating_value = true;
+    				input_changes.value = /*currentYear*/ ctx[3];
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			input.$set(input_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(label.$$.fragment, local);
+    			transition_in(input.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(label.$$.fragment, local);
+    			transition_out(input.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(label, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(input, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_18$1.name,
+    		type: "slot",
+    		source: "(201:2) <FormGroup>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (212:3) <Label for="selectTeam">
+    function create_default_slot_17$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Búsqueda por equipo");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_17$1.name,
+    		type: "slot",
+    		source: "(212:3) <Label for=\\\"selectTeam\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (214:4) {#each teams as team}
+    function create_each_block_1$1(ctx) {
+    	let option;
+    	let t_value = /*team*/ ctx[32] + "";
+    	let t;
+    	let option_value_value;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = option_value_value = /*team*/ ctx[32];
+    			option.value = option.__value;
+    			add_location(option, file$c, 214, 4, 5191);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*teams*/ 4 && t_value !== (t_value = /*team*/ ctx[32] + "")) set_data_dev(t, t_value);
+
+    			if (dirty[0] & /*teams*/ 4 && option_value_value !== (option_value_value = /*team*/ ctx[32])) {
+    				prop_dev(option, "__value", option_value_value);
+    			}
+
+    			option.value = option.__value;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$1.name,
+    		type: "each",
+    		source: "(214:4) {#each teams as team}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (213:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
+    function create_default_slot_16$1(ctx) {
+    	let t0;
+    	let option;
+    	let each_value_1 = /*teams*/ ctx[2];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t0 = space();
+    			option = element("option");
+    			option.textContent = "-";
+    			option.__value = "-";
+    			option.value = option.__value;
+    			add_location(option, file$c, 216, 4, 5233);
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, option, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*teams*/ 4) {
+    				each_value_1 = /*teams*/ ctx[2];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(t0.parentNode, t0);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(option);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_16$1.name,
+    		type: "slot",
+    		source: "(213:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (211:2) <FormGroup>
+    function create_default_slot_15$1(ctx) {
+    	let t;
+    	let updating_value;
+    	let current;
+
+    	const label = new Label({
+    			props: {
+    				for: "selectTeam",
+    				$$slots: { default: [create_default_slot_17$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	function input_value_binding_1(value) {
+    		/*input_value_binding_1*/ ctx[18].call(null, value);
+    	}
+
+    	let input_props = {
+    		type: "select",
+    		name: "selectTeam",
+    		id: "selectTeam",
+    		$$slots: { default: [create_default_slot_16$1] },
+    		$$scope: { ctx }
+    	};
+
+    	if (/*currentTeam*/ ctx[4] !== void 0) {
+    		input_props.value = /*currentTeam*/ ctx[4];
+    	}
+
+    	const input = new Input({ props: input_props, $$inline: true });
+    	binding_callbacks.push(() => bind(input, "value", input_value_binding_1));
+
+    	const block = {
+    		c: function create() {
+    			create_component(label.$$.fragment);
+    			t = space();
+    			create_component(input.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(label, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(input, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const label_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				label_changes.$$scope = { dirty, ctx };
+    			}
+
+    			label.$set(label_changes);
+    			const input_changes = {};
+
+    			if (dirty[0] & /*teams*/ 4 | dirty[1] & /*$$scope*/ 128) {
+    				input_changes.$$scope = { dirty, ctx };
+    			}
+
+    			if (!updating_value && dirty[0] & /*currentTeam*/ 16) {
+    				updating_value = true;
+    				input_changes.value = /*currentTeam*/ ctx[4];
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			input.$set(input_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(label.$$.fragment, local);
+    			transition_in(input.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(label.$$.fragment, local);
+    			transition_out(input.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(label, detaching);
+    			if (detaching) detach_dev(t);
+    			destroy_component(input, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_15$1.name,
+    		type: "slot",
+    		source: "(211:2) <FormGroup>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (221:2) <Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" >
+    function create_default_slot_14$1(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Buscar");
+    			attr_dev(i, "class", "fas fa-search");
+    			add_location(i, file$c, 220, 106, 5390);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_14$1.name,
+    		type: "slot",
+    		source: "(221:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentYear, currentTeam)}\\\" class=\\\"button-search\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (245:10) <Button outline  color="primary" on:click={insertTransfer}>
+    function create_default_slot_13$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Insertar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_13$1.name,
+    		type: "slot",
+    		source: "(245:10) <Button outline  color=\\\"primary\\\" on:click={insertTransfer}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (257:10) <Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">
+    function create_default_slot_12$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Delete");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_12$1.name,
+    		type: "slot",
+    		source: "(257:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteTransfer(transfer.year,transfer.team)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (247:4) {#each transfers as transfer}
+    function create_each_block$1(ctx) {
+    	let tr;
+    	let td0;
+    	let t0_value = /*transfer*/ ctx[29].country + "";
+    	let t0;
+    	let t1;
+    	let td1;
+    	let a;
+    	let t2_value = /*transfer*/ ctx[29].year + "";
+    	let t2;
+    	let a_href_value;
+    	let t3;
+    	let td2;
+    	let t4_value = /*transfer*/ ctx[29].team + "";
+    	let t4;
+    	let t5;
+    	let td3;
+    	let t6_value = /*transfer*/ ctx[29].signing + "";
+    	let t6;
+    	let t7;
+    	let td4;
+    	let t8_value = /*transfer*/ ctx[29].sale + "";
+    	let t8;
+    	let t9;
+    	let td5;
+    	let t10_value = /*transfer*/ ctx[29].balance + "";
+    	let t10;
+    	let t11;
+    	let td6;
+    	let t12;
+    	let current;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot_12$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*deleteTransfer*/ ctx[9](/*transfer*/ ctx[29].year, /*transfer*/ ctx[29].team))) /*deleteTransfer*/ ctx[9](/*transfer*/ ctx[29].year, /*transfer*/ ctx[29].team).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			tr = element("tr");
+    			td0 = element("td");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			td1 = element("td");
+    			a = element("a");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			td2 = element("td");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			td3 = element("td");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			td4 = element("td");
+    			t8 = text(t8_value);
+    			t9 = space();
+    			td5 = element("td");
+    			t10 = text(t10_value);
+    			t11 = space();
+    			td6 = element("td");
+    			create_component(button.$$.fragment);
+    			t12 = space();
+    			add_location(td0, file$c, 248, 6, 6239);
+    			attr_dev(a, "href", a_href_value = "#/global-transfers/" + /*transfer*/ ctx[29].year + "/" + /*transfer*/ ctx[29].team);
+    			add_location(a, file$c, 250, 7, 6287);
+    			add_location(td1, file$c, 249, 6, 6274);
+    			add_location(td2, file$c, 252, 6, 6388);
+    			add_location(td3, file$c, 253, 6, 6420);
+    			add_location(td4, file$c, 254, 6, 6455);
+    			add_location(td5, file$c, 255, 6, 6487);
+    			add_location(td6, file$c, 256, 6, 6522);
+    			add_location(tr, file$c, 247, 5, 6227);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, tr, anchor);
+    			append_dev(tr, td0);
+    			append_dev(td0, t0);
+    			append_dev(tr, t1);
+    			append_dev(tr, td1);
+    			append_dev(td1, a);
+    			append_dev(a, t2);
+    			append_dev(tr, t3);
+    			append_dev(tr, td2);
+    			append_dev(td2, t4);
+    			append_dev(tr, t5);
+    			append_dev(tr, td3);
+    			append_dev(td3, t6);
+    			append_dev(tr, t7);
+    			append_dev(tr, td4);
+    			append_dev(td4, t8);
+    			append_dev(tr, t9);
+    			append_dev(tr, td5);
+    			append_dev(td5, t10);
+    			append_dev(tr, t11);
+    			append_dev(tr, td6);
+    			mount_component(button, td6, null);
+    			append_dev(tr, t12);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if ((!current || dirty[0] & /*transfers*/ 128) && t0_value !== (t0_value = /*transfer*/ ctx[29].country + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*transfers*/ 128) && t2_value !== (t2_value = /*transfer*/ ctx[29].year + "")) set_data_dev(t2, t2_value);
+
+    			if (!current || dirty[0] & /*transfers*/ 128 && a_href_value !== (a_href_value = "#/global-transfers/" + /*transfer*/ ctx[29].year + "/" + /*transfer*/ ctx[29].team)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if ((!current || dirty[0] & /*transfers*/ 128) && t4_value !== (t4_value = /*transfer*/ ctx[29].team + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*transfers*/ 128) && t6_value !== (t6_value = /*transfer*/ ctx[29].signing + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty[0] & /*transfers*/ 128) && t8_value !== (t8_value = /*transfer*/ ctx[29].sale + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty[0] & /*transfers*/ 128) && t10_value !== (t10_value = /*transfer*/ ctx[29].balance + "")) set_data_dev(t10, t10_value);
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(tr);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(247:4) {#each transfers as transfer}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (224:2) <Table bordered>
+    function create_default_slot_11$1(ctx) {
+    	let thead;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let th6;
+    	let t13;
+    	let tbody;
+    	let tr1;
+    	let td0;
+    	let input0;
+    	let t14;
+    	let td1;
+    	let input1;
+    	let t15;
+    	let td2;
+    	let input2;
+    	let t16;
+    	let td3;
+    	let input3;
+    	let t17;
+    	let td4;
+    	let input4;
+    	let t18;
+    	let td5;
+    	let input5;
+    	let t19;
+    	let td6;
+    	let t20;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_13$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*insertTransfer*/ ctx[8]);
+    	let each_value = /*transfers*/ ctx[7];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			thead = element("thead");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Pais";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "Año";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Equipo";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Fichajes";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Ventas";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Balance";
+    			t11 = space();
+    			th6 = element("th");
+    			th6.textContent = "Actions";
+    			t13 = space();
+    			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			input0 = element("input");
+    			t14 = space();
+    			td1 = element("td");
+    			input1 = element("input");
+    			t15 = space();
+    			td2 = element("td");
+    			input2 = element("input");
+    			t16 = space();
+    			td3 = element("td");
+    			input3 = element("input");
+    			t17 = space();
+    			td4 = element("td");
+    			input4 = element("input");
+    			t18 = space();
+    			td5 = element("td");
+    			input5 = element("input");
+    			t19 = space();
+    			td6 = element("td");
+    			create_component(button.$$.fragment);
+    			t20 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			add_location(th0, file$c, 226, 5, 5491);
+    			add_location(th1, file$c, 227, 5, 5511);
+    			add_location(th2, file$c, 228, 5, 5530);
+    			add_location(th3, file$c, 229, 5, 5552);
+    			add_location(th4, file$c, 230, 5, 5576);
+    			add_location(th5, file$c, 231, 5, 5598);
+    			add_location(th6, file$c, 232, 5, 5621);
+    			add_location(tr0, file$c, 225, 4, 5480);
+    			add_location(thead, file$c, 224, 3, 5467);
+    			add_location(input0, file$c, 238, 9, 5696);
+    			add_location(td0, file$c, 238, 5, 5692);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$c, 239, 9, 5754);
+    			add_location(td1, file$c, 239, 5, 5750);
+    			add_location(input2, file$c, 240, 9, 5823);
+    			add_location(td2, file$c, 240, 5, 5819);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$c, 241, 9, 5878);
+    			add_location(td3, file$c, 241, 5, 5874);
+    			attr_dev(input4, "type", "number");
+    			add_location(input4, file$c, 242, 9, 5950);
+    			add_location(td4, file$c, 242, 5, 5946);
+    			attr_dev(input5, "type", "number");
+    			add_location(input5, file$c, 243, 9, 6019);
+    			add_location(td5, file$c, 243, 5, 6015);
+    			add_location(td6, file$c, 244, 5, 6087);
+    			add_location(tr1, file$c, 237, 4, 5681);
+    			add_location(tbody, file$c, 236, 3, 5668);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, thead, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			append_dev(tr0, t11);
+    			append_dev(tr0, th6);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, input0);
+    			set_input_value(input0, /*newTransfer*/ ctx[0].country);
+    			append_dev(tr1, t14);
+    			append_dev(tr1, td1);
+    			append_dev(td1, input1);
+    			set_input_value(input1, /*newTransfer*/ ctx[0].year);
+    			append_dev(tr1, t15);
+    			append_dev(tr1, td2);
+    			append_dev(td2, input2);
+    			set_input_value(input2, /*newTransfer*/ ctx[0].team);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input3);
+    			set_input_value(input3, /*newTransfer*/ ctx[0].signing);
+    			append_dev(tr1, t17);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input4);
+    			set_input_value(input4, /*newTransfer*/ ctx[0].sale);
+    			append_dev(tr1, t18);
+    			append_dev(tr1, td5);
+    			append_dev(td5, input5);
+    			set_input_value(input5, /*newTransfer*/ ctx[0].balance);
+    			append_dev(tr1, t19);
+    			append_dev(tr1, td6);
+    			mount_component(button, td6, null);
+    			append_dev(tbody, t20);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(tbody, null);
+    			}
+
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[19]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[20]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[21]),
+    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[22]),
+    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[23]),
+    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[24])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*newTransfer*/ 1 && input0.value !== /*newTransfer*/ ctx[0].country) {
+    				set_input_value(input0, /*newTransfer*/ ctx[0].country);
+    			}
+
+    			if (dirty[0] & /*newTransfer*/ 1 && to_number(input1.value) !== /*newTransfer*/ ctx[0].year) {
+    				set_input_value(input1, /*newTransfer*/ ctx[0].year);
+    			}
+
+    			if (dirty[0] & /*newTransfer*/ 1 && input2.value !== /*newTransfer*/ ctx[0].team) {
+    				set_input_value(input2, /*newTransfer*/ ctx[0].team);
+    			}
+
+    			if (dirty[0] & /*newTransfer*/ 1 && to_number(input3.value) !== /*newTransfer*/ ctx[0].signing) {
+    				set_input_value(input3, /*newTransfer*/ ctx[0].signing);
+    			}
+
+    			if (dirty[0] & /*newTransfer*/ 1 && to_number(input4.value) !== /*newTransfer*/ ctx[0].sale) {
+    				set_input_value(input4, /*newTransfer*/ ctx[0].sale);
+    			}
+
+    			if (dirty[0] & /*newTransfer*/ 1 && to_number(input5.value) !== /*newTransfer*/ ctx[0].balance) {
+    				set_input_value(input5, /*newTransfer*/ ctx[0].balance);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+
+    			if (dirty[0] & /*deleteTransfer, transfers*/ 640) {
+    				each_value = /*transfers*/ ctx[7];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(tbody, null);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(thead);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
+    			destroy_each(each_blocks, detaching);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_11$1.name,
+    		type: "slot",
+    		source: "(224:2) <Table bordered>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (197:19)     Loading transfers...   {:then transfers}
+    function create_pending_block$2(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Loading transfers...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$2.name,
+    		type: "pending",
+    		source: "(197:19)     Loading transfers...   {:then transfers}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (267:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
+    function create_default_slot_10$1(ctx) {
+    	let current;
+
+    	const paginationlink = new PaginationLink({
+    			props: {
+    				previous: true,
+    				href: "#/globalTransfersAPI"
+    			},
+    			$$inline: true
+    		});
+
+    	paginationlink.$on("click", /*click_handler*/ ctx[25]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationlink.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationlink, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationlink.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationlink.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationlink, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_10$1.name,
+    		type: "slot",
+    		source: "(267:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (272:2) {#if currentPage != 1}
+    function create_if_block_1$3(ctx) {
+    	let current;
+
+    	const paginationitem = new PaginationItem({
+    			props: {
+    				$$slots: { default: [create_default_slot_8$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationitem.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationitem, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const paginationitem_changes = {};
+
+    			if (dirty[0] & /*currentPage*/ 32 | dirty[1] & /*$$scope*/ 128) {
+    				paginationitem_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationitem.$set(paginationitem_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationitem.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationitem.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationitem, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$3.name,
+    		type: "if",
+    		source: "(272:2) {#if currentPage != 1}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (274:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >
+    function create_default_slot_9$1(ctx) {
+    	let t_value = /*currentPage*/ ctx[5] - 1 + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*currentPage*/ 32 && t_value !== (t_value = /*currentPage*/ ctx[5] - 1 + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_9$1.name,
+    		type: "slot",
+    		source: "(274:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (273:2) <PaginationItem>
+    function create_default_slot_8$1(ctx) {
+    	let current;
+
+    	const paginationlink = new PaginationLink({
+    			props: {
+    				href: "#/globalTransfersAPI",
+    				$$slots: { default: [create_default_slot_9$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	paginationlink.$on("click", /*click_handler_1*/ ctx[26]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationlink.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationlink, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const paginationlink_changes = {};
+
+    			if (dirty[0] & /*currentPage*/ 32 | dirty[1] & /*$$scope*/ 128) {
+    				paginationlink_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationlink.$set(paginationlink_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationlink.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationlink.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationlink, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_8$1.name,
+    		type: "slot",
+    		source: "(273:2) <PaginationItem>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (278:3) <PaginationLink href="#/globalTransfersAPI" >
+    function create_default_slot_7$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(/*currentPage*/ ctx[5]);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*currentPage*/ 32) set_data_dev(t, /*currentPage*/ ctx[5]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_7$1.name,
+    		type: "slot",
+    		source: "(278:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (277:2) <PaginationItem active>
+    function create_default_slot_6$1(ctx) {
+    	let current;
+
+    	const paginationlink = new PaginationLink({
+    			props: {
+    				href: "#/globalTransfersAPI",
+    				$$slots: { default: [create_default_slot_7$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationlink.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationlink, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const paginationlink_changes = {};
+
+    			if (dirty[0] & /*currentPage*/ 32 | dirty[1] & /*$$scope*/ 128) {
+    				paginationlink_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationlink.$set(paginationlink_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationlink.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationlink.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationlink, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_6$1.name,
+    		type: "slot",
+    		source: "(277:2) <PaginationItem active>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (282:2) {#if moreData}
+    function create_if_block$8(ctx) {
+    	let current;
+
+    	const paginationitem = new PaginationItem({
+    			props: {
+    				$$slots: { default: [create_default_slot_4$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationitem.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationitem, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const paginationitem_changes = {};
+
+    			if (dirty[0] & /*currentPage*/ 32 | dirty[1] & /*$$scope*/ 128) {
+    				paginationitem_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationitem.$set(paginationitem_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationitem.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationitem.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationitem, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$8.name,
+    		type: "if",
+    		source: "(282:2) {#if moreData}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (284:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">
+    function create_default_slot_5$1(ctx) {
+    	let t_value = /*currentPage*/ ctx[5] + 1 + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text(t_value);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*currentPage*/ 32 && t_value !== (t_value = /*currentPage*/ ctx[5] + 1 + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_5$1.name,
+    		type: "slot",
+    		source: "(284:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (283:2) <PaginationItem >
+    function create_default_slot_4$1(ctx) {
+    	let current;
+
+    	const paginationlink = new PaginationLink({
+    			props: {
+    				href: "#/globalTransfersAPI",
+    				$$slots: { default: [create_default_slot_5$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	paginationlink.$on("click", /*click_handler_2*/ ctx[27]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationlink.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationlink, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const paginationlink_changes = {};
+
+    			if (dirty[0] & /*currentPage*/ 32 | dirty[1] & /*$$scope*/ 128) {
+    				paginationlink_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationlink.$set(paginationlink_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationlink.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationlink.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationlink, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_4$1.name,
+    		type: "slot",
+    		source: "(283:2) <PaginationItem >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (288:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
+    function create_default_slot_3$1(ctx) {
+    	let current;
+
+    	const paginationlink = new PaginationLink({
+    			props: { next: true, href: "#/globalTransfersAPI" },
+    			$$inline: true
+    		});
+
+    	paginationlink.$on("click", /*click_handler_3*/ ctx[28]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationlink.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationlink, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationlink.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationlink.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationlink, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_3$1.name,
+    		type: "slot",
+    		source: "(288:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (264:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
+    function create_default_slot_2$2(ctx) {
+    	let t0;
+    	let t1;
+    	let t2;
+    	let t3;
+    	let current;
+
+    	const paginationitem0 = new PaginationItem({
+    			props: {
+    				class: /*currentPage*/ ctx[5] === 1 ? "disabled" : "",
+    				$$slots: { default: [create_default_slot_10$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	let if_block0 = /*currentPage*/ ctx[5] != 1 && create_if_block_1$3(ctx);
+
+    	const paginationitem1 = new PaginationItem({
+    			props: {
+    				active: true,
+    				$$slots: { default: [create_default_slot_6$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	let if_block1 = /*moreData*/ ctx[6] && create_if_block$8(ctx);
+
+    	const paginationitem2 = new PaginationItem({
+    			props: {
+    				class: /*moreData*/ ctx[6] ? "" : "disabled",
+    				$$slots: { default: [create_default_slot_3$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(paginationitem0.$$.fragment);
+    			t0 = space();
+    			if (if_block0) if_block0.c();
+    			t1 = space();
+    			create_component(paginationitem1.$$.fragment);
+    			t2 = space();
+    			if (if_block1) if_block1.c();
+    			t3 = space();
+    			create_component(paginationitem2.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(paginationitem0, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(paginationitem1, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, t3, anchor);
+    			mount_component(paginationitem2, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const paginationitem0_changes = {};
+    			if (dirty[0] & /*currentPage*/ 32) paginationitem0_changes.class = /*currentPage*/ ctx[5] === 1 ? "disabled" : "";
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				paginationitem0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationitem0.$set(paginationitem0_changes);
+
+    			if (/*currentPage*/ ctx[5] != 1) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+
+    					if (dirty[0] & /*currentPage*/ 32) {
+    						transition_in(if_block0, 1);
+    					}
+    				} else {
+    					if_block0 = create_if_block_1$3(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(t1.parentNode, t1);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			const paginationitem1_changes = {};
+
+    			if (dirty[0] & /*currentPage*/ 32 | dirty[1] & /*$$scope*/ 128) {
+    				paginationitem1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationitem1.$set(paginationitem1_changes);
+
+    			if (/*moreData*/ ctx[6]) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+
+    					if (dirty[0] & /*moreData*/ 64) {
+    						transition_in(if_block1, 1);
+    					}
+    				} else {
+    					if_block1 = create_if_block$8(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(t3.parentNode, t3);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+
+    				check_outros();
+    			}
+
+    			const paginationitem2_changes = {};
+    			if (dirty[0] & /*moreData*/ 64) paginationitem2_changes.class = /*moreData*/ ctx[6] ? "" : "disabled";
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				paginationitem2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			paginationitem2.$set(paginationitem2_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(paginationitem0.$$.fragment, local);
+    			transition_in(if_block0);
+    			transition_in(paginationitem1.$$.fragment, local);
+    			transition_in(if_block1);
+    			transition_in(paginationitem2.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(paginationitem0.$$.fragment, local);
+    			transition_out(if_block0);
+    			transition_out(paginationitem1.$$.fragment, local);
+    			transition_out(if_block1);
+    			transition_out(paginationitem2.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(paginationitem0, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (if_block0) if_block0.d(detaching);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(paginationitem1, detaching);
+    			if (detaching) detach_dev(t2);
+    			if (if_block1) if_block1.d(detaching);
+    			if (detaching) detach_dev(t3);
+    			destroy_component(paginationitem2, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$2.name,
+    		type: "slot",
+    		source: "(264:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (294:1) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot_1$2(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$c, 293, 53, 7784);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$2.name,
+    		type: "slot",
+    		source: "(294:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (295:1) <Button outline on:click={deleteGlobalTransfers} color="danger">
+    function create_default_slot$2(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Borrar todo");
+    			attr_dev(i, "class", "fa fa-trash");
+    			attr_dev(i, "aria-hidden", "true");
+    			add_location(i, file$c, 294, 66, 7908);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$2.name,
+    		type: "slot",
+    		source: "(295:1) <Button outline on:click={deleteGlobalTransfers} color=\\\"danger\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
 
     function create_fragment$d(ctx) {
+    	let main;
+    	let promise;
+    	let t0;
+    	let t1;
+    	let t2;
+    	let current;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$2,
+    		then: create_then_block$2,
+    		catch: create_catch_block$2,
+    		value: 7,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*transfers*/ ctx[7], info);
+
+    	const pagination = new Pagination({
+    			props: {
+    				style: "float:right;",
+    				ariaLabel: "Cambiar de página",
+    				$$slots: { default: [create_default_slot_2$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot_1$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", pop);
+
+    	const button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "danger",
+    				$$slots: { default: [create_default_slot$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", /*deleteGlobalTransfers*/ ctx[10]);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			info.block.c();
+    			t0 = space();
+    			create_component(pagination.$$.fragment);
+    			t1 = space();
+    			create_component(button0.$$.fragment);
+    			t2 = space();
+    			create_component(button1.$$.fragment);
+    			add_location(main, file$c, 194, 0, 4649);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			info.block.m(main, info.anchor = null);
+    			info.mount = () => main;
+    			info.anchor = t0;
+    			append_dev(main, t0);
+    			mount_component(pagination, main, null);
+    			append_dev(main, t1);
+    			mount_component(button0, main, null);
+    			append_dev(main, t2);
+    			mount_component(button1, main, null);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			info.ctx = ctx;
+
+    			if (dirty[0] & /*transfers*/ 128 && promise !== (promise = /*transfers*/ ctx[7]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[7] = info.resolved;
+    				info.block.p(child_ctx, dirty);
+    			}
+
+    			const pagination_changes = {};
+
+    			if (dirty[0] & /*moreData, currentPage*/ 96 | dirty[1] & /*$$scope*/ 128) {
+    				pagination_changes.$$scope = { dirty, ctx };
+    			}
+
+    			pagination.$set(pagination_changes);
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 128) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			transition_in(pagination.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			transition_out(pagination.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
+    			destroy_component(pagination);
+    			destroy_component(button0);
+    			destroy_component(button1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$d.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$d($$self, $$props, $$invalidate) {
+    	let transfers = [];
+
+    	let newTransfer = {
+    		country: "",
+    		year: parseInt(""),
+    		team: "",
+    		signing: "",
+    		sale: "",
+    		balance: ""
+    	};
+
+    	let years = [];
+    	let teams = [];
+    	let currentYear = "-";
+    	let currentTeam = "-";
+    	let numberElementsPages = 10;
+    	let offset = 0;
+    	let currentPage = 1;
+    	let moreData = true;
+    	onMount(getTransfers);
+    	onMount(getYearsTeams);
+
+    	//Funcion que devuelve array con los años y los paises existentes para poder hacer un select y usarlo para buscar
+    	async function getYearsTeams() {
+    		const res = await fetch("/api/v1/global-transfers"); //Recogemos los datos de /api/v1/global-marriages
+
+    		if (res.ok) {
+    			const json = await res.json();
+
+    			$$invalidate(1, years = json.map(d => {
+    				return d.year; //Guardamos los años en un array
+    			}));
+
+    			$$invalidate(1, years = Array.from(new Set(years))); //Eliminamos años repetidos
+
+    			$$invalidate(2, teams = json.map(d => {
+    				return d.team; //Guardamos los equipos 
+    			}));
+
+    			$$invalidate(2, teams = Array.from(new Set(teams))); //Eliminamos los duplicados
+    			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
+    		} else {
+    			console.log("ERROR!");
+    		}
+    	}
+
+    	async function getTransfers() {
+    		console.log("Fetching transfers...");
+    		const res = await fetch("/api/v1/global-transfers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages);
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			$$invalidate(7, transfers = json);
+    			console.log("Received " + transfers.length + " transfers.");
+
+    			if (transfers.length != 10) {
+    				$$invalidate(6, moreData = false);
+    			} else {
+    				const next = await fetch("/api/v1/global-transfers?offset=" + numberElementsPages * (offset + 1) + "&limit=" + numberElementsPages);
+    				console.log("La variable NEXT tiene el estado: " + next.status);
+    				const jsonNext = await next.json();
+
+    				if (jsonNext.length == 0 || next.status == 404) {
+    					$$invalidate(6, moreData = false);
+    				} else {
+    					$$invalidate(6, moreData = true); //Vemos si quedan aun mas datos en la siguiente pagina
+    				}
+    			}
+    		} else {
+    			console.log("ERROR!");
+    		}
+    	}
+
+    	async function insertTransfer() {
+    		console.log("Inserting transfer..." + JSON.stringify(newTransfer));
+
+    		if (newTransfer.year == "" || newTransfer.year == null || newTransfer.team == "" || newTransfer.team == null) {
+    			alert("Se debe incluir el año y el equipo vinculante obligatoriamente");
+    		} else {
+    			const res = await fetch("/api/v1/global-transfers", {
+    				method: "POST",
+    				body: JSON.stringify(newTransfer),
+    				headers: { "Content-Type": "application/json" }
+    			}).then(function (res) {
+    				getTransfers();
+    			});
+    		}
+    	}
+
+    	async function deleteTransfer(year, team) {
+    		console.log("Deleting transfer..." + JSON.stringify(year) + +JSON.stringify(team));
+
+    		const res = await fetch("/api/v1/global-transfers/" + year + "/" + team, { method: "DELETE" }).then(function (res) {
+    			getTransfers();
+    			getYearsTeams();
+    		});
+    	}
+
+    	async function deleteGlobalTransfers() {
+    		console.log("Deleting all transfers data...");
+
+    		const res = await fetch("/api/v1/global-transfers/", { method: "DELETE" }).then(function (res) {
+    			getTransfers();
+    			getYearsTeams();
+    		});
+    	}
+
+    	async function search(year, team) {
+    		console.log("Searching data: " + year + " and " + team);
+
+    		/* Checking if the fields are empty */
+    		var url = "/api/v1/global-transfers";
+
+    		if (year != "-" && team != "-") {
+    			url = url + "?year=" + year + "&team=" + team;
+    		} else if (year != "-" && team == "-") {
+    			url = url + "?year=" + year;
+    		} else if (year == "-" && team != "-") {
+    			url = url + "?team=" + team;
+    		}
+
+    		const res = await fetch(url);
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			$$invalidate(7, transfers = json);
+    			console.log("Found " + transfers.length + " global transfers stats.");
+    		} else {
+    			console.log("ERROR!");
+    		}
+    	}
+
+    	function addOffset(increment) {
+    		offset += increment;
+    		$$invalidate(5, currentPage += increment);
+    		getTransfers();
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$4.warn(`<TransfersTable> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("TransfersTable", $$slots, []);
+
+    	function input_value_binding(value) {
+    		currentYear = value;
+    		$$invalidate(3, currentYear);
+    	}
+
+    	function input_value_binding_1(value) {
+    		currentTeam = value;
+    		$$invalidate(4, currentTeam);
+    	}
+
+    	function input0_input_handler() {
+    		newTransfer.country = this.value;
+    		$$invalidate(0, newTransfer);
+    	}
+
+    	function input1_input_handler() {
+    		newTransfer.year = to_number(this.value);
+    		$$invalidate(0, newTransfer);
+    	}
+
+    	function input2_input_handler() {
+    		newTransfer.team = this.value;
+    		$$invalidate(0, newTransfer);
+    	}
+
+    	function input3_input_handler() {
+    		newTransfer.signing = to_number(this.value);
+    		$$invalidate(0, newTransfer);
+    	}
+
+    	function input4_input_handler() {
+    		newTransfer.sale = to_number(this.value);
+    		$$invalidate(0, newTransfer);
+    	}
+
+    	function input5_input_handler() {
+    		newTransfer.balance = to_number(this.value);
+    		$$invalidate(0, newTransfer);
+    	}
+
+    	const click_handler = () => addOffset(-1);
+    	const click_handler_1 = () => addOffset(-1);
+    	const click_handler_2 = () => addOffset(1);
+    	const click_handler_3 = () => addOffset(1);
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		pop,
+    		Table,
+    		Button,
+    		Input,
+    		Label,
+    		FormGroup,
+    		Pagination,
+    		PaginationItem,
+    		PaginationLink,
+    		transfers,
+    		newTransfer,
+    		years,
+    		teams,
+    		currentYear,
+    		currentTeam,
+    		numberElementsPages,
+    		offset,
+    		currentPage,
+    		moreData,
+    		getYearsTeams,
+    		getTransfers,
+    		insertTransfer,
+    		deleteTransfer,
+    		deleteGlobalTransfers,
+    		search,
+    		addOffset
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("transfers" in $$props) $$invalidate(7, transfers = $$props.transfers);
+    		if ("newTransfer" in $$props) $$invalidate(0, newTransfer = $$props.newTransfer);
+    		if ("years" in $$props) $$invalidate(1, years = $$props.years);
+    		if ("teams" in $$props) $$invalidate(2, teams = $$props.teams);
+    		if ("currentYear" in $$props) $$invalidate(3, currentYear = $$props.currentYear);
+    		if ("currentTeam" in $$props) $$invalidate(4, currentTeam = $$props.currentTeam);
+    		if ("numberElementsPages" in $$props) numberElementsPages = $$props.numberElementsPages;
+    		if ("offset" in $$props) offset = $$props.offset;
+    		if ("currentPage" in $$props) $$invalidate(5, currentPage = $$props.currentPage);
+    		if ("moreData" in $$props) $$invalidate(6, moreData = $$props.moreData);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		newTransfer,
+    		years,
+    		teams,
+    		currentYear,
+    		currentTeam,
+    		currentPage,
+    		moreData,
+    		transfers,
+    		insertTransfer,
+    		deleteTransfer,
+    		deleteGlobalTransfers,
+    		search,
+    		addOffset,
+    		offset,
+    		numberElementsPages,
+    		getYearsTeams,
+    		getTransfers,
+    		input_value_binding,
+    		input_value_binding_1,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler,
+    		input4_input_handler,
+    		input5_input_handler,
+    		click_handler,
+    		click_handler_1,
+    		click_handler_2,
+    		click_handler_3
+    	];
+    }
+
+    class TransfersTable extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {}, [-1, -1]);
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "TransfersTable",
+    			options,
+    			id: create_fragment$d.name
+    		});
+    	}
+    }
+
+    /* src\front\TransfersGUI\App.svelte generated by Svelte v3.21.0 */
+    const file$d = "src\\front\\TransfersGUI\\App.svelte";
+
+    function create_fragment$e(ctx) {
+    	let main;
+    	let h1;
+    	let t1;
+    	let current;
+    	const transferstable = new TransfersTable({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			h1 = element("h1");
+    			h1.textContent = "Administrador de datos de transferencias";
+    			t1 = space();
+    			create_component(transferstable.$$.fragment);
+    			attr_dev(h1, "class", "display-4");
+    			set_style(h1, "text-align", "center");
+    			add_location(h1, file$d, 5, 1, 88);
+    			add_location(main, file$d, 4, 0, 79);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h1);
+    			append_dev(main, t1);
+    			mount_component(transferstable, main, null);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(transferstable.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(transferstable.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_component(transferstable);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$e.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$e($$self, $$props, $$invalidate) {
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("App", $$slots, []);
+    	$$self.$capture_state = () => ({ TransfersTable });
+    	return [];
+    }
+
+    class App$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment$e.name
+    		});
+    	}
+    }
+
+    /* src\front\TransfersGUI\EditTransfer.svelte generated by Svelte v3.21.0 */
+
+    const { console: console_1$5 } = globals;
+    const file$e = "src\\front\\TransfersGUI\\EditTransfer.svelte";
+
+    // (1:0) <script>      import {          onMount      }
+    function create_catch_block$3(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$3.name,
+    		type: "catch",
+    		source: "(1:0) <script>      import {          onMount      }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (82:4) {:then transfer}
+    function create_then_block$3(ctx) {
+    	let current;
+
+    	const table = new Table({
+    			props: {
+    				bordered: true,
+    				$$slots: { default: [create_default_slot_1$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(table.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const table_changes = {};
+
+    			if (dirty & /*$$scope, updatedBalance, updatedSale, updatedSigning, updatedTeam, updatedYear, updatedCountry*/ 32894) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$3.name,
+    		type: "then",
+    		source: "(82:4) {:then transfer}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (103:25) <Button outline  color="primary" on:click={updateTransfer}>
+    function create_default_slot_2$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Actualizar");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$3.name,
+    		type: "slot",
+    		source: "(103:25) <Button outline  color=\\\"primary\\\" on:click={updateTransfer}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (83:8) <Table bordered>
+    function create_default_slot_1$3(ctx) {
+    	let thead;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let th6;
+    	let t13;
+    	let tbody;
+    	let tr1;
+    	let td0;
+    	let input0;
+    	let t14;
+    	let td1;
+    	let t15;
+    	let t16;
+    	let td2;
+    	let t17;
+    	let t18;
+    	let td3;
+    	let input1;
+    	let t19;
+    	let td4;
+    	let input2;
+    	let t20;
+    	let td5;
+    	let input3;
+    	let t21;
+    	let td6;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_2$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*updateTransfer*/ ctx[9]);
+
+    	const block = {
+    		c: function create() {
+    			thead = element("thead");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Pais";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "Año";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Equipo";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Fichajes";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Ventas";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Balance Final";
+    			t11 = space();
+    			th6 = element("th");
+    			th6.textContent = "Actions";
+    			t13 = space();
+    			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			input0 = element("input");
+    			t14 = space();
+    			td1 = element("td");
+    			t15 = text(/*updatedYear*/ ctx[2]);
+    			t16 = space();
+    			td2 = element("td");
+    			t17 = text(/*updatedTeam*/ ctx[3]);
+    			t18 = space();
+    			td3 = element("td");
+    			input1 = element("input");
+    			t19 = space();
+    			td4 = element("td");
+    			input2 = element("input");
+    			t20 = space();
+    			td5 = element("td");
+    			input3 = element("input");
+    			t21 = space();
+    			td6 = element("td");
+    			create_component(button.$$.fragment);
+    			add_location(th0, file$e, 85, 20, 2342);
+    			add_location(th1, file$e, 86, 20, 2377);
+    			add_location(th2, file$e, 87, 20, 2411);
+    			add_location(th3, file$e, 88, 20, 2448);
+    			add_location(th4, file$e, 89, 20, 2487);
+    			add_location(th5, file$e, 90, 20, 2524);
+    			add_location(th6, file$e, 91, 20, 2568);
+    			add_location(tr0, file$e, 84, 16, 2316);
+    			add_location(thead, file$e, 83, 12, 2291);
+    			add_location(input0, file$e, 96, 24, 2698);
+    			add_location(td0, file$e, 96, 20, 2694);
+    			add_location(td1, file$e, 97, 20, 2762);
+    			add_location(td2, file$e, 98, 20, 2806);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$e, 99, 24, 2854);
+    			add_location(td3, file$e, 99, 20, 2850);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$e, 100, 24, 2936);
+    			add_location(td4, file$e, 100, 20, 2932);
+    			attr_dev(input3, "type", "number");
+    			add_location(input3, file$e, 101, 24, 3015);
+    			add_location(td5, file$e, 101, 20, 3011);
+    			add_location(td6, file$e, 102, 20, 3093);
+    			add_location(tr1, file$e, 95, 16, 2668);
+    			add_location(tbody, file$e, 94, 12, 2643);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, thead, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			append_dev(tr0, t11);
+    			append_dev(tr0, th6);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, input0);
+    			set_input_value(input0, /*updatedCountry*/ ctx[1]);
+    			append_dev(tr1, t14);
+    			append_dev(tr1, td1);
+    			append_dev(td1, t15);
+    			append_dev(tr1, t16);
+    			append_dev(tr1, td2);
+    			append_dev(td2, t17);
+    			append_dev(tr1, t18);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input1);
+    			set_input_value(input1, /*updatedSigning*/ ctx[4]);
+    			append_dev(tr1, t19);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input2);
+    			set_input_value(input2, /*updatedSale*/ ctx[5]);
+    			append_dev(tr1, t20);
+    			append_dev(tr1, td5);
+    			append_dev(td5, input3);
+    			set_input_value(input3, /*updatedBalance*/ ctx[6]);
+    			append_dev(tr1, t21);
+    			append_dev(tr1, td6);
+    			mount_component(button, td6, null);
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[11]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[12]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[13]),
+    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[14])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*updatedCountry*/ 2 && input0.value !== /*updatedCountry*/ ctx[1]) {
+    				set_input_value(input0, /*updatedCountry*/ ctx[1]);
+    			}
+
+    			if (!current || dirty & /*updatedYear*/ 4) set_data_dev(t15, /*updatedYear*/ ctx[2]);
+    			if (!current || dirty & /*updatedTeam*/ 8) set_data_dev(t17, /*updatedTeam*/ ctx[3]);
+
+    			if (dirty & /*updatedSigning*/ 16 && to_number(input1.value) !== /*updatedSigning*/ ctx[4]) {
+    				set_input_value(input1, /*updatedSigning*/ ctx[4]);
+    			}
+
+    			if (dirty & /*updatedSale*/ 32 && to_number(input2.value) !== /*updatedSale*/ ctx[5]) {
+    				set_input_value(input2, /*updatedSale*/ ctx[5]);
+    			}
+
+    			if (dirty & /*updatedBalance*/ 64 && to_number(input3.value) !== /*updatedBalance*/ ctx[6]) {
+    				set_input_value(input3, /*updatedBalance*/ ctx[6]);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 32768) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(thead);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$3.name,
+    		type: "slot",
+    		source: "(83:8) <Table bordered>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (80:21)           Loading transfers...      {:then transfer}
+    function create_pending_block$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Loading transfers...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$3.name,
+    		type: "pending",
+    		source: "(80:21)           Loading transfers...      {:then transfer}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (108:4) {#if errorMsg}
+    function create_if_block$9(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("ERROR: ");
+    			t1 = text(/*errorMsg*/ ctx[7]);
+    			set_style(p, "color", "red");
+    			add_location(p, file$e, 108, 8, 3285);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*errorMsg*/ 128) set_data_dev(t1, /*errorMsg*/ ctx[7]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$9.name,
+    		type: "if",
+    		source: "(108:4) {#if errorMsg}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (111:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Atrás");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$3.name,
+    		type: "slot",
+    		source: "(111:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$f(ctx) {
+    	let main;
+    	let h3;
+    	let t0;
+    	let strong;
+    	let t1_value = /*params*/ ctx[0].year + "";
+    	let t1;
+    	let t2;
+    	let promise;
+    	let t3;
+    	let t4;
+    	let current;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$3,
+    		then: create_then_block$3,
+    		catch: create_catch_block$3,
+    		value: 8,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*transfer*/ ctx[8], info);
+    	let if_block = /*errorMsg*/ ctx[7] && create_if_block$9(ctx);
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			h3 = element("h3");
+    			t0 = text("Edit Transfer ");
+    			strong = element("strong");
+    			t1 = text(t1_value);
+    			t2 = space();
+    			info.block.c();
+    			t3 = space();
+    			if (if_block) if_block.c();
+    			t4 = space();
+    			create_component(button.$$.fragment);
+    			add_location(strong, file$e, 78, 22, 2141);
+    			add_location(h3, file$e, 78, 4, 2123);
+    			add_location(main, file$e, 77, 0, 2111);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h3);
+    			append_dev(h3, t0);
+    			append_dev(h3, strong);
+    			append_dev(strong, t1);
+    			append_dev(main, t2);
+    			info.block.m(main, info.anchor = null);
+    			info.mount = () => main;
+    			info.anchor = t3;
+    			append_dev(main, t3);
+    			if (if_block) if_block.m(main, null);
+    			append_dev(main, t4);
+    			mount_component(button, main, null);
+    			current = true;
+    		},
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+    			if ((!current || dirty & /*params*/ 1) && t1_value !== (t1_value = /*params*/ ctx[0].year + "")) set_data_dev(t1, t1_value);
+    			info.ctx = ctx;
+
+    			if (dirty & /*transfer*/ 256 && promise !== (promise = /*transfer*/ ctx[8]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[8] = info.resolved;
+    				info.block.p(child_ctx, dirty);
+    			}
+
+    			if (/*errorMsg*/ ctx[7]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$9(ctx);
+    					if_block.c();
+    					if_block.m(main, t4);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 32768) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
+    			if (if_block) if_block.d();
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$f.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$f($$self, $$props, $$invalidate) {
+    	let { params = {} } = $$props;
+    	let transfer = {};
+    	let updatedCountry = "XXXX";
+    	let updatedYear = 12345;
+    	let updatedTeam = SevillaFC;
+    	let updatedSigning = 17;
+    	let updatedSale = 32;
+    	let updatedBalance = +108.2;
+    	let errorMsg = "";
+    	onMount(getTransfer);
+
+    	async function getTransfer() {
+    		console.log("Fetching transfer...");
+    		const res = await fetch("/api/v1/global-transfers/" + params.year + "/" + params.team);
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			$$invalidate(8, transfer = json);
+    			$$invalidate(1, updatedCountry = transfer.country);
+    			$$invalidate(2, updatedYear = transfer.year);
+    			$$invalidate(3, updatedTeam = transfer.team);
+    			$$invalidate(4, updatedSigning = transfer.signing);
+    			$$invalidate(5, updatedSale = transfer.sale);
+    			$$invalidate(6, updatedBalance = transfer.balance);
+    			console.log("Received transfer");
+    		} else {
+    			$$invalidate(7, errorMsg = res.status + ": " + res.statusText);
+    			console.log("ERROR!" + errorMsg);
+    		}
+    	}
+
+    	async function updateTransfer() {
+    		console.log("Updating transfer..." + JSON.stringify(params.year));
+
+    		const res = await fetch("/api/v1/global-marriages/" + params.year + "/" + params.team, {
+    			method: "PUT",
+    			body: JSON.stringify({
+    				country: updatedCountry,
+    				year: parseInt(params.year),
+    				team: params.team,
+    				signing: updatedSigning,
+    				sale: updatedSale,
+    				balance: updatedBalance
+    			}),
+    			headers: { "Content-Type": "application/json" }
+    		}).then(function (res) {
+    			getTransfer();
+    		});
+    	}
+
+    	const writable_props = ["params"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$5.warn(`<EditTransfer> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("EditTransfer", $$slots, []);
+
+    	function input0_input_handler() {
+    		updatedCountry = this.value;
+    		$$invalidate(1, updatedCountry);
+    	}
+
+    	function input1_input_handler() {
+    		updatedSigning = to_number(this.value);
+    		$$invalidate(4, updatedSigning);
+    	}
+
+    	function input2_input_handler() {
+    		updatedSale = to_number(this.value);
+    		$$invalidate(5, updatedSale);
+    	}
+
+    	function input3_input_handler() {
+    		updatedBalance = to_number(this.value);
+    		$$invalidate(6, updatedBalance);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ("params" in $$props) $$invalidate(0, params = $$props.params);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		pop,
+    		Table,
+    		Button,
+    		Input,
+    		params,
+    		transfer,
+    		updatedCountry,
+    		updatedYear,
+    		updatedTeam,
+    		updatedSigning,
+    		updatedSale,
+    		updatedBalance,
+    		errorMsg,
+    		getTransfer,
+    		updateTransfer
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("params" in $$props) $$invalidate(0, params = $$props.params);
+    		if ("transfer" in $$props) $$invalidate(8, transfer = $$props.transfer);
+    		if ("updatedCountry" in $$props) $$invalidate(1, updatedCountry = $$props.updatedCountry);
+    		if ("updatedYear" in $$props) $$invalidate(2, updatedYear = $$props.updatedYear);
+    		if ("updatedTeam" in $$props) $$invalidate(3, updatedTeam = $$props.updatedTeam);
+    		if ("updatedSigning" in $$props) $$invalidate(4, updatedSigning = $$props.updatedSigning);
+    		if ("updatedSale" in $$props) $$invalidate(5, updatedSale = $$props.updatedSale);
+    		if ("updatedBalance" in $$props) $$invalidate(6, updatedBalance = $$props.updatedBalance);
+    		if ("errorMsg" in $$props) $$invalidate(7, errorMsg = $$props.errorMsg);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		params,
+    		updatedCountry,
+    		updatedYear,
+    		updatedTeam,
+    		updatedSigning,
+    		updatedSale,
+    		updatedBalance,
+    		errorMsg,
+    		transfer,
+    		updateTransfer,
+    		getTransfer,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler
+    	];
+    }
+
+    class EditTransfer extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, { params: 0 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "EditTransfer",
+    			options,
+    			id: create_fragment$f.name
+    		});
+    	}
+
+    	get params() {
+    		throw new Error("<EditTransfer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set params(value) {
+    		throw new Error("<EditTransfer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\front\NotFound.svelte generated by Svelte v3.21.0 */
+
+    const file$f = "src\\front\\NotFound.svelte";
+
+    function create_fragment$g(ctx) {
     	let main;
     	let h1;
 
@@ -10310,8 +13565,8 @@ var app = (function () {
     			main = element("main");
     			h1 = element("h1");
     			h1.textContent = "¡La pagina no existe!";
-    			add_location(h1, file$c, 1, 4, 11);
-    			add_location(main, file$c, 0, 0, 0);
+    			add_location(h1, file$f, 1, 4, 12);
+    			add_location(main, file$f, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10330,7 +13585,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$g.name,
     		type: "component",
     		source: "",
     		ctx
@@ -10339,7 +13594,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$d($$self, $$props) {
+    function instance$g($$self, $$props) {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -10354,21 +13609,21 @@ var app = (function () {
     class NotFound extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {});
+    		init(this, options, instance$g, create_fragment$g, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "NotFound",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$g.name
     		});
     	}
     }
 
     /* src\front\App.svelte generated by Svelte v3.21.0 */
-    const file$d = "src\\front\\App.svelte";
+    const file$g = "src\\front\\App.svelte";
 
-    function create_fragment$e(ctx) {
+    function create_fragment$h(ctx) {
     	let main;
     	let current;
 
@@ -10381,7 +13636,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file$d, 21, 0, 377);
+    			add_location(main, file$g, 27, 0, 623);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10409,7 +13664,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$e.name,
+    		id: create_fragment$h.name,
     		type: "component",
     		source: "",
     		ctx
@@ -10418,11 +13673,13 @@ var app = (function () {
     	return block;
     }
 
-    function instance$e($$self, $$props, $$invalidate) {
+    function instance$h($$self, $$props, $$invalidate) {
     	const routes = {
     		"/": Home,
     		"/global-Coef/:country/:year": EditCoef,
     		"/globalCoefAPI": App,
+    		"/global-transfers/:country/:year": EditTransfer,
+    		"/globaltransfersAPI": App$1,
     		"*": NotFound
     	};
 
@@ -10440,6 +13697,8 @@ var app = (function () {
     		Home,
     		globalCoef: App,
     		EditCoef,
+    		globalTransfers: App$1,
+    		EditTransfer,
     		NotFound,
     		routes
     	});
@@ -10447,21 +13706,21 @@ var app = (function () {
     	return [routes];
     }
 
-    class App$1 extends SvelteComponentDev {
+    class App$2 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {});
+    		init(this, options, instance$h, create_fragment$h, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$e.name
+    			id: create_fragment$h.name
     		});
     	}
     }
 
-    const app = new App$1({
+    const app = new App$2({
     	target: document.querySelector('#SvelteApp')
     });
 

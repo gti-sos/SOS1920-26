@@ -16,8 +16,8 @@ coefAPI(app);
 //----------------------------------fin-coef
 
 //----------------------------------transfers
-const transfersAPI = require(path.join(__dirname, "transfersAPI"));
-const dbTransfers = path.join(__dirname,"transfersAPI/transfers.db");
+const transfersAPI = require(path.join(__dirname, "./src/back/transfersAPI"));
+const dbTransfers = path.join(__dirname,"./src/back/transfersAPI/transfers.db");
 transfersAPI(app);
 //----------------------------------transfers//
 
@@ -26,6 +26,7 @@ const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
 const dbGoalscorers = path.join(__dirname,"goalscorersAPI/goalscorers.db");
 goalscorersAPI(app);
 //----------------------------------goalscorers//
+
 app.use("/", express.static("./public"));
 
 
