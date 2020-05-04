@@ -17,13 +17,14 @@
 
 	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
 
-	let marriages = [];
-	let newMarriage = {
+	let coef = [];
+	let newCoef = {
 		country: "",
 		year: parseInt("") ,
-		marriages: "",
-		avg_wm:"",
-		avg_m:""
+		team: "",
+		coefficient:"",
+		fed:"",
+		classification:""
 	};
 
 //Usaremos estas variables para la paginacion y para la busqueda
@@ -37,7 +38,7 @@
 	let currentPage = 1; 
 	let moreData = true; 
 
-	onMount(getMarriages);
+	onMount(getCoef);
 	onMount(getCountriesYears);
 
 
@@ -46,7 +47,7 @@
 
 //Funcion que devuelve array con los años y los paises existentes para poder hacer un select y usarlo para buscar
 	async function getCountriesYears() {
-		const res = await fetch("/api/v1/global-marriages"); //Recogemos los datos de /api/v1/global-marriages
+		const res = await fetch("/api/v1/global-coef"); //Recogemos los datos de /api/v1/global-coef
 
 		if (res.ok) {
 			const json = await res.json();
@@ -72,22 +73,22 @@
 	
 
 
-	async function getMarriages() {
+	async function getCoef() {
 
-		console.log("Fetching marriages...");
-		const res = await fetch("/api/v1/global-marriages?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
+		console.log("Fetching coef...");
+		const res = await fetch("/api/v1/global-coef?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
 
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
-			marriages = json;
-			console.log("Received " + marriages.length + " marriages.");
+			coef = json;
+			console.log("Received " + coef.length + " coef.");
 
-			if (marriages.length!=10){
+			if (coef.length!=10){
 				moreData=false
 			} else{
 
-						const next = await fetch("/api/v1/global-marriages?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
+						const next = await fetch("/api/v1/global-coef?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
 						console.log("La variable NEXT tiene el estado: " + next.status)
 						const jsonNext = await next.json();
 						
@@ -106,50 +107,50 @@
 		}
 	}
 
-	async function insertMarriage() {
+	async function insertCoef() {
 
-		console.log("Inserting marriage..." + JSON.stringify(newMarriage));
+		console.log("Inserting coef..." + JSON.stringify(newCoef));
 
-		if (newMarriage.country == ""
-			|| newMarriage.country == null
-			|| newMarriage.year == "" 
-			|| newMarriage.year == null) {
+		if (newCoef.country == ""
+			|| newCoef.country == null
+			|| newCoef.year == "" 
+			|| newCoef.year == null) {
 			
 			alert("Se debe incluir el nombre del país y el año obligatoriamente");
 
 		} else {
-				const res = await fetch("/api/v1/global-marriages", {
+				const res = await fetch("/api/v1/global-coef", {
 					method: "POST",
-					body: JSON.stringify(newMarriage),
+					body: JSON.stringify(newCoef),
 					headers: {
 						"Content-Type": "application/json"
 					}
 				}).then(function (res) {
-					getMarriages();
+					getCoef();
 				});
 			}
 	}
 
 
 	//Borramos un pais en un año concreto
-	async function deleteMarriage(country,year) {
-		console.log("Deleting marrriage..." + JSON.stringify(country)+ + JSON.stringify(year) );
+	async function deleteCoef(country,year) {
+		console.log("Deleting coef..." + JSON.stringify(country)+ + JSON.stringify(year) );
 
-		const res = await fetch("/api/v1/global-marriages/" + country+"/"+year, {
+		const res = await fetch("/api/v1/global-coef/" + country+"/"+year, {
 			method: "DELETE"
 		}).then(function (res) {
-			getMarriages();
+			getCoef();
 			getCountriesYears();
 		});
 	}
 
 	//Borramos todos los paises
-	async function deleteGlobalMarriages() {
-		console.log("Deleting all marriages data...");
-		const res = await fetch("/api/v1/global-marriages/", {
+	async function deleteGlobalCoef() {
+		console.log("Deleting all coef data...");
+		const res = await fetch("/api/v1/global-coef/", {
 			method: "DELETE"
 		}).then(function (res) {
-			getMarriages();
+			getCoef();
 			getCountriesYears();
 		});
 	}
@@ -159,7 +160,7 @@
 		console.log("Searching data: " + country + " and " + year);
 
 		/* Checking if the fields are empty */
-		var url = "/api/v1/global-marriages";
+		var url = "/api/v1/global-coef";
 
 		if (country != "-" && year != "-") {
 			url = url + "?country=" + country + "&year=" + year; 
@@ -174,9 +175,9 @@
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
-			marriages = json;			
+			coef = json;			
 
-			console.log("Found " + marriages.length + " global marrriages stats.");
+			console.log("Found " + coef.length + " global coef stats.");
 		} else {
 			console.log("ERROR!");
 		}
@@ -186,7 +187,7 @@
 	function addOffset (increment) {
 		offset += increment;
 		currentPage += increment;
-		getMarriages();
+		getCoef();
 	}
 
 
@@ -195,9 +196,9 @@
 
 <main>
 
-	{#await marriages}
-		Loading marriages...
-	{:then marriages}
+	{#await coef}
+		Loading coef...
+	{:then coef}
 
 		<FormGroup> 
 			<Label for="selectCountry"> Búsqueda por país </Label>
@@ -227,32 +228,35 @@
 				<tr>
 					<th>Pais</th>
 					<th>Año</th>
-					<th>Matrimonios Registrados</th>
-					<th>Media de edad en hombres</th>
-					<th>Media de edad en mujeres</th>
+					<th>Equipo</th>
+					<th>Coeficiente</th>
+					<th>Fed</th>
+					<th>Clasificación</th>
 					<th>Actions</th>
 
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><input bind:value="{newMarriage.country}"></td>
-					<td><input type="number" bind:value="{newMarriage.year}"></td>
-					<td><input type="number" bind:value="{newMarriage.marriages}"></td>
-					<td><input type="number" bind:value="{newMarriage.avg_m}"></td>
-					<td><input type="number" bind:value="{newMarriage.avg_wm}"></td>
-					<td> <Button outline  color="primary" on:click={insertMarriage}>Insertar</Button> </td>
+					<td><input bind:value="{newCoef.country}"></td>
+					<td><input type="number" bind:value="{newCoef.year}"></td>
+					<td><input bind:value="{newCoef.team}"></td>
+					<td><input type="number" bind:value="{newCoef.coefficient}"></td>
+					<td><input type="number" bind:value="{newCoef.fed}"></td>
+					<td><input type="number" bind:value="{newCoef.classification}"></td>
+					<td> <Button outline  color="primary" on:click={insertCoef}>Insertar</Button> </td>
 				</tr>
-				{#each marriages as marriage}
+				{#each coef as coef}
 					<tr>
 						<td>
-							<a href="#/global-marriages/{marriage.country}/{marriage.year}">{marriage.country}</a>
+							<a href="#/global-coef/{coef.country}/{coef.year}">{coef.country}</a>
 						</td>
-						<td>{marriage.year}</td>
-						<td>{marriage.marriages}</td>
-						<td>{marriage.avg_m}</td>
-						<td>{marriage.avg_wm}</td>
-						<td><Button outline color="danger" on:click="{deleteMarriage(marriage.country,marriage.year)}">Delete</Button></td>
+						<td>{coef.year}</td>
+						<td>{coef.team}</td>
+						<td>{coef.coefficient}</td>
+						<td>{coef.fed}</td>
+						<td>{coef.classification}</td>
+						<td><Button outline color="danger" on:click="{deleteCoef(coef.country,coef.year)}">Delete</Button></td>
 					</tr>
 				{/each}
 			</tbody>
@@ -263,33 +267,33 @@
 
 
 		<PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
-		  <PaginationLink previous href="#/globalMarriagesAPI" on:click="{() => addOffset(-1)}" />
+		  <PaginationLink previous href="#/globalCoefAPI" on:click="{() => addOffset(-1)}" />
 		</PaginationItem>
 		
 		<!-- If we are not in the first page-->
 		{#if currentPage != 1}
 		<PaginationItem>
-			<PaginationLink href="#/globalMarriagesAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
+			<PaginationLink href="#/globalCoefAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
 		</PaginationItem>
 		{/if}
 		<PaginationItem active>
-			<PaginationLink href="#/globalMarriagesAPI" >{currentPage}</PaginationLink>
+			<PaginationLink href="#/globalCoefAPI" >{currentPage}</PaginationLink>
 		</PaginationItem>
 
 		<!-- If there are more elements-->
 		{#if moreData}
 		<PaginationItem >
-			<PaginationLink href="#/globalMarriagesAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>
+			<PaginationLink href="#/globalCoefAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>
 		</PaginationItem>
 		{/if}
 
 		<PaginationItem class="{moreData ? '' : 'disabled'}">
-		  <PaginationLink next href="#/globalMarriagesAPI" on:click="{() => addOffset(1)}"/>
+		  <PaginationLink next href="#/globalCoefAPI" on:click="{() => addOffset(1)}"/>
 		</PaginationItem>
 
 	</Pagination>
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
-	<Button outline on:click={deleteGlobalMarriages} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline on:click={deleteGlobalCoef} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
 
 </main>
