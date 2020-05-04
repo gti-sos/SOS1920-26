@@ -33,6 +33,8 @@
     "express": "^4.17.1",
     "heroku": "^7.39.0",
     "nedb": "^1.8.0",
-    "relojs": "^1.0.5"
+    "relojs": "^1.0.5",
+    "svelte-spa-router": "^2.1.0",
+    "sveltestrap": "^3.3.3"
   }
 }
