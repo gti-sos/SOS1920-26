@@ -10,8 +10,8 @@ const BASE_API_URL = "/api/v1";
 const port = process.env.PORT || 80;
 
 //----------------------------------coef
-const coefAPI = require(path.join(__dirname, "coefAPI"));
-const dbCoef = path.join(__dirname,"coefAPI/coef.db");
+const coefAPI = require(path.join(__dirname, "./src/back/coefAPI"));
+const dbCoef = path.join(__dirname,"./src/back/coefAPI/coef.db");
 coefAPI(app);
 //----------------------------------fin-coef
 
