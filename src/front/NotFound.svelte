@@ -1,3 +1,3 @@
 <main>
-    <h1>¡La pagina no existe!</h1>
+    <h1>Página no encontrada</h1>
 </main>

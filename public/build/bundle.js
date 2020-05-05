@@ -7159,7 +7159,7 @@ var app = (function () {
     		});
 
     	button.$on("click", function () {
-    		if (is_function(/*search*/ ctx[11](/*currentCountry*/ ctx[3], /*currentYear*/ ctx[4]))) /*search*/ ctx[11](/*currentCountry*/ ctx[3], /*currentYear*/ ctx[4]).apply(this, arguments);
+    		if (is_function(/*search*/ ctx[11](/*currentTeam*/ ctx[3], /*currentYear*/ ctx[4]))) /*search*/ ctx[11](/*currentTeam*/ ctx[3], /*currentYear*/ ctx[4]).apply(this, arguments);
     	});
 
     	const table = new Table({
@@ -7195,7 +7195,7 @@ var app = (function () {
     			ctx = new_ctx;
     			const formgroup0_changes = {};
 
-    			if (dirty[0] & /*currentCountry, countries*/ 10 | dirty[1] & /*$$scope*/ 64) {
+    			if (dirty[0] & /*currentTeam, teams*/ 10 | dirty[1] & /*$$scope*/ 64) {
     				formgroup0_changes.$$scope = { dirty, ctx };
     			}
 
@@ -7259,13 +7259,13 @@ var app = (function () {
     	return block;
     }
 
-    // (204:3) <Label for="selectCountry">
+    // (204:2) <Label for="selectTeam">
     function create_default_slot_20(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Búsqueda por país");
+    			t = text("Búsqueda por equipo");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -7279,17 +7279,17 @@ var app = (function () {
     		block,
     		id: create_default_slot_20.name,
     		type: "slot",
-    		source: "(204:3) <Label for=\\\"selectCountry\\\">",
+    		source: "(204:2) <Label for=\\\"selectTeam\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (206:4) {#each countries as country}
+    // (206:3) {#each teams as team}
     function create_each_block_2(ctx) {
     	let option;
-    	let t_value = /*country*/ ctx[34] + "";
+    	let t_value = /*team*/ ctx[34] + "";
     	let t;
     	let option_value_value;
 
@@ -7297,18 +7297,18 @@ var app = (function () {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = option_value_value = /*country*/ ctx[34];
+    			option.__value = option_value_value = /*team*/ ctx[34];
     			option.value = option.__value;
-    			add_location(option, file$9, 206, 4, 4554);
+    			add_location(option, file$9, 206, 3, 4316);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
     			append_dev(option, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*countries*/ 2 && t_value !== (t_value = /*country*/ ctx[34] + "")) set_data_dev(t, t_value);
+    			if (dirty[0] & /*teams*/ 2 && t_value !== (t_value = /*team*/ ctx[34] + "")) set_data_dev(t, t_value);
 
-    			if (dirty[0] & /*countries*/ 2 && option_value_value !== (option_value_value = /*country*/ ctx[34])) {
+    			if (dirty[0] & /*teams*/ 2 && option_value_value !== (option_value_value = /*team*/ ctx[34])) {
     				prop_dev(option, "__value", option_value_value);
     			}
 
@@ -7323,18 +7323,18 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(206:4) {#each countries as country}",
+    		source: "(206:3) {#each teams as team}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (205:3) <Input type="select" name="selectCountry" id="selectCountry" bind:value="{currentCountry}">
+    // (205:2) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
     function create_default_slot_19(ctx) {
     	let t0;
     	let option;
-    	let each_value_2 = /*countries*/ ctx[1];
+    	let each_value_2 = /*teams*/ ctx[1];
     	validate_each_argument(each_value_2);
     	let each_blocks = [];
 
@@ -7353,7 +7353,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$9, 208, 4, 4597);
+    			add_location(option, file$9, 208, 3, 4354);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7364,8 +7364,8 @@ var app = (function () {
     			insert_dev(target, option, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*countries*/ 2) {
-    				each_value_2 = /*countries*/ ctx[1];
+    			if (dirty[0] & /*teams*/ 2) {
+    				each_value_2 = /*teams*/ ctx[1];
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -7399,14 +7399,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19.name,
     		type: "slot",
-    		source: "(205:3) <Input type=\\\"select\\\" name=\\\"selectCountry\\\" id=\\\"selectCountry\\\" bind:value=\\\"{currentCountry}\\\">",
+    		source: "(205:2) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (203:2) <FormGroup>
+    // (203:1) <FormGroup>
     function create_default_slot_18(ctx) {
     	let t;
     	let updating_value;
@@ -7414,7 +7414,7 @@ var app = (function () {
 
     	const label = new Label({
     			props: {
-    				for: "selectCountry",
+    				for: "selectTeam",
     				$$slots: { default: [create_default_slot_20] },
     				$$scope: { ctx }
     			},
@@ -7427,14 +7427,14 @@ var app = (function () {
 
     	let input_props = {
     		type: "select",
-    		name: "selectCountry",
-    		id: "selectCountry",
+    		name: "selectTeam",
+    		id: "selectTeam",
     		$$slots: { default: [create_default_slot_19] },
     		$$scope: { ctx }
     	};
 
-    	if (/*currentCountry*/ ctx[3] !== void 0) {
-    		input_props.value = /*currentCountry*/ ctx[3];
+    	if (/*currentTeam*/ ctx[3] !== void 0) {
+    		input_props.value = /*currentTeam*/ ctx[3];
     	}
 
     	const input = new Input({ props: input_props, $$inline: true });
@@ -7462,13 +7462,13 @@ var app = (function () {
     			label.$set(label_changes);
     			const input_changes = {};
 
-    			if (dirty[0] & /*countries*/ 2 | dirty[1] & /*$$scope*/ 64) {
+    			if (dirty[0] & /*teams*/ 2 | dirty[1] & /*$$scope*/ 64) {
     				input_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_value && dirty[0] & /*currentCountry*/ 8) {
+    			if (!updating_value && dirty[0] & /*currentTeam*/ 8) {
     				updating_value = true;
-    				input_changes.value = /*currentCountry*/ ctx[3];
+    				input_changes.value = /*currentTeam*/ ctx[3];
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -7496,7 +7496,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_18.name,
     		type: "slot",
-    		source: "(203:2) <FormGroup>",
+    		source: "(203:1) <FormGroup>",
     		ctx
     	});
 
@@ -7543,7 +7543,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*year*/ ctx[31];
     			option.value = option.__value;
-    			add_location(option, file$9, 216, 4, 4820);
+    			add_location(option, file$9, 216, 4, 4575);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7597,7 +7597,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$9, 218, 4, 4860);
+    			add_location(option, file$9, 218, 4, 4615);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7747,7 +7747,7 @@ var app = (function () {
     	return block;
     }
 
-    // (223:2) <Button outline color="secondary" on:click="{search(currentCountry, currentYear)}" class="button-search" >
+    // (223:2) <Button outline color="secondary" on:click="{search(currentTeam, currentYear)}" class="button-search" >
     function create_default_slot_14(ctx) {
     	let i;
     	let t;
@@ -7757,7 +7757,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$9, 222, 109, 5016);
+    			add_location(i, file$9, 222, 106, 4768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -7773,7 +7773,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(223:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentCountry, currentYear)}\\\" class=\\\"button-search\\\" >",
+    		source: "(223:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentTeam, currentYear)}\\\" class=\\\"button-search\\\" >",
     		ctx
     	});
 
@@ -7807,13 +7807,13 @@ var app = (function () {
     	return block;
     }
 
-    // (259:10) <Button outline color="danger" on:click="{deleteCoef(coef.country,coef.year)}">
+    // (259:10) <Button outline color="danger" on:click="{deleteCoef(coef.team,coef.year)}">
     function create_default_slot_12(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Delete");
+    			t = text("Eliminar");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -7827,7 +7827,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(259:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteCoef(coef.country,coef.year)}\\\">",
+    		source: "(259:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteCoef(coef.team,coef.year)}\\\">",
     		ctx
     	});
 
@@ -7838,18 +7838,18 @@ var app = (function () {
     function create_each_block(ctx) {
     	let tr;
     	let td0;
-    	let a;
-    	let t0_value = /*coef*/ ctx[7].country + "";
+    	let t0_value = /*coef*/ ctx[7].team + "";
     	let t0;
-    	let a_href_value;
     	let t1;
     	let td1;
     	let t2_value = /*coef*/ ctx[7].year + "";
     	let t2;
     	let t3;
     	let td2;
+    	let a;
     	let t4_value = /*coef*/ ctx[7].team + "";
     	let t4;
+    	let a_href_value;
     	let t5;
     	let td3;
     	let t6_value = /*coef*/ ctx[7].coefficient + "";
@@ -7878,20 +7878,20 @@ var app = (function () {
     		});
 
     	button.$on("click", function () {
-    		if (is_function(/*deleteCoef*/ ctx[9](/*coef*/ ctx[7].country, /*coef*/ ctx[7].year))) /*deleteCoef*/ ctx[9](/*coef*/ ctx[7].country, /*coef*/ ctx[7].year).apply(this, arguments);
+    		if (is_function(/*deleteCoef*/ ctx[9](/*coef*/ ctx[7].team, /*coef*/ ctx[7].year))) /*deleteCoef*/ ctx[9](/*coef*/ ctx[7].team, /*coef*/ ctx[7].year).apply(this, arguments);
     	});
 
     	const block = {
     		c: function create() {
     			tr = element("tr");
     			td0 = element("td");
-    			a = element("a");
     			t0 = text(t0_value);
     			t1 = space();
     			td1 = element("td");
     			t2 = text(t2_value);
     			t3 = space();
     			td2 = element("td");
+    			a = element("a");
     			t4 = text(t4_value);
     			t5 = space();
     			td3 = element("td");
@@ -7906,28 +7906,28 @@ var app = (function () {
     			td6 = element("td");
     			create_component(button.$$.fragment);
     			t12 = space();
-    			attr_dev(a, "href", a_href_value = "#/global-coef/" + /*coef*/ ctx[7].country + "/" + /*coef*/ ctx[7].year);
-    			add_location(a, file$9, 251, 7, 5860);
-    			add_location(td0, file$9, 250, 6, 5848);
-    			add_location(td1, file$9, 253, 6, 5948);
-    			add_location(td2, file$9, 254, 6, 5975);
-    			add_location(td3, file$9, 255, 6, 6002);
-    			add_location(td4, file$9, 256, 6, 6036);
-    			add_location(td5, file$9, 257, 6, 6062);
-    			add_location(td6, file$9, 258, 6, 6099);
-    			add_location(tr, file$9, 249, 5, 5837);
+    			add_location(td0, file$9, 250, 6, 5571);
+    			add_location(td1, file$9, 251, 6, 5598);
+    			attr_dev(a, "href", a_href_value = "#/global-coef/" + /*coef*/ ctx[7].team + "/" + /*coef*/ ctx[7].year);
+    			add_location(a, file$9, 253, 7, 5637);
+    			add_location(td2, file$9, 252, 6, 5625);
+    			add_location(td3, file$9, 255, 6, 5719);
+    			add_location(td4, file$9, 256, 6, 5753);
+    			add_location(td5, file$9, 257, 6, 5779);
+    			add_location(td6, file$9, 258, 6, 5816);
+    			add_location(tr, file$9, 249, 5, 5560);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
-    			append_dev(td0, a);
-    			append_dev(a, t0);
+    			append_dev(td0, t0);
     			append_dev(tr, t1);
     			append_dev(tr, td1);
     			append_dev(td1, t2);
     			append_dev(tr, t3);
     			append_dev(tr, td2);
-    			append_dev(td2, t4);
+    			append_dev(td2, a);
+    			append_dev(a, t4);
     			append_dev(tr, t5);
     			append_dev(tr, td3);
     			append_dev(td3, t6);
@@ -7945,14 +7945,14 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty[0] & /*coef*/ 128) && t0_value !== (t0_value = /*coef*/ ctx[7].country + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*coef*/ 128) && t0_value !== (t0_value = /*coef*/ ctx[7].team + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*coef*/ 128) && t2_value !== (t2_value = /*coef*/ ctx[7].year + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*coef*/ 128) && t4_value !== (t4_value = /*coef*/ ctx[7].team + "")) set_data_dev(t4, t4_value);
 
-    			if (!current || dirty[0] & /*coef*/ 128 && a_href_value !== (a_href_value = "#/global-coef/" + /*coef*/ ctx[7].country + "/" + /*coef*/ ctx[7].year)) {
+    			if (!current || dirty[0] & /*coef*/ 128 && a_href_value !== (a_href_value = "#/global-coef/" + /*coef*/ ctx[7].team + "/" + /*coef*/ ctx[7].year)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if ((!current || dirty[0] & /*coef*/ 128) && t2_value !== (t2_value = /*coef*/ ctx[7].year + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty[0] & /*coef*/ 128) && t4_value !== (t4_value = /*coef*/ ctx[7].team + "")) set_data_dev(t4, t4_value);
     			if ((!current || dirty[0] & /*coef*/ 128) && t6_value !== (t6_value = /*coef*/ ctx[7].coefficient + "")) set_data_dev(t6, t6_value);
     			if ((!current || dirty[0] & /*coef*/ 128) && t8_value !== (t8_value = /*coef*/ ctx[7].fed + "")) set_data_dev(t8, t8_value);
     			if ((!current || dirty[0] & /*coef*/ 128) && t10_value !== (t10_value = /*coef*/ ctx[7].classification + "")) set_data_dev(t10, t10_value);
@@ -8061,7 +8061,7 @@ var app = (function () {
     			thead = element("thead");
     			tr0 = element("tr");
     			th0 = element("th");
-    			th0.textContent = "Pais";
+    			th0.textContent = "País";
     			t1 = space();
     			th1 = element("th");
     			th1.textContent = "Año";
@@ -8109,34 +8109,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$9, 228, 5, 5142);
-    			add_location(th1, file$9, 229, 5, 5161);
-    			add_location(th2, file$9, 230, 5, 5179);
-    			add_location(th3, file$9, 231, 5, 5200);
-    			add_location(th4, file$9, 232, 5, 5226);
-    			add_location(th5, file$9, 233, 5, 5244);
-    			add_location(th6, file$9, 234, 5, 5272);
-    			add_location(tr0, file$9, 227, 4, 5132);
-    			add_location(thead, file$9, 226, 3, 5120);
-    			add_location(input0, file$9, 240, 9, 5342);
-    			add_location(td0, file$9, 240, 5, 5338);
+    			add_location(th0, file$9, 228, 5, 4865);
+    			add_location(th1, file$9, 229, 5, 4884);
+    			add_location(th2, file$9, 230, 5, 4902);
+    			add_location(th3, file$9, 231, 5, 4923);
+    			add_location(th4, file$9, 232, 5, 4949);
+    			add_location(th5, file$9, 233, 5, 4967);
+    			add_location(th6, file$9, 234, 5, 4995);
+    			add_location(tr0, file$9, 227, 4, 4855);
+    			add_location(thead, file$9, 226, 3, 4843);
+    			add_location(input0, file$9, 240, 9, 5065);
+    			add_location(td0, file$9, 240, 5, 5061);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 241, 9, 5395);
-    			add_location(td1, file$9, 241, 5, 5391);
-    			add_location(input2, file$9, 242, 9, 5459);
-    			add_location(td2, file$9, 242, 5, 5455);
+    			add_location(input1, file$9, 241, 9, 5118);
+    			add_location(td1, file$9, 241, 5, 5114);
+    			add_location(input2, file$9, 242, 9, 5182);
+    			add_location(td2, file$9, 242, 5, 5178);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$9, 243, 9, 5509);
-    			add_location(td3, file$9, 243, 5, 5505);
+    			add_location(input3, file$9, 243, 9, 5232);
+    			add_location(td3, file$9, 243, 5, 5228);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$9, 244, 9, 5580);
-    			add_location(td4, file$9, 244, 5, 5576);
+    			add_location(input4, file$9, 244, 9, 5303);
+    			add_location(td4, file$9, 244, 5, 5299);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$9, 245, 9, 5643);
-    			add_location(td5, file$9, 245, 5, 5639);
-    			add_location(td6, file$9, 246, 5, 5713);
-    			add_location(tr1, file$9, 239, 4, 5328);
-    			add_location(tbody, file$9, 238, 3, 5316);
+    			add_location(input5, file$9, 245, 9, 5366);
+    			add_location(td5, file$9, 245, 5, 5362);
+    			add_location(td6, file$9, 246, 5, 5436);
+    			add_location(tr1, file$9, 239, 4, 5051);
+    			add_location(tbody, file$9, 238, 3, 5039);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -8979,7 +8979,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$9, 295, 53, 7290);
+    			add_location(i, file$9, 295, 53, 6933);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9013,7 +9013,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$9, 296, 61, 7408);
+    			add_location(i, file$9, 296, 61, 7051);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9101,7 +9101,7 @@ var app = (function () {
     			create_component(button0.$$.fragment);
     			t2 = space();
     			create_component(button1.$$.fragment);
-    			add_location(main, file$9, 196, 0, 4293);
+    			add_location(main, file$9, 196, 0, 4077);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9204,40 +9204,40 @@ var app = (function () {
     		classification: ""
     	};
 
-    	//Variables para la paginacion y para la busqueda
-    	let countries = [];
+    	//Variables para paginacion y busqueda
+    	let teams = [];
 
     	let years = [];
-    	let currentCountry = "-";
+    	let currentTeam = "-";
     	let currentYear = "-";
     	let numberElementsPages = 10;
     	let offset = 0;
     	let currentPage = 1;
     	let moreData = true;
     	onMount(getCoef);
-    	onMount(getCountriesYears);
+    	onMount(getTeamsYears);
 
-    	//Funcion que devuelve array con los años y los paises existentes para poder hacer un select y usarlo para buscar
-    	async function getCountriesYears() {
-    		const res = await fetch("/api/v1/global-coef"); //Recogemos los datos de /api/v1/global-coef
+    	//Funcion que devuelve array con los equipos y años
+    	async function getTeamsYears() {
+    		const res = await fetch("/api/v1/global-coef");
 
     		if (res.ok) {
     			const json = await res.json();
 
-    			$$invalidate(1, countries = json.map(d => {
-    				return d.country;
+    			$$invalidate(1, teams = json.map(d => {
+    				return d.team;
     			}));
 
-    			$$invalidate(1, countries = Array.from(new Set(countries)));
+    			$$invalidate(1, teams = Array.from(new Set(teams)));
 
     			$$invalidate(2, years = json.map(d => {
     				return d.year;
     			}));
 
     			$$invalidate(2, years = Array.from(new Set(years)));
-    			console.log("Contados " + countries.length + "paises y " + years.length + "años distintos.");
+    			console.log("Contados " + teams.length + "equipos y " + years.length + "años distintos.");
     		} else {
-    			console.log("ERROR!");
+    			console.log("ERROR");
     		}
     	}
 
@@ -9265,15 +9265,15 @@ var app = (function () {
     				}
     			}
     		} else {
-    			console.log("ERROR!");
+    			console.log("ERROR");
     		}
     	}
 
     	async function insertCoef() {
     		console.log("Inserting coef..." + JSON.stringify(newCoef));
 
-    		if (newCoef.country == "" || newCoef.country == null || newCoef.year == "" || newCoef.year == null) {
-    			alert("Se debe incluir el nombre del país y el año obligatoriamente");
+    		if (newCoef.team == "" || newCoef.team == null || newCoef.year == "" || newCoef.year == null) {
+    			alert("Se debe incluir el nombre del equipo y año obligatoriamente");
     		} else {
     			const res = await fetch("/api/v1/global-coef", {
     				method: "POST",
@@ -9285,35 +9285,35 @@ var app = (function () {
     		}
     	}
 
-    	//Borramos un pais en un año concreto
-    	async function deleteCoef(country, year) {
-    		console.log("Deleting coef..." + JSON.stringify(country) + +JSON.stringify(year));
+    	//Borrar un equipo en un año 
+    	async function deleteCoef(team, year) {
+    		console.log("Deleting coef..." + JSON.stringify(team) + +JSON.stringify(year));
 
-    		const res = await fetch("/api/v1/global-coef/" + country + "/" + year, { method: "DELETE" }).then(function (res) {
+    		const res = await fetch("/api/v1/global-coef/" + team + "/" + year, { method: "DELETE" }).then(function (res) {
     			getCoef();
-    			getCountriesYears();
+    			getTeamsYears();
     		});
     	}
 
-    	//Borramos todos los paises
+    	//Borrar todos los equipos
     	async function deleteGlobalCoef() {
     		console.log("Deleting all coef data...");
 
     		const res = await fetch("/api/v1/global-coef/", { method: "DELETE" }).then(function (res) {
     			getCoef();
-    			getCountriesYears();
+    			getTeamsYears();
     		});
     	}
 
-    	async function search(country, year) {
-    		console.log("Searching data: " + country + " and " + year);
+    	async function search(team, year) {
+    		console.log("Searching data: " + team + " and " + year);
     		var url = "/api/v1/global-coef";
 
-    		if (country != "-" && year != "-") {
-    			url = url + "?country=" + country + "&year=" + year;
-    		} else if (country != "-" && year == "-") {
-    			url = url + "?country=" + country;
-    		} else if (country == "-" && year != "-") {
+    		if (team != "-" && year != "-") {
+    			url = url + "?team=" + team + "&year=" + year;
+    		} else if (team != "-" && year == "-") {
+    			url = url + "?team=" + team;
+    		} else if (team == "-" && year != "-") {
     			url = url + "?year=" + year;
     		}
 
@@ -9325,7 +9325,7 @@ var app = (function () {
     			$$invalidate(7, coef = json);
     			console.log("Found " + coef.length + " global coef stats.");
     		} else {
-    			console.log("ERROR!");
+    			console.log("ERROR");
     		}
     	}
 
@@ -9345,8 +9345,8 @@ var app = (function () {
     	validate_slots("CoefTable", $$slots, []);
 
     	function input_value_binding(value) {
-    		currentCountry = value;
-    		$$invalidate(3, currentCountry);
+    		currentTeam = value;
+    		$$invalidate(3, currentTeam);
     	}
 
     	function input_value_binding_1(value) {
@@ -9402,15 +9402,15 @@ var app = (function () {
     		PaginationLink,
     		coef,
     		newCoef,
-    		countries,
+    		teams,
     		years,
-    		currentCountry,
+    		currentTeam,
     		currentYear,
     		numberElementsPages,
     		offset,
     		currentPage,
     		moreData,
-    		getCountriesYears,
+    		getTeamsYears,
     		getCoef,
     		insertCoef,
     		deleteCoef,
@@ -9422,9 +9422,9 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ("coef" in $$props) $$invalidate(7, coef = $$props.coef);
     		if ("newCoef" in $$props) $$invalidate(0, newCoef = $$props.newCoef);
-    		if ("countries" in $$props) $$invalidate(1, countries = $$props.countries);
+    		if ("teams" in $$props) $$invalidate(1, teams = $$props.teams);
     		if ("years" in $$props) $$invalidate(2, years = $$props.years);
-    		if ("currentCountry" in $$props) $$invalidate(3, currentCountry = $$props.currentCountry);
+    		if ("currentTeam" in $$props) $$invalidate(3, currentTeam = $$props.currentTeam);
     		if ("currentYear" in $$props) $$invalidate(4, currentYear = $$props.currentYear);
     		if ("numberElementsPages" in $$props) numberElementsPages = $$props.numberElementsPages;
     		if ("offset" in $$props) offset = $$props.offset;
@@ -9438,9 +9438,9 @@ var app = (function () {
 
     	return [
     		newCoef,
-    		countries,
+    		teams,
     		years,
-    		currentCountry,
+    		currentTeam,
     		currentYear,
     		currentPage,
     		moreData,
@@ -9452,7 +9452,7 @@ var app = (function () {
     		addOffset,
     		offset,
     		numberElementsPages,
-    		getCountriesYears,
+    		getTeamsYears,
     		getCoef,
     		input_value_binding,
     		input_value_binding_1,
@@ -9737,7 +9737,7 @@ var app = (function () {
     			thead = element("thead");
     			tr0 = element("tr");
     			th0 = element("th");
-    			th0.textContent = "Pais";
+    			th0.textContent = "País";
     			t1 = space();
     			th1 = element("th");
     			th1.textContent = "Año";
@@ -9755,7 +9755,7 @@ var app = (function () {
     			th5.textContent = "Clasificación";
     			t11 = space();
     			th6 = element("th");
-    			th6.textContent = "Actions";
+    			th6.textContent = "Acciones";
     			t13 = space();
     			tbody = element("tbody");
     			tr1 = element("tr");
@@ -9779,32 +9779,32 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$b, 83, 20, 2221);
-    			add_location(th1, file$b, 84, 20, 2255);
-    			add_location(th2, file$b, 85, 20, 2288);
-    			add_location(th3, file$b, 86, 20, 2324);
-    			add_location(th4, file$b, 87, 20, 2365);
-    			add_location(th5, file$b, 88, 20, 2398);
-    			add_location(th6, file$b, 89, 20, 2441);
-    			add_location(tr0, file$b, 82, 16, 2196);
-    			add_location(thead, file$b, 81, 12, 2172);
-    			add_location(td0, file$b, 94, 20, 2562);
-    			add_location(td1, file$b, 95, 20, 2608);
+    			add_location(th0, file$b, 83, 20, 2223);
+    			add_location(th1, file$b, 84, 20, 2257);
+    			add_location(th2, file$b, 85, 20, 2290);
+    			add_location(th3, file$b, 86, 20, 2326);
+    			add_location(th4, file$b, 87, 20, 2367);
+    			add_location(th5, file$b, 88, 20, 2400);
+    			add_location(th6, file$b, 89, 20, 2443);
+    			add_location(tr0, file$b, 82, 16, 2198);
+    			add_location(thead, file$b, 81, 12, 2174);
+    			add_location(td0, file$b, 94, 20, 2565);
+    			add_location(td1, file$b, 95, 20, 2611);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$b, 96, 24, 2655);
-    			add_location(td2, file$b, 96, 20, 2651);
+    			add_location(input0, file$b, 96, 24, 2658);
+    			add_location(td2, file$b, 96, 20, 2654);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$b, 97, 24, 2733);
-    			add_location(td3, file$b, 97, 20, 2729);
+    			add_location(input1, file$b, 97, 24, 2736);
+    			add_location(td3, file$b, 97, 20, 2732);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$b, 98, 24, 2818);
-    			add_location(td4, file$b, 98, 20, 2814);
+    			add_location(input2, file$b, 98, 24, 2821);
+    			add_location(td4, file$b, 98, 20, 2817);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$b, 99, 24, 2895);
-    			add_location(td5, file$b, 99, 20, 2891);
-    			add_location(td6, file$b, 100, 20, 2979);
-    			add_location(tr1, file$b, 93, 16, 2537);
-    			add_location(tbody, file$b, 92, 12, 2513);
+    			add_location(input3, file$b, 99, 24, 2898);
+    			add_location(td5, file$b, 99, 20, 2894);
+    			add_location(td6, file$b, 100, 20, 2982);
+    			add_location(tr1, file$b, 93, 16, 2540);
+    			add_location(tbody, file$b, 92, 12, 2516);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -9958,7 +9958,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[7]);
     			set_style(p, "color", "red");
-    			add_location(p, file$b, 106, 8, 3161);
+    			add_location(p, file$b, 106, 8, 3164);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10054,7 +10054,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h3 = element("h3");
-    			t0 = text("Edit coef ");
+    			t0 = text("Editar coef ");
     			strong = element("strong");
     			t1 = text(t1_value);
     			t2 = space();
@@ -10063,7 +10063,7 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t4 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$b, 76, 18, 2037);
+    			add_location(strong, file$b, 76, 20, 2039);
     			add_location(h3, file$b, 76, 4, 2023);
     			add_location(main, file$b, 75, 0, 2012);
     		},
@@ -13563,7 +13563,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			h1.textContent = "¡La pagina no existe!";
+    			h1.textContent = "Página no encontrada";
     			add_location(h1, file$f, 1, 4, 11);
     			add_location(main, file$f, 0, 0, 0);
     		},
@@ -13675,7 +13675,7 @@ var app = (function () {
     function instance$h($$self, $$props, $$invalidate) {
     	const routes = {
     		"/": Home,
-    		"/global-Coef/:country/:year": EditCoef,
+    		"/global-coef/:country/:year": EditCoef,
     		"/globalCoefAPI": App,
     		"/global-transfers/:country/:year": EditTransfer,
     		"/globaltransfersAPI": App$1,

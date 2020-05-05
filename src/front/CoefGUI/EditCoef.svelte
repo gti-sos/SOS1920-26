@@ -74,20 +74,20 @@
     }
 </script>
 <main>
-    <h3>Edit coef <strong>{params.country}</strong></h3>
+    <h3>Editar coef <strong>{params.country}</strong></h3>
     {#await coef}
         Loading coef...
     {:then coef}
         <Table bordered>
             <thead>
                 <tr>
-                    <th>Pais</th>
+                    <th>País</th>
                     <th>Año</th>
                     <th>Equipo</th>
                     <th>Coeficiente</th>
                     <th>Fed</th>
                     <th>Clasificación</th>
-                    <th>Actions</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
