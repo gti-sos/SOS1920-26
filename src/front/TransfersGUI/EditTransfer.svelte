@@ -17,7 +17,7 @@
     let transfer = {};
     let updatedCountry = "XXXX";
     let updatedYear = 12345;
-    let updatedTeam = SevillaFC;
+    let updatedTeam = "SevillaFC";
     let updatedSigning = 17;
     let updatedSale = 32;
     let updatedBalance = +108.2;
@@ -53,7 +53,7 @@
 
         console.log("Updating transfer..." + JSON.stringify(params.year));
 
-        const res = await fetch("/api/v1/global-marriages/" + params.year +"/"+params.team, {
+        const res = await fetch("/api/v1/global-transfers/" + params.year +"/"+params.team, {
             method: "PUT",
             body: JSON.stringify({
                 country: updatedCountry,
@@ -69,16 +69,49 @@
             }
         }).then(function (res) {
             getTransfer();
+            /*if (response.ok) {
+            window.location.href = "#/globaltransfersAPI";
+            }*/
         });
-
-
-
     }
+
+    function errorAlert(error) {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong>Error</strong> Ha ocurrido un error " + error;
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+    }
+    
+    function updateAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-info ";
+		alert_element.innerHTML = "<strong>Dato actualizado</strong> Se ha actualziado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+    }
+    
+    function clearAlert () {
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "display: none; ";
+		alert_element.className = "alert alert-dismissible in";
+		alert_element.innerHTML = "";
+	}
 </script>
 <main>
-    <h3>Edit Transfer <strong>{params.year}</strong></h3>
+    <div role="alert" id="div_alert" style="display: none;">
+	</div>
+    <h3>Editar Transfer <strong>{params.year}</strong></h3>
     {#await transfer}
-        Loading transfers...
+        Cargando transfers...
     {:then transfer}
         <Table bordered>
             <thead>
@@ -100,7 +133,7 @@
                     <td><input type="number" bind:value="{updatedSigning}"></td>
                     <td><input type="number" bind:value="{updatedSale}"></td>
                     <td><input type="number" bind:value="{updatedBalance}"></td>
-                    <td> <Button outline  color="primary" on:click={updateTransfer}>Actualizar</Button> </td>
+                    <td> <Button outline  color="primary" on:click={updateTransfer} on:click={updateAlert}>Actualizar</Button> </td>
                 </tr>
         </tbody>
         </Table>

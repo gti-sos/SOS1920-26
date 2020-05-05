@@ -18,7 +18,7 @@
 		"/": Home,
 		"/global-coef/:country/:year": EditCoef,
 		"/globalCoefAPI":globalCoef,
-		"/global-transfers/:country/:year": EditTransfer,
+		"/global-transfers/:year/:team": EditTransfer,
 		"/globaltransfersAPI":globalTransfers,  
 		"*": NotFound
 	};

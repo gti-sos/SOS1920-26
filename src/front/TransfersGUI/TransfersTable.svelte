@@ -43,11 +43,20 @@
 
 
 
+	async function ReloadTable() {
+		const res = await fetch("/api/v1/global-transfers/loadInitialData")
 
+		if (res.ok) {
+			const initialTransfers = await res.json();
+			console.log("Contados "+ initialTransfers.length +" datos de matrimonios")
+			getTransfers();
+		}else{
+			console.log("No se han cargado correctamente los datos inicales")
+		}
+	}
 
-//Funcion que devuelve array con los años y los paises existentes para poder hacer un select y usarlo para buscar
 	async function getYearsTeams() {
-		const res = await fetch("/api/v1/global-transfers"); //Recogemos los datos de /api/v1/global-marriages
+		const res = await fetch("/api/v1/global-transfers"); 
 
 		if (res.ok) {
 			const json = await res.json();
@@ -188,12 +197,82 @@
 		getTransfers();
 	}
 
+	function insertAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-success ";
+		alert_element.innerHTML = "<strong> Dato insertado</strong> Se ha insertado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+	
+	function deleteAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Dato borrado</strong> Se ha borrado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	function deleteAllAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Datos borrados</strong> Se han borrado todos los datos correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	
+	function ReloadTableAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-info ";
+		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han restaurado los datos";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+
+	function errorAlert(error) {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Error</strong> Ha ocurrido un error " + error;
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	function clearAlert () {
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "display: none; ";
+		alert_element.className = "alert alert-dismissible in";
+		alert_element.innerHTML = "";
+	}
+
 
 
 </script>
 
 <main>
-
+	<div role="alert" id="div_alert" style="display: none;">
+	</div>
 	{#await transfers}
 		Loading transfers...
 	{:then transfers}
@@ -219,7 +298,8 @@
 		</FormGroup>
 
 		<Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		
+		<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-search"></i> Restaurar API </Button>
+
 
 		<Table bordered>
 			<thead>
@@ -242,19 +322,19 @@
 					<td><input type="number" bind:value="{newTransfer.signing}"></td>
 					<td><input type="number" bind:value="{newTransfer.sale}"></td>
 					<td><input type="number" bind:value="{newTransfer.balance}"></td>
-					<td> <Button outline  color="primary" on:click={insertTransfer}>Insertar</Button> </td>
+					<td> <Button outline  color="primary" on:click={insertTransfer} on:click={insertAlert}>Insertar</Button> </td>
 				</tr>
 				{#each transfers as transfer}
 					<tr>
 						<td>{transfer.country}</td>
-						<td>
-							<a href="#/global-transfers/{transfer.year}/{transfer.team}">{transfer.year}</a>
-						</td>
+						<td>{transfer.year}</td>
 						<td>{transfer.team}</td>
 						<td>{transfer.signing}</td>
 						<td>{transfer.sale}</td>
 						<td>{transfer.balance}</td>
-						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">Delete</Button></td>
+						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}" on:click={deleteAlert}>Eliminar</Button></td>
+						<td><Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}">Editar</Button></td>
+						
 					</tr>
 				{/each}
 			</tbody>
@@ -268,7 +348,6 @@
 		  <PaginationLink previous href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" />
 		</PaginationItem>
 		
-		<!-- If we are not in the first page-->
 		{#if currentPage != 1}
 		<PaginationItem>
 			<PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
@@ -278,7 +357,6 @@
 			<PaginationLink href="#/globalTransfersAPI" >{currentPage}</PaginationLink>
 		</PaginationItem>
 
-		<!-- If there are more elements-->
 		{#if moreData}
 		<PaginationItem >
 			<PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>
@@ -292,6 +370,6 @@
 	</Pagination>
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
-	<Button outline on:click={deleteGlobalTransfers} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline on:click={deleteGlobalTransfers} color="danger" on:click={deleteAllAlert}> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
 
 </main>
