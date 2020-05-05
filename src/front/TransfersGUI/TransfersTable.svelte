@@ -134,10 +134,17 @@
 						"Content-Type": "application/json"
 					}
 				}).then(function (res) {
-					getTransfers();
-				});
+					if (res.ok) {
+						getTransfers();
+						insertAlert();
+
+				} else {
+					errorAlert("Error interno al intentar insertar un elemento");
+				}
 				
-			}
+				
+			});
+		}
 	}
 
 
@@ -322,7 +329,7 @@
 					<td><input type="number" bind:value="{newTransfer.signing}"></td>
 					<td><input type="number" bind:value="{newTransfer.sale}"></td>
 					<td><input type="number" bind:value="{newTransfer.balance}"></td>
-					<td> <Button outline  color="primary" on:click={insertTransfer} on:click={insertAlert}>Insertar</Button> </td>
+					<td> <Button outline  color="primary" on:click={insertTransfer}> <i class="fa fa-plus-circle" aria-hidden="true"></i> Insertar</Button> </td>
 				</tr>
 				{#each transfers as transfer}
 					<tr>
@@ -332,8 +339,8 @@
 						<td>{transfer.signing}</td>
 						<td>{transfer.sale}</td>
 						<td>{transfer.balance}</td>
-						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}" on:click={deleteAlert}>Eliminar</Button></td>
-						<td><Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}">Editar</Button></td>
+						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}" on:click={deleteAlert}> <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</Button></td>
+						<td><Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}"> <i class="fa fa-edit" aria-hidden="true"></i> Editar</Button></td>
 						
 					</tr>
 				{/each}
