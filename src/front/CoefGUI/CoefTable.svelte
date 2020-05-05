@@ -27,7 +27,7 @@
 		classification:""
 	};
 
-//Usaremos estas variables para la paginacion y para la busqueda
+//Variables para la paginacion y para la busqueda
 	let countries = [];
 	let years = [];
 	let currentCountry = "-";
@@ -53,15 +53,15 @@
 			const json = await res.json();
 
 			countries = json.map((d) => {
-					return d.country;            //Guardamos los paises 
+					return d.country;            
 			});
-			countries = Array.from(new Set(countries));   //Eliminamos los duplicados
+			countries = Array.from(new Set(countries));   
 			
 			
 			years = json.map((d) => {   
-					return d.year;    //Guardamos los años en un array
+					return d.year;    
 			});
-			years = Array.from(new Set(years));      //Eliminamos años repetidos
+			years = Array.from(new Set(years));      
 
 			console.log("Contados " + countries.length + "paises y " + years.length + "años distintos.");
 
@@ -98,7 +98,7 @@
 							moreData = false;
 						} 
 						else {
-							moreData = true;  //Vemos si quedan aun mas datos en la siguiente pagina
+							moreData = true;  
 						}
 					}
 		} 
@@ -159,7 +159,7 @@
 	async function search(country, year) {
 		console.log("Searching data: " + country + " and " + year);
 
-		/* Checking if the fields are empty */
+		
 		var url = "/api/v1/global-coef";
 
 		if (country != "-" && year != "-") {
@@ -223,7 +223,7 @@
 		<Button outline color="secondary" on:click="{search(currentCountry, currentYear)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
 		
 
-		<Table bordered>
+		<Table bordered > <!--Administrador de Coef -->
 			<thead>
 				<tr>
 					<th>Pais</th>
@@ -232,7 +232,7 @@
 					<th>Coeficiente</th>
 					<th>Fed</th>
 					<th>Clasificación</th>
-					<th>Actions</th>
+					<th>Acciones</th>
 
 				</tr>
 			</thead>

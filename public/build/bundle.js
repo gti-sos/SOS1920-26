@@ -7102,7 +7102,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (1:0) <script>   import {    onMount   }
+    // (1:0) <script>  import {   onMount  }
     function create_catch_block(ctx) {
     	const block = {
     		c: noop,
@@ -7117,7 +7117,7 @@ var app = (function () {
     		block,
     		id: create_catch_block.name,
     		type: "catch",
-    		source: "(1:0) <script>   import {    onMount   }",
+    		source: "(1:0) <script>  import {   onMount  }",
     		ctx
     	});
 
@@ -7299,7 +7299,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*country*/ ctx[34];
     			option.value = option.__value;
-    			add_location(option, file$9, 206, 4, 4976);
+    			add_location(option, file$9, 206, 4, 4554);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7353,7 +7353,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$9, 208, 4, 5021);
+    			add_location(option, file$9, 208, 4, 4597);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7543,7 +7543,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*year*/ ctx[31];
     			option.value = option.__value;
-    			add_location(option, file$9, 216, 4, 5252);
+    			add_location(option, file$9, 216, 4, 4820);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7597,7 +7597,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$9, 218, 4, 5294);
+    			add_location(option, file$9, 218, 4, 4860);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7757,7 +7757,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$9, 222, 109, 5454);
+    			add_location(i, file$9, 222, 109, 5016);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -7907,15 +7907,15 @@ var app = (function () {
     			create_component(button.$$.fragment);
     			t12 = space();
     			attr_dev(a, "href", a_href_value = "#/global-coef/" + /*coef*/ ctx[7].country + "/" + /*coef*/ ctx[7].year);
-    			add_location(a, file$9, 251, 7, 6295);
-    			add_location(td0, file$9, 250, 6, 6282);
-    			add_location(td1, file$9, 253, 6, 6385);
-    			add_location(td2, file$9, 254, 6, 6413);
-    			add_location(td3, file$9, 255, 6, 6441);
-    			add_location(td4, file$9, 256, 6, 6476);
-    			add_location(td5, file$9, 257, 6, 6503);
-    			add_location(td6, file$9, 258, 6, 6541);
-    			add_location(tr, file$9, 249, 5, 6270);
+    			add_location(a, file$9, 251, 7, 5860);
+    			add_location(td0, file$9, 250, 6, 5848);
+    			add_location(td1, file$9, 253, 6, 5948);
+    			add_location(td2, file$9, 254, 6, 5975);
+    			add_location(td3, file$9, 255, 6, 6002);
+    			add_location(td4, file$9, 256, 6, 6036);
+    			add_location(td5, file$9, 257, 6, 6062);
+    			add_location(td6, file$9, 258, 6, 6099);
+    			add_location(tr, file$9, 249, 5, 5837);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -7990,7 +7990,7 @@ var app = (function () {
     	return block;
     }
 
-    // (226:2) <Table bordered>
+    // (226:2) <Table bordered >
     function create_default_slot_11(ctx) {
     	let thead;
     	let tr0;
@@ -8079,7 +8079,7 @@ var app = (function () {
     			th5.textContent = "Clasificación";
     			t11 = space();
     			th6 = element("th");
-    			th6.textContent = "Actions";
+    			th6.textContent = "Acciones";
     			t13 = space();
     			tbody = element("tbody");
     			tr1 = element("tr");
@@ -8109,34 +8109,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$9, 228, 5, 5555);
-    			add_location(th1, file$9, 229, 5, 5575);
-    			add_location(th2, file$9, 230, 5, 5594);
-    			add_location(th3, file$9, 231, 5, 5616);
-    			add_location(th4, file$9, 232, 5, 5643);
-    			add_location(th5, file$9, 233, 5, 5662);
-    			add_location(th6, file$9, 234, 5, 5691);
-    			add_location(tr0, file$9, 227, 4, 5544);
-    			add_location(thead, file$9, 226, 3, 5531);
-    			add_location(input0, file$9, 240, 9, 5766);
-    			add_location(td0, file$9, 240, 5, 5762);
+    			add_location(th0, file$9, 228, 5, 5142);
+    			add_location(th1, file$9, 229, 5, 5161);
+    			add_location(th2, file$9, 230, 5, 5179);
+    			add_location(th3, file$9, 231, 5, 5200);
+    			add_location(th4, file$9, 232, 5, 5226);
+    			add_location(th5, file$9, 233, 5, 5244);
+    			add_location(th6, file$9, 234, 5, 5272);
+    			add_location(tr0, file$9, 227, 4, 5132);
+    			add_location(thead, file$9, 226, 3, 5120);
+    			add_location(input0, file$9, 240, 9, 5342);
+    			add_location(td0, file$9, 240, 5, 5338);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 241, 9, 5820);
-    			add_location(td1, file$9, 241, 5, 5816);
-    			add_location(input2, file$9, 242, 9, 5885);
-    			add_location(td2, file$9, 242, 5, 5881);
+    			add_location(input1, file$9, 241, 9, 5395);
+    			add_location(td1, file$9, 241, 5, 5391);
+    			add_location(input2, file$9, 242, 9, 5459);
+    			add_location(td2, file$9, 242, 5, 5455);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$9, 243, 9, 5936);
-    			add_location(td3, file$9, 243, 5, 5932);
+    			add_location(input3, file$9, 243, 9, 5509);
+    			add_location(td3, file$9, 243, 5, 5505);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$9, 244, 9, 6008);
-    			add_location(td4, file$9, 244, 5, 6004);
+    			add_location(input4, file$9, 244, 9, 5580);
+    			add_location(td4, file$9, 244, 5, 5576);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$9, 245, 9, 6072);
-    			add_location(td5, file$9, 245, 5, 6068);
-    			add_location(td6, file$9, 246, 5, 6143);
-    			add_location(tr1, file$9, 239, 4, 5751);
-    			add_location(tbody, file$9, 238, 3, 5738);
+    			add_location(input5, file$9, 245, 9, 5643);
+    			add_location(td5, file$9, 245, 5, 5639);
+    			add_location(td6, file$9, 246, 5, 5713);
+    			add_location(tr1, file$9, 239, 4, 5328);
+    			add_location(tbody, file$9, 238, 3, 5316);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -8296,14 +8296,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(226:2) <Table bordered>",
+    		source: "(226:2) <Table bordered >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (199:14)     Loading coef...   {:then coef}
+    // (199:14)    Loading coef...  {:then coef}
     function create_pending_block(ctx) {
     	let t;
 
@@ -8326,7 +8326,7 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-    		source: "(199:14)     Loading coef...   {:then coef}",
+    		source: "(199:14)    Loading coef...  {:then coef}",
     		ctx
     	});
 
@@ -8979,7 +8979,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$9, 295, 53, 7769);
+    			add_location(i, file$9, 295, 53, 7290);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9013,7 +9013,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$9, 296, 61, 7888);
+    			add_location(i, file$9, 296, 61, 7408);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9101,7 +9101,7 @@ var app = (function () {
     			create_component(button0.$$.fragment);
     			t2 = space();
     			create_component(button1.$$.fragment);
-    			add_location(main, file$9, 196, 0, 4705);
+    			add_location(main, file$9, 196, 0, 4293);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9204,7 +9204,7 @@ var app = (function () {
     		classification: ""
     	};
 
-    	//Usaremos estas variables para la paginacion y para la busqueda
+    	//Variables para la paginacion y para la busqueda
     	let countries = [];
 
     	let years = [];
@@ -9225,16 +9225,16 @@ var app = (function () {
     			const json = await res.json();
 
     			$$invalidate(1, countries = json.map(d => {
-    				return d.country; //Guardamos los paises 
+    				return d.country;
     			}));
 
-    			$$invalidate(1, countries = Array.from(new Set(countries))); //Eliminamos los duplicados
+    			$$invalidate(1, countries = Array.from(new Set(countries)));
 
     			$$invalidate(2, years = json.map(d => {
-    				return d.year; //Guardamos los años en un array
+    				return d.year;
     			}));
 
-    			$$invalidate(2, years = Array.from(new Set(years))); //Eliminamos años repetidos
+    			$$invalidate(2, years = Array.from(new Set(years)));
     			console.log("Contados " + countries.length + "paises y " + years.length + "años distintos.");
     		} else {
     			console.log("ERROR!");
@@ -9261,7 +9261,7 @@ var app = (function () {
     				if (jsonNext.length == 0 || next.status == 404) {
     					$$invalidate(6, moreData = false);
     				} else {
-    					$$invalidate(6, moreData = true); //Vemos si quedan aun mas datos en la siguiente pagina
+    					$$invalidate(6, moreData = true);
     				}
     			}
     		} else {
@@ -9307,8 +9307,6 @@ var app = (function () {
 
     	async function search(country, year) {
     		console.log("Searching data: " + country + " and " + year);
-
-    		/* Checking if the fields are empty */
     		var url = "/api/v1/global-coef";
 
     		if (country != "-" && year != "-") {
@@ -9491,7 +9489,7 @@ var app = (function () {
     function create_fragment$b(ctx) {
     	let main;
     	let h1;
-    	let t;
+    	let t1;
     	let current;
     	const coeftable = new CoefTable({ $$inline: true });
 
@@ -9499,12 +9497,13 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			h1 = element("h1");
-    			t = text("Administrador de Coef/h1>\r\n\t");
+    			h1.textContent = "Administrador de Coef";
+    			t1 = space();
     			create_component(coeftable.$$.fragment);
     			attr_dev(h1, "class", "display-4");
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$a, 5, 1, 78);
-    			add_location(main, file$a, 4, 0, 69);
+    			add_location(h1, file$a, 5, 1, 73);
+    			add_location(main, file$a, 4, 0, 65);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9512,8 +9511,8 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
     			append_dev(main, h1);
-    			append_dev(h1, t);
-    			mount_component(coeftable, h1, null);
+    			append_dev(main, t1);
+    			mount_component(coeftable, main, null);
     			current = true;
     		},
     		p: noop,
@@ -9575,7 +9574,7 @@ var app = (function () {
     const { console: console_1$3 } = globals;
     const file$b = "src\\front\\CoefGUI\\EditCoef.svelte";
 
-    // (1:0) <script>      import {          onMount      }
+    // (1:0) <script>     import {         onMount     }
     function create_catch_block$1(ctx) {
     	const block = {
     		c: noop,
@@ -9590,7 +9589,7 @@ var app = (function () {
     		block,
     		id: create_catch_block$1.name,
     		type: "catch",
-    		source: "(1:0) <script>      import {          onMount      }",
+    		source: "(1:0) <script>     import {         onMount     }",
     		ctx
     	});
 
@@ -9780,32 +9779,32 @@ var app = (function () {
     			t21 = space();
     			td6 = element("td");
     			create_component(button.$$.fragment);
-    			add_location(th0, file$b, 83, 20, 2304);
-    			add_location(th1, file$b, 84, 20, 2339);
-    			add_location(th2, file$b, 85, 20, 2373);
-    			add_location(th3, file$b, 86, 20, 2410);
-    			add_location(th4, file$b, 87, 20, 2452);
-    			add_location(th5, file$b, 88, 20, 2486);
-    			add_location(th6, file$b, 89, 20, 2530);
-    			add_location(tr0, file$b, 82, 16, 2278);
-    			add_location(thead, file$b, 81, 12, 2253);
-    			add_location(td0, file$b, 94, 20, 2656);
-    			add_location(td1, file$b, 95, 20, 2703);
+    			add_location(th0, file$b, 83, 20, 2221);
+    			add_location(th1, file$b, 84, 20, 2255);
+    			add_location(th2, file$b, 85, 20, 2288);
+    			add_location(th3, file$b, 86, 20, 2324);
+    			add_location(th4, file$b, 87, 20, 2365);
+    			add_location(th5, file$b, 88, 20, 2398);
+    			add_location(th6, file$b, 89, 20, 2441);
+    			add_location(tr0, file$b, 82, 16, 2196);
+    			add_location(thead, file$b, 81, 12, 2172);
+    			add_location(td0, file$b, 94, 20, 2562);
+    			add_location(td1, file$b, 95, 20, 2608);
     			attr_dev(input0, "type", "number");
-    			add_location(input0, file$b, 96, 24, 2751);
-    			add_location(td2, file$b, 96, 20, 2747);
+    			add_location(input0, file$b, 96, 24, 2655);
+    			add_location(td2, file$b, 96, 20, 2651);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$b, 97, 24, 2830);
-    			add_location(td3, file$b, 97, 20, 2826);
+    			add_location(input1, file$b, 97, 24, 2733);
+    			add_location(td3, file$b, 97, 20, 2729);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$b, 98, 24, 2916);
-    			add_location(td4, file$b, 98, 20, 2912);
+    			add_location(input2, file$b, 98, 24, 2818);
+    			add_location(td4, file$b, 98, 20, 2814);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$b, 99, 24, 2994);
-    			add_location(td5, file$b, 99, 20, 2990);
-    			add_location(td6, file$b, 100, 20, 3079);
-    			add_location(tr1, file$b, 93, 16, 2630);
-    			add_location(tbody, file$b, 92, 12, 2605);
+    			add_location(input3, file$b, 99, 24, 2895);
+    			add_location(td5, file$b, 99, 20, 2891);
+    			add_location(td6, file$b, 100, 20, 2979);
+    			add_location(tr1, file$b, 93, 16, 2537);
+    			add_location(tbody, file$b, 92, 12, 2513);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -9917,7 +9916,7 @@ var app = (function () {
     	return block;
     }
 
-    // (78:17)           Loading coef...      {:then coef}
+    // (78:17)          Loading coef...     {:then coef}
     function create_pending_block$1(ctx) {
     	let t;
 
@@ -9940,7 +9939,7 @@ var app = (function () {
     		block,
     		id: create_pending_block$1.name,
     		type: "pending",
-    		source: "(78:17)           Loading coef...      {:then coef}",
+    		source: "(78:17)          Loading coef...     {:then coef}",
     		ctx
     	});
 
@@ -9959,7 +9958,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[7]);
     			set_style(p, "color", "red");
-    			add_location(p, file$b, 106, 8, 3267);
+    			add_location(p, file$b, 106, 8, 3161);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -10064,9 +10063,9 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t4 = space();
     			create_component(button.$$.fragment);
-    			add_location(strong, file$b, 76, 18, 2113);
-    			add_location(h3, file$b, 76, 4, 2099);
-    			add_location(main, file$b, 75, 0, 2087);
+    			add_location(strong, file$b, 76, 18, 2037);
+    			add_location(h3, file$b, 76, 4, 2023);
+    			add_location(main, file$b, 75, 0, 2012);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13565,7 +13564,7 @@ var app = (function () {
     			main = element("main");
     			h1 = element("h1");
     			h1.textContent = "¡La pagina no existe!";
-    			add_location(h1, file$f, 1, 4, 12);
+    			add_location(h1, file$f, 1, 4, 11);
     			add_location(main, file$f, 0, 0, 0);
     		},
     		l: function claim(nodes) {
