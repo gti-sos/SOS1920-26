@@ -200,15 +200,15 @@
 		Loading coef...
 	{:then coef}
 
-	<FormGroup> 
-		<Label for="selectTeam"> Búsqueda por equipo </Label>
-		<Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
-			{#each teams as team}
-			<option>{team}</option>
-			{/each}
-			<option>-</option>
-		</Input>
-	</FormGroup>
+		<FormGroup> 
+			<Label for="selectTeam"> Búsqueda por equipo </Label>
+			<Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
+				{#each teams as team}
+				<option>{team}</option>
+				{/each}
+				<option>-</option>
+			</Input>
+		</FormGroup>
 				
 		<FormGroup>
 			<Label for="selectYear"> Año </Label>
