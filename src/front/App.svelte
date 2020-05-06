@@ -20,8 +20,10 @@
 		"/": Home,
 		"/global-coef/:team/:year": EditCoef,
 		"/globalCoefAPI":globalCoef,
+
 		"/global-transfers/:year/:team": EditTransfer,
 		"/globaltransfersAPI":globalTransfers,
+		
 		"/goalscorersAPI":goalscorers,  
 		"*": NotFound
 	};
