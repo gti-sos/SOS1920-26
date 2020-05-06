@@ -42,7 +42,17 @@
 	onMount(getTeamsYears);
 
 
+	async function ReloadTable() {
+		const res = await fetch("/api/v1/global-coef/loadInitialData")
 
+		if (res.ok) {
+			const initialTransfers = await res.json();
+			console.log("Contados "+ initialTransfers.length +" datos de coef")
+			getTransfers();
+		}else{
+			console.log("No se han cargado los datos inicales")
+		}
+	}
 
 
 //Funcion que devuelve array con los equipos y años
@@ -70,6 +80,7 @@
 		}
 	}
 
+
 	
 
 
@@ -88,15 +99,15 @@
 				moreData=false
 			} else{
 
-						const next = await fetch("/api/v1/global-coef?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
-						console.log("La variable NEXT tiene el estado: " + next.status)
-						const jsonNext = await next.json();
+					const next = await fetch("/api/v1/global-coef?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
+					console.log("La variable NEXT tiene el estado: " + next.status)
+					const jsonNext = await next.json();
 						
 						
 						
-						if (jsonNext.length == 0 || next.status==404) {  
-							moreData = false;
-						} 
+					if (jsonNext.length == 0 || next.status==404) {  
+						moreData = false;
+					} 
 						else {
 							moreData = true;  
 						}
@@ -126,7 +137,14 @@
 						"Content-Type": "application/json"
 					}
 				}).then(function (res) {
-					getCoef();
+					if (res.ok) {
+						getCoef();
+						insertAlert();
+
+				} else {
+					errorAlert("Error interno al intentar insertar un elemento");
+				}
+				
 				});
 			}
 	}
@@ -191,6 +209,76 @@
 	}
 
 
+	function insertAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-success ";
+		alert_element.innerHTML = "<strong> Dato insertado</strong> Se ha insertado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+	
+	function deleteAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Dato borrado</strong> Se ha borrado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	function deleteAllAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Datos borrados</strong> Se han borrado todos los datos correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	
+	function ReloadTableAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-info ";
+		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han restaurado los datos";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+
+	function errorAlert(error) {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Error</strong> Ha ocurrido un error " + error;
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	function clearAlert () {
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "display: none; ";
+		alert_element.className = "alert alert-dismissible in";
+		alert_element.innerHTML = "";
+	}
+
+
 
 </script>
 
@@ -221,7 +309,7 @@
 		</FormGroup>
 
 		<Button outline color="secondary" on:click="{search(currentTeam, currentYear)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		
+
 
 		<Table bordered > 
 			<thead>
@@ -295,5 +383,7 @@
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 	<Button outline on:click={deleteGlobalCoef} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-sync-alt"></i> Restaurar API </Button>
+
 
 </main>

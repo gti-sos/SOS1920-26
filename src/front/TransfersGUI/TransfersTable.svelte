@@ -48,7 +48,11 @@
 
 		if (res.ok) {
 			const initialTransfers = await res.json();
+<<<<<<< HEAD
 			console.log("Contados "+ initialTransfers.length +" datos de transferencias de fichajes")
+=======
+			console.log("Contados "+ initialTransfers.length +" datos de transfers")
+>>>>>>> 10404e62ff2ff641e0f3db946b6c01243044e7ce
 			getTransfers();
 		}else{
 			console.log("No se han cargado correctamente los datos inicales")
