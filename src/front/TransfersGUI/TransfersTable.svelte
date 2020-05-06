@@ -48,11 +48,7 @@
 
 		if (res.ok) {
 			const initialTransfers = await res.json();
-<<<<<<< HEAD
 			console.log("Contados "+ initialTransfers.length +" datos de transferencias de fichajes")
-=======
-			console.log("Contados "+ initialTransfers.length +" datos de transfers")
->>>>>>> 10404e62ff2ff641e0f3db946b6c01243044e7ce
 			getTransfers();
 		}else{
 			console.log("No se han cargado correctamente los datos inicales")
@@ -250,7 +246,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-info ";
-		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han restaurado los datos";
+		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han cargado los datos iniciales";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -309,7 +305,7 @@
 		</FormGroup>
 
 		<Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-search"></i> Restaurar API </Button>
+		<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-search"></i> Carga Inicial API </Button>
 
 
 		<Table bordered>
