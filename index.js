@@ -31,7 +31,7 @@ app.use("/", express.static("./public"));
 
 
 app.listen(port, () => {
-	console.log("Server ready");
+	console.log("Server ready on:" + port);
 });
 
 console.log("Starting server...");
