@@ -68,10 +68,13 @@
                 "Content-Type": "application/json"
             }
         }).then(function (res) {
-            getTransfer();
-            /*if (response.ok) {
-            window.location.href = "#/globaltransfersAPI";
-            }*/
+            if (res.ok) {
+                getTransfer();
+            } else if (res.status == 404) {
+                    errorAlert("Se ha intentado borrar un elemento inexistente.");
+                } else {
+                    errorAlert("");
+                }
         });
     }
 

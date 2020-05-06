@@ -28,7 +28,7 @@
     async function getCoef() {
 
         console.log("Fetching coef...");
-        const res = await fetch("/api/v1/global-coef/" + params.country +"/"+params.year);
+        const res = await fetch("/api/v1/global-coef/" + params.team +"/"+params.year);
         
         if (res.ok) {
             console.log("Ok:");
@@ -40,24 +40,24 @@
             updatedCoefficient=coef.coefficient;
             updatedFed=coef.fed;
             updatedClassification=coef.classification;
-            console.log("Received coef.");
+            console.log("Received coef");
         } else {
             errorMsg = res.status + ": " + res.statusText;
-            console.log("ERROR!" + errorMsg);
+            console.log("ERROR" + errorMsg);
         }
     }
 
 
     async function updateCoef() {
 
-        console.log("Updating coef..." + JSON.stringify(params.country));
+        console.log("Updating coef..." + JSON.stringify(params.team));
 
-        const res = await fetch("/api/v1/global-coef/" + params.country +"/"+params.year, {
+        const res = await fetch("/api/v1/global-coef/" + params.team +"/"+params.year, {
             method: "PUT",
             body: JSON.stringify({
-                country: params.country,
+                country: updatedCountry,
                 year: parseInt(params.year),
-                team: updatedTeam,
+                team: params.team,
                 coefficient: updatedCoefficient,
                 fed: updatedFed,
                 classification: updatedClassification
@@ -113,7 +113,7 @@
 <main>
     <div role="alert" id="div_alert" style="display: none;"></div>
 
-    <h3>Editar coef <strong>{params.country}</strong></h3>
+    <h3>Editar Coef <strong>{params.team}</strong></h3>
     {#await coef}
         Loading coef...
     {:then coef}
@@ -131,9 +131,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{updatedCountry}</td>
+                    <td><input bind:value="{updatedCountry}"></td>
                     <td>{updatedYear}</td>
-                    <td><input type="number" bind:value="{updatedTeam}"></td>
+                    <td>{updatedTeam}</td>
                     <td><input type="number" bind:value="{updatedCoefficient}"></td>
                     <td><input type="number" bind:value="{updatedFed}"></td>
                     <td><input type="number" bind:value="{updatedClassification}"></td>
@@ -145,5 +145,5 @@
     {#if errorMsg}
         <p style="color: red">ERROR: {errorMsg}</p>
     {/if}
-    <Button outline color="secondary" on:click="{pop}">Atras</Button>
+    <Button outline color="secondary" on:click="{pop}">Atrás</Button>
 </main>
