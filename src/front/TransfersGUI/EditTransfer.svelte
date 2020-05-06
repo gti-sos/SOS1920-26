@@ -44,7 +44,7 @@
             console.log("Received transfer");
         } else {
             errorMsg = res.status + ": " + res.statusText;
-            console.log("ERROR!" + errorMsg);
+            console.log("Error" + errorMsg);
         }
     }
 

@@ -74,7 +74,7 @@
 			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
 
 		} else {
-			console.log("ERROR!");
+			console.log("Error");
 		}
 	}
 
@@ -111,7 +111,7 @@
 					}
 		} 
 		else {
-			console.log("ERROR!");
+			console.log("Error");
 		}
 	}
 
@@ -139,7 +139,7 @@
 						insertAlert();
 
 				} else {
-					errorAlert("Error interno al intentar insertar un elemento");
+					errorAlert("Error al intentar insertar elemento");
 				}
 				
 				
@@ -154,8 +154,15 @@
 		const res = await fetch("/api/v1/global-transfers/" + year+"/"+team, {
 			method: "DELETE"
 		}).then(function (res) {
+			if (res.ok){
 			getTransfers();
 			getYearsTeams();
+			errorResponse(res)
+			} else if (res.status == 404) {
+				errorAlert("El elemento que intentas borrar no existe");
+			} else {
+				errorAlert("Error al intentar borrar un elemento");
+			}
 		});
 	}
 
@@ -164,8 +171,14 @@
 		const res = await fetch("/api/v1/global-transfers/", {
 			method: "DELETE"
 		}).then(function (res) {
+			if (res.ok){
 			getTransfers();
 			getYearsTeams();
+			const json =  res.json();
+			coef = json;
+		} else{
+			errorAlert("Error al borrar todos los elementos")
+		}
 		});
 	}
 
@@ -193,7 +206,7 @@
 
 			console.log("Found " + transfers.length + " global transfers stats.");
 		} else {
-			console.log("ERROR!");
+			console.log("Error");
 		}
 		
 	}
@@ -273,6 +286,30 @@
 		alert_element.innerHTML = "";
 	}
 
+	function errorResponse(res) {
+	var status = res.status
+	switch (status) {
+		case 400:
+			alert("Código de error: " + status + '\n'+ "Error de prueba");
+			break;
+		case 401:
+			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		case 404:
+			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		case 405:
+			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		case 405:
+			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		default:
+			alert("Código de error: "+ status +'\n'+ "Error de desconocido")
+			break;
+	}
+}
+
 
 
 </script>
@@ -305,7 +342,8 @@
 		</FormGroup>
 
 		<Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-search"></i> Carga Inicial API </Button>
+		<Button color="success" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fa fa-refresh" aria-hidden="true"></i> Carga Inicial API </Button>
+		
 
 
 		<Table bordered>
@@ -330,6 +368,7 @@
 					<td><input type="number" bind:value="{newTransfer.sale}"></td>
 					<td><input type="number" bind:value="{newTransfer.balance}"></td>
 					<td> <Button outline  color="primary" on:click={insertTransfer}> <i class="fa fa-plus-circle" aria-hidden="true"></i> Insertar</Button> </td>
+					
 				</tr>
 				{#each transfers as transfer}
 					<tr>
