@@ -9,6 +9,8 @@
 	import globalTransfers from './TransfersGUI/App.svelte'; 
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
 
+	import goalscorers from './GoalscorersGUI/App.svelte';
+
 	import NotFound from './NotFound.svelte';
 
 	
@@ -16,10 +18,11 @@
 
 	const routes = {
 		"/": Home,
-		"/global-coef/:country/:year": EditCoef,
+		"/global-coef/:team/:year": EditCoef,
 		"/globalCoefAPI":globalCoef,
 		"/global-transfers/:year/:team": EditTransfer,
-		"/globaltransfersAPI":globalTransfers,  
+		"/globaltransfersAPI":globalTransfers,
+		"/goalscorersAPI":goalscorers,  
 		"*": NotFound
 	};
 

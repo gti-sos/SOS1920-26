@@ -22,8 +22,8 @@ transfersAPI(app);
 //----------------------------------transfers//
 
 //----------------------------------goalscorers
-const goalscorersAPI = require(path.join(__dirname, "goalscorersAPI"));
-const dbGoalscorers = path.join(__dirname,"goalscorersAPI/goalscorers.db");
+const goalscorersAPI = require(path.join(__dirname, "./src/back/goalscorersAPI"));
+const dbGoalscorers = path.join(__dirname,"./src/back/goalscorersAPI/goalscorers.db");
 goalscorersAPI(app);
 //----------------------------------goalscorers//
 
