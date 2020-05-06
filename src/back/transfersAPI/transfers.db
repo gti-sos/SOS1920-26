@@ -1,6 +1,6 @@
-{"country":"england","year":2015,"team":"manchester-united","signing":50,"sale":52,"balance":-200.02,"_id":"C78P3ihA9cPyaKWI"}
-{"country":"spain","year":2019,"team":"real-madrid","signing":51,"sale":35,"balance":-236.15,"_id":"VHdiF3Ca4MvwrABJ"}
-{"country":"england","year":2017,"team":"manchester-city","signing":68,"sale":56,"balance":-404.3,"_id":"fSGM03BFrbGLE5MK"}
-{"country":"england","year":2016,"team":"manchester-city","signing":62,"sale":47,"balance":-318.91,"_id":"pXCgNoD3h9Xsl31m"}
-{"country":"spain","year":2018,"team":"fc-barcelona","signing":39,"sale":32,"balance":-137.05,"_id":"udGdzuOxwVwgnBYM"}
-{"country":"italy","year":2019,"team":"juventus","signing":72,"sale":61,"balance":-174.55,"_id":"zznUtfi2bwhPduuo"}
+{"country":"england","year":2017,"team":"manchester-city","signing":68,"sale":56,"balance":-404.3,"_id":"2N2DWRwJj4ye9eLz"}
+{"country":"spain","year":2019,"team":"real-madrid","signing":51,"sale":35,"balance":-236.15,"_id":"MAanPhPwdeGziPh3"}
+{"country":"england","year":2016,"team":"manchester-city","signing":62,"sale":47,"balance":-318.91,"_id":"YEfm3XBlIE2gPNtA"}
+{"country":"england","year":2015,"team":"manchester-united","signing":50,"sale":52,"balance":-200.02,"_id":"hUFTiD7BUWl06WAd"}
+{"country":"spain","year":2018,"team":"fc-barcelona","signing":39,"sale":32,"balance":-137.05,"_id":"x25MUCZHc1M2eZdY"}
+{"country":"italy","year":2019,"team":"juventus","signing":72,"sale":61,"balance":-174.55,"_id":"xiot4ZCqTwPFBxpT"}

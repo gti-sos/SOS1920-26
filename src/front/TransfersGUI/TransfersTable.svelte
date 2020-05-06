@@ -48,7 +48,7 @@
 
 		if (res.ok) {
 			const initialTransfers = await res.json();
-			console.log("Contados "+ initialTransfers.length +" datos de matrimonios")
+			console.log("Contados "+ initialTransfers.length +" datos de transferencias de fichajes")
 			getTransfers();
 		}else{
 			console.log("No se han cargado correctamente los datos inicales")
