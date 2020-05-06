@@ -4,8 +4,8 @@
 	} from "svelte";
 
 	import {
-        pop
-    } from "svelte-spa-router";
+		pop
+	} from "svelte-spa-router";
 
 	import Table from "sveltestrap/src/Table.svelte";
 	import Button from "sveltestrap/src/Button.svelte";
@@ -21,150 +21,137 @@
 	let newGoalscorer = {
 		name: "",
 		country: "",
-		debut: parseInt("") ,
+		debut: parseInt(""),
 		goals: "",
 		matches: "",
 		teams: ""
 	};
 
 
-	let years = [];
+	let debutYears = [];
 	let teams = [];
 	let currentYear = "-";
 	let currentTeam = "-";
 
 	let numberElementsPages = 10;
 	let offset = 0;
-	let currentPage = 1; 
-	let moreData = true; 
+	let currentPage = 1;
+	let moreData = true;
 
-	onMount(getTransfers);
-	onMount(getYearsTeams);
-
+	onMount(getGoalscorers);
 
 
-
-
-//Funcion que devuelve array con los años y los paises existentes para poder hacer un select y usarlo para buscar
-	async function getYearsTeams() {
-		const res = await fetch("/api/v1/global-transfers"); //Recogemos los datos de /api/v1/global-marriages
+	async function ReloadTable() {
+		const res = await fetch("/api/v1/goalscorers/loadInitialData")
 
 		if (res.ok) {
-			const json = await res.json();
-			
-			years = json.map((d) => {   
-					return d.year;    //Guardamos los años en un array
-			});
-			years = Array.from(new Set(years));      //Eliminamos años repetidos
-
-			teams = json.map((d) => {
-					return d.team;            //Guardamos los equipos 
-			});
-			teams = Array.from(new Set(teams));   //Eliminamos los duplicados
-
-			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
-
+			const initialGoalscorers = await res.json();
+			console.log("Contados " + initialGoalscorers.length + " datos de goleadores.")
+			getGoalscorers();
 		} else {
-			console.log("ERROR!");
+			console.log("No se han cargado correctamente los datos inicales")
 		}
 	}
 
-	
+	async function getGoalscorers() {
 
-
-	async function getTransfers() {
-
-		console.log("Fetching transfers...");
-		const res = await fetch("/api/v1/global-transfers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
+		console.log("Fetching goalscorers...");
+		const res = await fetch("/api/v1/goalscorers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages);
 
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
-			transfers = json;
-			console.log("Received " + transfers.length + " transfers.");
+			goalscorers = json;
+			console.log("Received " + goalscorers.length + " goalscorers.");
 
-			if (transfers.length!=10){
-				moreData=false
-			} else{
+			if (goalscorers.length != 10) {
+				moreData = false
+			} else {
 
-						const next = await fetch("/api/v1/global-transfers?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
-						console.log("La variable NEXT tiene el estado: " + next.status)
-						const jsonNext = await next.json();
-						
-						
-						
-						if (jsonNext.length == 0 || next.status==404) {  
-							moreData = false;
-						} 
-						else {
-							moreData = true;  //Vemos si quedan aun mas datos en la siguiente pagina
-						}
-					}
-		} 
+				const next = await fetch("/api/v1/goalscorers?offset=" + numberElementsPages * (offset + 1) + "&limit=" + numberElementsPages);
+				console.log("La variable NEXT tiene el estado: " + next.status)
+				const jsonNext = await next.json();
+
+				if (jsonNext.length == 0 || next.status == 404) {
+					moreData = false;
+				}
+				else {
+					moreData = true;
+				}
+			}
+		}
 		else {
 			console.log("ERROR!");
 		}
 	}
 
-	async function insertTransfer() {
+	async function insertGoalscorer() {
 
-		console.log("Inserting transfer..." + JSON.stringify(newTransfer));
+		console.log("Inserting goalscorer..." + JSON.stringify(newGoalscorer));
 
-		if (newTransfer.year == ""
-			|| newTransfer.year == null
-			|| newTransfer.team == "" 
-			|| newTransfer.team == null) {
-			
-			alert("Se debe incluir el año y el equipo vinculante obligatoriamente");
+		if (newGoalscorer.debut == ""
+			|| newGoalscorer.debut == null
+			|| newGoalscorer.name == ""
+			|| newGoalscorer.name == null
+			|| newGoalscorer.goals == null
+			|| newGoalscorer.goals == "") {
+
+			alert("Se debe incluir el nombre, el año de debut y los goles del goleador obligatoriamente");
 
 		} else {
-				const res = await fetch("/api/v1/global-transfers", {
-					method: "POST",
-					body: JSON.stringify(newTransfer),
-					headers: {
-						"Content-Type": "application/json"
-					}
-				}).then(function (res) {
+			const res = await fetch("/api/v1/goalscorers", {
+				method: "POST",
+				body: JSON.stringify(newGoalscorer),
+				headers: {
+					"Content-Type": "application/json"
+				}
+			}).then(function (res) {
+				if (res.ok) {
 					getTransfers();
-				});
-				
-			}
+					insertAlert();
+
+				} else {
+					errorAlert("Error interno al intentar insertar un goleador");
+				}
+
+
+			});
+
+		}
 	}
 
 
-	async function deleteTransfer(year, team) {
-		console.log("Deleting transfer..." + JSON.stringify(year)+ + JSON.stringify(team) );
+	async function deleteGoalscorer(name) {
+		console.log("Deleting goalscorer..." + JSON.stringify(name));
 
-		const res = await fetch("/api/v1/global-transfers/" + year+"/"+team, {
+		const res = await fetch("/api/v1/goalscorers/" + name, {
 			method: "DELETE"
 		}).then(function (res) {
-			getTransfers();
-			getYearsTeams();
+			getGoalscorers();
 		});
 	}
 
-	async function deleteGlobalTransfers() {
-		console.log("Deleting all transfers data...");
-		const res = await fetch("/api/v1/global-transfers/", {
+	async function deleteGoalscorers() {
+		console.log("Deleting all goalscorers data...");
+		const res = await fetch("/api/v1/goalscorers/", {
 			method: "DELETE"
 		}).then(function (res) {
-			getTransfers();
-			getYearsTeams();
+			getGoalscorers();
 		});
 	}
 
 
-	async function search(year, team) {
-		console.log("Searching data: " + year + " and " + team);
+	async function search(name) {
+		console.log("Searching data: " + debut + " and " + team);
 
 		/* Checking if the fields are empty */
-		var url = "/api/v1/global-transfers";
+		var url = "/api/v1/goalscorers";
 
-		if (year != "-" && team != "-") {
-			url = url + "?year=" + year + "&team=" + team; 
-		} else if (year != "-" && team == "-") {
-			url = url + "?year=" + year;
-		} else if (year == "-" && team != "-") {
+		if (debut != "-" && team != "-") {
+			url = url + "?debut=" + debut + "&team=" + team;
+		} else if (debut != "-" && team == "-") {
+			url = url + "?debut=" + debut;
+		} else if (debut == "-" && team != "-") {
 			url = url + "?team=" + team;
 		}
 
@@ -173,36 +160,103 @@
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
-			transfers = json;			
+			goalscorers = json;
 
-			console.log("Found " + transfers.length + " global transfers stats.");
+			console.log("Found " + goalscorers.length + " goalscorers stats.");
 		} else {
 			console.log("ERROR!");
 		}
-		
+
 	}
 
-	function addOffset (increment) {
+	function addOffset(increment) {
 		offset += increment;
 		currentPage += increment;
-		getTransfers();
+		getGoalscorers();
+	}
+
+	function insertAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-success ";
+		alert_element.innerHTML = "<strong> Dato insertado</strong> Se ha insertado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+	
+	function deleteAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Dato borrado</strong> Se ha borrado el dato correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	function deleteAllAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Datos borrados</strong> Se han borrado todos los datos correctamente";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	
+	function ReloadTableAlert() {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-info ";
+		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han restaurado los datos";
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
 	}
 
 
+	function errorAlert(error) {
+		clearAlert();
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+		alert_element.className = "alert alert-dismissible in alert-danger ";
+		alert_element.innerHTML = "<strong> Error</strong> Ha ocurrido un error " + error;
+		
+		setTimeout(() => {
+			clearAlert();
+		}, 3000);
+	}
+
+	function clearAlert () {
+		var alert_element = document.getElementById("div_alert");
+		alert_element.style = "display: none; ";
+		alert_element.className = "alert alert-dismissible in";
+		alert_element.innerHTML = "";
+	}
 
 </script>
 
 <main>
 
-	{#await transfers}
-		Loading transfers...
-	{:then transfers}
+	{#await goalscorers}
+		Loading goalscorers...
+	{:then goalscorers}
 				
 		<FormGroup>
 			<Label for="selectYear"> Año </Label>
 			<Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
-				{#each years as year}
-				<option>{year}</option>
+				{#each debutYears as debut}
+				<option>{debut}</option>
 				{/each}
 				<option>-</option>
 			</Input>
@@ -219,42 +273,40 @@
 		</FormGroup>
 
 		<Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		
+		<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-search"></i> Restaurar API </Button>
 
 		<Table bordered>
 			<thead>
 				<tr>
-					<th>Pais</th>
-					<th>Año</th>
-					<th>Equipo</th>
-					<th>Fichajes</th>
-					<th>Ventas</th>
-					<th>Balance</th>
-					<th>Actions</th>
+					<th>Nombre</th>
+					<th>País</th>
+					<th>Debut</th>
+					<th>Goles</th>
+					<th>Partidos</th>
+					<th>Equipos</th>
+					<th>Acciones</th>
 
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td><input bind:value="{newTransfer.country}"></td>
-					<td><input type="number" bind:value="{newTransfer.year}"></td>
-					<td><input bind:value="{newTransfer.team}"></td>
-					<td><input type="number" bind:value="{newTransfer.signing}"></td>
-					<td><input type="number" bind:value="{newTransfer.sale}"></td>
-					<td><input type="number" bind:value="{newTransfer.balance}"></td>
-					<td> <Button outline  color="primary" on:click={insertTransfer}>Insertar</Button> </td>
+					<td><input bind:value="{newGoalscorer.name}"></td>
+					<td><input bind:value="{newGoalscorer.country}"></td>
+					<td><input type="number" bind:value="{newGoalscorer.debut}"></td>
+					<td><input type="number" bind:value="{newGoalscorer.goals}"></td>
+					<td><input type="number" bind:value="{newGoalscorer.matches}"></td>
+					<td><input type="number" bind:value="{newGoalscorer.teams}"></td>
+					<td> <Button outline  color="primary" on:click={insertGoalscorer}>Insertar</Button> </td>
 				</tr>
-				{#each transfers as transfer}
+				{#each goalscorers as goalscorer}
 					<tr>
-						<td>{transfer.country}</td>
-						<td>
-							<a href="#/global-transfers/{transfer.year}/{transfer.team}">{transfer.year}</a>
-						</td>
-						<td>{transfer.team}</td>
-						<td>{transfer.signing}</td>
-						<td>{transfer.sale}</td>
-						<td>{transfer.balance}</td>
-						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">Delete</Button></td>
+						<td>{goalscorer.name}</td>
+						<td>{goalscorer.country}</td>
+						<td>{goalscorer.debut}</td>
+						<td>{goalscorer.goals}</td>
+						<td>{goalscorer.matches}</td>
+						<td>{goalscorer.teams}</td>
+						<td><Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}">Delete</Button></td>
 					</tr>
 				{/each}
 			</tbody>
@@ -265,33 +317,33 @@
 
 
 		<PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
-		  <PaginationLink previous href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" />
+		  <PaginationLink previous href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" />
 		</PaginationItem>
 		
 		<!-- If we are not in the first page-->
 		{#if currentPage != 1}
 		<PaginationItem>
-			<PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
+			<PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
 		</PaginationItem>
 		{/if}
 		<PaginationItem active>
-			<PaginationLink href="#/globalTransfersAPI" >{currentPage}</PaginationLink>
+			<PaginationLink href="#/goalscorersAPI" >{currentPage}</PaginationLink>
 		</PaginationItem>
 
 		<!-- If there are more elements-->
 		{#if moreData}
 		<PaginationItem >
-			<PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>
+			<PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>
 		</PaginationItem>
 		{/if}
 
 		<PaginationItem class="{moreData ? '' : 'disabled'}">
-		  <PaginationLink next href="#/globalTransfersAPI" on:click="{() => addOffset(1)}"/>
+		  <PaginationLink next href="#/goalscorersAPI" on:click="{() => addOffset(1)}"/>
 		</PaginationItem>
 
 	</Pagination>
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
-	<Button outline on:click={deleteGlobalTransfers} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline on:click={deleteGoalscorers} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
 
 </main>
