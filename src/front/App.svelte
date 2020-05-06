@@ -16,7 +16,7 @@
 
 	const routes = {
 		"/": Home,
-		"/global-coef/:country/:year": EditCoef,
+		"/global-coef/:team/:year": EditCoef,
 		"/globalCoefAPI":globalCoef,
 		"/global-transfers/:year/:team": EditTransfer,
 		"/globaltransfersAPI":globalTransfers,  

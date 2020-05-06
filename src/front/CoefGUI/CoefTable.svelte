@@ -103,8 +103,6 @@
 					console.log("La variable NEXT tiene el estado: " + next.status)
 					const jsonNext = await next.json();
 						
-						
-						
 					if (jsonNext.length == 0 || next.status==404) {  
 						moreData = false;
 					} 
@@ -251,7 +249,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-info ";
-		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han restaurado los datos";
+		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han cargado los datos iniciales";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -283,6 +281,7 @@
 </script>
 
 <main>
+	<div role="alert" id="div_alert" style="display: none;"></div>
 
 	{#await coef}
 		Loading coef...
@@ -336,7 +335,7 @@
 				</tr>
 				{#each coef as coef}
 					<tr>
-						<td>{coef.team}</td>
+						<td>{coef.country}</td>
 						<td>{coef.year}</td>
 						<td>
 							<a href="#/global-coef/{coef.team}/{coef.year}">{coef.team}</a>
@@ -344,8 +343,8 @@
 						<td>{coef.coefficient}</td>
 						<td>{coef.fed}</td>
 						<td>{coef.classification}</td>
-						<td><Button outline color="danger" on:click="{deleteCoef(coef.team,coef.year)}">Eliminar</Button></td>
-					</tr>
+						<td><Button outline color="danger" on:click="{deleteCoef(coef.team,coef.year)}" on:click={deleteAlert}> Eliminar</Button></td>				
+						</tr>
 				{/each}
 			</tbody>
 		</Table>
@@ -382,8 +381,8 @@
 	</Pagination>
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
-	<Button outline on:click={deleteGlobalCoef} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
-	<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-sync-alt"></i> Restaurar API </Button>
+	<Button outline on:click={deleteGlobalCoef} color="danger" on:click={deleteAllAlert}> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-sync-alt"></i> Carga inicial de API </Button>
 
 
 </main>
