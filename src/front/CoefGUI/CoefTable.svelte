@@ -27,10 +27,10 @@
 		classification:""
 	};
 
-//Usaremos estas variables para la paginacion y para la busqueda
-	let countries = [];
+//Variables para paginacion y busqueda
+	let teams = [];
 	let years = [];
-	let currentCountry = "-";
+	let currentTeam = "-";
 	let currentYear = "-";
 
 	let numberElementsPages = 10;
@@ -39,34 +39,34 @@
 	let moreData = true; 
 
 	onMount(getCoef);
-	onMount(getCountriesYears);
+	onMount(getTeamsYears);
 
 
 
 
 
-//Funcion que devuelve array con los años y los paises existentes para poder hacer un select y usarlo para buscar
-	async function getCountriesYears() {
-		const res = await fetch("/api/v1/global-coef"); //Recogemos los datos de /api/v1/global-coef
+//Funcion que devuelve array con los equipos y años
+	async function getTeamsYears() {
+		const res = await fetch("/api/v1/global-coef");
 
 		if (res.ok) {
 			const json = await res.json();
 
-			countries = json.map((d) => {
-					return d.country;            //Guardamos los paises 
+			teams = json.map((d) => {
+					return d.team;            
 			});
-			countries = Array.from(new Set(countries));   //Eliminamos los duplicados
+			teams = Array.from(new Set(teams));   
 			
 			
 			years = json.map((d) => {   
-					return d.year;    //Guardamos los años en un array
+					return d.year;    
 			});
-			years = Array.from(new Set(years));      //Eliminamos años repetidos
+			years = Array.from(new Set(years));      
 
-			console.log("Contados " + countries.length + "paises y " + years.length + "años distintos.");
+			console.log("Contados " + teams.length + "equipos y " + years.length + "años distintos.");
 
 		} else {
-			console.log("ERROR!");
+			console.log("ERROR");
 		}
 	}
 
@@ -98,12 +98,12 @@
 							moreData = false;
 						} 
 						else {
-							moreData = true;  //Vemos si quedan aun mas datos en la siguiente pagina
+							moreData = true;  
 						}
 					}
 		} 
 		else {
-			console.log("ERROR!");
+			console.log("ERROR");
 		}
 	}
 
@@ -111,12 +111,12 @@
 
 		console.log("Inserting coef..." + JSON.stringify(newCoef));
 
-		if (newCoef.country == ""
-			|| newCoef.country == null
+		if (newCoef.team == ""
+			|| newCoef.team == null
 			|| newCoef.year == "" 
 			|| newCoef.year == null) {
 			
-			alert("Se debe incluir el nombre del país y el año obligatoriamente");
+			alert("Se debe incluir el nombre del equipo y año obligatoriamente");
 
 		} else {
 				const res = await fetch("/api/v1/global-coef", {
@@ -132,41 +132,41 @@
 	}
 
 
-	//Borramos un pais en un año concreto
-	async function deleteCoef(country,year) {
-		console.log("Deleting coef..." + JSON.stringify(country)+ + JSON.stringify(year) );
+//Borrar un equipo en un año 
+	async function deleteCoef(team,year) {
+		console.log("Deleting coef..." + JSON.stringify(team)+ + JSON.stringify(year) );
 
-		const res = await fetch("/api/v1/global-coef/" + country+"/"+year, {
+		const res = await fetch("/api/v1/global-coef/" + team+"/"+year, {
 			method: "DELETE"
 		}).then(function (res) {
 			getCoef();
-			getCountriesYears();
+			getTeamsYears();
 		});
 	}
 
-	//Borramos todos los paises
+//Borrar todos los equipos
 	async function deleteGlobalCoef() {
 		console.log("Deleting all coef data...");
 		const res = await fetch("/api/v1/global-coef/", {
 			method: "DELETE"
 		}).then(function (res) {
 			getCoef();
-			getCountriesYears();
+			getTeamsYears();
 		});
 	}
 
 
-	async function search(country, year) {
-		console.log("Searching data: " + country + " and " + year);
+	async function search(team, year) {
+		console.log("Searching data: " + team + " and " + year);
 
-		/* Checking if the fields are empty */
+		
 		var url = "/api/v1/global-coef";
 
-		if (country != "-" && year != "-") {
-			url = url + "?country=" + country + "&year=" + year; 
-		} else if (country != "-" && year == "-") {
-			url = url + "?country=" + country;
-		} else if (country == "-" && year != "-") {
+		if (team != "-" && year != "-") {
+			url = url + "?team=" + team + "&year=" + year; 
+		} else if (team != "-" && year == "-") {
+			url = url + "?team=" + team;
+		} else if (team == "-" && year != "-") {
 			url = url + "?year=" + year;
 		}
 
@@ -179,7 +179,7 @@
 
 			console.log("Found " + coef.length + " global coef stats.");
 		} else {
-			console.log("ERROR!");
+			console.log("ERROR");
 		}
 		
 	}
@@ -201,10 +201,10 @@
 	{:then coef}
 
 		<FormGroup> 
-			<Label for="selectCountry"> Búsqueda por país </Label>
-			<Input type="select" name="selectCountry" id="selectCountry" bind:value="{currentCountry}">
-				{#each countries as country}
-				<option>{country}</option>
+			<Label for="selectTeam"> Búsqueda por equipo </Label>
+			<Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
+				{#each teams as team}
+				<option>{team}</option>
 				{/each}
 				<option>-</option>
 			</Input>
@@ -220,19 +220,19 @@
 			</Input>
 		</FormGroup>
 
-		<Button outline color="secondary" on:click="{search(currentCountry, currentYear)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
+		<Button outline color="secondary" on:click="{search(currentTeam, currentYear)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
 		
 
-		<Table bordered>
+		<Table bordered > 
 			<thead>
 				<tr>
-					<th>Pais</th>
+					<th>País</th>
 					<th>Año</th>
 					<th>Equipo</th>
 					<th>Coeficiente</th>
 					<th>Fed</th>
 					<th>Clasificación</th>
-					<th>Actions</th>
+					<th>Acciones</th>
 
 				</tr>
 			</thead>
@@ -248,15 +248,15 @@
 				</tr>
 				{#each coef as coef}
 					<tr>
-						<td>
-							<a href="#/global-coef/{coef.country}/{coef.year}">{coef.country}</a>
-						</td>
-						<td>{coef.year}</td>
 						<td>{coef.team}</td>
+						<td>{coef.year}</td>
+						<td>
+							<a href="#/global-coef/{coef.team}/{coef.year}">{coef.team}</a>
+						</td>
 						<td>{coef.coefficient}</td>
 						<td>{coef.fed}</td>
 						<td>{coef.classification}</td>
-						<td><Button outline color="danger" on:click="{deleteCoef(coef.country,coef.year)}">Delete</Button></td>
+						<td><Button outline color="danger" on:click="{deleteCoef(coef.team,coef.year)}">Eliminar</Button></td>
 					</tr>
 				{/each}
 			</tbody>
@@ -270,7 +270,7 @@
 		  <PaginationLink previous href="#/globalCoefAPI" on:click="{() => addOffset(-1)}" />
 		</PaginationItem>
 		
-		<!-- If we are not in the first page-->
+		
 		{#if currentPage != 1}
 		<PaginationItem>
 			<PaginationLink href="#/globalCoefAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
@@ -280,7 +280,7 @@
 			<PaginationLink href="#/globalCoefAPI" >{currentPage}</PaginationLink>
 		</PaginationItem>
 
-		<!-- If there are more elements-->
+		
 		{#if moreData}
 		<PaginationItem >
 			<PaginationLink href="#/globalCoefAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>
