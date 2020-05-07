@@ -30,7 +30,7 @@
 	let BASE_API_URL = "/api/v2";
 	let teams = [];
 	let names = [];
-	let currentName = "-";
+	let currentName = "--Mostrar todos--";
 
 	let numberElementsPages = 10;
 	let offset = 0;
@@ -179,7 +179,7 @@
 
 		var url = BASE_API_URL + "/goalscorers";
 
-		if (name != "-") {
+		if (name != "--Mostrar todos--") {
 			url = url + "?name=" + name;
 		}
 
@@ -282,16 +282,16 @@
 	
 	<FormGroup>
 		<Label for="selectName"> Jugador que desea buscar </Label>
-		<Input type="select"  name="selectName" id="selectName" bind:value="{currentName}">
+		<Input type="select" name="selectName" onchange="{search(currentName)}" id="selectName" bind:value="{currentName}">
 			{#each names as name}
 			<option>{name}</option>
 			{/each}
-			<option>-</option>
+			<option>--Mostrar todos--</option>
 		</Input>
 	</FormGroup>
 
 
-		<Button outline color="secondary" on:click="{search(currentName)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
+	<!--	<Button outline color="secondary" on:click="{search(currentName)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button> -->
 		<Button outline color="primary" on:click="{ReloadTable}"> <i class="fa fa-refresh"></i> Cargar datos iniciales </Button>
 		<Table bordered>
 			<thead>
