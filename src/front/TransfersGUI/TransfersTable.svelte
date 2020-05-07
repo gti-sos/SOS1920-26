@@ -139,11 +139,7 @@
 						insertAlert();
 
 				} else {
-<<<<<<< HEAD
 					errorAlert("Error interno al intentar insertar el elemento");
-=======
-					errorAlert("Error al intentar insertar elemento");
->>>>>>> 3689c7252e8a6908fe5f3196f2b24b2f0a3404ba
 				}
 				
 				
@@ -161,7 +157,8 @@
 			if (res.ok){
 			getTransfers();
 			getYearsTeams();
-			errorResponse(res)
+			deleteAlert();
+			
 			} else if (res.status == 404) {
 				errorAlert("El elemento que intentas borrar no existe");
 			} else {
@@ -178,6 +175,7 @@
 			if (res.ok){
 			getTransfers();
 			getYearsTeams();
+			deleteAllAlert();
 		} else{
 			errorAlert("Error al borrar todos los elementos")
 		}
@@ -380,7 +378,7 @@
 						<td>{transfer.signing}</td>
 						<td>{transfer.sale}</td>
 						<td>{transfer.balance}</td>
-						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}" on:click={deleteAlert}> <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</Button></td>
+						<td><Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}"> <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</Button></td>
 						<td><Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}"> <i class="fa fa-edit" aria-hidden="true"></i> Editar</Button></td>
 						
 					</tr>
@@ -418,6 +416,6 @@
 	</Pagination>
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
-	<Button outline on:click={deleteGlobalTransfers} color="danger" on:click={deleteAllAlert}> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline on:click={deleteGlobalTransfers} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
 
 </main>
