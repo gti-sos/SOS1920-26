@@ -27,9 +27,9 @@
 		teams: ""
 	};
 
-
 	let debutYears = [];
 	let teams = [];
+	let totalGoals = [];
 	let currentYear = "-";
 	let currentTeam = "-";
 
@@ -40,16 +40,32 @@
 
 	onMount(getGoalscorers);
 
-
 	async function ReloadTable() {
-		const res = await fetch("/api/v1/goalscorers/loadInitialData")
+		const res = await fetch("/api/v1/goalscorers/loadInitialData");
 
 		if (res.ok) {
 			const initialGoalscorers = await res.json();
-			console.log("Contados " + initialGoalscorers.length + " datos de goleadores.")
+			console.log("Contados " + initialGoalscorers.length + " datos de goleadores.");
+			ReloadTableAlert();
 			getGoalscorers();
 		} else {
-			console.log("No se han cargado correctamente los datos inicales")
+			console.log("No se han cargado correctamente los datos iniciales")
+		}
+	}
+
+	async function getGoals(){
+		const res = await fetch("/api/v1/goalscorers"); 
+		if (res.ok) {
+			const json = await res.json();
+			
+			totalGoals = json.map((d) => {   
+					return d.goals;    //Guardamos los años en un array
+			});
+			totalGoals = Array.from(new Set(totalGoals));      //Eliminamos años repetidos
+			console.log("Contados " + totalGoals.length + " goles.");
+
+		} else {
+			console.log("Error");
 		}
 	}
 
@@ -107,7 +123,7 @@
 				}
 			}).then(function (res) {
 				if (res.ok) {
-					getTransfers();
+					getGoalscorers();
 					insertAlert();
 
 				} else {
@@ -127,7 +143,14 @@
 		const res = await fetch("/api/v1/goalscorers/" + name, {
 			method: "DELETE"
 		}).then(function (res) {
-			getGoalscorers();
+			if (res.ok){
+				getGoalscorers();
+				deleteAlert();
+			}else if(res.status==404){
+				errorAlert("El elemento que intentas borrar no existe");
+			}else{
+				errorAlert("Error al intentar borrar un elemento");
+			}
 		});
 	}
 
@@ -136,7 +159,12 @@
 		const res = await fetch("/api/v1/goalscorers/", {
 			method: "DELETE"
 		}).then(function (res) {
+			if(res.ok){
 			getGoalscorers();
+			deleteAllAlert();
+			}else{
+				errorAlert("Error al borrar todos los elementos");
+			}
 		});
 	}
 
@@ -180,7 +208,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-success ";
-		alert_element.innerHTML = "<strong> Dato insertado</strong> Se ha insertado el dato correctamente";
+		alert_element.innerHTML = "<strong> Dato insertado.</strong> Se ha insertado el dato correctamente";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -192,7 +220,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
-		alert_element.innerHTML = "<strong> Dato borrado</strong> Se ha borrado el dato correctamente";
+		alert_element.innerHTML = "<strong> Dato borrado.</strong> Se ha borrado el dato correctamente";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -204,7 +232,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
-		alert_element.innerHTML = "<strong> Datos borrados</strong> Se han borrado todos los datos correctamente";
+		alert_element.innerHTML = "<strong> Datos borrados.</strong> Se han borrado todos los datos correctamente";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -217,7 +245,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-info ";
-		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han restaurado los datos";
+		alert_element.innerHTML = "<strong> Tabla Restaurada.</strong> Se han restaurado los datos";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -230,7 +258,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
-		alert_element.innerHTML = "<strong> Error</strong> Ha ocurrido un error " + error;
+		alert_element.innerHTML = "<strong> Error.</strong> Ha ocurrido un error " + error;
 		
 		setTimeout(() => {
 			clearAlert();
@@ -247,7 +275,7 @@
 </script>
 
 <main>
-
+	<div role="alert" id="div_alert" style="display: none;"></div>
 	{#await goalscorers}
 		Loading goalscorers...
 	{:then goalscorers}
@@ -273,7 +301,7 @@
 		</FormGroup>
 
 		<Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-search"></i> Restaurar API </Button>
+		<Button outline color="primary" on:click="{ReloadTable}"> <i class="fas fa-search"></i> Restaurar API </Button>
 
 		<Table bordered>
 			<thead>
@@ -306,7 +334,8 @@
 						<td>{goalscorer.goals}</td>
 						<td>{goalscorer.matches}</td>
 						<td>{goalscorer.teams}</td>
-						<td><Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}">Delete</Button></td>
+						<td><Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" > <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</Button></td>
+						<td><Button outline color="info" href="#/goalscorers/{goalscorer.name}"> <i class="fa fa-edit" aria-hidden="true"></i> Editar</Button></td>
 					</tr>
 				{/each}
 			</tbody>
@@ -320,7 +349,6 @@
 		  <PaginationLink previous href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" />
 		</PaginationItem>
 		
-		<!-- If we are not in the first page-->
 		{#if currentPage != 1}
 		<PaginationItem>
 			<PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >{currentPage - 1}</PaginationLink>
@@ -330,7 +358,6 @@
 			<PaginationLink href="#/goalscorersAPI" >{currentPage}</PaginationLink>
 		</PaginationItem>
 
-		<!-- If there are more elements-->
 		{#if moreData}
 		<PaginationItem >
 			<PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">{currentPage + 1}</PaginationLink>

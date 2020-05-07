@@ -46,9 +46,9 @@
 		const res = await fetch("/api/v1/global-coef/loadInitialData")
 
 		if (res.ok) {
-			const initialTransfers = await res.json();
-			console.log("Contados "+ initialTransfers.length +" datos de coef")
-			getTransfers();
+			const initialCoef = await res.json();
+			console.log("Contados "+ initialCoef.length +" datos de coef")
+			getCoef();
 		}else{
 			console.log("No se han cargado los datos inicales")
 		}
@@ -149,14 +149,20 @@
 
 
 //Borrar un equipo en un año 
-	async function deleteCoef(team,year) {
+async function deleteCoef(team,year) {
 		console.log("Deleting coef..." + JSON.stringify(team)+ + JSON.stringify(year) );
-
 		const res = await fetch("/api/v1/global-coef/" + team+"/"+year, {
 			method: "DELETE"
 		}).then(function (res) {
+			if (res.ok){
 			getCoef();
 			getTeamsYears();
+			errorResponse(res)
+			} else if (res.status == 404) {
+				errorAlert("Se ha intentado borrar un elemento inexistente.");
+			} else {
+				errorAlert("Error al borrar un elemento");
+			}
 		});
 	}
 
@@ -166,8 +172,12 @@
 		const res = await fetch("/api/v1/global-coef/", {
 			method: "DELETE"
 		}).then(function (res) {
-			getCoef();
-			getTeamsYears();
+			if (res.ok){
+			const json =  res.json();
+			coef = json;
+		} else{
+			errorAlert("Error al borrar todos los elementos")
+		}
 		});
 	}
 
@@ -275,6 +285,30 @@
 		alert_element.className = "alert alert-dismissible in";
 		alert_element.innerHTML = "";
 	}
+
+	function errorResponse(res) {
+	var status = res.status
+	switch (status) {
+		case 400:
+			alert("Codigo de error: " + status + '\n'+ "Error de prueba");
+			break;
+		case 401:
+			alert("Codigo de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		case 404:
+			alert("Codigo de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		case 405:
+			alert("Codigo de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		case 405:
+			alert("Codigo de error: " + status + '\n'+ "Error de prueba 1");
+			break;
+		default:
+			alert("Codigo de error: "+ status +'\n'+ "Error de desconocido")
+			break;
+	}
+}
 
 
 
