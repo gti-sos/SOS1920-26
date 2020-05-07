@@ -137,6 +137,12 @@
 					if (res.ok) {
 						getTransfers();
 						insertAlert();
+						newTransfer.country="";
+						newTransfer.year="";
+						newTransfer.team="";
+						newTransfer.signing="";
+						newTransfer.sale="";
+						newTransfer.balance="";
 
 				} else {
 					errorAlert("Error interno al intentar insertar el elemento");

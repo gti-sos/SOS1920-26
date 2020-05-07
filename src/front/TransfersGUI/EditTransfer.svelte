@@ -72,6 +72,7 @@
         }).then(function (res) {
             if (res.ok) {
                 getTransfer();
+                updateAlert();
             } else if (res.status == 404) {
                     errorAlert("Se ha intentado borrar un elemento inexistente.");
                 } else {
@@ -97,7 +98,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-info ";
-		alert_element.innerHTML = "<strong>Dato actualizado</strong> Se ha actualziado el dato correctamente";
+		alert_element.innerHTML = "<strong>Dato actualizado</strong> Se ha actualizado el dato correctamente";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -114,7 +115,7 @@
 <main>
     <div role="alert" id="div_alert" style="display: none;">
 	</div>
-    <h3>Editar Transfer <strong>{params.year}</strong></h3>
+    <h3>Editar Transfer <strong>{params.team} : {params.year}</strong></h3>
     {#await transfer}
         Cargando transfers...
     {:then transfer}
@@ -138,7 +139,7 @@
                     <td><input type="number" bind:value="{updatedSigning}"></td>
                     <td><input type="number" bind:value="{updatedSale}"></td>
                     <td><input type="number" bind:value="{updatedBalance}"></td>
-                    <td> <Button outline  color="primary" on:click={updateTransfer} on:click={updateAlert}>Actualizar</Button> </td>
+                    <td> <Button outline  color="primary" on:click={updateTransfer}> <i class="fa fa-refresh" aria-hidden="true"></i> Actualizar</Button> </td>
                 </tr>
         </tbody>
         </Table>
@@ -146,5 +147,5 @@
     {#if errorMsg}
         <p style="color: red">ERROR: {errorMsg}</p>
     {/if}
-    <Button outline color="secondary" on:click="{pop}">Atrás</Button>
+    <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás</Button>
 </main>
