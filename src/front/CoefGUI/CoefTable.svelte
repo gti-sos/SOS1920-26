@@ -159,7 +159,9 @@ async function deleteCoef(team,year) {
 			if (res.ok){
 			getCoef();
 			getTeamsYears();
-			errorResponse(res)
+			//errorResponse(res)
+			deleteAlert();
+
 			} else if (res.status == 404) {
 				errorAlert("Se ha intentado borrar un elemento inexistente.");
 			} else {
@@ -288,7 +290,7 @@ async function deleteCoef(team,year) {
 		alert_element.innerHTML = "";
 	}
 
-	function errorResponse(res) {
+	/*function errorResponse(res) {
 	var status = res.status
 	switch (status) {
 		case 400:
@@ -310,7 +312,7 @@ async function deleteCoef(team,year) {
 			alert("Codigo de error: "+ status +'\n'+ "Error de desconocido")
 			break;
 	}
-}
+}*/
 
 
 
