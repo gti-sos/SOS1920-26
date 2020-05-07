@@ -12,9 +12,17 @@
 
 -  **APIs**:
     - [http://sos1920-26.herokuapp.com/api/v1/goalscorers] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
+    - [http://sos1920-26.herokuapp.com/api/v2/goalscorers] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
+
     - [http://sos1920-26.herokuapp.com/api/v1/global-coef] (developed by [Jose García Creus](https://github.com/jgcreus))
-    - [http://sos1920-26.herokuapp.com/api/v1/global-transfers] (developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
+    - [http://sos1920-26.herokuapp.com/api/v2/global-coef] (developed by [Jose García Creus](https://github.com/jgcreus))
+
+    - [http://sos1920-26.herokuapp.com/api/v1/global-transfers] (v1 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
+    - [http://sos1920-26.herokuapp.com/api/v2/global-transfers] (v2 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
+
 -  **Portales de documentación de Postman**:
 	- [https://documenter.getpostman.com/view/10847476/SzYUZgTA] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
 	- [https://documenter.getpostman.com/view/10847476/SzYUa2AE] (developed by [Jose García Creus](https://github.com/jgcreus))
-	- [https://documenter.getpostman.com/view/10637393/SzYUa2Ee] (developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
+
+	- [https://documenter.getpostman.com/view/10637393/SzYUa2Ee] (v1 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
+  - [https://documenter.getpostman.com/view/10637393/Szme3xW3] (v2 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
