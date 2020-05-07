@@ -286,29 +286,6 @@
 		alert_element.innerHTML = "";
 	}
 
-	function errorResponse(res) {
-	var status = res.status
-	switch (status) {
-		case 400:
-			alert("Código de error: " + status + '\n'+ "Error de prueba");
-			break;
-		case 401:
-			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
-			break;
-		case 404:
-			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
-			break;
-		case 405:
-			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
-			break;
-		case 405:
-			alert("Código de error: " + status + '\n'+ "Error de prueba 1");
-			break;
-		default:
-			alert("Código de error: "+ status +'\n'+ "Error de desconocido")
-			break;
-	}
-}
 
 
 
