@@ -9719,8 +9719,8 @@ var app = (function () {
     			create_component(coeftable.$$.fragment);
     			attr_dev(h1, "class", "display-4");
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$a, 5, 1, 73);
-    			add_location(main, file$a, 4, 0, 65);
+    			add_location(h1, file$a, 5, 1, 78);
+    			add_location(main, file$a, 4, 0, 69);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16913,7 +16913,7 @@ var app = (function () {
     			main = element("main");
     			h1 = element("h1");
     			h1.textContent = "Página no encontrada";
-    			add_location(h1, file$h, 1, 4, 11);
+    			add_location(h1, file$h, 1, 4, 12);
     			add_location(main, file$h, 0, 0, 0);
     		},
     		l: function claim(nodes) {
