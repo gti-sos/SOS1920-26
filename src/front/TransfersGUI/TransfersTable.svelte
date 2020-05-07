@@ -1,4 +1,6 @@
 <script>
+		
+
 	import {
 		onMount
 	} from "svelte";
@@ -62,14 +64,14 @@
 			const json = await res.json();
 			
 			years = json.map((d) => {   
-					return d.year;    //Guardamos los años en un array
+					return d.year;    
 			});
-			years = Array.from(new Set(years));      //Eliminamos años repetidos
+			years = Array.from(new Set(years));      
 
 			teams = json.map((d) => {
-					return d.team;            //Guardamos los equipos 
+					return d.team;             
 			});
-			teams = Array.from(new Set(teams));   //Eliminamos los duplicados
+			teams = Array.from(new Set(teams));   
 
 			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
 

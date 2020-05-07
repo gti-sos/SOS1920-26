@@ -10623,7 +10623,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (1:0) <script>   import {    onMount   }
+    // (1:0) <script>         import {    onMount   }
     function create_catch_block$2(ctx) {
     	const block = {
     		c: noop,
@@ -10638,14 +10638,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$2.name,
     		type: "catch",
-    		source: "(1:0) <script>   import {    onMount   }",
+    		source: "(1:0) <script>         import {    onMount   }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (305:1) {:then transfers}
+    // (307:1) {:then transfers}
     function create_then_block$2(ctx) {
     	let t0;
     	let t1;
@@ -10801,14 +10801,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(305:1) {:then transfers}",
+    		source: "(307:1) {:then transfers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (308:3) <Label for="selectYear">
+    // (310:3) <Label for="selectYear">
     function create_default_slot_22(ctx) {
     	let t;
 
@@ -10828,14 +10828,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_22.name,
     		type: "slot",
-    		source: "(308:3) <Label for=\\\"selectYear\\\">",
+    		source: "(310:3) <Label for=\\\"selectYear\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:4) {#each years as year}
+    // (312:4) {#each years as year}
     function create_each_block_2$1(ctx) {
     	let option;
     	let t_value = /*year*/ ctx[37] + "";
@@ -10848,7 +10848,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*year*/ ctx[37];
     			option.value = option.__value;
-    			add_location(option, file$c, 310, 4, 8243);
+    			add_location(option, file$c, 312, 4, 8140);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -10872,14 +10872,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2$1.name,
     		type: "each",
-    		source: "(310:4) {#each years as year}",
+    		source: "(312:4) {#each years as year}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (309:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
+    // (311:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
     function create_default_slot_21$1(ctx) {
     	let t0;
     	let option;
@@ -10902,7 +10902,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$c, 312, 4, 8285);
+    			add_location(option, file$c, 314, 4, 8182);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -10948,14 +10948,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_21$1.name,
     		type: "slot",
-    		source: "(309:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
+    		source: "(311:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:2) <FormGroup>
+    // (309:2) <FormGroup>
     function create_default_slot_20$1(ctx) {
     	let t;
     	let updating_value;
@@ -11045,14 +11045,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_20$1.name,
     		type: "slot",
-    		source: "(307:2) <FormGroup>",
+    		source: "(309:2) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (318:3) <Label for="selectTeam">
+    // (320:3) <Label for="selectTeam">
     function create_default_slot_19$1(ctx) {
     	let t;
 
@@ -11072,14 +11072,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19$1.name,
     		type: "slot",
-    		source: "(318:3) <Label for=\\\"selectTeam\\\">",
+    		source: "(320:3) <Label for=\\\"selectTeam\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (320:4) {#each teams as team}
+    // (322:4) {#each teams as team}
     function create_each_block_1$1(ctx) {
     	let option;
     	let t_value = /*team*/ ctx[34] + "";
@@ -11092,7 +11092,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*team*/ ctx[34];
     			option.value = option.__value;
-    			add_location(option, file$c, 320, 4, 8528);
+    			add_location(option, file$c, 322, 4, 8425);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -11116,14 +11116,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(320:4) {#each teams as team}",
+    		source: "(322:4) {#each teams as team}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (319:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
+    // (321:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
     function create_default_slot_18$1(ctx) {
     	let t0;
     	let option;
@@ -11146,7 +11146,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$c, 322, 4, 8570);
+    			add_location(option, file$c, 324, 4, 8467);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -11192,14 +11192,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18$1.name,
     		type: "slot",
-    		source: "(319:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
+    		source: "(321:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (317:2) <FormGroup>
+    // (319:2) <FormGroup>
     function create_default_slot_17$1(ctx) {
     	let t;
     	let updating_value;
@@ -11289,14 +11289,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17$1.name,
     		type: "slot",
-    		source: "(317:2) <FormGroup>",
+    		source: "(319:2) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (327:2) <Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" >
+    // (329:2) <Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" >
     function create_default_slot_16$1(ctx) {
     	let i;
     	let t;
@@ -11306,7 +11306,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$c, 326, 106, 8727);
+    			add_location(i, file$c, 328, 106, 8624);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11322,14 +11322,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16$1.name,
     		type: "slot",
-    		source: "(327:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentYear, currentTeam)}\\\" class=\\\"button-search\\\" >",
+    		source: "(329:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentYear, currentTeam)}\\\" class=\\\"button-search\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:2) <Button color="success" on:click="{ReloadTable}"  on:click={ReloadTableAlert}>
+    // (330:2) <Button color="success" on:click="{ReloadTable}"  on:click={ReloadTableAlert}>
     function create_default_slot_15$1(ctx) {
     	let i;
     	let t;
@@ -11340,7 +11340,7 @@ var app = (function () {
     			t = text(" Carga Inicial API");
     			attr_dev(i, "class", "fa fa-refresh");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 327, 81, 8856);
+    			add_location(i, file$c, 329, 81, 8753);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11356,14 +11356,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$1.name,
     		type: "slot",
-    		source: "(328:2) <Button color=\\\"success\\\" on:click=\\\"{ReloadTable}\\\"  on:click={ReloadTableAlert}>",
+    		source: "(330:2) <Button color=\\\"success\\\" on:click=\\\"{ReloadTable}\\\"  on:click={ReloadTableAlert}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (353:10) <Button outline  color="primary" on:click={insertTransfer}>
+    // (355:10) <Button outline  color="primary" on:click={insertTransfer}>
     function create_default_slot_14$1(ctx) {
     	let i;
     	let t;
@@ -11374,7 +11374,7 @@ var app = (function () {
     			t = text(" Insertar");
     			attr_dev(i, "class", "fa fa-plus-circle");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 352, 70, 9651);
+    			add_location(i, file$c, 354, 70, 9548);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11390,14 +11390,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$1.name,
     		type: "slot",
-    		source: "(353:10) <Button outline  color=\\\"primary\\\" on:click={insertTransfer}>",
+    		source: "(355:10) <Button outline  color=\\\"primary\\\" on:click={insertTransfer}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (364:10) <Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">
+    // (366:10) <Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">
     function create_default_slot_13$1(ctx) {
     	let i;
     	let t;
@@ -11408,7 +11408,7 @@ var app = (function () {
     			t = text(" Eliminar");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 363, 99, 10093);
+    			add_location(i, file$c, 365, 99, 9990);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11424,14 +11424,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$1.name,
     		type: "slot",
-    		source: "(364:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteTransfer(transfer.year,transfer.team)}\\\">",
+    		source: "(366:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteTransfer(transfer.year,transfer.team)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (365:10) <Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}">
+    // (367:10) <Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}">
     function create_default_slot_12$1(ctx) {
     	let i;
     	let t;
@@ -11442,7 +11442,7 @@ var app = (function () {
     			t = text(" Editar");
     			attr_dev(i, "class", "fa fa-edit");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 364, 98, 10262);
+    			add_location(i, file$c, 366, 98, 10159);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11458,14 +11458,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$1.name,
     		type: "slot",
-    		source: "(365:10) <Button outline color=\\\"info\\\" href=\\\"#/global-transfers/{transfer.year}/{transfer.team}\\\">",
+    		source: "(367:10) <Button outline color=\\\"info\\\" href=\\\"#/global-transfers/{transfer.year}/{transfer.team}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (356:4) {#each transfers as transfer}
+    // (358:4) {#each transfers as transfer}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -11550,15 +11550,15 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$c, 357, 6, 9799);
-    			add_location(td1, file$c, 358, 6, 9834);
-    			add_location(td2, file$c, 359, 6, 9866);
-    			add_location(td3, file$c, 360, 6, 9898);
-    			add_location(td4, file$c, 361, 6, 9933);
-    			add_location(td5, file$c, 362, 6, 9965);
-    			add_location(td6, file$c, 363, 6, 10000);
-    			add_location(td7, file$c, 364, 6, 10170);
-    			add_location(tr, file$c, 356, 5, 9787);
+    			add_location(td0, file$c, 359, 6, 9696);
+    			add_location(td1, file$c, 360, 6, 9731);
+    			add_location(td2, file$c, 361, 6, 9763);
+    			add_location(td3, file$c, 362, 6, 9795);
+    			add_location(td4, file$c, 363, 6, 9830);
+    			add_location(td5, file$c, 364, 6, 9862);
+    			add_location(td6, file$c, 365, 6, 9897);
+    			add_location(td7, file$c, 366, 6, 10067);
+    			add_location(tr, file$c, 358, 5, 9684);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -11634,14 +11634,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(356:4) {#each transfers as transfer}",
+    		source: "(358:4) {#each transfers as transfer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (332:2) <Table bordered>
+    // (334:2) <Table bordered>
     function create_default_slot_11$1(ctx) {
     	let thead;
     	let tr0;
@@ -11760,34 +11760,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$c, 334, 5, 8989);
-    			add_location(th1, file$c, 335, 5, 9009);
-    			add_location(th2, file$c, 336, 5, 9028);
-    			add_location(th3, file$c, 337, 5, 9050);
-    			add_location(th4, file$c, 338, 5, 9074);
-    			add_location(th5, file$c, 339, 5, 9096);
-    			add_location(th6, file$c, 340, 5, 9119);
-    			add_location(tr0, file$c, 333, 4, 8978);
-    			add_location(thead, file$c, 332, 3, 8965);
-    			add_location(input0, file$c, 346, 9, 9195);
-    			add_location(td0, file$c, 346, 5, 9191);
+    			add_location(th0, file$c, 336, 5, 8886);
+    			add_location(th1, file$c, 337, 5, 8906);
+    			add_location(th2, file$c, 338, 5, 8925);
+    			add_location(th3, file$c, 339, 5, 8947);
+    			add_location(th4, file$c, 340, 5, 8971);
+    			add_location(th5, file$c, 341, 5, 8993);
+    			add_location(th6, file$c, 342, 5, 9016);
+    			add_location(tr0, file$c, 335, 4, 8875);
+    			add_location(thead, file$c, 334, 3, 8862);
+    			add_location(input0, file$c, 348, 9, 9092);
+    			add_location(td0, file$c, 348, 5, 9088);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$c, 347, 9, 9253);
-    			add_location(td1, file$c, 347, 5, 9249);
-    			add_location(input2, file$c, 348, 9, 9322);
-    			add_location(td2, file$c, 348, 5, 9318);
+    			add_location(input1, file$c, 349, 9, 9150);
+    			add_location(td1, file$c, 349, 5, 9146);
+    			add_location(input2, file$c, 350, 9, 9219);
+    			add_location(td2, file$c, 350, 5, 9215);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$c, 349, 9, 9377);
-    			add_location(td3, file$c, 349, 5, 9373);
+    			add_location(input3, file$c, 351, 9, 9274);
+    			add_location(td3, file$c, 351, 5, 9270);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$c, 350, 9, 9449);
-    			add_location(td4, file$c, 350, 5, 9445);
+    			add_location(input4, file$c, 352, 9, 9346);
+    			add_location(td4, file$c, 352, 5, 9342);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$c, 351, 9, 9518);
-    			add_location(td5, file$c, 351, 5, 9514);
-    			add_location(td6, file$c, 352, 5, 9586);
-    			add_location(tr1, file$c, 345, 4, 9180);
-    			add_location(tbody, file$c, 344, 3, 9167);
+    			add_location(input5, file$c, 353, 9, 9415);
+    			add_location(td5, file$c, 353, 5, 9411);
+    			add_location(td6, file$c, 354, 5, 9483);
+    			add_location(tr1, file$c, 347, 4, 9077);
+    			add_location(tbody, file$c, 346, 3, 9064);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -11947,14 +11947,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$1.name,
     		type: "slot",
-    		source: "(332:2) <Table bordered>",
+    		source: "(334:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (303:19)     Loading transfers...   {:then transfers}
+    // (305:19)     Loading transfers...   {:then transfers}
     function create_pending_block$2(ctx) {
     	let t;
 
@@ -11977,14 +11977,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(303:19)     Loading transfers...   {:then transfers}",
+    		source: "(305:19)     Loading transfers...   {:then transfers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (376:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
+    // (378:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
     function create_default_slot_10$1(ctx) {
     	let current;
 
@@ -12025,14 +12025,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$1.name,
     		type: "slot",
-    		source: "(376:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
+    		source: "(378:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (380:2) {#if currentPage != 1}
+    // (382:2) {#if currentPage != 1}
     function create_if_block_1$3(ctx) {
     	let current;
 
@@ -12079,14 +12079,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(380:2) {#if currentPage != 1}",
+    		source: "(382:2) {#if currentPage != 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (382:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >
+    // (384:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >
     function create_default_slot_9$1(ctx) {
     	let t_value = /*currentPage*/ ctx[5] - 1 + "";
     	let t;
@@ -12110,14 +12110,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(382:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
+    		source: "(384:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (381:2) <PaginationItem>
+    // (383:2) <PaginationItem>
     function create_default_slot_8$1(ctx) {
     	let current;
 
@@ -12167,14 +12167,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(381:2) <PaginationItem>",
+    		source: "(383:2) <PaginationItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (386:3) <PaginationLink href="#/globalTransfersAPI" >
+    // (388:3) <PaginationLink href="#/globalTransfersAPI" >
     function create_default_slot_7$1(ctx) {
     	let t;
 
@@ -12197,14 +12197,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(386:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" >",
+    		source: "(388:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (385:2) <PaginationItem active>
+    // (387:2) <PaginationItem active>
     function create_default_slot_6$1(ctx) {
     	let current;
 
@@ -12252,14 +12252,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(385:2) <PaginationItem active>",
+    		source: "(387:2) <PaginationItem active>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (389:2) {#if moreData}
+    // (391:2) {#if moreData}
     function create_if_block$8(ctx) {
     	let current;
 
@@ -12306,14 +12306,14 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(389:2) {#if moreData}",
+    		source: "(391:2) {#if moreData}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (391:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">
+    // (393:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">
     function create_default_slot_5$1(ctx) {
     	let t_value = /*currentPage*/ ctx[5] + 1 + "";
     	let t;
@@ -12337,14 +12337,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(391:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
+    		source: "(393:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (390:2) <PaginationItem >
+    // (392:2) <PaginationItem >
     function create_default_slot_4$1(ctx) {
     	let current;
 
@@ -12394,14 +12394,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(390:2) <PaginationItem >",
+    		source: "(392:2) <PaginationItem >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (395:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
+    // (397:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
     function create_default_slot_3$1(ctx) {
     	let current;
 
@@ -12439,14 +12439,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(395:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
+    		source: "(397:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (373:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
+    // (375:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
     function create_default_slot_2$2(ctx) {
     	let t0;
     	let t1;
@@ -12616,14 +12616,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(373:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
+    		source: "(375:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (401:1) <Button outline color="secondary" on:click="{pop}">
+    // (403:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot_1$2(ctx) {
     	let i;
     	let t;
@@ -12633,7 +12633,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$c, 400, 53, 11405);
+    			add_location(i, file$c, 402, 53, 11302);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -12649,14 +12649,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(401:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(403:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (402:1) <Button outline on:click={deleteGlobalTransfers} color="danger">
+    // (404:1) <Button outline on:click={deleteGlobalTransfers} color="danger">
     function create_default_slot$2(ctx) {
     	let i;
     	let t;
@@ -12667,7 +12667,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 401, 66, 11529);
+    			add_location(i, file$c, 403, 66, 11426);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -12683,7 +12683,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(402:1) <Button outline on:click={deleteGlobalTransfers} color=\\\"danger\\\">",
+    		source: "(404:1) <Button outline on:click={deleteGlobalTransfers} color=\\\"danger\\\">",
     		ctx
     	});
 
@@ -12762,8 +12762,8 @@ var app = (function () {
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
-    			add_location(div, file$c, 300, 1, 7929);
-    			add_location(main, file$c, 299, 0, 7920);
+    			add_location(div, file$c, 302, 1, 7826);
+    			add_location(main, file$c, 301, 0, 7817);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12981,16 +12981,16 @@ var app = (function () {
     			const json = await res.json();
 
     			$$invalidate(1, years = json.map(d => {
-    				return d.year; //Guardamos los años en un array
+    				return d.year;
     			}));
 
-    			$$invalidate(1, years = Array.from(new Set(years))); //Eliminamos años repetidos
+    			$$invalidate(1, years = Array.from(new Set(years)));
 
     			$$invalidate(2, teams = json.map(d => {
-    				return d.team; //Guardamos los equipos 
+    				return d.team;
     			}));
 
-    			$$invalidate(2, teams = Array.from(new Set(teams))); //Eliminamos los duplicados
+    			$$invalidate(2, teams = Array.from(new Set(teams)));
     			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
     		} else {
     			console.log("Error");
