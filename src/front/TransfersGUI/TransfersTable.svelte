@@ -139,7 +139,7 @@
 						insertAlert();
 
 				} else {
-					errorAlert("Error interno al intentar insertar un elemento");
+					errorAlert("Error interno al intentar insertar el elemento");
 				}
 				
 				

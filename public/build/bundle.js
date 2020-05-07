@@ -7310,11 +7310,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*team*/ ctx[34];
     			option.value = option.__value;
-<<<<<<< HEAD
-    			add_location(option, file$9, 294, 4, 7320);
-=======
-    			add_location(option, file$9, 293, 4, 7083);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(option, file$9, 293, 4, 7376);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7368,11 +7364,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-<<<<<<< HEAD
-    			add_location(option, file$9, 296, 4, 7362);
-=======
-    			add_location(option, file$9, 295, 4, 7123);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(option, file$9, 295, 4, 7418);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7562,11 +7554,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*year*/ ctx[31];
     			option.value = option.__value;
-<<<<<<< HEAD
-    			add_location(option, file$9, 304, 4, 7593);
-=======
-    			add_location(option, file$9, 303, 4, 7346);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(option, file$9, 303, 4, 7649);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -7620,11 +7608,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-<<<<<<< HEAD
-    			add_location(option, file$9, 306, 4, 7635);
-=======
-    			add_location(option, file$9, 305, 4, 7386);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(option, file$9, 305, 4, 7691);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7784,11 +7768,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar");
     			attr_dev(i, "class", "fas fa-search");
-<<<<<<< HEAD
-    			add_location(i, file$9, 310, 106, 7792);
-=======
-    			add_location(i, file$9, 309, 106, 7539);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(i, file$9, 309, 106, 7848);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -7939,29 +7919,16 @@ var app = (function () {
     			td6 = element("td");
     			create_component(button.$$.fragment);
     			t12 = space();
-<<<<<<< HEAD
-    			add_location(td0, file$9, 338, 6, 8621);
-    			add_location(td1, file$9, 339, 6, 8649);
+    			add_location(td0, file$9, 337, 6, 8677);
+    			add_location(td1, file$9, 338, 6, 8708);
     			attr_dev(a, "href", a_href_value = "#/global-coef/" + /*coef*/ ctx[7].team + "/" + /*coef*/ ctx[7].year);
-    			add_location(a, file$9, 341, 7, 8690);
-    			add_location(td2, file$9, 340, 6, 8677);
-    			add_location(td3, file$9, 343, 6, 8774);
-    			add_location(td4, file$9, 344, 6, 8809);
-    			add_location(td5, file$9, 345, 6, 8836);
-    			add_location(td6, file$9, 346, 6, 8874);
-    			add_location(tr, file$9, 337, 5, 8609);
-=======
-    			add_location(td0, file$9, 337, 6, 8340);
-    			add_location(td1, file$9, 338, 6, 8370);
-    			attr_dev(a, "href", a_href_value = "#/global-coef/" + /*coef*/ ctx[7].team + "/" + /*coef*/ ctx[7].year);
-    			add_location(a, file$9, 340, 7, 8409);
-    			add_location(td2, file$9, 339, 6, 8397);
-    			add_location(td3, file$9, 342, 6, 8491);
-    			add_location(td4, file$9, 343, 6, 8525);
-    			add_location(td5, file$9, 344, 6, 8551);
-    			add_location(td6, file$9, 345, 6, 8588);
-    			add_location(tr, file$9, 336, 5, 8329);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(a, file$9, 340, 7, 8749);
+    			add_location(td2, file$9, 339, 6, 8736);
+    			add_location(td3, file$9, 342, 6, 8833);
+    			add_location(td4, file$9, 343, 6, 8868);
+    			add_location(td5, file$9, 344, 6, 8895);
+    			add_location(td6, file$9, 345, 6, 8933);
+    			add_location(tr, file$9, 336, 5, 8665);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -8155,65 +8122,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-<<<<<<< HEAD
-    			add_location(th0, file$9, 316, 5, 7893);
-    			add_location(th1, file$9, 317, 5, 7913);
-    			add_location(th2, file$9, 318, 5, 7932);
-    			add_location(th3, file$9, 319, 5, 7954);
-    			add_location(th4, file$9, 320, 5, 7981);
-    			add_location(th5, file$9, 321, 5, 8000);
-    			add_location(th6, file$9, 322, 5, 8029);
-    			add_location(tr0, file$9, 315, 4, 7882);
-    			add_location(thead, file$9, 314, 3, 7869);
-    			add_location(input0, file$9, 328, 9, 8105);
-    			add_location(td0, file$9, 328, 5, 8101);
+    			add_location(th0, file$9, 315, 5, 7949);
+    			add_location(th1, file$9, 316, 5, 7969);
+    			add_location(th2, file$9, 317, 5, 7988);
+    			add_location(th3, file$9, 318, 5, 8010);
+    			add_location(th4, file$9, 319, 5, 8037);
+    			add_location(th5, file$9, 320, 5, 8056);
+    			add_location(th6, file$9, 321, 5, 8085);
+    			add_location(tr0, file$9, 314, 4, 7938);
+    			add_location(thead, file$9, 313, 3, 7925);
+    			add_location(input0, file$9, 327, 9, 8161);
+    			add_location(td0, file$9, 327, 5, 8157);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 329, 9, 8159);
-    			add_location(td1, file$9, 329, 5, 8155);
-    			add_location(input2, file$9, 330, 9, 8224);
-    			add_location(td2, file$9, 330, 5, 8220);
+    			add_location(input1, file$9, 328, 9, 8215);
+    			add_location(td1, file$9, 328, 5, 8211);
+    			add_location(input2, file$9, 329, 9, 8280);
+    			add_location(td2, file$9, 329, 5, 8276);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$9, 331, 9, 8275);
-    			add_location(td3, file$9, 331, 5, 8271);
+    			add_location(input3, file$9, 330, 9, 8331);
+    			add_location(td3, file$9, 330, 5, 8327);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$9, 332, 9, 8347);
-    			add_location(td4, file$9, 332, 5, 8343);
+    			add_location(input4, file$9, 331, 9, 8403);
+    			add_location(td4, file$9, 331, 5, 8399);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$9, 333, 9, 8411);
-    			add_location(td5, file$9, 333, 5, 8407);
-    			add_location(td6, file$9, 334, 5, 8482);
-    			add_location(tr1, file$9, 327, 4, 8090);
-    			add_location(tbody, file$9, 326, 3, 8077);
-=======
-    			add_location(th0, file$9, 315, 5, 7634);
-    			add_location(th1, file$9, 316, 5, 7653);
-    			add_location(th2, file$9, 317, 5, 7671);
-    			add_location(th3, file$9, 318, 5, 7692);
-    			add_location(th4, file$9, 319, 5, 7718);
-    			add_location(th5, file$9, 320, 5, 7736);
-    			add_location(th6, file$9, 321, 5, 7764);
-    			add_location(tr0, file$9, 314, 4, 7624);
-    			add_location(thead, file$9, 313, 3, 7612);
-    			add_location(input0, file$9, 327, 9, 7834);
-    			add_location(td0, file$9, 327, 5, 7830);
-    			attr_dev(input1, "type", "number");
-    			add_location(input1, file$9, 328, 9, 7887);
-    			add_location(td1, file$9, 328, 5, 7883);
-    			add_location(input2, file$9, 329, 9, 7951);
-    			add_location(td2, file$9, 329, 5, 7947);
-    			attr_dev(input3, "type", "number");
-    			add_location(input3, file$9, 330, 9, 8001);
-    			add_location(td3, file$9, 330, 5, 7997);
-    			attr_dev(input4, "type", "number");
-    			add_location(input4, file$9, 331, 9, 8072);
-    			add_location(td4, file$9, 331, 5, 8068);
-    			attr_dev(input5, "type", "number");
-    			add_location(input5, file$9, 332, 9, 8135);
-    			add_location(td5, file$9, 332, 5, 8131);
-    			add_location(td6, file$9, 333, 5, 8205);
-    			add_location(tr1, file$9, 326, 4, 7820);
-    			add_location(tbody, file$9, 325, 3, 7808);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(input5, file$9, 332, 9, 8467);
+    			add_location(td5, file$9, 332, 5, 8463);
+    			add_location(td6, file$9, 333, 5, 8538);
+    			add_location(tr1, file$9, 326, 4, 8146);
+    			add_location(tbody, file$9, 325, 3, 8133);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -8380,11 +8316,7 @@ var app = (function () {
     	return block;
     }
 
-<<<<<<< HEAD
-    // (287:14)     Loading coef...   {:then coef}
-=======
-    // (286:14)    Loading coef...  {:then coef}
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    // (286:14)     Loading coef...   {:then coef}
     function create_pending_block(ctx) {
     	let t;
 
@@ -8407,11 +8339,7 @@ var app = (function () {
     		block,
     		id: create_pending_block.name,
     		type: "pending",
-<<<<<<< HEAD
-    		source: "(287:14)     Loading coef...   {:then coef}",
-=======
-    		source: "(286:14)    Loading coef...  {:then coef}",
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    		source: "(286:14)     Loading coef...   {:then coef}",
     		ctx
     	});
 
@@ -9064,11 +8992,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-<<<<<<< HEAD
-    			add_location(i, file$9, 383, 53, 10028);
-=======
-    			add_location(i, file$9, 382, 53, 9734);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(i, file$9, 382, 53, 10116);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9102,11 +9026,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-<<<<<<< HEAD
-    			add_location(i, file$9, 384, 61, 10147);
-=======
-    			add_location(i, file$9, 383, 87, 9878);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(i, file$9, 383, 87, 10261);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9139,11 +9059,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Carga inicial de API");
     			attr_dev(i, "class", "fas fa-sync-alt");
-<<<<<<< HEAD
-    			add_location(i, file$9, 385, 88, 10305);
-=======
-    			add_location(i, file$9, 384, 88, 10035);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(i, file$9, 384, 88, 10419);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9252,15 +9168,11 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t4 = space();
     			create_component(button2.$$.fragment);
-<<<<<<< HEAD
-    			add_location(main, file$9, 284, 0, 7066);
-=======
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
-    			add_location(div, file$9, 283, 1, 6783);
-    			add_location(main, file$9, 282, 0, 6775);
->>>>>>> 9ec51d7ab42dcdfb403d6ee7d8b3fdfc4b3a9565
+    			add_location(div, file$9, 283, 1, 7066);
+    			add_location(main, file$9, 282, 0, 7057);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13102,7 +13014,7 @@ var app = (function () {
     					getTransfers();
     					insertAlert$1();
     				} else {
-    					errorAlert$2("Error interno al intentar insertar un elemento");
+    					errorAlert$2("Error interno al intentar insertar el elemento");
     				}
     			});
     		}
@@ -14228,25 +14140,8 @@ var app = (function () {
     // (1:0) <script>   import {    onMount   }
     function create_catch_block$4(ctx) {
     	const block = {
-<<<<<<< HEAD
     		c: noop,
     		m: noop,
-=======
-    		c: function create() {
-    			main = element("main");
-    			h1 = element("h1");
-    			h1.textContent = "Página no encontrada";
-    			add_location(h1, file$f, 1, 4, 12);
-    			add_location(main, file$f, 0, 0, 0);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, main, anchor);
-    			append_dev(main, h1);
-    		},
->>>>>>> 10404e62ff2ff641e0f3db946b6c01243044e7ce
     		p: noop,
     		i: noop,
     		o: noop,
@@ -14314,7 +14209,7 @@ var app = (function () {
     		});
 
     	button1.$on("click", /*ReloadTable*/ ctx[8]);
-    	button1.$on("click", ReloadTableAlert$1);
+    	button1.$on("click", ReloadTableAlert$2);
 
     	const table = new Table({
     			props: {
@@ -14327,14 +14222,6 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-<<<<<<< HEAD
-    			main = element("main");
-    			create_component(router.$$.fragment);
-    			add_location(main, file$g, 27, 0, 617);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-=======
     			create_component(formgroup0.$$.fragment);
     			t0 = space();
     			create_component(formgroup1.$$.fragment);
@@ -14344,7 +14231,6 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t3 = space();
     			create_component(table.$$.fragment);
->>>>>>> 3d72f132fe5508ddc1d5556e44a9bdcbf99d5daf
     		},
     		m: function mount(target, anchor) {
     			mount_component(formgroup0, target, anchor);
@@ -14437,21 +14323,9 @@ var app = (function () {
     	return block;
     }
 
-<<<<<<< HEAD
-    function instance$h($$self, $$props, $$invalidate) {
-    	const routes = {
-    		"/": Home,
-    		"/global-coef/:team/:year": EditCoef,
-    		"/globalCoefAPI": App,
-    		"/global-transfers/:year/:team": EditTransfer,
-    		"/globaltransfersAPI": App$1,
-    		"*": NotFound
-    	};
-=======
     // (256:3) <Label for="selectYear">
-    function create_default_slot_21$1(ctx) {
+    function create_default_slot_21$2(ctx) {
     	let t;
->>>>>>> 3d72f132fe5508ddc1d5556e44a9bdcbf99d5daf
 
     	const block = {
     		c: function create() {
@@ -14467,7 +14341,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_21$1.name,
+    		id: create_default_slot_21$2.name,
     		type: "slot",
     		source: "(256:3) <Label for=\\\"selectYear\\\">",
     		ctx
@@ -14597,7 +14471,7 @@ var app = (function () {
     	const label = new Label({
     			props: {
     				for: "selectYear",
-    				$$slots: { default: [create_default_slot_21$1] },
+    				$$slots: { default: [create_default_slot_21$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16388,8 +16262,8 @@ var app = (function () {
     	return block;
     }
 
-    function insertAlert$1() {
-    	clearAlert$3();
+    function insertAlert$2() {
+    	clearAlert$4();
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
     	alert_element.className = "alert alert-dismissible in alert-success ";
@@ -16397,14 +16271,14 @@ var app = (function () {
 
     	setTimeout(
     		() => {
-    			clearAlert$3();
+    			clearAlert$4();
     		},
     		3000
     	);
     }
 
-    function deleteAlert$1() {
-    	clearAlert$3();
+    function deleteAlert$2() {
+    	clearAlert$4();
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
     	alert_element.className = "alert alert-dismissible in alert-danger ";
@@ -16412,14 +16286,14 @@ var app = (function () {
 
     	setTimeout(
     		() => {
-    			clearAlert$3();
+    			clearAlert$4();
     		},
     		3000
     	);
     }
 
-    function deleteAllAlert$1() {
-    	clearAlert$3();
+    function deleteAllAlert$2() {
+    	clearAlert$4();
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
     	alert_element.className = "alert alert-dismissible in alert-danger ";
@@ -16427,14 +16301,14 @@ var app = (function () {
 
     	setTimeout(
     		() => {
-    			clearAlert$3();
+    			clearAlert$4();
     		},
     		3000
     	);
     }
 
-    function ReloadTableAlert$1() {
-    	clearAlert$3();
+    function ReloadTableAlert$2() {
+    	clearAlert$4();
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
     	alert_element.className = "alert alert-dismissible in alert-info ";
@@ -16442,14 +16316,14 @@ var app = (function () {
 
     	setTimeout(
     		() => {
-    			clearAlert$3();
+    			clearAlert$4();
     		},
     		3000
     	);
     }
 
-    function errorAlert$3(error) {
-    	clearAlert$3();
+    function errorAlert$4(error) {
+    	clearAlert$4();
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
     	alert_element.className = "alert alert-dismissible in alert-danger ";
@@ -16457,13 +16331,13 @@ var app = (function () {
 
     	setTimeout(
     		() => {
-    			clearAlert$3();
+    			clearAlert$4();
     		},
     		3000
     	);
     }
 
-    function clearAlert$3() {
+    function clearAlert$4() {
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "display: none; ";
     	alert_element.className = "alert alert-dismissible in";
@@ -16545,9 +16419,9 @@ var app = (function () {
     			}).then(function (res) {
     				if (res.ok) {
     					getTransfers();
-    					insertAlert$1();
+    					insertAlert$2();
     				} else {
-    					errorAlert$3("Error interno al intentar insertar un goleador");
+    					errorAlert$4("Error interno al intentar insertar un goleador");
     				}
     			});
     		}
@@ -16683,12 +16557,12 @@ var app = (function () {
     		deleteGoalscorers,
     		search,
     		addOffset,
-    		insertAlert: insertAlert$1,
-    		deleteAlert: deleteAlert$1,
-    		deleteAllAlert: deleteAllAlert$1,
-    		ReloadTableAlert: ReloadTableAlert$1,
-    		errorAlert: errorAlert$3,
-    		clearAlert: clearAlert$3
+    		insertAlert: insertAlert$2,
+    		deleteAlert: deleteAlert$2,
+    		deleteAllAlert: deleteAllAlert$2,
+    		ReloadTableAlert: ReloadTableAlert$2,
+    		errorAlert: errorAlert$4,
+    		clearAlert: clearAlert$4
     	});
 
     	$$self.$inject_state = $$props => {
@@ -16925,7 +16799,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file$i, 30, 0, 713);
+    			add_location(main, file$i, 30, 0, 710);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16965,7 +16839,7 @@ var app = (function () {
     function instance$j($$self, $$props, $$invalidate) {
     	const routes = {
     		"/": Home,
-    		"/global-coef/:country/:year": EditCoef,
+    		"/global-coef/:team/:year": EditCoef,
     		"/globalCoefAPI": App,
     		"/global-transfers/:year/:team": EditTransfer,
     		"/globaltransfersAPI": App$1,
