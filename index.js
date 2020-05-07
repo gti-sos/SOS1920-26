@@ -6,25 +6,27 @@ const path = require("path");
 const app = express();
 app.use(bodyParser.json());
 
-const BASE_API_URL = "/api/v2";
 const port = process.env.PORT || 1500;
 
 //----------------------------------coef
-const coefAPI = require(path.join(__dirname, "./src/back/coefAPI"));
-const dbCoef = path.join(__dirname,"./src/back/coefAPI/coef.db");
-coefAPI(app);
+const coefAPIv1 = require(path.join(__dirname, "./src/back/coefAPI/v1"));
+const coefAPIv2 = require(path.join(__dirname, "./src/back/coefAPI/v2"));
+coefAPIv1(app);
+coefAPIv2(app);
 //----------------------------------fin-coef
 
 //----------------------------------transfers
-const transfersAPI = require(path.join(__dirname, "./src/back/transfersAPI"));
-const dbTransfers = path.join(__dirname,"./src/back/transfersAPI/transfers.db");
-transfersAPI(app);
+const transfersAPIv1 = require(path.join(__dirname, "./src/back/transfersAPI/v1"));
+const transfersAPIv2 = require(path.join(__dirname, "./src/back/transfersAPI/v2"));
+transfersAPIv1(app);
+transfersAPIv2(app);
 //----------------------------------transfers//
 
 //----------------------------------goalscorers
-const goalscorersAPI = require(path.join(__dirname, "./src/back/goalscorersAPI"));
-const dbGoalscorers = path.join(__dirname,"./src/back/goalscorersAPI/goalscorers.db");
-goalscorersAPI(app);
+const goalscorersAPIv1 = require(path.join(__dirname, "./src/back/goalscorersAPI/v1"));
+const goalscorersAPIv2 = require(path.join(__dirname, "./src/back/goalscorersAPI/v2"));
+goalscorersAPIv1(app);
+goalscorersAPIv2(app);
 //----------------------------------goalscorers//
 
 app.use("/", express.static("./public"));
