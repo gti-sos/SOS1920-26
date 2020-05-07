@@ -4,6 +4,7 @@
 {"country":"spain","year":2018,"team":"fc-barcelona","signing":39,"sale":32,"balance":-137.05,"_id":"V5KxLjHyRL5fmL4z"}
 {"country":"england","year":2015,"team":"manchester-united","signing":50,"sale":52,"balance":-200.02,"_id":"X2q6kuWqzhUcYjzV"}
 {"country":"england","year":2017,"team":"manchester-city","signing":68,"sale":56,"balance":-404.3,"_id":"z4MdnJgIkNZdJAqY"}
+<<<<<<< HEAD
 {"country":"spain","year":2019,"team":"real-madrid","signing":51,"sale":35,"balance":-236.1,"_id":"9LAmWjL9B5ZT3UNB"}
 {"country":"spain","year":2019,"team":"real-madrid","signing":51,"sale":35,"balance":-236.15,"_id":"9LAmWjL9B5ZT3UNB"}
 {"country":"italy","year":2019,"team":"juventus","signing":72,"sale":61,"balance":-174.5,"_id":"LLts9DSJqGRULQgU"}
@@ -26,3 +27,5 @@
 {"$$deleted":true,"_id":"kM2HePyEPGeCqt28"}
 {"country":"test","year":8451,"team":"bnj","signing":84562,"sale":9562,"balance":-485,"_id":"ka63cju6OvOTcVfz"}
 {"$$deleted":true,"_id":"ka63cju6OvOTcVfz"}
+=======
+>>>>>>> be84c8a242e31d8ec6e46847e4baaff98b935067

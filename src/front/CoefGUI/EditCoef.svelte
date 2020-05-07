@@ -139,7 +139,7 @@
                     <td><input type="number" bind:value="{updatedCoefficient}"></td>
                     <td><input type="number" bind:value="{updatedFed}"></td>
                     <td><input type="number" bind:value="{updatedClassification}"></td>
-                    <td> <Button outline  color="primary" on:click={updateCoef} on:click={updateAlert}> <i class="fas fa-pencil-alt"> <i class="fas fa-pencil-alt"> </i> Actualizar</Button> </td>
+                    <td> <Button outline  color="primary" on:click={updateCoef} on:click={updateAlert}> Actualizar</Button> </td>
                 </tr>
         </tbody>
         </Table>
