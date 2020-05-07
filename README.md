@@ -21,7 +21,8 @@
     - [http://sos1920-26.herokuapp.com/api/v2/global-transfers] (v2 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
 
 -  **Portales de documentación de Postman**:
-	- [https://documenter.getpostman.com/view/10847476/SzYUZgTA] (developed by [Javier Botella Rodríguez](https://github.com/javibotella))
+	- [https://documenter.getpostman.com/view/10847476/SzYUZgTA] (v1 developed by [Javier Botella Rodríguez](https://github.com/javibotella))
+  - [https://documenter.getpostman.com/view/10847476/Szme4J8v] (v2 developed by [Javier Botella Rodríguez](https://github.com/javibotella))
 
 	- [https://documenter.getpostman.com/view/10865377/SzYUa2AE] (v1 developed by [Jose García Creus](https://github.com/jgcreus))
   - [https://documenter.getpostman.com/view/10865377/Szme3xW8] (v2 developed by [Jose García Creus](https://github.com/jgcreus))

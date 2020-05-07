@@ -74,6 +74,29 @@ module.exports = function(app) {
         }
     });
 
+    /*
+    BÚSQUEDA POR RANGO DE GOLES, PREGUNTAR PARA EL SIGUIENTE ENTREGABLE
+    //GET GOALSCORERS/GOALS
+    app.get(BASE_API_URL + "/goalscorers?from=goalsMin&to=goalsMax", (req, res) => {
+
+        var goalsMin = parseInt(req.params.goalsMin);
+        var goalsMax = parseInt(req.params.goalsMax);
+        console.log(goalsMin);
+        db.find({
+            $and: [{"goals": {$gte:goalsMin}},{"goals": {$lte:goalsMax}}]
+        }, (err, goalscorers) => {
+            console.log(goalscorers);
+            if (goalscorers.length != 0) {
+                deleteIDs(goalscorers);
+                res.send(JSON.stringify(goalscorers, null, 2));
+                console.log("Data sent: " + JSON.stringify(goalscorers[0], null, 2));
+            } else {
+                res.sendStatus(404);
+            }
+        })
+    });
+*/
+
     //GET GOALSCORERS
     app.get(BASE_API_URL + "/goalscorers", (req, res) => {
         console.log("NEW GET .../goalscorers");
@@ -152,6 +175,7 @@ module.exports = function(app) {
             }
         })
     });
+
 
 
     //PUT GOALSCORERS/XXXXX

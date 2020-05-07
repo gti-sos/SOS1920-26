@@ -338,7 +338,7 @@
 					<th>Fichajes</th>
 					<th>Ventas</th>
 					<th>Balance</th>
-					<th>Actions</th>
+					<th>Acciones</th>
 
 				</tr>
 			</thead>

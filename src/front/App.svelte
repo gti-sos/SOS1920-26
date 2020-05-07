@@ -10,6 +10,7 @@
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
 
 	import goalscorers from './GoalscorersGUI/App.svelte';
+	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
 
 	import NotFound from './NotFound.svelte';
 
@@ -24,6 +25,7 @@
 		"/global-transfers/:year/:team": EditTransfer,
 		"/globaltransfersAPI":globalTransfers,
 		
+		"/goalscorers/:name":EditGoalscorer,
 		"/goalscorersAPI":goalscorers,  
 		"*": NotFound
 	};
