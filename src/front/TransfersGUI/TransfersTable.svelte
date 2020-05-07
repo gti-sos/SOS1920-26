@@ -27,7 +27,7 @@
 		balance:""
 	};
 
-
+	let BASE_API_URL = "/api/v2";
 	let years = [];
 	let teams = [];
 	let currentYear = "-";
@@ -44,7 +44,7 @@
 
 
 	async function ReloadTable() {
-		const res = await fetch("/api/v1/global-transfers/loadInitialData")
+		const res = await fetch(BASE_API_URL + "/global-transfers/loadInitialData")
 
 		if (res.ok) {
 			const initialTransfers = await res.json();
@@ -56,7 +56,7 @@
 	}
 
 	async function getYearsTeams() {
-		const res = await fetch("/api/v1/global-transfers"); 
+		const res = await fetch(BASE_API_URL + "/global-transfers"); 
 
 		if (res.ok) {
 			const json = await res.json();
@@ -84,7 +84,7 @@
 	async function getTransfers() {
 
 		console.log("Fetching transfers...");
-		const res = await fetch("/api/v1/global-transfers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
+		const res = await fetch(BASE_API_URL + "/global-transfers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
 
 		if (res.ok) {
 			console.log("Ok:");
@@ -96,7 +96,7 @@
 				moreData=false
 			} else{
 
-						const next = await fetch("/api/v1/global-transfers?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
+						const next = await fetch(BASE_API_URL + "/global-transfers?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
 						console.log("La variable NEXT tiene el estado: " + next.status)
 						const jsonNext = await next.json();
 						
@@ -127,7 +127,7 @@
 			alert("Se debe incluir el año y el equipo vinculante obligatoriamente");
 
 		} else {
-				const res = await fetch("/api/v1/global-transfers", {
+				const res = await fetch(BASE_API_URL + "/global-transfers", {
 					method: "POST",
 					body: JSON.stringify(newTransfer),
 					headers: {
@@ -151,7 +151,7 @@
 	async function deleteTransfer(year, team) {
 		console.log("Deleting transfer..." + JSON.stringify(year)+ + JSON.stringify(team) );
 
-		const res = await fetch("/api/v1/global-transfers/" + year+"/"+team, {
+		const res = await fetch(BASE_API_URL + "/global-transfers/" + year+"/"+team, {
 			method: "DELETE"
 		}).then(function (res) {
 			if (res.ok){
@@ -169,7 +169,7 @@
 
 	async function deleteGlobalTransfers() {
 		console.log("Deleting all transfers data...");
-		const res = await fetch("/api/v1/global-transfers/", {
+		const res = await fetch(BASE_API_URL + "/global-transfers/", {
 			method: "DELETE"
 		}).then(function (res) {
 			if (res.ok){
@@ -187,7 +187,7 @@
 		console.log("Searching data: " + year + " and " + team);
 
 		/* Checking if the fields are empty */
-		var url = "/api/v1/global-transfers";
+		var url = BASE_API_URL + "/global-transfers";
 
 		if (year != "-" && team != "-") {
 			url = url + "?year=" + year + "&team=" + team; 

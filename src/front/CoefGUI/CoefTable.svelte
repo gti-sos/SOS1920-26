@@ -17,6 +17,8 @@
 
 	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
 
+	let BASE_API_URL = "/api/v2";
+
 	let coef = [];
 	let newCoef = {
 		country: "",
@@ -43,7 +45,7 @@
 
 
 	async function ReloadTable() {
-		const res = await fetch("/api/v1/global-coef/loadInitialData")
+		const res = await fetch(BASE_API_URL + "/global-coef/loadInitialData")
 
 		if (res.ok) {
 			const initialCoef = await res.json();
@@ -57,7 +59,7 @@
 
 //Funcion que devuelve array con los equipos y años
 	async function getTeamsYears() {
-		const res = await fetch("/api/v1/global-coef");
+		const res = await fetch(BASE_API_URL + "/global-coef");
 
 		if (res.ok) {
 			const json = await res.json();
@@ -87,7 +89,7 @@
 	async function getCoef() {
 
 		console.log("Fetching coef...");
-		const res = await fetch("/api/v1/global-coef?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
+		const res = await fetch(BASE_API_URL + "/global-coef?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
 
 		if (res.ok) {
 			console.log("Ok:");
@@ -99,7 +101,7 @@
 				moreData=false
 			} else{
 
-					const next = await fetch("/api/v1/global-coef?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
+					const next = await fetch(BASE_API_URL + "/global-coef?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
 					console.log("La variable NEXT tiene el estado: " + next.status)
 					const jsonNext = await next.json();
 						
@@ -128,7 +130,7 @@
 			alert("Se debe incluir el nombre del equipo y año obligatoriamente");
 
 		} else {
-				const res = await fetch("/api/v1/global-coef", {
+				const res = await fetch(BASE_API_URL + "/global-coef", {
 					method: "POST",
 					body: JSON.stringify(newCoef),
 					headers: {
@@ -151,7 +153,7 @@
 //Borrar un equipo en un año 
 async function deleteCoef(team,year) {
 		console.log("Deleting coef..." + JSON.stringify(team)+ + JSON.stringify(year) );
-		const res = await fetch("/api/v1/global-coef/" + team+"/"+year, {
+		const res = await fetch(BASE_API_URL + "/global-coef/" + team+"/"+year, {
 			method: "DELETE"
 		}).then(function (res) {
 			if (res.ok){
@@ -169,7 +171,7 @@ async function deleteCoef(team,year) {
 //Borrar todos los equipos
 	async function deleteGlobalCoef() {
 		console.log("Deleting all coef data...");
-		const res = await fetch("/api/v1/global-coef/", {
+		const res = await fetch(BASE_API_URL + "/global-coef/", {
 			method: "DELETE"
 		}).then(function (res) {
 			if (res.ok){
@@ -186,7 +188,7 @@ async function deleteCoef(team,year) {
 		console.log("Searching data: " + team + " and " + year);
 
 		
-		var url = "/api/v1/global-coef";
+		var url = BASE_API_URL + "/global-coef";
 
 		if (team != "-" && year != "-") {
 			url = url + "?team=" + team + "&year=" + year; 

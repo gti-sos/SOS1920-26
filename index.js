@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 app.use(bodyParser.json());
 
-const BASE_API_URL = "/api/v1";
+const BASE_API_URL = "/api/v2";
 const port = process.env.PORT || 1500;
 
 //----------------------------------coef

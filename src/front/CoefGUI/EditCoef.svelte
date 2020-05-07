@@ -14,6 +14,8 @@
 
 
     export let params = {};
+	let BASE_API_URL = "/api/v2";
+
     let coef = {};
     let updatedCountry = "XXXX";
     let updatedYear = 2000;
@@ -28,7 +30,7 @@
     async function getCoef() {
 
         console.log("Fetching coef...");
-        const res = await fetch("/api/v1/global-coef/" + params.team +"/"+params.year);
+        const res = await fetch(BASE_API_URL + "/global-coef/" + params.team +"/"+params.year);
         
         if (res.ok) {
             console.log("Ok:");
@@ -52,7 +54,7 @@
 
         console.log("Updating coef..." + JSON.stringify(params.team));
 
-        const res = await fetch("/api/v1/global-coef/" + params.team +"/"+params.year, {
+        const res = await fetch(BASE_API_URL + "/global-coef/" + params.team +"/"+params.year, {
             method: "PUT",
             body: JSON.stringify({
                 country: updatedCountry,

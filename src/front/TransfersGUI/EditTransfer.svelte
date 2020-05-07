@@ -14,6 +14,8 @@
 
 
     export let params = {};
+
+    let BASE_API_URL = "/api/v2";
     let transfer = {};
     let updatedCountry = "XXXX";
     let updatedYear = 12345;
@@ -28,7 +30,7 @@
     async function getTransfer() {
 
         console.log("Fetching transfer...");
-        const res = await fetch("/api/v1/global-transfers/" + params.year +"/"+params.team);
+        const res = await fetch(BASE_API_URL + "/global-transfers/" + params.year +"/"+params.team);
         
         if (res.ok) {
             console.log("Ok:");
@@ -53,7 +55,7 @@
 
         console.log("Updating transfer..." + JSON.stringify(params.year));
 
-        const res = await fetch("/api/v1/global-transfers/" + params.year +"/"+params.team, {
+        const res = await fetch(BASE_API_URL + "/global-transfers/" + params.year +"/"+params.team, {
             method: "PUT",
             body: JSON.stringify({
                 country: updatedCountry,

@@ -27,6 +27,7 @@
 		teams: ""
 	};
 
+	let BASE_API_URL = "/api/v2";
 	let debutYears = [];
 	let teams = [];
 	let totalGoals = [];
@@ -41,7 +42,7 @@
 	onMount(getGoalscorers);
 
 	async function ReloadTable() {
-		const res = await fetch("/api/v1/goalscorers/loadInitialData");
+		const res = await fetch(BASE_API_URL + "/goalscorers/loadInitialData");
 
 		if (res.ok) {
 			const initialGoalscorers = await res.json();
@@ -54,7 +55,7 @@
 	}
 
 	async function getGoals(){
-		const res = await fetch("/api/v1/goalscorers"); 
+		const res = await fetch(BASE_API_URL + "/goalscorers"); 
 		if (res.ok) {
 			const json = await res.json();
 			
@@ -72,7 +73,7 @@
 	async function getGoalscorers() {
 
 		console.log("Fetching goalscorers...");
-		const res = await fetch("/api/v1/goalscorers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages);
+		const res = await fetch(BASE_API_URL + "/goalscorers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages);
 
 		if (res.ok) {
 			console.log("Ok:");
@@ -84,7 +85,7 @@
 				moreData = false
 			} else {
 
-				const next = await fetch("/api/v1/goalscorers?offset=" + numberElementsPages * (offset + 1) + "&limit=" + numberElementsPages);
+				const next = await fetch(BASE_API_URL + "/goalscorers?offset=" + numberElementsPages * (offset + 1) + "&limit=" + numberElementsPages);
 				console.log("La variable NEXT tiene el estado: " + next.status)
 				const jsonNext = await next.json();
 
@@ -115,7 +116,7 @@
 			alert("Se debe incluir el nombre, el año de debut y los goles del goleador obligatoriamente");
 
 		} else {
-			const res = await fetch("/api/v1/goalscorers", {
+			const res = await fetch(BASE_API_URL + "/goalscorers", {
 				method: "POST",
 				body: JSON.stringify(newGoalscorer),
 				headers: {
@@ -140,7 +141,7 @@
 	async function deleteGoalscorer(name) {
 		console.log("Deleting goalscorer..." + JSON.stringify(name));
 
-		const res = await fetch("/api/v1/goalscorers/" + name, {
+		const res = await fetch(BASE_API_URL + "/goalscorers/" + name, {
 			method: "DELETE"
 		}).then(function (res) {
 			if (res.ok){
@@ -156,7 +157,7 @@
 
 	async function deleteGoalscorers() {
 		console.log("Deleting all goalscorers data...");
-		const res = await fetch("/api/v1/goalscorers/", {
+		const res = await fetch(BASE_API_URL + "/goalscorers/", {
 			method: "DELETE"
 		}).then(function (res) {
 			if(res.ok){
@@ -173,7 +174,7 @@
 		console.log("Searching data: " + debut + " and " + team);
 
 		/* Checking if the fields are empty */
-		var url = "/api/v1/goalscorers";
+		var url = BASE_API_URL + "/goalscorers";
 
 		if (debut != "-" && team != "-") {
 			url = url + "?debut=" + debut + "&team=" + team;
