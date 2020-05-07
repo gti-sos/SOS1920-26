@@ -174,8 +174,6 @@
 			if (res.ok){
 			getTransfers();
 			getYearsTeams();
-			const json =  res.json();
-			coef = json;
 		} else{
 			errorAlert("Error al borrar todos los elementos")
 		}
