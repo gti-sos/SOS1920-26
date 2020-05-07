@@ -28,11 +28,9 @@
 	};
 
 	let BASE_API_URL = "/api/v2";
-	let debutYears = [];
 	let teams = [];
-	let totalGoals = [];
-	let currentYear = "-";
-	let currentTeam = "-";
+	let names = [];
+	let currentName = "-";
 
 	let numberElementsPages = 10;
 	let offset = 0;
@@ -40,6 +38,7 @@
 	let moreData = true;
 
 	onMount(getGoalscorers);
+	onMount(getNames);
 
 	async function ReloadTable() {
 		const res = await fetch(BASE_API_URL + "/goalscorers/loadInitialData");
@@ -54,16 +53,15 @@
 		}
 	}
 
-	async function getGoals(){
+	async function getNames(){
 		const res = await fetch(BASE_API_URL + "/goalscorers"); 
 		if (res.ok) {
 			const json = await res.json();
 			
-			totalGoals = json.map((d) => {   
-					return d.goals;    //Guardamos los años en un array
+			names = json.map((d) => {   
+					return d.name;   
 			});
-			totalGoals = Array.from(new Set(totalGoals));      //Eliminamos años repetidos
-			console.log("Contados " + totalGoals.length + " goles.");
+			console.log("Contados " + names.length + " goles.");
 
 		} else {
 			console.log("Error");
@@ -126,7 +124,13 @@
 				if (res.ok) {
 					getGoalscorers();
 					insertAlert();
-
+					newGoalscorer.country = "";
+					newGoalscorer.debut = "";
+					newGoalscorer.goals = "";
+					newGoalscorer.matches = "";
+					newGoalscorer.name = "";
+					newGoalscorer.teams = "";
+					
 				} else {
 					errorAlert("Error interno al intentar insertar un goleador");
 				}
@@ -171,17 +175,12 @@
 
 
 	async function search(name) {
-		console.log("Searching data: " + debut + " and " + team);
+		console.log("Searching data: " + name);
 
-		/* Checking if the fields are empty */
 		var url = BASE_API_URL + "/goalscorers";
 
-		if (debut != "-" && team != "-") {
-			url = url + "?debut=" + debut + "&team=" + team;
-		} else if (debut != "-" && team == "-") {
-			url = url + "?debut=" + debut;
-		} else if (debut == "-" && team != "-") {
-			url = url + "?team=" + team;
+		if (name != "-") {
+			url = url + "?name=" + name;
 		}
 
 		const res = await fetch(url);
@@ -280,30 +279,20 @@
 	{#await goalscorers}
 		Loading goalscorers...
 	{:then goalscorers}
-				
-		<FormGroup>
-			<Label for="selectYear"> Año </Label>
-			<Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
-				{#each debutYears as debut}
-				<option>{debut}</option>
-				{/each}
-				<option>-</option>
-			</Input>
-		</FormGroup>
+	
+	<FormGroup>
+		<Label for="selectName"> Jugador que desea buscar </Label>
+		<Input type="select"  name="selectName" id="selectName" bind:value="{currentName}">
+			{#each names as name}
+			<option>{name}</option>
+			{/each}
+			<option>-</option>
+		</Input>
+	</FormGroup>
 
-		<FormGroup> 
-			<Label for="selectTeam"> Búsqueda por equipo </Label>
-			<Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
-				{#each teams as team}
-				<option>{team}</option>
-				{/each}
-				<option>-</option>
-			</Input>
-		</FormGroup>
 
-		<Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
-		<Button outline color="primary" on:click="{ReloadTable}"> <i class="fas fa-search"></i> Restaurar API </Button>
-
+		<Button outline color="secondary" on:click="{search(currentName)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button>
+		<Button outline color="primary" on:click="{ReloadTable}"> <i class="fa fa-refresh"></i> Cargar datos iniciales </Button>
 		<Table bordered>
 			<thead>
 				<tr>

@@ -16,34 +16,34 @@
     export let params = {};
 
     let BASE_API_URL = "/api/v2";
-    let transfer = {};
-    let updatedCountry = "XXXX";
-    let updatedYear = 12345;
-    let updatedTeam = "SevillaFC";
-    let updatedSigning = 17;
-    let updatedSale = 32;
-    let updatedBalance = +108.2;
-    let errorMsg = "";
+    let goalscorer = {};
+    let updatedName;
+    let updatedDebut;
+    let updatedCountry;
+    let updatedGoals;
+    let updatedMatches;
+    let updatedTeams;
+    let errorMsg;
 
-    onMount(getTransfer);
+    onMount(getGoalscorer);
 
-    async function getTransfer() {
+    async function getGoalscorer() {
 
-        console.log("Fetching transfer...");
-        const res = await fetch(BASE_API_URL + "/global-transfers/" + params.year +"/"+params.team);
+        console.log("Fetching goalscorer...");
+        const res = await fetch(BASE_API_URL + "/goalscorers/" + params.name);
         
         if (res.ok) {
             console.log("Ok:");
             const json = await res.json();
-            transfer = json;
-            updatedCountry = transfer.country;
-            updatedYear = transfer.year;
-            updatedTeam = transfer.team;
-            updatedSigning = transfer.signing;
-            updatedSale = transfer.sale;
-            updatedBalance = transfer.balance;
+            goalscorer = json;
+            updatedName = goalscorer.name;
+            updatedDebut = goalscorer.debut;
+            updatedCountry = goalscorer.country;
+            updatedGoals = goalscorer.goals;
+            updatedMatches = goalscorer.matches;
+            updatedTeams = goalscorer.teams;
 
-            console.log("Received transfer");
+            console.log("Goalscorer received");
         } else {
             errorMsg = res.status + ": " + res.statusText;
             console.log("Error" + errorMsg);
@@ -51,19 +51,19 @@
     }
 
 
-    async function updateTransfer() {
+    async function updateGoalscorer() {
 
-        console.log("Updating transfer..." + JSON.stringify(params.year));
+        console.log("Updating goalscorer..." + JSON.stringify(params.name));
 
-        const res = await fetch(BASE_API_URL + "/global-transfers/" + params.year +"/"+params.team, {
+        const res = await fetch(BASE_API_URL + "/goalscorers/" + params.name, {
             method: "PUT",
             body: JSON.stringify({
+                name: updatedName,
+                debut: parseInt(updatedDebut),
                 country: updatedCountry,
-                year: parseInt(params.year),
-                team: params.team,
-                signing: updatedSigning,
-                sale: updatedSale,
-                balance: updatedBalance
+                goals: updatedGoals,
+                matches: updatedMatches,
+                teams: updatedTeams
             }),
 
             headers: {
@@ -71,10 +71,10 @@
             }
         }).then(function (res) {
             if (res.ok) {
-                getTransfer();
+                getGoalscorer();
                 updateAlert();
             } else if (res.status == 404) {
-                    errorAlert("Se ha intentado borrar un elemento inexistente.");
+                    errorAlert("Se ha intentado actualizar un elemento inexistente.");
                 } else {
                     errorAlert("");
                 }
@@ -98,7 +98,7 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-info ";
-		alert_element.innerHTML = "<strong>Dato actualizado</strong> Se ha actualizado el dato correctamente";
+		alert_element.innerHTML = "<strong>Dato actualizado.</strong> Se ha actualizado el dato correctamente";
 		
 		setTimeout(() => {
 			clearAlert();
@@ -115,31 +115,31 @@
 <main>
     <div role="alert" id="div_alert" style="display: none;">
 	</div>
-    <h3>Editar Transfer <strong>{params.team} : {params.year}</strong></h3>
-    {#await transfer}
-        Cargando transfers...
-    {:then transfer}
+    <h3>Editar goleador <strong> params.name</strong></h3>
+    {#await goalscorer}
+        Cargando goalscorers...
+    {:then goalscorer}
         <Table bordered>
             <thead>
                 <tr>
-                    <th>Pais</th>
-                    <th>Año</th>
-                    <th>Equipo</th>
-                    <th>Fichajes</th>
-                    <th>Ventas</th>
-                    <th>Balance Final</th>
+                    <th>Nombre</th>
+                    <th>País</th>
+                    <th>Debut</th>
+                    <th>Goles</th>
+                    <th>Partidos</th>
+                    <th>Equipos</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><input bind:value="{updatedCountry}"></td>
-                    <td>{updatedYear}</td>
-                    <td>{updatedTeam}</td>
-                    <td><input type="number" bind:value="{updatedSigning}"></td>
-                    <td><input type="number" bind:value="{updatedSale}"></td>
-                    <td><input type="number" bind:value="{updatedBalance}"></td>
-                    <td> <Button outline  color="primary" on:click={updateTransfer}> <i class="fa fa-refresh" aria-hidden="true"></i> Actualizar</Button> </td>
+                    <td>{updatedName}</td>
+                    <td>{updatedCountry}</td>
+                    <td>{updatedDebut}</td>
+                    <td><input type="number" bind:value="{updatedGoals}"></td>
+                    <td><input type="number" bind:value="{updatedMatches}"></td>
+                    <td><input type="number" bind:value="{updatedTeams}"></td>
+                    <td> <Button outline  color="primary" on:click={updateGoalscorer}> <i class="fa fa-refresh" aria-hidden="true"></i> Actualizar</Button> </td>
                 </tr>
         </tbody>
         </Table>
