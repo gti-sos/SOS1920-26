@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+2
 (function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
@@ -1470,6 +1469,8 @@ var app = (function () {
     	let t2;
     	let t3;
     	let button2;
+    	let i2;
+    	let t4;
 
     	const block = {
     		c: function create() {
@@ -1484,7 +1485,8 @@ var app = (function () {
     			t2 = text(" API de las transferencias del mercado de fichajes");
     			t3 = space();
     			button2 = element("button");
-    			button2.textContent = "API de goleadores";
+    			i2 = element("i");
+    			t4 = text(" API de goleadores");
     			attr_dev(i0, "class", "fa fa-percent");
     			attr_dev(i0, "aria-hidden", "true");
     			add_location(i0, file, 3, 106, 141);
@@ -1499,6 +1501,9 @@ var app = (function () {
     			attr_dev(button1, "class", "btn btn-outline-info");
     			attr_dev(button1, "onclick", "window.location.href='#/globaltransfersAPI'");
     			add_location(button1, file, 4, 2, 223);
+    			attr_dev(i2, "class", "fas fa-futbol");
+    			attr_dev(i2, "aria-hidden", "true");
+    			add_location(i2, file, 5, 106, 541);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-outline-success");
     			attr_dev(button2, "onclick", "window.location.href='#/goalscorersAPI'");
@@ -1522,6 +1527,8 @@ var app = (function () {
     			append_dev(button1, t2);
     			append_dev(div, t3);
     			append_dev(div, button2);
+    			append_dev(button2, i2);
+    			append_dev(button2, t4);
     		},
     		p: noop,
     		i: noop,
@@ -10616,7 +10623,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (1:0) <script>   import {    onMount   }
+    // (1:0) <script>         import {    onMount   }
     function create_catch_block$2(ctx) {
     	const block = {
     		c: noop,
@@ -10631,14 +10638,14 @@ var app = (function () {
     		block,
     		id: create_catch_block$2.name,
     		type: "catch",
-    		source: "(1:0) <script>   import {    onMount   }",
+    		source: "(1:0) <script>         import {    onMount   }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (305:1) {:then transfers}
+    // (307:1) {:then transfers}
     function create_then_block$2(ctx) {
     	let t0;
     	let t1;
@@ -10794,14 +10801,14 @@ var app = (function () {
     		block,
     		id: create_then_block$2.name,
     		type: "then",
-    		source: "(305:1) {:then transfers}",
+    		source: "(307:1) {:then transfers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (308:3) <Label for="selectYear">
+    // (310:3) <Label for="selectYear">
     function create_default_slot_22(ctx) {
     	let t;
 
@@ -10821,14 +10828,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_22.name,
     		type: "slot",
-    		source: "(308:3) <Label for=\\\"selectYear\\\">",
+    		source: "(310:3) <Label for=\\\"selectYear\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (310:4) {#each years as year}
+    // (312:4) {#each years as year}
     function create_each_block_2$1(ctx) {
     	let option;
     	let t_value = /*year*/ ctx[37] + "";
@@ -10841,7 +10848,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*year*/ ctx[37];
     			option.value = option.__value;
-    			add_location(option, file$c, 310, 4, 8243);
+    			add_location(option, file$c, 312, 4, 8140);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -10865,14 +10872,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2$1.name,
     		type: "each",
-    		source: "(310:4) {#each years as year}",
+    		source: "(312:4) {#each years as year}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (309:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
+    // (311:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
     function create_default_slot_21$1(ctx) {
     	let t0;
     	let option;
@@ -10895,7 +10902,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$c, 312, 4, 8285);
+    			add_location(option, file$c, 314, 4, 8182);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -10941,14 +10948,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_21$1.name,
     		type: "slot",
-    		source: "(309:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
+    		source: "(311:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:2) <FormGroup>
+    // (309:2) <FormGroup>
     function create_default_slot_20$1(ctx) {
     	let t;
     	let updating_value;
@@ -11038,14 +11045,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_20$1.name,
     		type: "slot",
-    		source: "(307:2) <FormGroup>",
+    		source: "(309:2) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (318:3) <Label for="selectTeam">
+    // (320:3) <Label for="selectTeam">
     function create_default_slot_19$1(ctx) {
     	let t;
 
@@ -11065,14 +11072,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19$1.name,
     		type: "slot",
-    		source: "(318:3) <Label for=\\\"selectTeam\\\">",
+    		source: "(320:3) <Label for=\\\"selectTeam\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (320:4) {#each teams as team}
+    // (322:4) {#each teams as team}
     function create_each_block_1$1(ctx) {
     	let option;
     	let t_value = /*team*/ ctx[34] + "";
@@ -11085,7 +11092,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*team*/ ctx[34];
     			option.value = option.__value;
-    			add_location(option, file$c, 320, 4, 8528);
+    			add_location(option, file$c, 322, 4, 8425);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -11109,14 +11116,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(320:4) {#each teams as team}",
+    		source: "(322:4) {#each teams as team}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (319:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
+    // (321:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
     function create_default_slot_18$1(ctx) {
     	let t0;
     	let option;
@@ -11139,7 +11146,7 @@ var app = (function () {
     			option.textContent = "-";
     			option.__value = "-";
     			option.value = option.__value;
-    			add_location(option, file$c, 322, 4, 8570);
+    			add_location(option, file$c, 324, 4, 8467);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -11185,14 +11192,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18$1.name,
     		type: "slot",
-    		source: "(319:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
+    		source: "(321:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (317:2) <FormGroup>
+    // (319:2) <FormGroup>
     function create_default_slot_17$1(ctx) {
     	let t;
     	let updating_value;
@@ -11282,14 +11289,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17$1.name,
     		type: "slot",
-    		source: "(317:2) <FormGroup>",
+    		source: "(319:2) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (327:2) <Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" >
+    // (329:2) <Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" >
     function create_default_slot_16$1(ctx) {
     	let i;
     	let t;
@@ -11299,7 +11306,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$c, 326, 106, 8727);
+    			add_location(i, file$c, 328, 106, 8624);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11315,14 +11322,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16$1.name,
     		type: "slot",
-    		source: "(327:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentYear, currentTeam)}\\\" class=\\\"button-search\\\" >",
+    		source: "(329:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentYear, currentTeam)}\\\" class=\\\"button-search\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:2) <Button color="success" on:click="{ReloadTable}"  on:click={ReloadTableAlert}>
+    // (330:2) <Button color="success" on:click="{ReloadTable}"  on:click={ReloadTableAlert}>
     function create_default_slot_15$1(ctx) {
     	let i;
     	let t;
@@ -11333,7 +11340,7 @@ var app = (function () {
     			t = text(" Carga Inicial API");
     			attr_dev(i, "class", "fa fa-refresh");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 327, 81, 8856);
+    			add_location(i, file$c, 329, 81, 8753);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11349,14 +11356,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$1.name,
     		type: "slot",
-    		source: "(328:2) <Button color=\\\"success\\\" on:click=\\\"{ReloadTable}\\\"  on:click={ReloadTableAlert}>",
+    		source: "(330:2) <Button color=\\\"success\\\" on:click=\\\"{ReloadTable}\\\"  on:click={ReloadTableAlert}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (353:10) <Button outline  color="primary" on:click={insertTransfer}>
+    // (355:10) <Button outline  color="primary" on:click={insertTransfer}>
     function create_default_slot_14$1(ctx) {
     	let i;
     	let t;
@@ -11367,7 +11374,7 @@ var app = (function () {
     			t = text(" Insertar");
     			attr_dev(i, "class", "fa fa-plus-circle");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 352, 70, 9650);
+    			add_location(i, file$c, 354, 70, 9548);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11383,14 +11390,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$1.name,
     		type: "slot",
-    		source: "(353:10) <Button outline  color=\\\"primary\\\" on:click={insertTransfer}>",
+    		source: "(355:10) <Button outline  color=\\\"primary\\\" on:click={insertTransfer}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (364:10) <Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">
+    // (366:10) <Button outline color="danger" on:click="{deleteTransfer(transfer.year,transfer.team)}">
     function create_default_slot_13$1(ctx) {
     	let i;
     	let t;
@@ -11401,7 +11408,7 @@ var app = (function () {
     			t = text(" Eliminar");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 363, 99, 10092);
+    			add_location(i, file$c, 365, 99, 9990);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11417,14 +11424,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$1.name,
     		type: "slot",
-    		source: "(364:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteTransfer(transfer.year,transfer.team)}\\\">",
+    		source: "(366:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteTransfer(transfer.year,transfer.team)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (365:10) <Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}">
+    // (367:10) <Button outline color="info" href="#/global-transfers/{transfer.year}/{transfer.team}">
     function create_default_slot_12$1(ctx) {
     	let i;
     	let t;
@@ -11435,7 +11442,7 @@ var app = (function () {
     			t = text(" Editar");
     			attr_dev(i, "class", "fa fa-edit");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 364, 98, 10261);
+    			add_location(i, file$c, 366, 98, 10159);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -11451,14 +11458,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$1.name,
     		type: "slot",
-    		source: "(365:10) <Button outline color=\\\"info\\\" href=\\\"#/global-transfers/{transfer.year}/{transfer.team}\\\">",
+    		source: "(367:10) <Button outline color=\\\"info\\\" href=\\\"#/global-transfers/{transfer.year}/{transfer.team}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (356:4) {#each transfers as transfer}
+    // (358:4) {#each transfers as transfer}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -11543,15 +11550,15 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$c, 357, 6, 9798);
-    			add_location(td1, file$c, 358, 6, 9833);
-    			add_location(td2, file$c, 359, 6, 9865);
-    			add_location(td3, file$c, 360, 6, 9897);
-    			add_location(td4, file$c, 361, 6, 9932);
-    			add_location(td5, file$c, 362, 6, 9964);
-    			add_location(td6, file$c, 363, 6, 9999);
-    			add_location(td7, file$c, 364, 6, 10169);
-    			add_location(tr, file$c, 356, 5, 9786);
+    			add_location(td0, file$c, 359, 6, 9696);
+    			add_location(td1, file$c, 360, 6, 9731);
+    			add_location(td2, file$c, 361, 6, 9763);
+    			add_location(td3, file$c, 362, 6, 9795);
+    			add_location(td4, file$c, 363, 6, 9830);
+    			add_location(td5, file$c, 364, 6, 9862);
+    			add_location(td6, file$c, 365, 6, 9897);
+    			add_location(td7, file$c, 366, 6, 10067);
+    			add_location(tr, file$c, 358, 5, 9684);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -11627,14 +11634,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(356:4) {#each transfers as transfer}",
+    		source: "(358:4) {#each transfers as transfer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (332:2) <Table bordered>
+    // (334:2) <Table bordered>
     function create_default_slot_11$1(ctx) {
     	let thead;
     	let tr0;
@@ -11723,7 +11730,7 @@ var app = (function () {
     			th5.textContent = "Balance";
     			t11 = space();
     			th6 = element("th");
-    			th6.textContent = "Actions";
+    			th6.textContent = "Acciones";
     			t13 = space();
     			tbody = element("tbody");
     			tr1 = element("tr");
@@ -11753,34 +11760,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$c, 334, 5, 8989);
-    			add_location(th1, file$c, 335, 5, 9009);
-    			add_location(th2, file$c, 336, 5, 9028);
-    			add_location(th3, file$c, 337, 5, 9050);
-    			add_location(th4, file$c, 338, 5, 9074);
-    			add_location(th5, file$c, 339, 5, 9096);
-    			add_location(th6, file$c, 340, 5, 9119);
-    			add_location(tr0, file$c, 333, 4, 8978);
-    			add_location(thead, file$c, 332, 3, 8965);
-    			add_location(input0, file$c, 346, 9, 9194);
-    			add_location(td0, file$c, 346, 5, 9190);
+    			add_location(th0, file$c, 336, 5, 8886);
+    			add_location(th1, file$c, 337, 5, 8906);
+    			add_location(th2, file$c, 338, 5, 8925);
+    			add_location(th3, file$c, 339, 5, 8947);
+    			add_location(th4, file$c, 340, 5, 8971);
+    			add_location(th5, file$c, 341, 5, 8993);
+    			add_location(th6, file$c, 342, 5, 9016);
+    			add_location(tr0, file$c, 335, 4, 8875);
+    			add_location(thead, file$c, 334, 3, 8862);
+    			add_location(input0, file$c, 348, 9, 9092);
+    			add_location(td0, file$c, 348, 5, 9088);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$c, 347, 9, 9252);
-    			add_location(td1, file$c, 347, 5, 9248);
-    			add_location(input2, file$c, 348, 9, 9321);
-    			add_location(td2, file$c, 348, 5, 9317);
+    			add_location(input1, file$c, 349, 9, 9150);
+    			add_location(td1, file$c, 349, 5, 9146);
+    			add_location(input2, file$c, 350, 9, 9219);
+    			add_location(td2, file$c, 350, 5, 9215);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$c, 349, 9, 9376);
-    			add_location(td3, file$c, 349, 5, 9372);
+    			add_location(input3, file$c, 351, 9, 9274);
+    			add_location(td3, file$c, 351, 5, 9270);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$c, 350, 9, 9448);
-    			add_location(td4, file$c, 350, 5, 9444);
+    			add_location(input4, file$c, 352, 9, 9346);
+    			add_location(td4, file$c, 352, 5, 9342);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$c, 351, 9, 9517);
-    			add_location(td5, file$c, 351, 5, 9513);
-    			add_location(td6, file$c, 352, 5, 9585);
-    			add_location(tr1, file$c, 345, 4, 9179);
-    			add_location(tbody, file$c, 344, 3, 9166);
+    			add_location(input5, file$c, 353, 9, 9415);
+    			add_location(td5, file$c, 353, 5, 9411);
+    			add_location(td6, file$c, 354, 5, 9483);
+    			add_location(tr1, file$c, 347, 4, 9077);
+    			add_location(tbody, file$c, 346, 3, 9064);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -11940,14 +11947,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$1.name,
     		type: "slot",
-    		source: "(332:2) <Table bordered>",
+    		source: "(334:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (303:19)     Loading transfers...   {:then transfers}
+    // (305:19)     Loading transfers...   {:then transfers}
     function create_pending_block$2(ctx) {
     	let t;
 
@@ -11970,14 +11977,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$2.name,
     		type: "pending",
-    		source: "(303:19)     Loading transfers...   {:then transfers}",
+    		source: "(305:19)     Loading transfers...   {:then transfers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (376:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
+    // (378:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
     function create_default_slot_10$1(ctx) {
     	let current;
 
@@ -12018,14 +12025,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$1.name,
     		type: "slot",
-    		source: "(376:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
+    		source: "(378:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (380:2) {#if currentPage != 1}
+    // (382:2) {#if currentPage != 1}
     function create_if_block_1$3(ctx) {
     	let current;
 
@@ -12072,14 +12079,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(380:2) {#if currentPage != 1}",
+    		source: "(382:2) {#if currentPage != 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (382:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >
+    // (384:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(-1)}" >
     function create_default_slot_9$1(ctx) {
     	let t_value = /*currentPage*/ ctx[5] - 1 + "";
     	let t;
@@ -12103,14 +12110,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$1.name,
     		type: "slot",
-    		source: "(382:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
+    		source: "(384:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (381:2) <PaginationItem>
+    // (383:2) <PaginationItem>
     function create_default_slot_8$1(ctx) {
     	let current;
 
@@ -12160,14 +12167,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$1.name,
     		type: "slot",
-    		source: "(381:2) <PaginationItem>",
+    		source: "(383:2) <PaginationItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (386:3) <PaginationLink href="#/globalTransfersAPI" >
+    // (388:3) <PaginationLink href="#/globalTransfersAPI" >
     function create_default_slot_7$1(ctx) {
     	let t;
 
@@ -12190,14 +12197,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$1.name,
     		type: "slot",
-    		source: "(386:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" >",
+    		source: "(388:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (385:2) <PaginationItem active>
+    // (387:2) <PaginationItem active>
     function create_default_slot_6$1(ctx) {
     	let current;
 
@@ -12245,14 +12252,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$1.name,
     		type: "slot",
-    		source: "(385:2) <PaginationItem active>",
+    		source: "(387:2) <PaginationItem active>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (389:2) {#if moreData}
+    // (391:2) {#if moreData}
     function create_if_block$8(ctx) {
     	let current;
 
@@ -12299,14 +12306,14 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(389:2) {#if moreData}",
+    		source: "(391:2) {#if moreData}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (391:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">
+    // (393:3) <PaginationLink href="#/globalTransfersAPI" on:click="{() => addOffset(1)}">
     function create_default_slot_5$1(ctx) {
     	let t_value = /*currentPage*/ ctx[5] + 1 + "";
     	let t;
@@ -12330,14 +12337,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$1.name,
     		type: "slot",
-    		source: "(391:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
+    		source: "(393:3) <PaginationLink href=\\\"#/globalTransfersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (390:2) <PaginationItem >
+    // (392:2) <PaginationItem >
     function create_default_slot_4$1(ctx) {
     	let current;
 
@@ -12387,14 +12394,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(390:2) <PaginationItem >",
+    		source: "(392:2) <PaginationItem >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (395:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
+    // (397:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
     function create_default_slot_3$1(ctx) {
     	let current;
 
@@ -12432,14 +12439,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(395:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
+    		source: "(397:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (373:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
+    // (375:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
     function create_default_slot_2$2(ctx) {
     	let t0;
     	let t1;
@@ -12609,14 +12616,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(373:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
+    		source: "(375:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (401:1) <Button outline color="secondary" on:click="{pop}">
+    // (403:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot_1$2(ctx) {
     	let i;
     	let t;
@@ -12626,7 +12633,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$c, 400, 53, 11404);
+    			add_location(i, file$c, 402, 53, 11302);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -12642,14 +12649,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(401:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(403:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (402:1) <Button outline on:click={deleteGlobalTransfers} color="danger">
+    // (404:1) <Button outline on:click={deleteGlobalTransfers} color="danger">
     function create_default_slot$2(ctx) {
     	let i;
     	let t;
@@ -12660,7 +12667,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$c, 401, 66, 11528);
+    			add_location(i, file$c, 403, 66, 11426);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -12676,7 +12683,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(402:1) <Button outline on:click={deleteGlobalTransfers} color=\\\"danger\\\">",
+    		source: "(404:1) <Button outline on:click={deleteGlobalTransfers} color=\\\"danger\\\">",
     		ctx
     	});
 
@@ -12755,8 +12762,8 @@ var app = (function () {
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
-    			add_location(div, file$c, 300, 1, 7929);
-    			add_location(main, file$c, 299, 0, 7920);
+    			add_location(div, file$c, 302, 1, 7826);
+    			add_location(main, file$c, 301, 0, 7817);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12974,16 +12981,16 @@ var app = (function () {
     			const json = await res.json();
 
     			$$invalidate(1, years = json.map(d => {
-    				return d.year; //Guardamos los años en un array
+    				return d.year;
     			}));
 
-    			$$invalidate(1, years = Array.from(new Set(years))); //Eliminamos años repetidos
+    			$$invalidate(1, years = Array.from(new Set(years)));
 
     			$$invalidate(2, teams = json.map(d => {
-    				return d.team; //Guardamos los equipos 
+    				return d.team;
     			}));
 
-    			$$invalidate(2, teams = Array.from(new Set(teams))); //Eliminamos los duplicados
+    			$$invalidate(2, teams = Array.from(new Set(teams)));
     			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
     		} else {
     			console.log("Error");
@@ -13445,7 +13452,7 @@ var app = (function () {
     			t = text(" Actualizar");
     			attr_dev(i, "class", "fa fa-refresh");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$e, 141, 85, 4650);
+    			add_location(i, file$e, 141, 85, 4651);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -13545,7 +13552,7 @@ var app = (function () {
     			th5.textContent = "Balance Final";
     			t11 = space();
     			th6 = element("th");
-    			th6.textContent = "Actions";
+    			th6.textContent = "Acciones";
     			t13 = space();
     			tbody = element("tbody");
     			tr1 = element("tr");
@@ -13578,22 +13585,22 @@ var app = (function () {
     			add_location(th6, file$e, 130, 20, 4060);
     			add_location(tr0, file$e, 123, 16, 3808);
     			add_location(thead, file$e, 122, 12, 3783);
-    			add_location(input0, file$e, 135, 24, 4190);
-    			add_location(td0, file$e, 135, 20, 4186);
-    			add_location(td1, file$e, 136, 20, 4254);
-    			add_location(td2, file$e, 137, 20, 4298);
+    			add_location(input0, file$e, 135, 24, 4191);
+    			add_location(td0, file$e, 135, 20, 4187);
+    			add_location(td1, file$e, 136, 20, 4255);
+    			add_location(td2, file$e, 137, 20, 4299);
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$e, 138, 24, 4346);
-    			add_location(td3, file$e, 138, 20, 4342);
+    			add_location(input1, file$e, 138, 24, 4347);
+    			add_location(td3, file$e, 138, 20, 4343);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$e, 139, 24, 4428);
-    			add_location(td4, file$e, 139, 20, 4424);
+    			add_location(input2, file$e, 139, 24, 4429);
+    			add_location(td4, file$e, 139, 20, 4425);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$e, 140, 24, 4507);
-    			add_location(td5, file$e, 140, 20, 4503);
-    			add_location(td6, file$e, 141, 20, 4585);
-    			add_location(tr1, file$e, 134, 16, 4160);
-    			add_location(tbody, file$e, 133, 12, 4135);
+    			add_location(input3, file$e, 140, 24, 4508);
+    			add_location(td5, file$e, 140, 20, 4504);
+    			add_location(td6, file$e, 141, 20, 4586);
+    			add_location(tr1, file$e, 134, 16, 4161);
+    			add_location(tbody, file$e, 133, 12, 4136);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -13747,7 +13754,7 @@ var app = (function () {
     			t0 = text("ERROR: ");
     			t1 = text(/*errorMsg*/ ctx[7]);
     			set_style(p, "color", "red");
-    			add_location(p, file$e, 147, 8, 4827);
+    			add_location(p, file$e, 147, 8, 4828);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -13783,7 +13790,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$e, 149, 56, 4939);
+    			add_location(i, file$e, 149, 56, 4940);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -14186,19 +14193,13 @@ var app = (function () {
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[32] = list[i];
+    	child_ctx[29] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[35] = list[i];
-    	return child_ctx;
-    }
-
-    function get_each_context_2$2(ctx, list, i) {
-    	const child_ctx = ctx.slice();
-    	child_ctx[38] = list[i];
+    	child_ctx[32] = list[i];
     	return child_ctx;
     }
 
@@ -14224,46 +14225,21 @@ var app = (function () {
     	return block;
     }
 
-    // (282:1) {:then goalscorers}
+    // (281:1) {:then goalscorers}
     function create_then_block$4(ctx) {
     	let t0;
     	let t1;
-    	let t2;
-    	let t3;
     	let current;
 
-    	const formgroup0 = new FormGroup({
+    	const formgroup = new FormGroup({
     			props: {
-    				$$slots: { default: [create_default_slot_20$2] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const formgroup1 = new FormGroup({
-    			props: {
-    				$$slots: { default: [create_default_slot_17$2] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const button0 = new Button({
-    			props: {
-    				outline: true,
-    				color: "secondary",
-    				class: "button-search",
     				$$slots: { default: [create_default_slot_16$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button0.$on("click", function () {
-    		if (is_function(/*search*/ ctx[12](/*currentYear*/ ctx[1], /*currentTeam*/ ctx[2]))) /*search*/ ctx[12](/*currentYear*/ ctx[1], /*currentTeam*/ ctx[2]).apply(this, arguments);
-    	});
-
-    	const button1 = new Button({
+    	const button = new Button({
     			props: {
     				outline: true,
     				color: "primary",
@@ -14273,7 +14249,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*ReloadTable*/ ctx[8]);
+    	button.$on("click", /*ReloadTable*/ ctx[6]);
 
     	const table = new Table({
     			props: {
@@ -14286,61 +14262,38 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			create_component(formgroup0.$$.fragment);
+    			create_component(formgroup.$$.fragment);
     			t0 = space();
-    			create_component(formgroup1.$$.fragment);
+    			create_component(button.$$.fragment);
     			t1 = space();
-    			create_component(button0.$$.fragment);
-    			t2 = space();
-    			create_component(button1.$$.fragment);
-    			t3 = space();
     			create_component(table.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			mount_component(formgroup0, target, anchor);
+    			mount_component(formgroup, target, anchor);
     			insert_dev(target, t0, anchor);
-    			mount_component(formgroup1, target, anchor);
+    			mount_component(button, target, anchor);
     			insert_dev(target, t1, anchor);
-    			mount_component(button0, target, anchor);
-    			insert_dev(target, t2, anchor);
-    			mount_component(button1, target, anchor);
-    			insert_dev(target, t3, anchor);
     			mount_component(table, target, anchor);
     			current = true;
     		},
-    		p: function update(new_ctx, dirty) {
-    			ctx = new_ctx;
-    			const formgroup0_changes = {};
+    		p: function update(ctx, dirty) {
+    			const formgroup_changes = {};
 
-    			if (dirty[0] & /*currentYear*/ 2 | dirty[1] & /*$$scope*/ 1024) {
-    				formgroup0_changes.$$scope = { dirty, ctx };
+    			if (dirty[0] & /*currentName, names*/ 6 | dirty[1] & /*$$scope*/ 16) {
+    				formgroup_changes.$$scope = { dirty, ctx };
     			}
 
-    			formgroup0.$set(formgroup0_changes);
-    			const formgroup1_changes = {};
+    			formgroup.$set(formgroup_changes);
+    			const button_changes = {};
 
-    			if (dirty[0] & /*currentTeam*/ 4 | dirty[1] & /*$$scope*/ 1024) {
-    				formgroup1_changes.$$scope = { dirty, ctx };
+    			if (dirty[1] & /*$$scope*/ 16) {
+    				button_changes.$$scope = { dirty, ctx };
     			}
 
-    			formgroup1.$set(formgroup1_changes);
-    			const button0_changes = {};
-
-    			if (dirty[1] & /*$$scope*/ 1024) {
-    				button0_changes.$$scope = { dirty, ctx };
-    			}
-
-    			button0.$set(button0_changes);
-    			const button1_changes = {};
-
-    			if (dirty[1] & /*$$scope*/ 1024) {
-    				button1_changes.$$scope = { dirty, ctx };
-    			}
-
-    			button1.$set(button1_changes);
+    			button.$set(button_changes);
     			const table_changes = {};
 
-    			if (dirty[0] & /*goalscorers, newGoalscorer*/ 33 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*goalscorers, newGoalscorer*/ 33 | dirty[1] & /*$$scope*/ 16) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14348,30 +14301,22 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(formgroup0.$$.fragment, local);
-    			transition_in(formgroup1.$$.fragment, local);
-    			transition_in(button0.$$.fragment, local);
-    			transition_in(button1.$$.fragment, local);
+    			transition_in(formgroup.$$.fragment, local);
+    			transition_in(button.$$.fragment, local);
     			transition_in(table.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(formgroup0.$$.fragment, local);
-    			transition_out(formgroup1.$$.fragment, local);
-    			transition_out(button0.$$.fragment, local);
-    			transition_out(button1.$$.fragment, local);
+    			transition_out(formgroup.$$.fragment, local);
+    			transition_out(button.$$.fragment, local);
     			transition_out(table.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(formgroup0, detaching);
+    			destroy_component(formgroup, detaching);
     			if (detaching) detach_dev(t0);
-    			destroy_component(formgroup1, detaching);
+    			destroy_component(button, detaching);
     			if (detaching) detach_dev(t1);
-    			destroy_component(button0, detaching);
-    			if (detaching) detach_dev(t2);
-    			destroy_component(button1, detaching);
-    			if (detaching) detach_dev(t3);
     			destroy_component(table, detaching);
     		}
     	};
@@ -14380,20 +14325,20 @@ var app = (function () {
     		block,
     		id: create_then_block$4.name,
     		type: "then",
-    		source: "(282:1) {:then goalscorers}",
+    		source: "(281:1) {:then goalscorers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (285:3) <Label for="selectYear">
-    function create_default_slot_22$1(ctx) {
+    // (284:2) <Label for="selectName">
+    function create_default_slot_18$2(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("Año");
+    			t = text("Jugador que desea buscar");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -14405,255 +14350,19 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_22$1.name,
+    		id: create_default_slot_18$2.name,
     		type: "slot",
-    		source: "(285:3) <Label for=\\\"selectYear\\\">",
+    		source: "(284:2) <Label for=\\\"selectName\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (287:4) {#each debutYears as debut}
-    function create_each_block_2$2(ctx) {
-    	let option;
-    	let t_value = /*debut*/ ctx[38] + "";
-    	let t;
-    	let option_value_value;
-
-    	const block = {
-    		c: function create() {
-    			option = element("option");
-    			t = text(t_value);
-    			option.__value = option_value_value = /*debut*/ ctx[38];
-    			option.value = option.__value;
-    			add_location(option, file$f, 287, 4, 7768);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, option, anchor);
-    			append_dev(option, t);
-    		},
-    		p: noop,
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(option);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_each_block_2$2.name,
-    		type: "each",
-    		source: "(287:4) {#each debutYears as debut}",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (286:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
-    function create_default_slot_21$2(ctx) {
-    	let t0;
-    	let option;
-    	let each_value_2 = /*debutYears*/ ctx[6];
-    	validate_each_argument(each_value_2);
-    	let each_blocks = [];
-
-    	for (let i = 0; i < each_value_2.length; i += 1) {
-    		each_blocks[i] = create_each_block_2$2(get_each_context_2$2(ctx, each_value_2, i));
-    	}
-
-    	const block = {
-    		c: function create() {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].c();
-    			}
-
-    			t0 = space();
-    			option = element("option");
-    			option.textContent = "-";
-    			option.__value = "-";
-    			option.value = option.__value;
-    			add_location(option, file$f, 289, 4, 7811);
-    		},
-    		m: function mount(target, anchor) {
-    			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(target, anchor);
-    			}
-
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, option, anchor);
-    		},
-    		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*debutYears*/ 64) {
-    				each_value_2 = /*debutYears*/ ctx[6];
-    				validate_each_argument(each_value_2);
-    				let i;
-
-    				for (i = 0; i < each_value_2.length; i += 1) {
-    					const child_ctx = get_each_context_2$2(ctx, each_value_2, i);
-
-    					if (each_blocks[i]) {
-    						each_blocks[i].p(child_ctx, dirty);
-    					} else {
-    						each_blocks[i] = create_each_block_2$2(child_ctx);
-    						each_blocks[i].c();
-    						each_blocks[i].m(t0.parentNode, t0);
-    					}
-    				}
-
-    				for (; i < each_blocks.length; i += 1) {
-    					each_blocks[i].d(1);
-    				}
-
-    				each_blocks.length = each_value_2.length;
-    			}
-    		},
-    		d: function destroy(detaching) {
-    			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(option);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_21$2.name,
-    		type: "slot",
-    		source: "(286:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (284:2) <FormGroup>
-    function create_default_slot_20$2(ctx) {
-    	let t;
-    	let updating_value;
-    	let current;
-
-    	const label = new Label({
-    			props: {
-    				for: "selectYear",
-    				$$slots: { default: [create_default_slot_22$1] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	function input_value_binding(value) {
-    		/*input_value_binding*/ ctx[20].call(null, value);
-    	}
-
-    	let input_props = {
-    		type: "select",
-    		name: "selectYear",
-    		id: "selectYear",
-    		$$slots: { default: [create_default_slot_21$2] },
-    		$$scope: { ctx }
-    	};
-
-    	if (/*currentYear*/ ctx[1] !== void 0) {
-    		input_props.value = /*currentYear*/ ctx[1];
-    	}
-
-    	const input = new Input({ props: input_props, $$inline: true });
-    	binding_callbacks.push(() => bind(input, "value", input_value_binding));
-
-    	const block = {
-    		c: function create() {
-    			create_component(label.$$.fragment);
-    			t = space();
-    			create_component(input.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(label, target, anchor);
-    			insert_dev(target, t, anchor);
-    			mount_component(input, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const label_changes = {};
-
-    			if (dirty[1] & /*$$scope*/ 1024) {
-    				label_changes.$$scope = { dirty, ctx };
-    			}
-
-    			label.$set(label_changes);
-    			const input_changes = {};
-
-    			if (dirty[1] & /*$$scope*/ 1024) {
-    				input_changes.$$scope = { dirty, ctx };
-    			}
-
-    			if (!updating_value && dirty[0] & /*currentYear*/ 2) {
-    				updating_value = true;
-    				input_changes.value = /*currentYear*/ ctx[1];
-    				add_flush_callback(() => updating_value = false);
-    			}
-
-    			input.$set(input_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(label.$$.fragment, local);
-    			transition_in(input.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(label.$$.fragment, local);
-    			transition_out(input.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(label, detaching);
-    			if (detaching) detach_dev(t);
-    			destroy_component(input, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_20$2.name,
-    		type: "slot",
-    		source: "(284:2) <FormGroup>",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (295:3) <Label for="selectTeam">
-    function create_default_slot_19$2(ctx) {
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			t = text("Búsqueda por equipo");
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_19$2.name,
-    		type: "slot",
-    		source: "(295:3) <Label for=\\\"selectTeam\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (297:4) {#each teams as team}
+    // (286:3) {#each names as name}
     function create_each_block_1$2(ctx) {
     	let option;
-    	let t_value = /*team*/ ctx[35] + "";
+    	let t_value = /*name*/ ctx[32] + "";
     	let t;
     	let option_value_value;
 
@@ -14661,15 +14370,23 @@ var app = (function () {
     		c: function create() {
     			option = element("option");
     			t = text(t_value);
-    			option.__value = option_value_value = /*team*/ ctx[35];
+    			option.__value = option_value_value = /*name*/ ctx[32];
     			option.value = option.__value;
-    			add_location(option, file$f, 297, 4, 8054);
+    			add_location(option, file$f, 286, 3, 7626);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
     			append_dev(option, t);
     		},
-    		p: noop,
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*names*/ 2 && t_value !== (t_value = /*name*/ ctx[32] + "")) set_data_dev(t, t_value);
+
+    			if (dirty[0] & /*names*/ 2 && option_value_value !== (option_value_value = /*name*/ ctx[32])) {
+    				prop_dev(option, "__value", option_value_value);
+    			}
+
+    			option.value = option.__value;
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(option);
     		}
@@ -14679,18 +14396,18 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(297:4) {#each teams as team}",
+    		source: "(286:3) {#each names as name}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (296:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
-    function create_default_slot_18$2(ctx) {
+    // (285:2) <Input type="select" name="selectName" onchange="{search(currentName)}" id="selectName" bind:value="{currentName}">
+    function create_default_slot_17$2(ctx) {
     	let t0;
     	let option;
-    	let each_value_1 = /*teams*/ ctx[7];
+    	let each_value_1 = /*names*/ ctx[1];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -14706,10 +14423,10 @@ var app = (function () {
 
     			t0 = space();
     			option = element("option");
-    			option.textContent = "-";
-    			option.__value = "-";
+    			option.textContent = "--Mostrar todos--";
+    			option.__value = "--Mostrar todos--";
     			option.value = option.__value;
-    			add_location(option, file$f, 299, 4, 8096);
+    			add_location(option, file$f, 288, 3, 7666);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -14720,8 +14437,8 @@ var app = (function () {
     			insert_dev(target, option, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty[0] & /*teams*/ 128) {
-    				each_value_1 = /*teams*/ ctx[7];
+    			if (dirty[0] & /*names*/ 2) {
+    				each_value_1 = /*names*/ ctx[1];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -14753,48 +14470,49 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_18$2.name,
+    		id: create_default_slot_17$2.name,
     		type: "slot",
-    		source: "(296:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
+    		source: "(285:2) <Input type=\\\"select\\\" name=\\\"selectName\\\" onchange=\\\"{search(currentName)}\\\" id=\\\"selectName\\\" bind:value=\\\"{currentName}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (294:2) <FormGroup>
-    function create_default_slot_17$2(ctx) {
+    // (283:1) <FormGroup>
+    function create_default_slot_16$2(ctx) {
     	let t;
     	let updating_value;
     	let current;
 
     	const label = new Label({
     			props: {
-    				for: "selectTeam",
-    				$$slots: { default: [create_default_slot_19$2] },
+    				for: "selectName",
+    				$$slots: { default: [create_default_slot_18$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	function input_value_binding_1(value) {
-    		/*input_value_binding_1*/ ctx[21].call(null, value);
+    	function input_value_binding(value) {
+    		/*input_value_binding*/ ctx[18].call(null, value);
     	}
 
     	let input_props = {
     		type: "select",
-    		name: "selectTeam",
-    		id: "selectTeam",
-    		$$slots: { default: [create_default_slot_18$2] },
+    		name: "selectName",
+    		onchange: /*search*/ ctx[10](/*currentName*/ ctx[2]),
+    		id: "selectName",
+    		$$slots: { default: [create_default_slot_17$2] },
     		$$scope: { ctx }
     	};
 
-    	if (/*currentTeam*/ ctx[2] !== void 0) {
-    		input_props.value = /*currentTeam*/ ctx[2];
+    	if (/*currentName*/ ctx[2] !== void 0) {
+    		input_props.value = /*currentName*/ ctx[2];
     	}
 
     	const input = new Input({ props: input_props, $$inline: true });
-    	binding_callbacks.push(() => bind(input, "value", input_value_binding_1));
+    	binding_callbacks.push(() => bind(input, "value", input_value_binding));
 
     	const block = {
     		c: function create() {
@@ -14811,20 +14529,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
     			label.$set(label_changes);
     			const input_changes = {};
+    			if (dirty[0] & /*currentName*/ 4) input_changes.onchange = /*search*/ ctx[10](/*currentName*/ ctx[2]);
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*names*/ 2 | dirty[1] & /*$$scope*/ 16) {
     				input_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_value && dirty[0] & /*currentTeam*/ 4) {
+    			if (!updating_value && dirty[0] & /*currentName*/ 4) {
     				updating_value = true;
-    				input_changes.value = /*currentTeam*/ ctx[2];
+    				input_changes.value = /*currentName*/ ctx[2];
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -14850,49 +14569,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_17$2.name,
-    		type: "slot",
-    		source: "(294:2) <FormGroup>",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (304:2) <Button outline color="secondary" on:click="{search(currentYear, currentTeam)}" class="button-search" >
-    function create_default_slot_16$2(ctx) {
-    	let i;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			i = element("i");
-    			t = text(" Buscar");
-    			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$f, 303, 106, 8253);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, i, anchor);
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(i);
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
     		id: create_default_slot_16$2.name,
     		type: "slot",
-    		source: "(304:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentYear, currentTeam)}\\\" class=\\\"button-search\\\" >",
+    		source: "(283:1) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (305:2) <Button outline color="primary" on:click="{ReloadTable}">
+    // (295:2) <Button outline color="primary" on:click="{ReloadTable}">
     function create_default_slot_15$2(ctx) {
     	let i;
     	let t;
@@ -14900,9 +14586,9 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			i = element("i");
-    			t = text(" Restaurar API");
-    			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$f, 304, 60, 8361);
+    			t = text(" Cargar datos iniciales");
+    			attr_dev(i, "class", "fa fa-refresh");
+    			add_location(i, file$f, 294, 60, 7942);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -14918,14 +14604,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$2.name,
     		type: "slot",
-    		source: "(305:2) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\">",
+    		source: "(295:2) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:10) <Button outline  color="primary" on:click={insertGoalscorer}>
+    // (317:10) <Button outline  color="primary" on:click={insertGoalscorer}>
     function create_default_slot_14$2(ctx) {
     	let t;
 
@@ -14945,14 +14631,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$2.name,
     		type: "slot",
-    		source: "(328:10) <Button outline  color=\\\"primary\\\" on:click={insertGoalscorer}>",
+    		source: "(317:10) <Button outline  color=\\\"primary\\\" on:click={insertGoalscorer}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (338:10) <Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" >
+    // (327:10) <Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" >
     function create_default_slot_13$2(ctx) {
     	let i;
     	let t;
@@ -14963,7 +14649,7 @@ var app = (function () {
     			t = text(" Eliminar");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$f, 337, 90, 9530);
+    			add_location(i, file$f, 326, 90, 9118);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -14979,14 +14665,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$2.name,
     		type: "slot",
-    		source: "(338:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteGoalscorer(goalscorer.name)}\\\" >",
+    		source: "(327:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteGoalscorer(goalscorer.name)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (339:10) <Button outline color="info" href="#/goalscorers/{goalscorer.name}">
+    // (328:10) <Button outline color="info" href="#/goalscorers/{goalscorer.name}">
     function create_default_slot_12$2(ctx) {
     	let i;
     	let t;
@@ -14997,7 +14683,7 @@ var app = (function () {
     			t = text(" Editar");
     			attr_dev(i, "class", "fa fa-edit");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$f, 338, 79, 9680);
+    			add_location(i, file$f, 327, 79, 9268);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -15013,38 +14699,38 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$2.name,
     		type: "slot",
-    		source: "(339:10) <Button outline color=\\\"info\\\" href=\\\"#/goalscorers/{goalscorer.name}\\\">",
+    		source: "(328:10) <Button outline color=\\\"info\\\" href=\\\"#/goalscorers/{goalscorer.name}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (330:4) {#each goalscorers as goalscorer}
+    // (319:4) {#each goalscorers as goalscorer}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*goalscorer*/ ctx[32].name + "";
+    	let t0_value = /*goalscorer*/ ctx[29].name + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*goalscorer*/ ctx[32].country + "";
+    	let t2_value = /*goalscorer*/ ctx[29].country + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*goalscorer*/ ctx[32].debut + "";
+    	let t4_value = /*goalscorer*/ ctx[29].debut + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*goalscorer*/ ctx[32].goals + "";
+    	let t6_value = /*goalscorer*/ ctx[29].goals + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*goalscorer*/ ctx[32].matches + "";
+    	let t8_value = /*goalscorer*/ ctx[29].matches + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*goalscorer*/ ctx[32].teams + "";
+    	let t10_value = /*goalscorer*/ ctx[29].teams + "";
     	let t10;
     	let t11;
     	let td6;
@@ -15064,14 +14750,14 @@ var app = (function () {
     		});
 
     	button0.$on("click", function () {
-    		if (is_function(/*deleteGoalscorer*/ ctx[10](/*goalscorer*/ ctx[32].name))) /*deleteGoalscorer*/ ctx[10](/*goalscorer*/ ctx[32].name).apply(this, arguments);
+    		if (is_function(/*deleteGoalscorer*/ ctx[8](/*goalscorer*/ ctx[29].name))) /*deleteGoalscorer*/ ctx[8](/*goalscorer*/ ctx[29].name).apply(this, arguments);
     	});
 
     	const button1 = new Button({
     			props: {
     				outline: true,
     				color: "info",
-    				href: "#/goalscorers/" + /*goalscorer*/ ctx[32].name,
+    				href: "#/goalscorers/" + /*goalscorer*/ ctx[29].name,
     				$$slots: { default: [create_default_slot_12$2] },
     				$$scope: { ctx }
     			},
@@ -15105,15 +14791,15 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$f, 331, 6, 9233);
-    			add_location(td1, file$f, 332, 6, 9267);
-    			add_location(td2, file$f, 333, 6, 9304);
-    			add_location(td3, file$f, 334, 6, 9339);
-    			add_location(td4, file$f, 335, 6, 9374);
-    			add_location(td5, file$f, 336, 6, 9411);
-    			add_location(td6, file$f, 337, 6, 9446);
-    			add_location(td7, file$f, 338, 6, 9607);
-    			add_location(tr, file$f, 330, 5, 9221);
+    			add_location(td0, file$f, 320, 6, 8821);
+    			add_location(td1, file$f, 321, 6, 8855);
+    			add_location(td2, file$f, 322, 6, 8892);
+    			add_location(td3, file$f, 323, 6, 8927);
+    			add_location(td4, file$f, 324, 6, 8962);
+    			add_location(td5, file$f, 325, 6, 8999);
+    			add_location(td6, file$f, 326, 6, 9034);
+    			add_location(td7, file$f, 327, 6, 9195);
+    			add_location(tr, file$f, 319, 5, 8809);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -15145,23 +14831,23 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t0_value !== (t0_value = /*goalscorer*/ ctx[32].name + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t2_value !== (t2_value = /*goalscorer*/ ctx[32].country + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t4_value !== (t4_value = /*goalscorer*/ ctx[32].debut + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t6_value !== (t6_value = /*goalscorer*/ ctx[32].goals + "")) set_data_dev(t6, t6_value);
-    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t8_value !== (t8_value = /*goalscorer*/ ctx[32].matches + "")) set_data_dev(t8, t8_value);
-    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t10_value !== (t10_value = /*goalscorer*/ ctx[32].teams + "")) set_data_dev(t10, t10_value);
+    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t0_value !== (t0_value = /*goalscorer*/ ctx[29].name + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t2_value !== (t2_value = /*goalscorer*/ ctx[29].country + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t4_value !== (t4_value = /*goalscorer*/ ctx[29].debut + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t6_value !== (t6_value = /*goalscorer*/ ctx[29].goals + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t8_value !== (t8_value = /*goalscorer*/ ctx[29].matches + "")) set_data_dev(t8, t8_value);
+    			if ((!current || dirty[0] & /*goalscorers*/ 32) && t10_value !== (t10_value = /*goalscorer*/ ctx[29].teams + "")) set_data_dev(t10, t10_value);
     			const button0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
-    			if (dirty[0] & /*goalscorers*/ 32) button1_changes.href = "#/goalscorers/" + /*goalscorer*/ ctx[32].name;
+    			if (dirty[0] & /*goalscorers*/ 32) button1_changes.href = "#/goalscorers/" + /*goalscorer*/ ctx[29].name;
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15189,14 +14875,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(330:4) {#each goalscorers as goalscorer}",
+    		source: "(319:4) {#each goalscorers as goalscorer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:2) <Table bordered>
+    // (296:2) <Table bordered>
     function create_default_slot_11$2(ctx) {
     	let thead;
     	let tr0;
@@ -15249,7 +14935,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button.$on("click", /*insertGoalscorer*/ ctx[9]);
+    	button.$on("click", /*insertGoalscorer*/ ctx[7]);
     	let each_value = /*goalscorers*/ ctx[5];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -15315,34 +15001,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$f, 309, 5, 8465);
-    			add_location(th1, file$f, 310, 5, 8487);
-    			add_location(th2, file$f, 311, 5, 8507);
-    			add_location(th3, file$f, 312, 5, 8528);
-    			add_location(th4, file$f, 313, 5, 8549);
-    			add_location(th5, file$f, 314, 5, 8573);
-    			add_location(th6, file$f, 315, 5, 8596);
-    			add_location(tr0, file$f, 308, 4, 8454);
-    			add_location(thead, file$f, 307, 3, 8441);
-    			add_location(input0, file$f, 321, 9, 8672);
-    			add_location(td0, file$f, 321, 5, 8668);
-    			add_location(input1, file$f, 322, 9, 8729);
-    			add_location(td1, file$f, 322, 5, 8725);
+    			add_location(th0, file$f, 298, 5, 8053);
+    			add_location(th1, file$f, 299, 5, 8075);
+    			add_location(th2, file$f, 300, 5, 8095);
+    			add_location(th3, file$f, 301, 5, 8116);
+    			add_location(th4, file$f, 302, 5, 8137);
+    			add_location(th5, file$f, 303, 5, 8161);
+    			add_location(th6, file$f, 304, 5, 8184);
+    			add_location(tr0, file$f, 297, 4, 8042);
+    			add_location(thead, file$f, 296, 3, 8029);
+    			add_location(input0, file$f, 310, 9, 8260);
+    			add_location(td0, file$f, 310, 5, 8256);
+    			add_location(input1, file$f, 311, 9, 8317);
+    			add_location(td1, file$f, 311, 5, 8313);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$f, 323, 9, 8789);
-    			add_location(td2, file$f, 323, 5, 8785);
+    			add_location(input2, file$f, 312, 9, 8377);
+    			add_location(td2, file$f, 312, 5, 8373);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$f, 324, 9, 8861);
-    			add_location(td3, file$f, 324, 5, 8857);
+    			add_location(input3, file$f, 313, 9, 8449);
+    			add_location(td3, file$f, 313, 5, 8445);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$f, 325, 9, 8933);
-    			add_location(td4, file$f, 325, 5, 8929);
+    			add_location(input4, file$f, 314, 9, 8521);
+    			add_location(td4, file$f, 314, 5, 8517);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$f, 326, 9, 9007);
-    			add_location(td5, file$f, 326, 5, 9003);
-    			add_location(td6, file$f, 327, 5, 9075);
-    			add_location(tr1, file$f, 320, 4, 8657);
-    			add_location(tbody, file$f, 319, 3, 8644);
+    			add_location(input5, file$f, 315, 9, 8595);
+    			add_location(td5, file$f, 315, 5, 8591);
+    			add_location(td6, file$f, 316, 5, 8663);
+    			add_location(tr1, file$f, 309, 4, 8245);
+    			add_location(tbody, file$f, 308, 3, 8232);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -15399,12 +15085,12 @@ var app = (function () {
     			if (remount) run_all(dispose);
 
     			dispose = [
-    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[22]),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[23]),
-    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[24]),
-    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[25]),
-    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[26]),
-    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[27])
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[19]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[20]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[21]),
+    				listen_dev(input3, "input", /*input3_input_handler*/ ctx[22]),
+    				listen_dev(input4, "input", /*input4_input_handler*/ ctx[23]),
+    				listen_dev(input5, "input", /*input5_input_handler*/ ctx[24])
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -15434,13 +15120,13 @@ var app = (function () {
 
     			const button_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
     			button.$set(button_changes);
 
-    			if (dirty[0] & /*goalscorers, deleteGoalscorer*/ 1056) {
+    			if (dirty[0] & /*goalscorers, deleteGoalscorer*/ 288) {
     				each_value = /*goalscorers*/ ctx[5];
     				validate_each_argument(each_value);
     				let i;
@@ -15502,14 +15188,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$2.name,
     		type: "slot",
-    		source: "(307:2) <Table bordered>",
+    		source: "(296:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (280:21)     Loading goalscorers...   {:then goalscorers}
+    // (279:21)     Loading goalscorers...   {:then goalscorers}
     function create_pending_block$4(ctx) {
     	let t;
 
@@ -15532,14 +15218,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$4.name,
     		type: "pending",
-    		source: "(280:21)     Loading goalscorers...   {:then goalscorers}",
+    		source: "(279:21)     Loading goalscorers...   {:then goalscorers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (349:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
+    // (338:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
     function create_default_slot_10$2(ctx) {
     	let current;
 
@@ -15548,7 +15234,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	paginationlink.$on("click", /*click_handler*/ ctx[28]);
+    	paginationlink.$on("click", /*click_handler*/ ctx[25]);
 
     	const block = {
     		c: function create() {
@@ -15577,14 +15263,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$2.name,
     		type: "slot",
-    		source: "(349:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
+    		source: "(338:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (353:2) {#if currentPage != 1}
+    // (342:2) {#if currentPage != 1}
     function create_if_block_1$4(ctx) {
     	let current;
 
@@ -15607,7 +15293,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const paginationitem_changes = {};
 
-    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 16) {
     				paginationitem_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15631,14 +15317,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(353:2) {#if currentPage != 1}",
+    		source: "(342:2) {#if currentPage != 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (355:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >
+    // (344:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >
     function create_default_slot_9$2(ctx) {
     	let t_value = /*currentPage*/ ctx[3] - 1 + "";
     	let t;
@@ -15662,14 +15348,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$2.name,
     		type: "slot",
-    		source: "(355:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
+    		source: "(344:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (354:2) <PaginationItem>
+    // (343:2) <PaginationItem>
     function create_default_slot_8$2(ctx) {
     	let current;
 
@@ -15682,7 +15368,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	paginationlink.$on("click", /*click_handler_1*/ ctx[29]);
+    	paginationlink.$on("click", /*click_handler_1*/ ctx[26]);
 
     	const block = {
     		c: function create() {
@@ -15695,7 +15381,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const paginationlink_changes = {};
 
-    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 16) {
     				paginationlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15719,14 +15405,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(354:2) <PaginationItem>",
+    		source: "(343:2) <PaginationItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (359:3) <PaginationLink href="#/goalscorersAPI" >
+    // (348:3) <PaginationLink href="#/goalscorersAPI" >
     function create_default_slot_7$2(ctx) {
     	let t;
 
@@ -15749,14 +15435,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(359:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" >",
+    		source: "(348:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (358:2) <PaginationItem active>
+    // (347:2) <PaginationItem active>
     function create_default_slot_6$2(ctx) {
     	let current;
 
@@ -15780,7 +15466,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const paginationlink_changes = {};
 
-    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 16) {
     				paginationlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15804,14 +15490,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(358:2) <PaginationItem active>",
+    		source: "(347:2) <PaginationItem active>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (362:2) {#if moreData}
+    // (351:2) {#if moreData}
     function create_if_block$a(ctx) {
     	let current;
 
@@ -15834,7 +15520,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const paginationitem_changes = {};
 
-    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 16) {
     				paginationitem_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15858,14 +15544,14 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(362:2) {#if moreData}",
+    		source: "(351:2) {#if moreData}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (364:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">
+    // (353:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">
     function create_default_slot_5$2(ctx) {
     	let t_value = /*currentPage*/ ctx[3] + 1 + "";
     	let t;
@@ -15889,14 +15575,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(364:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
+    		source: "(353:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (363:2) <PaginationItem >
+    // (352:2) <PaginationItem >
     function create_default_slot_4$2(ctx) {
     	let current;
 
@@ -15909,7 +15595,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	paginationlink.$on("click", /*click_handler_2*/ ctx[30]);
+    	paginationlink.$on("click", /*click_handler_2*/ ctx[27]);
 
     	const block = {
     		c: function create() {
@@ -15922,7 +15608,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const paginationlink_changes = {};
 
-    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 16) {
     				paginationlink_changes.$$scope = { dirty, ctx };
     			}
 
@@ -15946,14 +15632,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(363:2) <PaginationItem >",
+    		source: "(352:2) <PaginationItem >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (368:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
+    // (357:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
     function create_default_slot_3$2(ctx) {
     	let current;
 
@@ -15962,7 +15648,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	paginationlink.$on("click", /*click_handler_3*/ ctx[31]);
+    	paginationlink.$on("click", /*click_handler_3*/ ctx[28]);
 
     	const block = {
     		c: function create() {
@@ -15991,14 +15677,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(368:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
+    		source: "(357:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (346:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
+    // (335:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
     function create_default_slot_2$4(ctx) {
     	let t0;
     	let t1;
@@ -16065,7 +15751,7 @@ var app = (function () {
     			const paginationitem0_changes = {};
     			if (dirty[0] & /*currentPage*/ 8) paginationitem0_changes.class = /*currentPage*/ ctx[3] === 1 ? "disabled" : "";
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				paginationitem0_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16096,7 +15782,7 @@ var app = (function () {
 
     			const paginationitem1_changes = {};
 
-    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*currentPage*/ 8 | dirty[1] & /*$$scope*/ 16) {
     				paginationitem1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16128,7 +15814,7 @@ var app = (function () {
     			const paginationitem2_changes = {};
     			if (dirty[0] & /*moreData*/ 16) paginationitem2_changes.class = /*moreData*/ ctx[4] ? "" : "disabled";
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				paginationitem2_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16168,14 +15854,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$4.name,
     		type: "slot",
-    		source: "(346:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
+    		source: "(335:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (374:1) <Button outline color="secondary" on:click="{pop}">
+    // (363:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot_1$4(ctx) {
     	let i;
     	let t;
@@ -16185,7 +15871,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$f, 373, 53, 10795);
+    			add_location(i, file$f, 362, 53, 10383);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16201,14 +15887,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$4.name,
     		type: "slot",
-    		source: "(374:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(363:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (375:1) <Button outline on:click={deleteGoalscorers} color="danger">
+    // (364:1) <Button outline on:click={deleteGoalscorers} color="danger">
     function create_default_slot$4(ctx) {
     	let i;
     	let t;
@@ -16219,7 +15905,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$f, 374, 62, 10915);
+    			add_location(i, file$f, 363, 62, 10503);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16235,7 +15921,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(375:1) <Button outline on:click={deleteGoalscorers} color=\\\"danger\\\">",
+    		source: "(364:1) <Button outline on:click={deleteGoalscorers} color=\\\"danger\\\">",
     		ctx
     	});
 
@@ -16297,7 +15983,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*deleteGoalscorers*/ ctx[11]);
+    	button1.$on("click", /*deleteGoalscorers*/ ctx[9]);
 
     	const block = {
     		c: function create() {
@@ -16314,8 +16000,8 @@ var app = (function () {
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
-    			add_location(div, file$f, 278, 1, 7445);
-    			add_location(main, file$f, 277, 0, 7436);
+    			add_location(div, file$f, 277, 1, 7264);
+    			add_location(main, file$f, 276, 0, 7255);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16347,21 +16033,21 @@ var app = (function () {
 
     			const pagination_changes = {};
 
-    			if (dirty[0] & /*moreData, currentPage*/ 24 | dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[0] & /*moreData, currentPage*/ 24 | dirty[1] & /*$$scope*/ 16) {
     				pagination_changes.$$scope = { dirty, ctx };
     			}
 
     			pagination.$set(pagination_changes);
     			const button0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				button0_changes.$$scope = { dirty, ctx };
     			}
 
     			button0.$set(button0_changes);
     			const button1_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 1024) {
+    			if (dirty[1] & /*$$scope*/ 16) {
     				button1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -16503,16 +16189,15 @@ var app = (function () {
     	};
 
     	let BASE_API_URL = "/api/v2";
-    	let debutYears = [];
     	let teams = [];
-    	let totalGoals = [];
-    	let currentYear = "-";
-    	let currentTeam = "-";
+    	let names = [];
+    	let currentName = "--Mostrar todos--";
     	let numberElementsPages = 10;
     	let offset = 0;
     	let currentPage = 1;
     	let moreData = true;
     	onMount(getGoalscorers);
+    	onMount(getNames);
 
     	async function ReloadTable() {
     		const res = await fetch(BASE_API_URL + "/goalscorers/loadInitialData");
@@ -16527,18 +16212,17 @@ var app = (function () {
     		}
     	}
 
-    	async function getGoals() {
+    	async function getNames() {
     		const res = await fetch(BASE_API_URL + "/goalscorers");
 
     		if (res.ok) {
     			const json = await res.json();
 
-    			totalGoals = json.map(d => {
-    				return d.goals; //Guardamos los años en un array
-    			});
+    			$$invalidate(1, names = json.map(d => {
+    				return d.name;
+    			}));
 
-    			totalGoals = Array.from(new Set(totalGoals)); //Eliminamos años repetidos
-    			console.log("Contados " + totalGoals.length + " goles.");
+    			console.log("Contados " + names.length + " goles.");
     		} else {
     			console.log("Error");
     		}
@@ -16586,6 +16270,12 @@ var app = (function () {
     				if (res.ok) {
     					getGoalscorers();
     					insertAlert$2();
+    					$$invalidate(0, newGoalscorer.country = "", newGoalscorer);
+    					$$invalidate(0, newGoalscorer.debut = "", newGoalscorer);
+    					$$invalidate(0, newGoalscorer.goals = "", newGoalscorer);
+    					$$invalidate(0, newGoalscorer.matches = "", newGoalscorer);
+    					$$invalidate(0, newGoalscorer.name = "", newGoalscorer);
+    					$$invalidate(0, newGoalscorer.teams = "", newGoalscorer);
     				} else {
     					errorAlert$4("Error interno al intentar insertar un goleador");
     				}
@@ -16622,17 +16312,11 @@ var app = (function () {
     	}
 
     	async function search(name) {
-    		console.log("Searching data: " + debut + " and " + team);
-
-    		/* Checking if the fields are empty */
+    		console.log("Searching data: " + name);
     		var url = BASE_API_URL + "/goalscorers";
 
-    		if (debut != "-" && team != "-") {
-    			url = url + "?debut=" + debut + "&team=" + team;
-    		} else if (debut != "-" && team == "-") {
-    			url = url + "?debut=" + debut;
-    		} else if (debut == "-" && team != "-") {
-    			url = url + "?team=" + team;
+    		if (name != "--Mostrar todos--") {
+    			url = url + "?name=" + name;
     		}
 
     		const res = await fetch(url);
@@ -16663,13 +16347,8 @@ var app = (function () {
     	validate_slots("GoalscorersTable", $$slots, []);
 
     	function input_value_binding(value) {
-    		currentYear = value;
-    		$$invalidate(1, currentYear);
-    	}
-
-    	function input_value_binding_1(value) {
-    		currentTeam = value;
-    		$$invalidate(2, currentTeam);
+    		currentName = value;
+    		$$invalidate(2, currentName);
     	}
 
     	function input0_input_handler() {
@@ -16721,17 +16400,15 @@ var app = (function () {
     		goalscorers,
     		newGoalscorer,
     		BASE_API_URL,
-    		debutYears,
     		teams,
-    		totalGoals,
-    		currentYear,
-    		currentTeam,
+    		names,
+    		currentName,
     		numberElementsPages,
     		offset,
     		currentPage,
     		moreData,
     		ReloadTable,
-    		getGoals,
+    		getNames,
     		getGoalscorers,
     		insertGoalscorer,
     		deleteGoalscorer,
@@ -16750,11 +16427,9 @@ var app = (function () {
     		if ("goalscorers" in $$props) $$invalidate(5, goalscorers = $$props.goalscorers);
     		if ("newGoalscorer" in $$props) $$invalidate(0, newGoalscorer = $$props.newGoalscorer);
     		if ("BASE_API_URL" in $$props) BASE_API_URL = $$props.BASE_API_URL;
-    		if ("debutYears" in $$props) $$invalidate(6, debutYears = $$props.debutYears);
-    		if ("teams" in $$props) $$invalidate(7, teams = $$props.teams);
-    		if ("totalGoals" in $$props) totalGoals = $$props.totalGoals;
-    		if ("currentYear" in $$props) $$invalidate(1, currentYear = $$props.currentYear);
-    		if ("currentTeam" in $$props) $$invalidate(2, currentTeam = $$props.currentTeam);
+    		if ("teams" in $$props) teams = $$props.teams;
+    		if ("names" in $$props) $$invalidate(1, names = $$props.names);
+    		if ("currentName" in $$props) $$invalidate(2, currentName = $$props.currentName);
     		if ("numberElementsPages" in $$props) numberElementsPages = $$props.numberElementsPages;
     		if ("offset" in $$props) offset = $$props.offset;
     		if ("currentPage" in $$props) $$invalidate(3, currentPage = $$props.currentPage);
@@ -16767,27 +16442,24 @@ var app = (function () {
 
     	return [
     		newGoalscorer,
-    		currentYear,
-    		currentTeam,
+    		names,
+    		currentName,
     		currentPage,
     		moreData,
     		goalscorers,
-    		debutYears,
-    		teams,
     		ReloadTable,
     		insertGoalscorer,
     		deleteGoalscorer,
     		deleteGoalscorers,
     		search,
     		addOffset,
-    		totalGoals,
     		offset,
     		BASE_API_URL,
+    		teams,
     		numberElementsPages,
-    		getGoals,
+    		getNames,
     		getGoalscorers,
     		input_value_binding,
-    		input_value_binding_1,
     		input0_input_handler,
     		input1_input_handler,
     		input2_input_handler,
@@ -16901,11 +16573,814 @@ var app = (function () {
     	}
     }
 
-    /* src\front\NotFound.svelte generated by Svelte v3.21.0 */
+    /* src\front\GoalscorersGUI\EditGoalscorer.svelte generated by Svelte v3.21.0 */
 
-    const file$h = "src\\front\\NotFound.svelte";
+    const { console: console_1$7 } = globals;
+    const file$h = "src\\front\\GoalscorersGUI\\EditGoalscorer.svelte";
+
+    // (1:0) <script>      import {          onMount      }
+    function create_catch_block$5(ctx) {
+    	const block = {
+    		c: noop,
+    		m: noop,
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: noop
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_catch_block$5.name,
+    		type: "catch",
+    		source: "(1:0) <script>      import {          onMount      }",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (121:4) {:then goalscorer}
+    function create_then_block$5(ctx) {
+    	let current;
+
+    	const table = new Table({
+    			props: {
+    				bordered: true,
+    				$$slots: { default: [create_default_slot_1$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(table.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const table_changes = {};
+
+    			if (dirty & /*$$scope, updatedTeams, updatedMatches, updatedGoals, updatedDebut, updatedCountry, updatedName*/ 32831) {
+    				table_changes.$$scope = { dirty, ctx };
+    			}
+
+    			table.$set(table_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_then_block$5.name,
+    		type: "then",
+    		source: "(121:4) {:then goalscorer}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (142:25) <Button outline  color="primary" on:click={updateGoalscorer}>
+    function create_default_slot_2$5(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Actualizar");
+    			attr_dev(i, "class", "fa fa-refresh");
+    			attr_dev(i, "aria-hidden", "true");
+    			add_location(i, file$h, 141, 87, 4552);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$5.name,
+    		type: "slot",
+    		source: "(142:25) <Button outline  color=\\\"primary\\\" on:click={updateGoalscorer}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (122:8) <Table bordered>
+    function create_default_slot_1$5(ctx) {
+    	let thead;
+    	let tr0;
+    	let th0;
+    	let t1;
+    	let th1;
+    	let t3;
+    	let th2;
+    	let t5;
+    	let th3;
+    	let t7;
+    	let th4;
+    	let t9;
+    	let th5;
+    	let t11;
+    	let th6;
+    	let t13;
+    	let tbody;
+    	let tr1;
+    	let td0;
+    	let t14;
+    	let t15;
+    	let td1;
+    	let t16;
+    	let t17;
+    	let td2;
+    	let t18;
+    	let t19;
+    	let td3;
+    	let input0;
+    	let t20;
+    	let td4;
+    	let input1;
+    	let t21;
+    	let td5;
+    	let input2;
+    	let t22;
+    	let td6;
+    	let current;
+    	let dispose;
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot_2$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*updateGoalscorer*/ ctx[8]);
+
+    	const block = {
+    		c: function create() {
+    			thead = element("thead");
+    			tr0 = element("tr");
+    			th0 = element("th");
+    			th0.textContent = "Nombre";
+    			t1 = space();
+    			th1 = element("th");
+    			th1.textContent = "País";
+    			t3 = space();
+    			th2 = element("th");
+    			th2.textContent = "Debut";
+    			t5 = space();
+    			th3 = element("th");
+    			th3.textContent = "Goles";
+    			t7 = space();
+    			th4 = element("th");
+    			th4.textContent = "Partidos";
+    			t9 = space();
+    			th5 = element("th");
+    			th5.textContent = "Equipos";
+    			t11 = space();
+    			th6 = element("th");
+    			th6.textContent = "Acciones";
+    			t13 = space();
+    			tbody = element("tbody");
+    			tr1 = element("tr");
+    			td0 = element("td");
+    			t14 = text(/*updatedName*/ ctx[0]);
+    			t15 = space();
+    			td1 = element("td");
+    			t16 = text(/*updatedCountry*/ ctx[2]);
+    			t17 = space();
+    			td2 = element("td");
+    			t18 = text(/*updatedDebut*/ ctx[1]);
+    			t19 = space();
+    			td3 = element("td");
+    			input0 = element("input");
+    			t20 = space();
+    			td4 = element("td");
+    			input1 = element("input");
+    			t21 = space();
+    			td5 = element("td");
+    			input2 = element("input");
+    			t22 = space();
+    			td6 = element("td");
+    			create_component(button.$$.fragment);
+    			add_location(th0, file$h, 124, 20, 3759);
+    			add_location(th1, file$h, 125, 20, 3796);
+    			add_location(th2, file$h, 126, 20, 3831);
+    			add_location(th3, file$h, 127, 20, 3867);
+    			add_location(th4, file$h, 128, 20, 3903);
+    			add_location(th5, file$h, 129, 20, 3942);
+    			add_location(th6, file$h, 130, 20, 3980);
+    			add_location(tr0, file$h, 123, 16, 3733);
+    			add_location(thead, file$h, 122, 12, 3708);
+    			add_location(td0, file$h, 135, 20, 4107);
+    			add_location(td1, file$h, 136, 20, 4151);
+    			add_location(td2, file$h, 137, 20, 4198);
+    			attr_dev(input0, "type", "number");
+    			add_location(input0, file$h, 138, 24, 4247);
+    			add_location(td3, file$h, 138, 20, 4243);
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file$h, 139, 24, 4327);
+    			add_location(td4, file$h, 139, 20, 4323);
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file$h, 140, 24, 4409);
+    			add_location(td5, file$h, 140, 20, 4405);
+    			add_location(td6, file$h, 141, 20, 4485);
+    			add_location(tr1, file$h, 134, 16, 4081);
+    			add_location(tbody, file$h, 133, 12, 4056);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, thead, anchor);
+    			append_dev(thead, tr0);
+    			append_dev(tr0, th0);
+    			append_dev(tr0, t1);
+    			append_dev(tr0, th1);
+    			append_dev(tr0, t3);
+    			append_dev(tr0, th2);
+    			append_dev(tr0, t5);
+    			append_dev(tr0, th3);
+    			append_dev(tr0, t7);
+    			append_dev(tr0, th4);
+    			append_dev(tr0, t9);
+    			append_dev(tr0, th5);
+    			append_dev(tr0, t11);
+    			append_dev(tr0, th6);
+    			insert_dev(target, t13, anchor);
+    			insert_dev(target, tbody, anchor);
+    			append_dev(tbody, tr1);
+    			append_dev(tr1, td0);
+    			append_dev(td0, t14);
+    			append_dev(tr1, t15);
+    			append_dev(tr1, td1);
+    			append_dev(td1, t16);
+    			append_dev(tr1, t17);
+    			append_dev(tr1, td2);
+    			append_dev(td2, t18);
+    			append_dev(tr1, t19);
+    			append_dev(tr1, td3);
+    			append_dev(td3, input0);
+    			set_input_value(input0, /*updatedGoals*/ ctx[3]);
+    			append_dev(tr1, t20);
+    			append_dev(tr1, td4);
+    			append_dev(td4, input1);
+    			set_input_value(input1, /*updatedMatches*/ ctx[4]);
+    			append_dev(tr1, t21);
+    			append_dev(tr1, td5);
+    			append_dev(td5, input2);
+    			set_input_value(input2, /*updatedTeams*/ ctx[5]);
+    			append_dev(tr1, t22);
+    			append_dev(tr1, td6);
+    			mount_component(button, td6, null);
+    			current = true;
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[13]),
+    				listen_dev(input2, "input", /*input2_input_handler*/ ctx[14])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (!current || dirty & /*updatedName*/ 1) set_data_dev(t14, /*updatedName*/ ctx[0]);
+    			if (!current || dirty & /*updatedCountry*/ 4) set_data_dev(t16, /*updatedCountry*/ ctx[2]);
+    			if (!current || dirty & /*updatedDebut*/ 2) set_data_dev(t18, /*updatedDebut*/ ctx[1]);
+
+    			if (dirty & /*updatedGoals*/ 8 && to_number(input0.value) !== /*updatedGoals*/ ctx[3]) {
+    				set_input_value(input0, /*updatedGoals*/ ctx[3]);
+    			}
+
+    			if (dirty & /*updatedMatches*/ 16 && to_number(input1.value) !== /*updatedMatches*/ ctx[4]) {
+    				set_input_value(input1, /*updatedMatches*/ ctx[4]);
+    			}
+
+    			if (dirty & /*updatedTeams*/ 32 && to_number(input2.value) !== /*updatedTeams*/ ctx[5]) {
+    				set_input_value(input2, /*updatedTeams*/ ctx[5]);
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 32768) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(thead);
+    			if (detaching) detach_dev(t13);
+    			if (detaching) detach_dev(tbody);
+    			destroy_component(button);
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$5.name,
+    		type: "slot",
+    		source: "(122:8) <Table bordered>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (119:23)           Cargando goalscorers...      {:then goalscorer}
+    function create_pending_block$5(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Cargando goalscorers...");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_pending_block$5.name,
+    		type: "pending",
+    		source: "(119:23)           Cargando goalscorers...      {:then goalscorer}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (147:4) {#if errorMsg}
+    function create_if_block$b(ctx) {
+    	let p;
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("ERROR: ");
+    			t1 = text(/*errorMsg*/ ctx[6]);
+    			set_style(p, "color", "red");
+    			add_location(p, file$h, 147, 8, 4729);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*errorMsg*/ 64) set_data_dev(t1, /*errorMsg*/ ctx[6]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$b.name,
+    		type: "if",
+    		source: "(147:4) {#if errorMsg}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (150:4) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot$5(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Atrás");
+    			attr_dev(i, "class", "fas fa-arrow-circle-left");
+    			add_location(i, file$h, 149, 56, 4841);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$5.name,
+    		type: "slot",
+    		source: "(150:4) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
 
     function create_fragment$i(ctx) {
+    	let main;
+    	let div;
+    	let t0;
+    	let h3;
+    	let t1;
+    	let strong;
+    	let t3;
+    	let promise;
+    	let t4;
+    	let t5;
+    	let current;
+
+    	let info = {
+    		ctx,
+    		current: null,
+    		token: null,
+    		pending: create_pending_block$5,
+    		then: create_then_block$5,
+    		catch: create_catch_block$5,
+    		value: 7,
+    		blocks: [,,,]
+    	};
+
+    	handle_promise(promise = /*goalscorer*/ ctx[7], info);
+    	let if_block = /*errorMsg*/ ctx[6] && create_if_block$b(ctx);
+
+    	const button = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				$$slots: { default: [create_default_slot$5] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", pop);
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			div = element("div");
+    			t0 = space();
+    			h3 = element("h3");
+    			t1 = text("Editar goleador ");
+    			strong = element("strong");
+    			strong.textContent = "params.name";
+    			t3 = space();
+    			info.block.c();
+    			t4 = space();
+    			if (if_block) if_block.c();
+    			t5 = space();
+    			create_component(button.$$.fragment);
+    			attr_dev(div, "role", "alert");
+    			attr_dev(div, "id", "div_alert");
+    			set_style(div, "display", "none");
+    			add_location(div, file$h, 115, 4, 3461);
+    			add_location(strong, file$h, 117, 24, 3552);
+    			add_location(h3, file$h, 117, 4, 3532);
+    			add_location(main, file$h, 114, 0, 3449);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, div);
+    			append_dev(main, t0);
+    			append_dev(main, h3);
+    			append_dev(h3, t1);
+    			append_dev(h3, strong);
+    			append_dev(main, t3);
+    			info.block.m(main, info.anchor = null);
+    			info.mount = () => main;
+    			info.anchor = t4;
+    			append_dev(main, t4);
+    			if (if_block) if_block.m(main, null);
+    			append_dev(main, t5);
+    			mount_component(button, main, null);
+    			current = true;
+    		},
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+    			info.ctx = ctx;
+
+    			if (dirty & /*goalscorer*/ 128 && promise !== (promise = /*goalscorer*/ ctx[7]) && handle_promise(promise, info)) ; else {
+    				const child_ctx = ctx.slice();
+    				child_ctx[7] = info.resolved;
+    				info.block.p(child_ctx, dirty);
+    			}
+
+    			if (/*errorMsg*/ ctx[6]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$b(ctx);
+    					if_block.c();
+    					if_block.m(main, t5);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 32768) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(info.block);
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			for (let i = 0; i < 3; i += 1) {
+    				const block = info.blocks[i];
+    				transition_out(block);
+    			}
+
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			info.block.d();
+    			info.token = null;
+    			info = null;
+    			if (if_block) if_block.d();
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$i.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function errorAlert$5(error) {
+    	clearAlert$5();
+    	var alert_element = document.getElementById("div_alert");
+    	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+    	alert_element.className = "alert alert-dismissible in alert-danger ";
+    	alert_element.innerHTML = "<strong>Error</strong> Ha ocurrido un error " + error;
+
+    	setTimeout(
+    		() => {
+    			clearAlert$5();
+    		},
+    		3000
+    	);
+    }
+
+    function updateAlert$2() {
+    	clearAlert$5();
+    	var alert_element = document.getElementById("div_alert");
+    	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
+    	alert_element.className = "alert alert-dismissible in alert-info ";
+    	alert_element.innerHTML = "<strong>Dato actualizado.</strong> Se ha actualizado el dato correctamente";
+
+    	setTimeout(
+    		() => {
+    			clearAlert$5();
+    		},
+    		3000
+    	);
+    }
+
+    function clearAlert$5() {
+    	var alert_element = document.getElementById("div_alert");
+    	alert_element.style = "display: none; ";
+    	alert_element.className = "alert alert-dismissible in";
+    	alert_element.innerHTML = "";
+    }
+
+    function instance$i($$self, $$props, $$invalidate) {
+    	let { params = {} } = $$props;
+    	let BASE_API_URL = "/api/v2";
+    	let goalscorer = {};
+    	let updatedName;
+    	let updatedDebut;
+    	let updatedCountry;
+    	let updatedGoals;
+    	let updatedMatches;
+    	let updatedTeams;
+    	let errorMsg;
+    	onMount(getGoalscorer);
+
+    	async function getGoalscorer() {
+    		console.log("Fetching goalscorer...");
+    		const res = await fetch(BASE_API_URL + "/goalscorers/" + params.name);
+
+    		if (res.ok) {
+    			console.log("Ok:");
+    			const json = await res.json();
+    			$$invalidate(7, goalscorer = json);
+    			$$invalidate(0, updatedName = goalscorer.name);
+    			$$invalidate(1, updatedDebut = goalscorer.debut);
+    			$$invalidate(2, updatedCountry = goalscorer.country);
+    			$$invalidate(3, updatedGoals = goalscorer.goals);
+    			$$invalidate(4, updatedMatches = goalscorer.matches);
+    			$$invalidate(5, updatedTeams = goalscorer.teams);
+    			console.log("Goalscorer received");
+    		} else {
+    			$$invalidate(6, errorMsg = res.status + ": " + res.statusText);
+    			console.log("Error" + errorMsg);
+    		}
+    	}
+
+    	async function updateGoalscorer() {
+    		console.log("Updating goalscorer..." + JSON.stringify(params.name));
+
+    		const res = await fetch(BASE_API_URL + "/goalscorers/" + params.name, {
+    			method: "PUT",
+    			body: JSON.stringify({
+    				name: updatedName,
+    				debut: parseInt(updatedDebut),
+    				country: updatedCountry,
+    				goals: updatedGoals,
+    				matches: updatedMatches,
+    				teams: updatedTeams
+    			}),
+    			headers: { "Content-Type": "application/json" }
+    		}).then(function (res) {
+    			if (res.ok) {
+    				getGoalscorer();
+    				updateAlert$2();
+    			} else if (res.status == 404) {
+    				errorAlert$5("Se ha intentado actualizar un elemento inexistente.");
+    			} else {
+    				errorAlert$5("");
+    			}
+    		});
+    	}
+
+    	const writable_props = ["params"];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$7.warn(`<EditGoalscorer> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("EditGoalscorer", $$slots, []);
+
+    	function input0_input_handler() {
+    		updatedGoals = to_number(this.value);
+    		$$invalidate(3, updatedGoals);
+    	}
+
+    	function input1_input_handler() {
+    		updatedMatches = to_number(this.value);
+    		$$invalidate(4, updatedMatches);
+    	}
+
+    	function input2_input_handler() {
+    		updatedTeams = to_number(this.value);
+    		$$invalidate(5, updatedTeams);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ("params" in $$props) $$invalidate(9, params = $$props.params);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		pop,
+    		Table,
+    		Button,
+    		Input,
+    		params,
+    		BASE_API_URL,
+    		goalscorer,
+    		updatedName,
+    		updatedDebut,
+    		updatedCountry,
+    		updatedGoals,
+    		updatedMatches,
+    		updatedTeams,
+    		errorMsg,
+    		getGoalscorer,
+    		updateGoalscorer,
+    		errorAlert: errorAlert$5,
+    		updateAlert: updateAlert$2,
+    		clearAlert: clearAlert$5
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("params" in $$props) $$invalidate(9, params = $$props.params);
+    		if ("BASE_API_URL" in $$props) BASE_API_URL = $$props.BASE_API_URL;
+    		if ("goalscorer" in $$props) $$invalidate(7, goalscorer = $$props.goalscorer);
+    		if ("updatedName" in $$props) $$invalidate(0, updatedName = $$props.updatedName);
+    		if ("updatedDebut" in $$props) $$invalidate(1, updatedDebut = $$props.updatedDebut);
+    		if ("updatedCountry" in $$props) $$invalidate(2, updatedCountry = $$props.updatedCountry);
+    		if ("updatedGoals" in $$props) $$invalidate(3, updatedGoals = $$props.updatedGoals);
+    		if ("updatedMatches" in $$props) $$invalidate(4, updatedMatches = $$props.updatedMatches);
+    		if ("updatedTeams" in $$props) $$invalidate(5, updatedTeams = $$props.updatedTeams);
+    		if ("errorMsg" in $$props) $$invalidate(6, errorMsg = $$props.errorMsg);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		updatedName,
+    		updatedDebut,
+    		updatedCountry,
+    		updatedGoals,
+    		updatedMatches,
+    		updatedTeams,
+    		errorMsg,
+    		goalscorer,
+    		updateGoalscorer,
+    		params,
+    		BASE_API_URL,
+    		getGoalscorer,
+    		input0_input_handler,
+    		input1_input_handler,
+    		input2_input_handler
+    	];
+    }
+
+    class EditGoalscorer extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$i, create_fragment$i, safe_not_equal, { params: 9 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "EditGoalscorer",
+    			options,
+    			id: create_fragment$i.name
+    		});
+    	}
+
+    	get params() {
+    		throw new Error("<EditGoalscorer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set params(value) {
+    		throw new Error("<EditGoalscorer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src\front\NotFound.svelte generated by Svelte v3.21.0 */
+
+    const file$i = "src\\front\\NotFound.svelte";
+
+    function create_fragment$j(ctx) {
     	let main;
     	let h1;
 
@@ -16914,8 +17389,8 @@ var app = (function () {
     			main = element("main");
     			h1 = element("h1");
     			h1.textContent = "Página no encontrada";
-    			add_location(h1, file$h, 1, 4, 11);
-    			add_location(main, file$h, 0, 0, 0);
+    			add_location(h1, file$i, 1, 4, 11);
+    			add_location(main, file$i, 0, 0, 0);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16934,7 +17409,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$i.name,
+    		id: create_fragment$j.name,
     		type: "component",
     		source: "",
     		ctx
@@ -16943,7 +17418,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$i($$self, $$props) {
+    function instance$j($$self, $$props) {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -16958,21 +17433,21 @@ var app = (function () {
     class NotFound extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$i, create_fragment$i, safe_not_equal, {});
+    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "NotFound",
     			options,
-    			id: create_fragment$i.name
+    			id: create_fragment$j.name
     		});
     	}
     }
 
     /* src\front\App.svelte generated by Svelte v3.21.0 */
-    const file$i = "src\\front\\App.svelte";
+    const file$j = "src\\front\\App.svelte";
 
-    function create_fragment$j(ctx) {
+    function create_fragment$k(ctx) {
     	let main;
     	let current;
 
@@ -16985,7 +17460,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			create_component(router.$$.fragment);
-    			add_location(main, file$i, 32, 0, 716);
+    			add_location(main, file$j, 34, 0, 827);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17013,7 +17488,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$j.name,
+    		id: create_fragment$k.name,
     		type: "component",
     		source: "",
     		ctx
@@ -17022,13 +17497,14 @@ var app = (function () {
     	return block;
     }
 
-    function instance$j($$self, $$props, $$invalidate) {
+    function instance$k($$self, $$props, $$invalidate) {
     	const routes = {
     		"/": Home,
     		"/global-coef/:team/:year": EditCoef,
     		"/globalCoefAPI": App,
     		"/global-transfers/:year/:team": EditTransfer,
     		"/globaltransfersAPI": App$1,
+    		"/goalscorers/:name": EditGoalscorer,
     		"/goalscorersAPI": App$2,
     		"*": NotFound
     	};
@@ -17050,6 +17526,7 @@ var app = (function () {
     		globalTransfers: App$1,
     		EditTransfer,
     		goalscorers: App$2,
+    		EditGoalscorer,
     		NotFound,
     		routes
     	});
@@ -17060,13 +17537,13 @@ var app = (function () {
     class App$3 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {});
+    		init(this, options, instance$k, create_fragment$k, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$j.name
+    			id: create_fragment$k.name
     		});
     	}
     }
@@ -17078,7 +17555,4 @@ var app = (function () {
     return app;
 
 }());
-=======
-var app=function(){"use strict";function t(){}function e(t,e){for(const n in e)t[n]=e[n];return t}function n(t){return t()}function o(){return Object.create(null)}function l(t){t.forEach(n)}function s(t){return"function"==typeof t}function r(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function c(e,...n){if(null==e)return t;const o=e.subscribe(...n);return o.unsubscribe?()=>o.unsubscribe():o}function a(t,e,n,o){if(t){const l=i(t,e,n,o);return t[0](l)}}function i(t,n,o,l){return t[1]&&l?e(o.ctx.slice(),t[1](l(n))):o.ctx}function u(t,e,n,o){if(t[2]&&o){const l=t[2](o(n));if(void 0===e.dirty)return l;if("object"==typeof l){const t=[],n=Math.max(e.dirty.length,l.length);for(let o=0;o<n;o+=1)t[o]=e.dirty[o]|l[o];return t}return e.dirty|l}return e.dirty}function d(t){const e={};for(const n in t)"$"!==n[0]&&(e[n]=t[n]);return e}function f(t,e){t.appendChild(e)}function $(t,e,n){t.insertBefore(e,n||null)}function p(t){t.parentNode.removeChild(t)}function m(t,e){for(let n=0;n<t.length;n+=1)t[n]&&t[n].d(e)}function g(t){return document.createElement(t)}function h(t){return document.createTextNode(t)}function y(){return h(" ")}function b(){return h("")}function v(t,e,n,o){return t.addEventListener(e,n,o),()=>t.removeEventListener(e,n,o)}function x(t,e,n){null==n?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function k(t,e){const n=Object.getOwnPropertyDescriptors(t.__proto__);for(const o in e)null==e[o]?t.removeAttribute(o):"style"===o?t.style.cssText=e[o]:"__value"===o||n[o]&&n[o].set?t[o]=e[o]:x(t,o,e[o])}function w(t){return""===t?void 0:+t}function _(t,e){e=""+e,t.data!==e&&(t.data=e)}function E(t,e){(null!=e||t.value)&&(t.value=e)}function T(t,e,n,o){t.style.setProperty(e,n,o?"important":"")}function O(t,e){for(let n=0;n<t.options.length;n+=1){const o=t.options[n];if(o.__value===e)return void(o.selected=!0)}}function N(t,e){for(let n=0;n<t.options.length;n+=1){const o=t.options[n];o.selected=~e.indexOf(o.__value)}}let I;function A(t){I=t}function L(){if(!I)throw new Error("Function called outside component initialization");return I}function S(t){L().$$.on_mount.push(t)}function C(){const t=L();return(e,n)=>{const o=t.$$.callbacks[e];if(o){const l=function(t,e){const n=document.createEvent("CustomEvent");return n.initCustomEvent(t,!1,!1,e),n}(e,n);o.slice().forEach(e=>{e.call(t,l)})}}}function P(t,e){const n=t.$$.callbacks[e.type];n&&n.slice().forEach(t=>t(e))}const j=[],M=[],H=[],R=[],z=Promise.resolve();let B=!1;function D(t){H.push(t)}function q(t){R.push(t)}let F=!1;const J=new Set;function X(){if(!F){F=!0;do{for(let t=0;t<j.length;t+=1){const e=j[t];A(e),U(e.$$)}for(j.length=0;M.length;)M.pop()();for(let t=0;t<H.length;t+=1){const e=H[t];J.has(e)||(J.add(e),e())}H.length=0}while(j.length);for(;R.length;)R.pop()();B=!1,F=!1,J.clear()}}function U(t){if(null!==t.fragment){t.update(),l(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(D)}}const Y=new Set;let Z;function G(){Z={r:0,c:[],p:Z}}function V(){Z.r||l(Z.c),Z=Z.p}function W(t,e){t&&t.i&&(Y.delete(t),t.i(e))}function K(t,e,n,o){if(t&&t.o){if(Y.has(t))return;Y.add(t),Z.c.push(()=>{Y.delete(t),o&&(n&&t.d(1),o())}),t.o(e)}}function Q(t,e){const n=e.token={};function o(t,o,l,s){if(e.token!==n)return;e.resolved=s;let r=e.ctx;void 0!==l&&(r=r.slice(),r[l]=s);const c=t&&(e.current=t)(r);let a=!1;e.block&&(e.blocks?e.blocks.forEach((t,n)=>{n!==o&&t&&(G(),K(t,1,1,()=>{e.blocks[n]=null}),V())}):e.block.d(1),c.c(),W(c,1),c.m(e.mount(),e.anchor),a=!0),e.block=c,e.blocks&&(e.blocks[o]=c),a&&X()}if((l=t)&&"object"==typeof l&&"function"==typeof l.then){const n=L();if(t.then(t=>{A(n),o(e.then,1,e.value,t),A(null)},t=>{A(n),o(e.catch,2,e.error,t),A(null)}),e.current!==e.pending)return o(e.pending,0),!0}else{if(e.current!==e.then)return o(e.then,1,e.value,t),!0;e.resolved=t}var l}function tt(t,e){const n={},o={},l={$$scope:1};let s=t.length;for(;s--;){const r=t[s],c=e[s];if(c){for(const t in r)t in c||(o[t]=1);for(const t in c)l[t]||(n[t]=c[t],l[t]=1);t[s]=c}else for(const t in r)l[t]=1}for(const t in o)t in n||(n[t]=void 0);return n}function et(t,e,n){const o=t.$$.props[e];void 0!==o&&(t.$$.bound[o]=n,n(t.$$.ctx[o]))}function nt(t){t&&t.c()}function ot(t,e,o){const{fragment:r,on_mount:c,on_destroy:a,after_update:i}=t.$$;r&&r.m(e,o),D(()=>{const e=c.map(n).filter(s);a?a.push(...e):l(e),t.$$.on_mount=[]}),i.forEach(D)}function lt(t,e){const n=t.$$;null!==n.fragment&&(l(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function st(t,e){-1===t.$$.dirty[0]&&(j.push(t),B||(B=!0,z.then(X)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function rt(e,n,s,r,c,a,i=[-1]){const u=I;A(e);const d=n.props||{},f=e.$$={fragment:null,ctx:null,props:a,update:t,not_equal:c,bound:o(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(u?u.$$.context:[]),callbacks:o(),dirty:i};let $=!1;if(f.ctx=s?s(e,d,(t,n,...o)=>{const l=o.length?o[0]:n;return f.ctx&&c(f.ctx[t],f.ctx[t]=l)&&(f.bound[t]&&f.bound[t](l),$&&st(e,t)),n}):[],f.update(),$=!0,l(f.before_update),f.fragment=!!r&&r(f.ctx),n.target){if(n.hydrate){const t=function(t){return Array.from(t.childNodes)}(n.target);f.fragment&&f.fragment.l(t),t.forEach(p)}else f.fragment&&f.fragment.c();n.intro&&W(e.$$.fragment),ot(e,n.target,n.anchor),X()}A(u)}class ct{$destroy(){lt(this,1),this.$destroy=t}$on(t,e){const n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1)}}$set(){}}const at=[];function it(t,e){return{subscribe:ut(t,e).subscribe}}function ut(e,n=t){let o;const l=[];function s(t){if(r(e,t)&&(e=t,o)){const t=!at.length;for(let t=0;t<l.length;t+=1){const n=l[t];n[1](),at.push(n,e)}if(t){for(let t=0;t<at.length;t+=2)at[t][0](at[t+1]);at.length=0}}}return{set:s,update:function(t){s(t(e))},subscribe:function(r,c=t){const a=[r,c];return l.push(a),1===l.length&&(o=n(s)||t),r(e),()=>{const t=l.indexOf(a);-1!==t&&l.splice(t,1),0===l.length&&(o(),o=null)}}}}function dt(e,n,o){const r=!Array.isArray(e),a=r?[e]:e,i=n.length<2;return it(o,e=>{let o=!1;const u=[];let d=0,f=t;const $=()=>{if(d)return;f();const o=n(r?u[0]:u,e);i?e(o):f=s(o)?o:t},p=a.map((t,e)=>c(t,t=>{u[e]=t,d&=~(1<<e),o&&$()},()=>{d|=1<<e}));return o=!0,$(),function(){l(p),f()}})}function ft(t){let e,n;var o=t[0];if(o){var l=new o({});l.$on("routeEvent",t[10])}return{c(){l&&nt(l.$$.fragment),e=b()},m(t,o){l&&ot(l,t,o),$(t,e,o),n=!0},p(t,n){if(o!==(o=t[0])){if(l){G();const t=l;K(t.$$.fragment,1,0,()=>{lt(t,1)}),V()}o?((l=new o({})).$on("routeEvent",t[10]),nt(l.$$.fragment),W(l.$$.fragment,1),ot(l,e.parentNode,e)):l=null}},i(t){n||(l&&W(l.$$.fragment,t),n=!0)},o(t){l&&K(l.$$.fragment,t),n=!1},d(t){t&&p(e),l&&lt(l,t)}}}function $t(t){let e,n;var o=t[0];function l(t){return{props:{params:t[1]}}}if(o){var s=new o(l(t));s.$on("routeEvent",t[9])}return{c(){s&&nt(s.$$.fragment),e=b()},m(t,o){s&&ot(s,t,o),$(t,e,o),n=!0},p(t,n){const r={};if(2&n&&(r.params=t[1]),o!==(o=t[0])){if(s){G();const t=s;K(t.$$.fragment,1,0,()=>{lt(t,1)}),V()}o?((s=new o(l(t))).$on("routeEvent",t[9]),nt(s.$$.fragment),W(s.$$.fragment,1),ot(s,e.parentNode,e)):s=null}else o&&s.$set(r)},i(t){n||(s&&W(s.$$.fragment,t),n=!0)},o(t){s&&K(s.$$.fragment,t),n=!1},d(t){t&&p(e),s&&lt(s,t)}}}function pt(t){let e,n,o,l;const s=[$t,ft],r=[];function c(t,e){return t[1]?0:1}return e=c(t),n=r[e]=s[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),$(t,o,n),l=!0},p(t,[l]){let a=e;e=c(t),e===a?r[e].p(t,l):(G(),K(r[a],1,1,()=>{r[a]=null}),V(),n=r[e],n||(n=r[e]=s[e](t),n.c()),W(n,1),n.m(o.parentNode,o))},i(t){l||(W(n),l=!0)},o(t){K(n),l=!1},d(t){r[e].d(t),t&&p(o)}}}function mt(){const t=window.location.href.indexOf("#/");let e=t>-1?window.location.href.substr(t+1):"/";const n=e.indexOf("?");let o="";return n>-1&&(o=e.substr(n+1),e=e.substr(0,n)),{location:e,querystring:o}}const gt=it(mt(),(function(t){const e=()=>{t(mt())};return window.addEventListener("hashchange",e,!1),function(){window.removeEventListener("hashchange",e,!1)}}));dt(gt,t=>t.location),dt(gt,t=>t.querystring);function ht(){return t=()=>{window.history.back()},new Promise(e=>{setTimeout(()=>{e(t())},0)});var t}function yt(e,n,o){let l,s=t;!function(t,e,n){t.$$.on_destroy.push(c(e,n))}(e,gt,t=>o(4,l=t)),e.$$.on_destroy.push(()=>s());let{routes:r={}}=n,{prefix:a=""}=n;class i{constructor(t,e){if(!e||"function"!=typeof e&&("object"!=typeof e||!0!==e._sveltesparouter))throw Error("Invalid component object");if(!t||"string"==typeof t&&(t.length<1||"/"!=t.charAt(0)&&"*"!=t.charAt(0))||"object"==typeof t&&!(t instanceof RegExp))throw Error('Invalid value for "path" argument');const{pattern:n,keys:o}=function(t,e){if(t instanceof RegExp)return{keys:!1,pattern:t};var n,o,l,s,r=[],c="",a=t.split("/");for(a[0]||a.shift();l=a.shift();)"*"===(n=l[0])?(r.push("wild"),c+="/(.*)"):":"===n?(o=l.indexOf("?",1),s=l.indexOf(".",1),r.push(l.substring(1,~o?o:~s?s:l.length)),c+=~o&&!~s?"(?:/([^/]+?))?":"/([^/]+?)",~s&&(c+=(~o?"?":"")+"\\"+l.substring(s))):c+="/"+l;return{keys:r,pattern:new RegExp("^"+c+(e?"(?=$|/)":"/?$"),"i")}}(t);this.path=t,"object"==typeof e&&!0===e._sveltesparouter?(this.component=e.route,this.conditions=e.conditions||[],this.userData=e.userData):(this.component=e,this.conditions=[],this.userData=void 0),this._pattern=n,this._keys=o}match(t){a&&t.startsWith(a)&&(t=t.substr(a.length)||"/");const e=this._pattern.exec(t);if(null===e)return null;if(!1===this._keys)return e;const n={};let o=0;for(;o<this._keys.length;)n[this._keys[o]]=e[++o]||null;return n}checkConditions(t){for(let e=0;e<this.conditions.length;e++)if(!this.conditions[e](t))return!1;return!0}}const u=[];r instanceof Map?r.forEach((t,e)=>{u.push(new i(e,t))}):Object.keys(r).forEach(t=>{u.push(new i(t,r[t]))});let d=null,f=null;const $=C(),p=(t,e)=>{setTimeout(()=>{$(t,e)},0)};return e.$set=t=>{"routes"in t&&o(2,r=t.routes),"prefix"in t&&o(3,a=t.prefix)},e.$$.update=()=>{if(17&e.$$.dirty){o(0,d=null);let t=0;for(;!d&&t<u.length;){const e=u[t].match(l.location);if(e){const n={component:u[t].component,name:u[t].component.name,location:l.location,querystring:l.querystring,userData:u[t].userData};if(!u[t].checkConditions(n)){p("conditionsFailed",n);break}o(0,d=u[t].component),e&&"object"==typeof e&&Object.keys(e).length?o(1,f=e):o(1,f=null),p("routeLoaded",n)}t++}}},[d,f,r,a,l,i,u,$,p,function(t){P(e,t)},function(t){P(e,t)}]}class bt extends ct{constructor(t){super(),rt(this,t,yt,pt,r,{routes:2,prefix:3})}}function vt(e){let n;return{c(){n=g("main"),n.innerHTML='<div class="div-home"><button type="button" class="btn btn-outline-success" onclick="window.location.href=&#39;#/globalCoefAPI&#39;"><i class="fa fa-percent" aria-hidden="true"></i> API de coef globales</button> \n\t\t<button type="button" class="btn btn-outline-info" onclick="window.location.href=&#39;#/globaltransfersAPI&#39;"><i class="fa fa-money" aria-hidden="true"></i> API de las transferencias del mercado de fichajes</button> \n\t\t<button type="button" class="btn btn-outline-success" onclick="window.location.href=&#39;#/goalscorersAPI&#39;"><i class="fas fa-futbol" aria-hidden="true"></i> API de goleadores</button></div>'},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}class xt extends ct{constructor(t){super(),rt(this,t,null,vt,r,{})}}function kt(t){var e,n,o="";if(t)if("object"==typeof t)if(Array.isArray(t))for(e=0;e<t.length;e++)t[e]&&(n=kt(t[e]))&&(o&&(o+=" "),o+=n);else for(e in t)t[e]&&(n=kt(e))&&(o&&(o+=" "),o+=n);else"boolean"==typeof t||t.call||(o&&(o+=" "),o+=t);return o}function wt(){for(var t,e=0,n="";e<arguments.length;)(t=kt(arguments[e++]))&&(n&&(n+=" "),n+=t);return n}function _t(t,e,n){return!0===n||""===n?t?"col":"col-"+e:"auto"===n?t?"col-auto":`col-${e}-auto`:t?"col-"+n:`col-${e}-${n}`}function Et(t){const e={};for(const n of Object.keys(t))"children"!==n&&"$$scope"!==n&&"$$slots"!==n&&(e[n]=t[n]);return e}function Tt(t){let n,o;const l=t[13].default,s=a(l,t,t[12],null);let r=[t[3],{class:t[1]}],c={};for(let t=0;t<r.length;t+=1)c=e(c,r[t]);return{c(){n=g("table"),s&&s.c(),k(n,c)},m(t,e){$(t,n,e),s&&s.m(n,null),o=!0},p(t,e){s&&s.p&&4096&e&&s.p(i(l,t,t[12],null),u(l,t[12],e,null)),k(n,tt(r,[8&e&&t[3],2&e&&{class:t[1]}]))},i(t){o||(W(s,t),o=!0)},o(t){K(s,t),o=!1},d(t){t&&p(n),s&&s.d(t)}}}function Ot(t){let n,o,l;const s=t[13].default,r=a(s,t,t[12],null);let c=[t[3],{class:t[1]}],d={};for(let t=0;t<c.length;t+=1)d=e(d,c[t]);return{c(){n=g("div"),o=g("table"),r&&r.c(),k(o,d),x(n,"class",t[2])},m(t,e){$(t,n,e),f(n,o),r&&r.m(o,null),l=!0},p(t,e){r&&r.p&&4096&e&&r.p(i(s,t,t[12],null),u(s,t[12],e,null)),k(o,tt(c,[8&e&&t[3],2&e&&{class:t[1]}])),(!l||4&e)&&x(n,"class",t[2])},i(t){l||(W(r,t),l=!0)},o(t){K(r,t),l=!1},d(t){t&&p(n),r&&r.d(t)}}}function Nt(t){let e,n,o,l;const s=[Ot,Tt],r=[];function c(t,e){return t[0]?0:1}return e=c(t),n=r[e]=s[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),$(t,o,n),l=!0},p(t,[l]){let a=e;e=c(t),e===a?r[e].p(t,l):(G(),K(r[a],1,1,()=>{r[a]=null}),V(),n=r[e],n||(n=r[e]=s[e](t),n.c()),W(n,1),n.m(o.parentNode,o))},i(t){l||(W(n),l=!0)},o(t){K(n),l=!1},d(t){r[e].d(t),t&&p(o)}}}function It(t,n,o){let{class:l=""}=n,{size:s=""}=n,{bordered:r=!1}=n,{borderless:c=!1}=n,{striped:a=!1}=n,{dark:i=!1}=n,{hover:u=!1}=n,{responsive:f=!1}=n;const $=Et(n);let p,m,{$$slots:g={},$$scope:h}=n;return t.$set=t=>{o(11,n=e(e({},n),d(t))),"class"in t&&o(4,l=t.class),"size"in t&&o(5,s=t.size),"bordered"in t&&o(6,r=t.bordered),"borderless"in t&&o(7,c=t.borderless),"striped"in t&&o(8,a=t.striped),"dark"in t&&o(9,i=t.dark),"hover"in t&&o(10,u=t.hover),"responsive"in t&&o(0,f=t.responsive),"$$scope"in t&&o(12,h=t.$$scope)},t.$$.update=()=>{2032&t.$$.dirty&&o(1,p=wt(l,"table",!!s&&"table-"+s,!!r&&"table-bordered",!!c&&"table-borderless",!!a&&"table-striped",!!i&&"table-dark",!!u&&"table-hover")),1&t.$$.dirty&&o(2,m=!0===f?"table-responsive":"table-responsive-"+f)},n=d(n),[f,p,m,$,l,s,r,c,a,i,u,n,h,g]}class At extends ct{constructor(t){super(),rt(this,t,It,Nt,r,{class:4,size:5,bordered:6,borderless:7,striped:8,dark:9,hover:10,responsive:0})}}function Lt(t){let n,o,l;const s=t[19].default,r=a(s,t,t[18],null),c=r||function(t){let e,n,o,l;const s=[jt,Pt,Ct],r=[];function c(t,e){return t[1]?0:t[0]?1:2}return e=c(t),n=r[e]=s[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),$(t,o,n),l=!0},p(t,l){let a=e;e=c(t),e===a?r[e].p(t,l):(G(),K(r[a],1,1,()=>{r[a]=null}),V(),n=r[e],n||(n=r[e]=s[e](t),n.c()),W(n,1),n.m(o.parentNode,o))},i(t){l||(W(n),l=!0)},o(t){K(n),l=!1},d(t){r[e].d(t),t&&p(o)}}}(t);let d=[t[10],{id:t[4]},{class:t[8]},{disabled:t[2]},{value:t[6]},{"aria-label":t[7]||t[9]},{style:t[5]}],f={};for(let t=0;t<d.length;t+=1)f=e(f,d[t]);return{c(){n=g("button"),c&&c.c(),k(n,f)},m(e,s,r){$(e,n,s),c&&c.m(n,null),o=!0,r&&l(),l=v(n,"click",t[21])},p(t,e){r?r.p&&262144&e&&r.p(i(s,t,t[18],null),u(s,t[18],e,null)):c&&c.p&&262147&e&&c.p(t,e),k(n,tt(d,[1024&e&&t[10],16&e&&{id:t[4]},256&e&&{class:t[8]},4&e&&{disabled:t[2]},64&e&&{value:t[6]},640&e&&{"aria-label":t[7]||t[9]},32&e&&{style:t[5]}]))},i(t){o||(W(c,t),o=!0)},o(t){K(c,t),o=!1},d(t){t&&p(n),c&&c.d(t),l()}}}function St(t){let n,o,l,s,r;const c=[Ht,Mt],a=[];function i(t,e){return t[0]?0:1}o=i(t),l=a[o]=c[o](t);let u=[t[10],{id:t[4]},{class:t[8]},{disabled:t[2]},{href:t[3]},{"aria-label":t[7]||t[9]},{style:t[5]}],d={};for(let t=0;t<u.length;t+=1)d=e(d,u[t]);return{c(){n=g("a"),l.c(),k(n,d)},m(e,l,c){$(e,n,l),a[o].m(n,null),s=!0,c&&r(),r=v(n,"click",t[20])},p(t,e){let s=o;o=i(t),o===s?a[o].p(t,e):(G(),K(a[s],1,1,()=>{a[s]=null}),V(),l=a[o],l||(l=a[o]=c[o](t),l.c()),W(l,1),l.m(n,null)),k(n,tt(u,[1024&e&&t[10],16&e&&{id:t[4]},256&e&&{class:t[8]},4&e&&{disabled:t[2]},8&e&&{href:t[3]},640&e&&{"aria-label":t[7]||t[9]},32&e&&{style:t[5]}]))},i(t){s||(W(l),s=!0)},o(t){K(l),s=!1},d(t){t&&p(n),a[o].d(),r()}}}function Ct(t){let e;const n=t[19].default,o=a(n,t,t[18],null);return{c(){o&&o.c()},m(t,n){o&&o.m(t,n),e=!0},p(t,e){o&&o.p&&262144&e&&o.p(i(n,t,t[18],null),u(n,t[18],e,null))},i(t){e||(W(o,t),e=!0)},o(t){K(o,t),e=!1},d(t){o&&o.d(t)}}}function Pt(e){let n;return{c(){n=h(e[0])},m(t,e){$(t,n,e)},p(t,e){1&e&&_(n,t[0])},i:t,o:t,d(t){t&&p(n)}}}function jt(e){let n;return{c(){n=g("span"),n.textContent="×",x(n,"aria-hidden","true")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function Mt(t){let e;const n=t[19].default,o=a(n,t,t[18],null);return{c(){o&&o.c()},m(t,n){o&&o.m(t,n),e=!0},p(t,e){o&&o.p&&262144&e&&o.p(i(n,t,t[18],null),u(n,t[18],e,null))},i(t){e||(W(o,t),e=!0)},o(t){K(o,t),e=!1},d(t){o&&o.d(t)}}}function Ht(e){let n;return{c(){n=h(e[0])},m(t,e){$(t,n,e)},p(t,e){1&e&&_(n,t[0])},i:t,o:t,d(t){t&&p(n)}}}function Rt(t){let e,n,o,l;const s=[St,Lt],r=[];function c(t,e){return t[3]?0:1}return e=c(t),n=r[e]=s[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),$(t,o,n),l=!0},p(t,[l]){let a=e;e=c(t),e===a?r[e].p(t,l):(G(),K(r[a],1,1,()=>{r[a]=null}),V(),n=r[e],n||(n=r[e]=s[e](t),n.c()),W(n,1),n.m(o.parentNode,o))},i(t){l||(W(n),l=!0)},o(t){K(n),l=!1},d(t){r[e].d(t),t&&p(o)}}}function zt(t,n,o){let{class:l=""}=n,{active:s=!1}=n,{block:r=!1}=n,{children:c}=n,{close:a=!1}=n,{color:i="secondary"}=n,{disabled:u=!1}=n,{href:f=""}=n,{id:$=""}=n,{outline:p=!1}=n,{size:m=""}=n,{style:g=""}=n,{value:h=""}=n;const y=Et(n);let b,v,x,{$$slots:k={},$$scope:w}=n;return t.$set=t=>{o(17,n=e(e({},n),d(t))),"class"in t&&o(11,l=t.class),"active"in t&&o(12,s=t.active),"block"in t&&o(13,r=t.block),"children"in t&&o(0,c=t.children),"close"in t&&o(1,a=t.close),"color"in t&&o(14,i=t.color),"disabled"in t&&o(2,u=t.disabled),"href"in t&&o(3,f=t.href),"id"in t&&o(4,$=t.id),"outline"in t&&o(15,p=t.outline),"size"in t&&o(16,m=t.size),"style"in t&&o(5,g=t.style),"value"in t&&o(6,h=t.value),"$$scope"in t&&o(18,w=t.$$scope)},t.$$.update=()=>{o(7,b=n["aria-label"]),129026&t.$$.dirty&&o(8,v=wt(l,{close:a},a||"btn",a||`btn${p?"-outline":""}-${i}`,!!m&&"btn-"+m,!!r&&"btn-block",{active:s})),2&t.$$.dirty&&o(9,x=a?"Close":null)},n=d(n),[c,a,u,f,$,g,h,b,v,x,y,l,s,r,i,p,m,n,w,k,function(e){P(t,e)},function(e){P(t,e)}]}class Bt extends ct{constructor(t){super(),rt(this,t,zt,Rt,r,{class:11,active:12,block:13,children:0,close:1,color:14,disabled:2,href:3,id:4,outline:15,size:16,style:5,value:6})}}function Dt(t){let n,o,s;const r=t[26].default,c=a(r,t,t[25],null);let d=[t[12],{id:t[6]},{multiple:!0},{class:t[10]},{name:t[7]},{disabled:t[9]}],f={};for(let t=0;t<d.length;t+=1)f=e(f,d[t]);return{c(){n=g("select"),c&&c.c(),k(n,f),void 0===t[1]&&D(()=>t[161].call(n))},m(e,r,a){$(e,n,r),c&&c.m(n,null),N(n,t[1]),o=!0,a&&l(s),s=[v(n,"blur",t[141]),v(n,"focus",t[142]),v(n,"change",t[143]),v(n,"input",t[144]),v(n,"change",t[161])]},p(t,e){c&&c.p&&33554432&e[0]&&c.p(i(r,t,t[25],null),u(r,t[25],e,null)),k(n,tt(d,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{multiple:!0},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]}])),2&e[0]&&N(n,t[1])},i(t){o||(W(c,t),o=!0)},o(t){K(c,t),o=!1},d(t){t&&p(n),c&&c.d(t),l(s)}}}function qt(t){let n,o,s;const r=t[26].default,c=a(r,t,t[25],null);let d=[t[12],{id:t[6]},{class:t[10]},{name:t[7]},{disabled:t[9]}],f={};for(let t=0;t<d.length;t+=1)f=e(f,d[t]);return{c(){n=g("select"),c&&c.c(),k(n,f),void 0===t[1]&&D(()=>t[160].call(n))},m(e,r,a){$(e,n,r),c&&c.m(n,null),O(n,t[1]),o=!0,a&&l(s),s=[v(n,"blur",t[137]),v(n,"focus",t[138]),v(n,"change",t[139]),v(n,"input",t[140]),v(n,"change",t[160])]},p(t,e){c&&c.p&&33554432&e[0]&&c.p(i(r,t,t[25],null),u(r,t[25],e,null)),k(n,tt(d,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]}])),2&e[0]&&O(n,t[1])},i(t){o||(W(c,t),o=!0)},o(t){K(c,t),o=!1},d(t){t&&p(n),c&&c.d(t),l(s)}}}function Ft(n){let o,s,r=[n[12],{id:n[6]},{class:n[10]},{name:n[7]},{disabled:n[9]}],c={};for(let t=0;t<r.length;t+=1)c=e(c,r[t]);return{c(){o=g("textarea"),k(o,c)},m(t,e,r){$(t,o,e),E(o,n[1]),r&&l(s),s=[v(o,"blur",n[130]),v(o,"focus",n[131]),v(o,"keydown",n[132]),v(o,"keypress",n[133]),v(o,"keyup",n[134]),v(o,"change",n[135]),v(o,"input",n[136]),v(o,"input",n[159])]},p(t,e){k(o,tt(r,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]}])),2&e[0]&&E(o,t[1])},i:t,o:t,d(t){t&&p(o),l(s)}}}function Jt(e){let n;function o(t,e){return"text"===t[3]?se:"password"===t[3]?le:"email"===t[3]?oe:"file"===t[3]?ne:"checkbox"===t[3]?ee:"radio"===t[3]?te:"url"===t[3]?Qt:"number"===t[3]?Kt:"date"===t[3]?Wt:"time"===t[3]?Vt:"datetime"===t[3]?Gt:"color"===t[3]?Zt:"range"===t[3]?Yt:"search"===t[3]?Ut:Xt}let l=o(e),s=l(e);return{c(){s.c(),n=b()},m(t,e){s.m(t,e),$(t,n,e)},p(t,e){l===(l=o(t))&&s?s.p(t,e):(s.d(1),s=l(t),s&&(s.c(),s.m(n.parentNode,n)))},i:t,o:t,d(t){s.d(t),t&&p(n)}}}function Xt(t){let n,o,s=[t[12],{id:t[6]},{type:t[3]},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]},{value:t[1]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),r&&l(o),o=[v(n,"blur",t[125]),v(n,"focus",t[126]),v(n,"keydown",t[127]),v(n,"keypress",t[128]),v(n,"keyup",t[129]),v(n,"input",t[13]),v(n,"change",t[13])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},8&e[0]&&{type:t[3]},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]},2&e[0]&&{value:t[1]}]))},d(t){t&&p(n),l(o)}}}function Ut(t){let n,o,s=[t[12],{id:t[6]},{type:"search"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[118]),v(n,"focus",t[119]),v(n,"keydown",t[120]),v(n,"keypress",t[121]),v(n,"keyup",t[122]),v(n,"change",t[123]),v(n,"input",t[124]),v(n,"input",t[158])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"search"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Yt(t){let n,o,s=[t[12],{id:t[6]},{type:"range"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[111]),v(n,"focus",t[112]),v(n,"keydown",t[113]),v(n,"keypress",t[114]),v(n,"keyup",t[115]),v(n,"change",t[116]),v(n,"input",t[117]),v(n,"change",t[157]),v(n,"input",t[157])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"range"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Zt(t){let n,o,s=[t[12],{id:t[6]},{type:"color"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[104]),v(n,"focus",t[105]),v(n,"keydown",t[106]),v(n,"keypress",t[107]),v(n,"keyup",t[108]),v(n,"change",t[109]),v(n,"input",t[110]),v(n,"input",t[156])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"color"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Gt(t){let n,o,s=[t[12],{id:t[6]},{type:"datetime"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[97]),v(n,"focus",t[98]),v(n,"keydown",t[99]),v(n,"keypress",t[100]),v(n,"keyup",t[101]),v(n,"change",t[102]),v(n,"input",t[103]),v(n,"input",t[155])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"datetime"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Vt(t){let n,o,s=[t[12],{id:t[6]},{type:"time"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[90]),v(n,"focus",t[91]),v(n,"keydown",t[92]),v(n,"keypress",t[93]),v(n,"keyup",t[94]),v(n,"change",t[95]),v(n,"input",t[96]),v(n,"input",t[154])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"time"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Wt(t){let n,o,s=[t[12],{id:t[6]},{type:"date"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[83]),v(n,"focus",t[84]),v(n,"keydown",t[85]),v(n,"keypress",t[86]),v(n,"keyup",t[87]),v(n,"change",t[88]),v(n,"input",t[89]),v(n,"input",t[153])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"date"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Kt(t){let n,o,s=[t[12],{id:t[6]},{type:"number"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[76]),v(n,"focus",t[77]),v(n,"keydown",t[78]),v(n,"keypress",t[79]),v(n,"keyup",t[80]),v(n,"change",t[81]),v(n,"input",t[82]),v(n,"input",t[152])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"number"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&w(n.value)!==t[1]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function Qt(t){let n,o,s=[t[12],{id:t[6]},{type:"url"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[69]),v(n,"focus",t[70]),v(n,"keydown",t[71]),v(n,"keypress",t[72]),v(n,"keyup",t[73]),v(n,"change",t[74]),v(n,"input",t[75]),v(n,"input",t[151])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"url"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function te(t){let n,o,s=[t[12],{id:t[6]},{type:"radio"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[62]),v(n,"focus",t[63]),v(n,"keydown",t[64]),v(n,"keypress",t[65]),v(n,"keyup",t[66]),v(n,"change",t[67]),v(n,"input",t[68]),v(n,"change",t[150])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"radio"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function ee(t){let n,o,s=[t[12],{id:t[6]},{type:"checkbox"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),n.checked=t[0],E(n,t[1]),r&&l(o),o=[v(n,"blur",t[55]),v(n,"focus",t[56]),v(n,"keydown",t[57]),v(n,"keypress",t[58]),v(n,"keyup",t[59]),v(n,"change",t[60]),v(n,"input",t[61]),v(n,"change",t[149])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"checkbox"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),1&e[0]&&(n.checked=t[0]),2&e[0]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function ne(t){let n,o,s=[t[12],{id:t[6]},{type:"file"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),r&&l(o),o=[v(n,"blur",t[48]),v(n,"focus",t[49]),v(n,"keydown",t[50]),v(n,"keypress",t[51]),v(n,"keyup",t[52]),v(n,"change",t[53]),v(n,"input",t[54]),v(n,"change",t[148])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"file"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}]))},d(t){t&&p(n),l(o)}}}function oe(t){let n,o,s=[t[12],{id:t[6]},{type:"email"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[41]),v(n,"focus",t[42]),v(n,"keydown",t[43]),v(n,"keypress",t[44]),v(n,"keyup",t[45]),v(n,"change",t[46]),v(n,"input",t[47]),v(n,"input",t[147])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"email"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&n.value!==t[1]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function le(t){let n,o,s=[t[12],{id:t[6]},{type:"password"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[34]),v(n,"focus",t[35]),v(n,"keydown",t[36]),v(n,"keypress",t[37]),v(n,"keyup",t[38]),v(n,"change",t[39]),v(n,"input",t[40]),v(n,"input",t[146])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"password"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&n.value!==t[1]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function se(t){let n,o,s=[t[12],{id:t[6]},{type:"text"},{readOnly:t[4]},{class:t[10]},{name:t[7]},{disabled:t[9]},{placeholder:t[8]}],r={};for(let t=0;t<s.length;t+=1)r=e(r,s[t]);return{c(){n=g("input"),k(n,r)},m(e,s,r){$(e,n,s),E(n,t[1]),r&&l(o),o=[v(n,"blur",t[27]),v(n,"focus",t[28]),v(n,"keydown",t[29]),v(n,"keypress",t[30]),v(n,"keyup",t[31]),v(n,"change",t[32]),v(n,"input",t[33]),v(n,"input",t[145])]},p(t,e){k(n,tt(s,[4096&e[0]&&t[12],64&e[0]&&{id:t[6]},{type:"text"},16&e[0]&&{readOnly:t[4]},1024&e[0]&&{class:t[10]},128&e[0]&&{name:t[7]},512&e[0]&&{disabled:t[9]},256&e[0]&&{placeholder:t[8]}])),2&e[0]&&n.value!==t[1]&&E(n,t[1])},d(t){t&&p(n),l(o)}}}function re(t){let e,n,o,l;const s=[Jt,Ft,qt,Dt],r=[];function c(t,e){return"input"===t[11]?0:"textarea"===t[11]?1:"select"!==t[11]||t[5]?"select"===t[11]&&t[5]?3:-1:2}return~(e=c(t))&&(n=r[e]=s[e](t)),{c(){n&&n.c(),o=b()},m(t,n){~e&&r[e].m(t,n),$(t,o,n),l=!0},p(t,l){let a=e;e=c(t),e===a?~e&&r[e].p(t,l):(n&&(G(),K(r[a],1,1,()=>{r[a]=null}),V()),~e?(n=r[e],n||(n=r[e]=s[e](t),n.c()),W(n,1),n.m(o.parentNode,o)):n=null)},i(t){l||(W(n),l=!0)},o(t){K(n),l=!1},d(t){~e&&r[e].d(t),t&&p(o)}}}function ce(t,n,o){let{class:l=""}=n,{type:s="text"}=n,{size:r}=n,{bsSize:c}=n,{color:a}=n,{checked:i=!1}=n,{valid:u=!1}=n,{invalid:f=!1}=n,{plaintext:$=!1}=n,{addon:p=!1}=n,{value:m=""}=n,{files:g=""}=n,{readonly:h}=n,{multiple:y=!1}=n,{id:b=""}=n,{name:v=""}=n,{placeholder:x=""}=n,{disabled:k=!1}=n;const{type:_,color:E,...T}=Et(n);let O,N;let{$$slots:I={},$$scope:A}=n;return t.$set=t=>{o(24,n=e(e({},n),d(t))),"class"in t&&o(16,l=t.class),"type"in t&&o(3,s=t.type),"size"in t&&o(14,r=t.size),"bsSize"in t&&o(15,c=t.bsSize),"color"in t&&o(17,a=t.color),"checked"in t&&o(0,i=t.checked),"valid"in t&&o(18,u=t.valid),"invalid"in t&&o(19,f=t.invalid),"plaintext"in t&&o(20,$=t.plaintext),"addon"in t&&o(21,p=t.addon),"value"in t&&o(1,m=t.value),"files"in t&&o(2,g=t.files),"readonly"in t&&o(4,h=t.readonly),"multiple"in t&&o(5,y=t.multiple),"id"in t&&o(6,b=t.id),"name"in t&&o(7,v=t.name),"placeholder"in t&&o(8,x=t.placeholder),"disabled"in t&&o(9,k=t.disabled),"$$scope"in t&&o(25,A=t.$$scope)},t.$$.update=()=>{if(4177928&t.$$.dirty[0]){const t=["radio","checkbox"].indexOf(s)>-1,e=new RegExp("\\D","g"),n="file"===s,i="textarea"===s,d="range"===s,m="button"===s||"reset"===s||"submit"===s,g="hidden"===s||"image"===s;o(11,N="select"===s||i?s:"input");let h="form-control";$?(h+="-plaintext",o(11,N="input")):n?h+="-file":t?h=p?null:"form-check-input":m?h="btn btn-"+(a||"secondary"):d?h="form-control-range":g&&(h=""),r&&e.test(r)&&(console.warn('Please use the prop "bsSize" instead of the "size" to bootstrap\'s input sizing.'),o(15,c=r),o(14,r=void 0)),o(10,O=wt(l,f&&"is-invalid",u&&"is-valid",!!c&&"form-control-"+c,h))}},n=d(n),[i,m,g,s,h,y,b,v,x,k,O,N,T,t=>{o(1,m=t.target.value)},r,c,l,a,u,f,$,p,_,E,n,A,I,function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(e){P(t,e)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){g=this.files,o(2,g)},function(){i=this.checked,m=this.value,o(0,i),o(1,m)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){m=w(this.value),o(1,m)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){m=w(this.value),o(1,m)},function(){m=this.value,o(1,m)},function(){m=this.value,o(1,m)},function(){m=function(t){const e=t.querySelector(":checked")||t.options[0];return e&&e.__value}(this),o(1,m)},function(){var t;t=this,m=[].map.call(t.querySelectorAll(":checked"),t=>t.__value),o(1,m)}]}class ae extends ct{constructor(t){super(),rt(this,t,ce,re,r,{class:16,type:3,size:14,bsSize:15,color:17,checked:0,valid:18,invalid:19,plaintext:20,addon:21,value:1,files:2,readonly:4,multiple:5,id:6,name:7,placeholder:8,disabled:9},[-1,-1,-1,-1,-1,-1])}}function ie(t){let n,o;const l=t[18].default,s=a(l,t,t[17],null);let r=[t[3],{id:t[1]},{class:t[2]},{for:t[0]}],c={};for(let t=0;t<r.length;t+=1)c=e(c,r[t]);return{c(){n=g("label"),s&&s.c(),k(n,c)},m(t,e){$(t,n,e),s&&s.m(n,null),o=!0},p(t,[e]){s&&s.p&&131072&e&&s.p(i(l,t,t[17],null),u(l,t[17],e,null)),k(n,tt(r,[8&e&&t[3],2&e&&{id:t[1]},4&e&&{class:t[2]},1&e&&{for:t[0]}]))},i(t){o||(W(s,t),o=!0)},o(t){K(s,t),o=!1},d(t){t&&p(n),s&&s.d(t)}}}function ue(t,n,o){let{class:l=""}=n;const s=Et(n);let{hidden:r=!1}=n,{check:c=!1}=n,{size:a=""}=n,{for:i}=n,{id:u=""}=n,{xs:f=""}=n,{sm:$=""}=n,{md:p=""}=n,{lg:m=""}=n,{xl:g=""}=n;const h={xs:f,sm:$,md:p,lg:m,xl:g};let{widths:y=Object.keys(h)}=n;const b=[];y.forEach(t=>{let e=n[t];if(!e&&""!==e)return;const o="xs"===t;let l;if(function(t){const e=typeof t;return null!=t&&("object"==e||"function"==e)}(e)){const n=o?"-":`-${t}-`;l=_t(o,t,e.size),b.push(wt({[l]:e.size||""===e.size,[`order${n}${e.order}`]:e.order||0===e.order,[`offset${n}${e.offset}`]:e.offset||0===e.offset}))}else l=_t(o,t,e),b.push(l)});let v,{$$slots:x={},$$scope:k}=n;return t.$set=t=>{o(16,n=e(e({},n),d(t))),"class"in t&&o(4,l=t.class),"hidden"in t&&o(5,r=t.hidden),"check"in t&&o(6,c=t.check),"size"in t&&o(7,a=t.size),"for"in t&&o(0,i=t.for),"id"in t&&o(1,u=t.id),"xs"in t&&o(8,f=t.xs),"sm"in t&&o(9,$=t.sm),"md"in t&&o(10,p=t.md),"lg"in t&&o(11,m=t.lg),"xl"in t&&o(12,g=t.xl),"widths"in t&&o(13,y=t.widths),"$$scope"in t&&o(17,k=t.$$scope)},t.$$.update=()=>{240&t.$$.dirty&&o(2,v=wt(l,!!r&&"sr-only",!!c&&"form-check-label",!!a&&"col-form-label-"+a,b,!!b.length&&"col-form-label"))},n=d(n),[i,u,v,s,l,r,c,a,f,$,p,m,g,y,h,b,n,k,x]}class de extends ct{constructor(t){super(),rt(this,t,ue,ie,r,{class:4,hidden:5,check:6,size:7,for:0,id:1,xs:8,sm:9,md:10,lg:11,xl:12,widths:13})}}function fe(t){let n,o;const l=t[11].default,s=a(l,t,t[10],null);let r=[t[3],{id:t[0]},{class:t[2]}],c={};for(let t=0;t<r.length;t+=1)c=e(c,r[t]);return{c(){n=g("div"),s&&s.c(),k(n,c)},m(t,e){$(t,n,e),s&&s.m(n,null),o=!0},p(t,e){s&&s.p&&1024&e&&s.p(i(l,t,t[10],null),u(l,t[10],e,null)),k(n,tt(r,[8&e&&t[3],1&e&&{id:t[0]},4&e&&{class:t[2]}]))},i(t){o||(W(s,t),o=!0)},o(t){K(s,t),o=!1},d(t){t&&p(n),s&&s.d(t)}}}function $e(t){let n,o;const l=t[11].default,s=a(l,t,t[10],null);let r=[t[3],{id:t[0]},{class:t[2]}],c={};for(let t=0;t<r.length;t+=1)c=e(c,r[t]);return{c(){n=g("fieldset"),s&&s.c(),k(n,c)},m(t,e){$(t,n,e),s&&s.m(n,null),o=!0},p(t,e){s&&s.p&&1024&e&&s.p(i(l,t,t[10],null),u(l,t[10],e,null)),k(n,tt(r,[8&e&&t[3],1&e&&{id:t[0]},4&e&&{class:t[2]}]))},i(t){o||(W(s,t),o=!0)},o(t){K(s,t),o=!1},d(t){t&&p(n),s&&s.d(t)}}}function pe(t){let e,n,o,l;const s=[$e,fe],r=[];function c(t,e){return"fieldset"===t[1]?0:1}return e=c(t),n=r[e]=s[e](t),{c(){n.c(),o=b()},m(t,n){r[e].m(t,n),$(t,o,n),l=!0},p(t,[l]){let a=e;e=c(t),e===a?r[e].p(t,l):(G(),K(r[a],1,1,()=>{r[a]=null}),V(),n=r[e],n||(n=r[e]=s[e](t),n.c()),W(n,1),n.m(o.parentNode,o))},i(t){l||(W(n),l=!0)},o(t){K(n),l=!1},d(t){r[e].d(t),t&&p(o)}}}function me(t,n,o){let{class:l=""}=n,{row:s=!1}=n,{check:r=!1}=n,{inline:c=!1}=n,{disabled:a=!1}=n,{id:i=""}=n,{tag:u=null}=n;const f=Et(n);let $,{$$slots:p={},$$scope:m}=n;return t.$set=t=>{o(9,n=e(e({},n),d(t))),"class"in t&&o(4,l=t.class),"row"in t&&o(5,s=t.row),"check"in t&&o(6,r=t.check),"inline"in t&&o(7,c=t.inline),"disabled"in t&&o(8,a=t.disabled),"id"in t&&o(0,i=t.id),"tag"in t&&o(1,u=t.tag),"$$scope"in t&&o(10,m=t.$$scope)},t.$$.update=()=>{496&t.$$.dirty&&o(2,$=wt(l,!!s&&"row",r?"form-check":"form-group",!(!r||!c)&&"form-check-inline",!(!r||!a)&&"disabled"))},n=d(n),[i,u,$,f,l,s,r,c,a,n,m,p]}class ge extends ct{constructor(t){super(),rt(this,t,me,pe,r,{class:4,row:5,check:6,inline:7,disabled:8,id:0,tag:1})}}function he(t){let n,o,l;const s=t[9].default,r=a(s,t,t[8],null);let c=[t[3],{class:t[1]},{"aria-label":t[0]}],d={};for(let t=0;t<c.length;t+=1)d=e(d,c[t]);return{c(){n=g("nav"),o=g("ul"),r&&r.c(),x(o,"class",t[2]),k(n,d)},m(t,e){$(t,n,e),f(n,o),r&&r.m(o,null),l=!0},p(t,[e]){r&&r.p&&256&e&&r.p(i(s,t,t[8],null),u(s,t[8],e,null)),(!l||4&e)&&x(o,"class",t[2]),k(n,tt(c,[8&e&&t[3],2&e&&{class:t[1]},1&e&&{"aria-label":t[0]}]))},i(t){l||(W(r,t),l=!0)},o(t){K(r,t),l=!1},d(t){t&&p(n),r&&r.d(t)}}}function ye(t,n,o){let{class:l=""}=n,{listClassName:s=""}=n,{size:r=""}=n,{ariaLabel:c="pagination"}=n;const a=Et(n);let i,u,{$$slots:f={},$$scope:$}=n;return t.$set=t=>{o(7,n=e(e({},n),d(t))),"class"in t&&o(4,l=t.class),"listClassName"in t&&o(5,s=t.listClassName),"size"in t&&o(6,r=t.size),"ariaLabel"in t&&o(0,c=t.ariaLabel),"$$scope"in t&&o(8,$=t.$$scope)},t.$$.update=()=>{16&t.$$.dirty&&o(1,i=wt(l)),96&t.$$.dirty&&o(2,u=wt(s,"pagination",{["pagination-"+r]:!!r}))},n=d(n),[c,i,u,a,l,s,r,n,$,f]}class be extends ct{constructor(t){super(),rt(this,t,ye,he,r,{class:4,listClassName:5,size:6,ariaLabel:0})}}function ve(t){let n,o;const l=t[7].default,s=a(l,t,t[6],null);let r=[t[1],{class:t[0]}],c={};for(let t=0;t<r.length;t+=1)c=e(c,r[t]);return{c(){n=g("li"),s&&s.c(),k(n,c)},m(t,e){$(t,n,e),s&&s.m(n,null),o=!0},p(t,[e]){s&&s.p&&64&e&&s.p(i(l,t,t[6],null),u(l,t[6],e,null)),k(n,tt(r,[2&e&&t[1],1&e&&{class:t[0]}]))},i(t){o||(W(s,t),o=!0)},o(t){K(s,t),o=!1},d(t){t&&p(n),s&&s.d(t)}}}function xe(t,n,o){let{class:l=""}=n,{active:s=!1}=n,{disabled:r=!1}=n;const c=Et(n);let a,{$$slots:i={},$$scope:u}=n;return t.$set=t=>{o(5,n=e(e({},n),d(t))),"class"in t&&o(2,l=t.class),"active"in t&&o(3,s=t.active),"disabled"in t&&o(4,r=t.disabled),"$$scope"in t&&o(6,u=t.$$scope)},t.$$.update=()=>{28&t.$$.dirty&&o(0,a=wt(l,"page-item",{active:s,disabled:r}))},n=d(n),[a,c,l,s,r,n,u,i]}class ke extends ct{constructor(t){super(),rt(this,t,xe,ve,r,{class:2,active:3,disabled:4})}}function we(t){let e;const n=t[14].default,o=a(n,t,t[13],null);return{c(){o&&o.c()},m(t,n){o&&o.m(t,n),e=!0},p(t,e){o&&o.p&&8192&e&&o.p(i(n,t,t[13],null),u(n,t[13],e,null))},i(t){e||(W(o,t),e=!0)},o(t){K(o,t),e=!1},d(t){o&&o.d(t)}}}function _e(t){let e,n,o,l,s;const r=t[14].default,c=a(r,t,t[13],null),d=c||function(t){let e;return{c(){e=h(t[5])},m(t,n){$(t,e,n)},p(t,n){32&n&&_(e,t[5])},d(t){t&&p(e)}}}(t);return{c(){e=g("span"),d&&d.c(),n=y(),o=g("span"),l=h(t[7]),x(e,"aria-hidden","true"),x(o,"class","sr-only")},m(t,r){$(t,e,r),d&&d.m(e,null),$(t,n,r),$(t,o,r),f(o,l),s=!0},p(t,e){c?c.p&&8192&e&&c.p(i(r,t,t[13],null),u(r,t[13],e,null)):d&&d.p&&32&e&&d.p(t,e),(!s||128&e)&&_(l,t[7])},i(t){s||(W(d,t),s=!0)},o(t){K(d,t),s=!1},d(t){t&&p(e),d&&d.d(t),t&&p(n),t&&p(o)}}}function Ee(t){let n,o,l,s,r;const c=[_e,we],a=[];function i(t,e){return t[1]||t[0]||t[2]||t[3]?0:1}o=i(t),l=a[o]=c[o](t);let u=[t[8],{class:t[6]},{href:t[4]}],d={};for(let t=0;t<u.length;t+=1)d=e(d,u[t]);return{c(){n=g("a"),l.c(),k(n,d)},m(e,l,c){$(e,n,l),a[o].m(n,null),s=!0,c&&r(),r=v(n,"click",t[15])},p(t,[e]){let s=o;o=i(t),o===s?a[o].p(t,e):(G(),K(a[s],1,1,()=>{a[s]=null}),V(),l=a[o],l||(l=a[o]=c[o](t),l.c()),W(l,1),l.m(n,null)),k(n,tt(u,[256&e&&t[8],64&e&&{class:t[6]},16&e&&{href:t[4]}]))},i(t){s||(W(l),s=!0)},o(t){K(l),s=!1},d(t){t&&p(n),a[o].d(),r()}}}function Te(t,n,o){let{class:l=""}=n,{next:s=!1}=n,{previous:r=!1}=n,{first:c=!1}=n,{last:a=!1}=n,{ariaLabel:i=""}=n,{href:u=""}=n;const f=Et(n);let $,p,m,g,{$$slots:h={},$$scope:y}=n;return t.$set=t=>{o(12,n=e(e({},n),d(t))),"class"in t&&o(9,l=t.class),"next"in t&&o(0,s=t.next),"previous"in t&&o(1,r=t.previous),"first"in t&&o(2,c=t.first),"last"in t&&o(3,a=t.last),"ariaLabel"in t&&o(10,i=t.ariaLabel),"href"in t&&o(4,u=t.href),"$$scope"in t&&o(13,y=t.$$scope)},t.$$.update=()=>{512&t.$$.dirty&&o(6,m=wt(l,"page-link")),15&t.$$.dirty&&(r?o(11,$="Previous"):s?o(11,$="Next"):c?o(11,$="First"):a&&o(11,$="Last")),3072&t.$$.dirty&&o(7,g=i||$),15&t.$$.dirty&&(r?o(5,p="‹"):s?o(5,p="›"):c?o(5,p="«"):a&&o(5,p="»"))},n=d(n),[s,r,c,a,u,p,m,g,f,l,i,$,n,y,h,function(e){P(t,e)}]}class Oe extends ct{constructor(t){super(),rt(this,t,Te,Ee,r,{class:9,next:0,previous:1,first:2,last:3,ariaLabel:10,href:4})}}function Ne(t,e,n){const o=t.slice();return o[7]=e[n],o}function Ie(t,e,n){const o=t.slice();return o[31]=e[n],o}function Ae(t,e,n){const o=t.slice();return o[34]=e[n],o}function Le(e){return{c:t,m:t,p:t,i:t,o:t,d:t}}function Se(t){let e,n,o,l;const r=new ge({props:{$$slots:{default:[Me]},$$scope:{ctx:t}}}),c=new ge({props:{$$slots:{default:[Be]},$$scope:{ctx:t}}}),a=new Bt({props:{outline:!0,color:"secondary",class:"button-search",$$slots:{default:[De]},$$scope:{ctx:t}}});a.$on("click",(function(){s(t[12](t[3],t[4]))&&t[12](t[3],t[4]).apply(this,arguments)}));const i=new At({props:{bordered:!0,$$slots:{default:[Xe]},$$scope:{ctx:t}}});return{c(){nt(r.$$.fragment),e=y(),nt(c.$$.fragment),n=y(),nt(a.$$.fragment),o=y(),nt(i.$$.fragment)},m(t,s){ot(r,t,s),$(t,e,s),ot(c,t,s),$(t,n,s),ot(a,t,s),$(t,o,s),ot(i,t,s),l=!0},p(e,n){t=e;const o={};10&n[0]|64&n[1]&&(o.$$scope={dirty:n,ctx:t}),r.$set(o);const l={};20&n[0]|64&n[1]&&(l.$$scope={dirty:n,ctx:t}),c.$set(l);const s={};64&n[1]&&(s.$$scope={dirty:n,ctx:t}),a.$set(s);const u={};129&n[0]|64&n[1]&&(u.$$scope={dirty:n,ctx:t}),i.$set(u)},i(t){l||(W(r.$$.fragment,t),W(c.$$.fragment,t),W(a.$$.fragment,t),W(i.$$.fragment,t),l=!0)},o(t){K(r.$$.fragment,t),K(c.$$.fragment,t),K(a.$$.fragment,t),K(i.$$.fragment,t),l=!1},d(t){lt(r,t),t&&p(e),lt(c,t),t&&p(n),lt(a,t),t&&p(o),lt(i,t)}}}function Ce(t){let e;return{c(){e=h("Búsqueda por equipo")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Pe(t){let e,n,o,l=t[34]+"";return{c(){e=g("option"),n=h(l),e.__value=o=t[34],e.value=e.__value},m(t,o){$(t,e,o),f(e,n)},p(t,s){2&s[0]&&l!==(l=t[34]+"")&&_(n,l),2&s[0]&&o!==(o=t[34])&&(e.__value=o),e.value=e.__value},d(t){t&&p(e)}}}function je(t){let e,n,o=t[1],l=[];for(let e=0;e<o.length;e+=1)l[e]=Pe(Ae(t,o,e));return{c(){for(let t=0;t<l.length;t+=1)l[t].c();e=y(),n=g("option"),n.textContent="-",n.__value="-",n.value=n.__value},m(t,o){for(let e=0;e<l.length;e+=1)l[e].m(t,o);$(t,e,o),$(t,n,o)},p(t,n){if(2&n[0]){let s;for(o=t[1],s=0;s<o.length;s+=1){const r=Ae(t,o,s);l[s]?l[s].p(r,n):(l[s]=Pe(r),l[s].c(),l[s].m(e.parentNode,e))}for(;s<l.length;s+=1)l[s].d(1);l.length=o.length}},d(t){m(l,t),t&&p(e),t&&p(n)}}}function Me(t){let e,n,o;const l=new de({props:{for:"selectTeam",$$slots:{default:[Ce]},$$scope:{ctx:t}}});function s(e){t[17].call(null,e)}let r={type:"select",name:"selectTeam",id:"selectTeam",$$slots:{default:[je]},$$scope:{ctx:t}};void 0!==t[3]&&(r.value=t[3]);const c=new ae({props:r});return M.push(()=>et(c,"value",s)),{c(){nt(l.$$.fragment),e=y(),nt(c.$$.fragment)},m(t,n){ot(l,t,n),$(t,e,n),ot(c,t,n),o=!0},p(t,e){const o={};64&e[1]&&(o.$$scope={dirty:e,ctx:t}),l.$set(o);const s={};2&e[0]|64&e[1]&&(s.$$scope={dirty:e,ctx:t}),!n&&8&e[0]&&(n=!0,s.value=t[3],q(()=>n=!1)),c.$set(s)},i(t){o||(W(l.$$.fragment,t),W(c.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),K(c.$$.fragment,t),o=!1},d(t){lt(l,t),t&&p(e),lt(c,t)}}}function He(t){let e;return{c(){e=h("Año")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Re(t){let e,n,o,l=t[31]+"";return{c(){e=g("option"),n=h(l),e.__value=o=t[31],e.value=e.__value},m(t,o){$(t,e,o),f(e,n)},p(t,s){4&s[0]&&l!==(l=t[31]+"")&&_(n,l),4&s[0]&&o!==(o=t[31])&&(e.__value=o),e.value=e.__value},d(t){t&&p(e)}}}function ze(t){let e,n,o=t[2],l=[];for(let e=0;e<o.length;e+=1)l[e]=Re(Ie(t,o,e));return{c(){for(let t=0;t<l.length;t+=1)l[t].c();e=y(),n=g("option"),n.textContent="-",n.__value="-",n.value=n.__value},m(t,o){for(let e=0;e<l.length;e+=1)l[e].m(t,o);$(t,e,o),$(t,n,o)},p(t,n){if(4&n[0]){let s;for(o=t[2],s=0;s<o.length;s+=1){const r=Ie(t,o,s);l[s]?l[s].p(r,n):(l[s]=Re(r),l[s].c(),l[s].m(e.parentNode,e))}for(;s<l.length;s+=1)l[s].d(1);l.length=o.length}},d(t){m(l,t),t&&p(e),t&&p(n)}}}function Be(t){let e,n,o;const l=new de({props:{for:"selectYear",$$slots:{default:[He]},$$scope:{ctx:t}}});function s(e){t[18].call(null,e)}let r={type:"select",name:"selectYear",id:"selectYear",$$slots:{default:[ze]},$$scope:{ctx:t}};void 0!==t[4]&&(r.value=t[4]);const c=new ae({props:r});return M.push(()=>et(c,"value",s)),{c(){nt(l.$$.fragment),e=y(),nt(c.$$.fragment)},m(t,n){ot(l,t,n),$(t,e,n),ot(c,t,n),o=!0},p(t,e){const o={};64&e[1]&&(o.$$scope={dirty:e,ctx:t}),l.$set(o);const s={};4&e[0]|64&e[1]&&(s.$$scope={dirty:e,ctx:t}),!n&&16&e[0]&&(n=!0,s.value=t[4],q(()=>n=!1)),c.$set(s)},i(t){o||(W(l.$$.fragment,t),W(c.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),K(c.$$.fragment,t),o=!1},d(t){lt(l,t),t&&p(e),lt(c,t)}}}function De(t){let e,n;return{c(){e=g("i"),n=h(" Buscar"),x(e,"class","fas fa-search")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function qe(t){let e;return{c(){e=h("Insertar")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Fe(t){let e;return{c(){e=h("Eliminar")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Je(t){let e,n,o,l,r,c,a,i,u,d,m,b,v,k,w,E,T,O,N,I,A,L,S,C,P=t[7].country+"",j=t[7].year+"",M=t[7].team+"",H=t[7].coefficient+"",R=t[7].fed+"",z=t[7].classification+"";const B=new Bt({props:{outline:!0,color:"danger",$$slots:{default:[Fe]},$$scope:{ctx:t}}});return B.$on("click",(function(){s(t[10](t[7].team,t[7].year))&&t[10](t[7].team,t[7].year).apply(this,arguments)})),B.$on("click",an),{c(){e=g("tr"),n=g("td"),o=h(P),l=y(),r=g("td"),c=h(j),a=y(),i=g("td"),u=g("a"),d=h(M),b=y(),v=g("td"),k=h(H),w=y(),E=g("td"),T=h(R),O=y(),N=g("td"),I=h(z),A=y(),L=g("td"),nt(B.$$.fragment),S=y(),x(u,"href",m="#/global-coef/"+t[7].team+"/"+t[7].year)},m(t,s){$(t,e,s),f(e,n),f(n,o),f(e,l),f(e,r),f(r,c),f(e,a),f(e,i),f(i,u),f(u,d),f(e,b),f(e,v),f(v,k),f(e,w),f(e,E),f(E,T),f(e,O),f(e,N),f(N,I),f(e,A),f(e,L),ot(B,L,null),f(e,S),C=!0},p(e,n){t=e,(!C||128&n[0])&&P!==(P=t[7].country+"")&&_(o,P),(!C||128&n[0])&&j!==(j=t[7].year+"")&&_(c,j),(!C||128&n[0])&&M!==(M=t[7].team+"")&&_(d,M),(!C||128&n[0]&&m!==(m="#/global-coef/"+t[7].team+"/"+t[7].year))&&x(u,"href",m),(!C||128&n[0])&&H!==(H=t[7].coefficient+"")&&_(k,H),(!C||128&n[0])&&R!==(R=t[7].fed+"")&&_(T,R),(!C||128&n[0])&&z!==(z=t[7].classification+"")&&_(I,z);const l={};64&n[1]&&(l.$$scope={dirty:n,ctx:t}),B.$set(l)},i(t){C||(W(B.$$.fragment,t),C=!0)},o(t){K(B.$$.fragment,t),C=!1},d(t){t&&p(e),lt(B)}}}function Xe(t){let e,n,o,s,r,c,a,i,u,d,h,b,k,_,T,O,N,I,A,L,S,C,P,j,M,H;const R=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[qe]},$$scope:{ctx:t}}});R.$on("click",t[9]);let z=t[7],B=[];for(let e=0;e<z.length;e+=1)B[e]=Je(Ne(t,z,e));const D=t=>K(B[t],1,1,()=>{B[t]=null});return{c(){e=g("thead"),e.innerHTML="<tr><th>País</th> \n\t\t\t\t\t<th>Año</th> \n\t\t\t\t\t<th>Equipo</th> \n\t\t\t\t\t<th>Coeficiente</th> \n\t\t\t\t\t<th>Fed</th> \n\t\t\t\t\t<th>Clasificación</th> \n\t\t\t\t\t<th>Acciones</th></tr>",n=y(),o=g("tbody"),s=g("tr"),r=g("td"),c=g("input"),a=y(),i=g("td"),u=g("input"),d=y(),h=g("td"),b=g("input"),k=y(),_=g("td"),T=g("input"),O=y(),N=g("td"),I=g("input"),A=y(),L=g("td"),S=g("input"),C=y(),P=g("td"),nt(R.$$.fragment),j=y();for(let t=0;t<B.length;t+=1)B[t].c();x(u,"type","number"),x(T,"type","number"),x(I,"type","number"),x(S,"type","number")},m(p,m,g){$(p,e,m),$(p,n,m),$(p,o,m),f(o,s),f(s,r),f(r,c),E(c,t[0].country),f(s,a),f(s,i),f(i,u),E(u,t[0].year),f(s,d),f(s,h),f(h,b),E(b,t[0].team),f(s,k),f(s,_),f(_,T),E(T,t[0].coefficient),f(s,O),f(s,N),f(N,I),E(I,t[0].fed),f(s,A),f(s,L),f(L,S),E(S,t[0].classification),f(s,C),f(s,P),ot(R,P,null),f(o,j);for(let t=0;t<B.length;t+=1)B[t].m(o,null);M=!0,g&&l(H),H=[v(c,"input",t[19]),v(u,"input",t[20]),v(b,"input",t[21]),v(T,"input",t[22]),v(I,"input",t[23]),v(S,"input",t[24])]},p(t,e){1&e[0]&&c.value!==t[0].country&&E(c,t[0].country),1&e[0]&&w(u.value)!==t[0].year&&E(u,t[0].year),1&e[0]&&b.value!==t[0].team&&E(b,t[0].team),1&e[0]&&w(T.value)!==t[0].coefficient&&E(T,t[0].coefficient),1&e[0]&&w(I.value)!==t[0].fed&&E(I,t[0].fed),1&e[0]&&w(S.value)!==t[0].classification&&E(S,t[0].classification);const n={};if(64&e[1]&&(n.$$scope={dirty:e,ctx:t}),R.$set(n),1152&e[0]){let n;for(z=t[7],n=0;n<z.length;n+=1){const l=Ne(t,z,n);B[n]?(B[n].p(l,e),W(B[n],1)):(B[n]=Je(l),B[n].c(),W(B[n],1),B[n].m(o,null))}for(G(),n=z.length;n<B.length;n+=1)D(n);V()}},i(t){if(!M){W(R.$$.fragment,t);for(let t=0;t<z.length;t+=1)W(B[t]);M=!0}},o(t){K(R.$$.fragment,t),B=B.filter(Boolean);for(let t=0;t<B.length;t+=1)K(B[t]);M=!1},d(t){t&&p(e),t&&p(n),t&&p(o),lt(R),m(B,t),l(H)}}}function Ue(e){let n;return{c(){n=h("Loading coef...")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function Ye(e){let n;const o=new Oe({props:{previous:!0,href:"#/globalCoefAPI"}});return o.$on("click",e[25]),{c(){nt(o.$$.fragment)},m(t,e){ot(o,t,e),n=!0},p:t,i(t){n||(W(o.$$.fragment,t),n=!0)},o(t){K(o.$$.fragment,t),n=!1},d(t){lt(o,t)}}}function Ze(t){let e;const n=new ke({props:{$$slots:{default:[Ve]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|64&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function Ge(t){let e,n=t[5]-1+"";return{c(){e=h(n)},m(t,n){$(t,e,n)},p(t,o){32&o[0]&&n!==(n=t[5]-1+"")&&_(e,n)},d(t){t&&p(e)}}}function Ve(t){let e;const n=new Oe({props:{href:"#/globalCoefAPI",$$slots:{default:[Ge]},$$scope:{ctx:t}}});return n.$on("click",t[26]),{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|64&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function We(t){let e;return{c(){e=h(t[5])},m(t,n){$(t,e,n)},p(t,n){32&n[0]&&_(e,t[5])},d(t){t&&p(e)}}}function Ke(t){let e;const n=new Oe({props:{href:"#/globalCoefAPI",$$slots:{default:[We]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|64&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function Qe(t){let e;const n=new ke({props:{$$slots:{default:[en]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|64&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function tn(t){let e,n=t[5]+1+"";return{c(){e=h(n)},m(t,n){$(t,e,n)},p(t,o){32&o[0]&&n!==(n=t[5]+1+"")&&_(e,n)},d(t){t&&p(e)}}}function en(t){let e;const n=new Oe({props:{href:"#/globalCoefAPI",$$slots:{default:[tn]},$$scope:{ctx:t}}});return n.$on("click",t[27]),{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|64&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function nn(e){let n;const o=new Oe({props:{next:!0,href:"#/globalCoefAPI"}});return o.$on("click",e[28]),{c(){nt(o.$$.fragment)},m(t,e){ot(o,t,e),n=!0},p:t,i(t){n||(W(o.$$.fragment,t),n=!0)},o(t){K(o.$$.fragment,t),n=!1},d(t){lt(o,t)}}}function on(t){let e,n,o,l,s;const r=new ke({props:{class:1===t[5]?"disabled":"",$$slots:{default:[Ye]},$$scope:{ctx:t}}});let c=1!=t[5]&&Ze(t);const a=new ke({props:{active:!0,$$slots:{default:[Ke]},$$scope:{ctx:t}}});let i=t[6]&&Qe(t);const u=new ke({props:{class:t[6]?"":"disabled",$$slots:{default:[nn]},$$scope:{ctx:t}}});return{c(){nt(r.$$.fragment),e=y(),c&&c.c(),n=y(),nt(a.$$.fragment),o=y(),i&&i.c(),l=y(),nt(u.$$.fragment)},m(t,d){ot(r,t,d),$(t,e,d),c&&c.m(t,d),$(t,n,d),ot(a,t,d),$(t,o,d),i&&i.m(t,d),$(t,l,d),ot(u,t,d),s=!0},p(t,e){const o={};32&e[0]&&(o.class=1===t[5]?"disabled":""),64&e[1]&&(o.$$scope={dirty:e,ctx:t}),r.$set(o),1!=t[5]?c?(c.p(t,e),32&e[0]&&W(c,1)):(c=Ze(t),c.c(),W(c,1),c.m(n.parentNode,n)):c&&(G(),K(c,1,1,()=>{c=null}),V());const s={};32&e[0]|64&e[1]&&(s.$$scope={dirty:e,ctx:t}),a.$set(s),t[6]?i?(i.p(t,e),64&e[0]&&W(i,1)):(i=Qe(t),i.c(),W(i,1),i.m(l.parentNode,l)):i&&(G(),K(i,1,1,()=>{i=null}),V());const d={};64&e[0]&&(d.class=t[6]?"":"disabled"),64&e[1]&&(d.$$scope={dirty:e,ctx:t}),u.$set(d)},i(t){s||(W(r.$$.fragment,t),W(c),W(a.$$.fragment,t),W(i),W(u.$$.fragment,t),s=!0)},o(t){K(r.$$.fragment,t),K(c),K(a.$$.fragment,t),K(i),K(u.$$.fragment,t),s=!1},d(t){lt(r,t),t&&p(e),c&&c.d(t),t&&p(n),lt(a,t),t&&p(o),i&&i.d(t),t&&p(l),lt(u,t)}}}function ln(t){let e,n;return{c(){e=g("i"),n=h(" Atrás"),x(e,"class","fas fa-arrow-circle-left")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function sn(t){let e,n;return{c(){e=g("i"),n=h(" Borrar todo"),x(e,"class","fa fa-trash"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function rn(t){let e,n;return{c(){e=g("i"),n=h(" Carga inicial de API"),x(e,"class","fas fa-sync-alt")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function cn(t){let e,n,o,l,s,r,c,a,i,u={ctx:t,current:null,token:null,pending:Ue,then:Se,catch:Le,value:7,blocks:[,,,]};Q(l=t[7],u);const d=new be({props:{style:"float:right;",ariaLabel:"Cambiar de página",$$slots:{default:[on]},$$scope:{ctx:t}}}),m=new Bt({props:{outline:!0,color:"secondary",$$slots:{default:[ln]},$$scope:{ctx:t}}});m.$on("click",ht);const h=new Bt({props:{outline:!0,color:"danger",$$slots:{default:[sn]},$$scope:{ctx:t}}});h.$on("click",t[11]),h.$on("click",un);const b=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[rn]},$$scope:{ctx:t}}});return b.$on("click",t[8]),b.$on("click",dn),{c(){e=g("main"),n=g("div"),o=y(),u.block.c(),s=y(),nt(d.$$.fragment),r=y(),nt(m.$$.fragment),c=y(),nt(h.$$.fragment),a=y(),nt(b.$$.fragment),x(n,"role","alert"),x(n,"id","div_alert"),T(n,"display","none")},m(t,l){$(t,e,l),f(e,n),f(e,o),u.block.m(e,u.anchor=null),u.mount=()=>e,u.anchor=s,f(e,s),ot(d,e,null),f(e,r),ot(m,e,null),f(e,c),ot(h,e,null),f(e,a),ot(b,e,null),i=!0},p(e,n){if(t=e,u.ctx=t,128&n[0]&&l!==(l=t[7])&&Q(l,u));else{const e=t.slice();e[7]=u.resolved,u.block.p(e,n)}const o={};96&n[0]|64&n[1]&&(o.$$scope={dirty:n,ctx:t}),d.$set(o);const s={};64&n[1]&&(s.$$scope={dirty:n,ctx:t}),m.$set(s);const r={};64&n[1]&&(r.$$scope={dirty:n,ctx:t}),h.$set(r);const c={};64&n[1]&&(c.$$scope={dirty:n,ctx:t}),b.$set(c)},i(t){i||(W(u.block),W(d.$$.fragment,t),W(m.$$.fragment,t),W(h.$$.fragment,t),W(b.$$.fragment,t),i=!0)},o(t){for(let t=0;t<3;t+=1){K(u.blocks[t])}K(d.$$.fragment,t),K(m.$$.fragment,t),K(h.$$.fragment,t),K(b.$$.fragment,t),i=!1},d(t){t&&p(e),u.block.d(),u.token=null,u=null,lt(d),lt(m),lt(h),lt(b)}}}function an(){$n();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-danger ",t.innerHTML="<strong> Dato borrado</strong> Se ha borrado el dato correctamente",setTimeout(()=>{$n()},3e3)}function un(){$n();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-danger ",t.innerHTML="<strong> Datos borrados</strong> Se han borrado todos los datos correctamente",setTimeout(()=>{$n()},3e3)}function dn(){$n();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-info ",t.innerHTML="<strong> Tabla Restaurada</strong> Se han cargado los datos iniciales",setTimeout(()=>{$n()},3e3)}function fn(t){$n();var e=document.getElementById("div_alert");e.style="position: fixed; top: 0px; top: 2%; width: 90%;",e.className="alert alert-dismissible in alert-danger ",e.innerHTML="<strong> Error</strong> Ha ocurrido un error "+t,setTimeout(()=>{$n()},3e3)}function $n(){var t=document.getElementById("div_alert");t.style="display: none; ",t.className="alert alert-dismissible in",t.innerHTML=""}function pn(t,e,n){let o=[],l={country:"",year:parseInt(""),team:"",coefficient:"",fed:"",classification:""},s=[],r=[],c="-",a="-",i=0,u=1,d=!0;async function f(){const t=await fetch("/api/v2/global-coef");if(t.ok){const e=await t.json();n(1,s=e.map(t=>t.team)),n(1,s=Array.from(new Set(s))),n(2,r=e.map(t=>t.year)),n(2,r=Array.from(new Set(r))),console.log("Contados "+s.length+"equipos y "+r.length+"años distintos.")}else console.log("ERROR")}async function $(){console.log("Fetching coef...");const t=await fetch("/api/v2/global-coef?offset="+10*i+"&limit=10");if(t.ok){console.log("Ok:");const e=await t.json();if(n(7,o=e),console.log("Received "+o.length+" coef."),10!=o.length)n(6,d=!1);else{const t=await fetch("/api/v2/global-coef?offset="+10*(i+1)+"&limit=10");console.log("La variable NEXT tiene el estado: "+t.status),0==(await t.json()).length||404==t.status?n(6,d=!1):n(6,d=!0)}}else console.log("ERROR")}function p(t){i+=t,n(5,u+=t),$()}S($),S(f);return[l,s,r,c,a,u,d,o,async function(){const t=await fetch("/api/v2/global-coef/loadInitialData");if(t.ok){const e=await t.json();console.log("Contados "+e.length+" datos de coef"),$()}else console.log("No se han cargado los datos inicales")},async function(){if(console.log("Inserting coef..."+JSON.stringify(l)),""==l.team||null==l.team||""==l.year||null==l.year)alert("Se debe incluir el nombre del equipo y año obligatoriamente");else{await fetch("/api/v2/global-coef",{method:"POST",body:JSON.stringify(l),headers:{"Content-Type":"application/json"}}).then((function(t){t.ok?($(),function(){$n();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-success ",t.innerHTML="<strong> Dato insertado</strong> Se ha insertado el dato correctamente",setTimeout(()=>{$n()},3e3)}()):fn("Error interno al intentar insertar un elemento")}))}},async function(t,e){console.log("Deleting coef..."+JSON.stringify(t)+ +JSON.stringify(e)),await fetch("/api/v2/global-coef/"+t+"/"+e,{method:"DELETE"}).then((function(t){t.ok?($(),f(),an()):404==t.status?fn("Se ha intentado borrar un elemento inexistente."):fn("Error al borrar un elemento")}))},async function(){console.log("Deleting all coef data..."),await fetch("/api/v2/global-coef/",{method:"DELETE"}).then((function(t){if(t.ok){const e=t.json();n(7,o=e)}else fn("Error al borrar todos los elementos")}))},async function(t,e){console.log("Searching data: "+t+" and "+e);var l="/api/v2/global-coef";"-"!=t&&"-"!=e?l=l+"?team="+t+"&year="+e:"-"!=t&&"-"==e?l=l+"?team="+t:"-"==t&&"-"!=e&&(l=l+"?year="+e);const s=await fetch(l);if(s.ok){console.log("Ok:");const t=await s.json();n(7,o=t),console.log("Found "+o.length+" global coef stats.")}else console.log("ERROR")},p,i,f,$,function(t){c=t,n(3,c)},function(t){a=t,n(4,a)},function(){l.country=this.value,n(0,l)},function(){l.year=w(this.value),n(0,l)},function(){l.team=this.value,n(0,l)},function(){l.coefficient=w(this.value),n(0,l)},function(){l.fed=w(this.value),n(0,l)},function(){l.classification=w(this.value),n(0,l)},()=>p(-1),()=>p(-1),()=>p(1),()=>p(1)]}class mn extends ct{constructor(t){super(),rt(this,t,pn,cn,r,{},[-1,-1])}}function gn(e){let n,o,l,s;const r=new mn({});return{c(){n=g("main"),o=g("h1"),o.textContent="Administrador de Coef",l=y(),nt(r.$$.fragment),x(o,"class","display-4"),T(o,"text-align","center")},m(t,e){$(t,n,e),f(n,o),f(n,l),ot(r,n,null),s=!0},p:t,i(t){s||(W(r.$$.fragment,t),s=!0)},o(t){K(r.$$.fragment,t),s=!1},d(t){t&&p(n),lt(r)}}}class hn extends ct{constructor(t){super(),rt(this,t,null,gn,r,{})}}function yn(e){return{c:t,m:t,p:t,i:t,o:t,d:t}}function bn(t){let e;const n=new At({props:{bordered:!0,$$slots:{default:[xn]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32894&e&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function vn(t){let e;return{c(){e=h("Actualizar")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function xn(t){let e,n,o,s,r,c,a,i,u,d,m,b,k,T,O,N,I,A,L,S,C,P,j,M,H;const R=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[vn]},$$scope:{ctx:t}}});return R.$on("click",t[9]),R.$on("click",On),{c(){e=g("thead"),e.innerHTML="<tr><th>País</th> \n                    <th>Año</th> \n                    <th>Equipo</th> \n                    <th>Coeficiente</th> \n                    <th>Fed</th> \n                    <th>Clasificación</th> \n                    <th>Acciones</th></tr>",n=y(),o=g("tbody"),s=g("tr"),r=g("td"),c=g("input"),a=y(),i=g("td"),u=h(t[2]),d=y(),m=g("td"),b=h(t[3]),k=y(),T=g("td"),O=g("input"),N=y(),I=g("td"),A=g("input"),L=y(),S=g("td"),C=g("input"),P=y(),j=g("td"),nt(R.$$.fragment),x(O,"type","number"),x(A,"type","number"),x(C,"type","number")},m(p,g,h){$(p,e,g),$(p,n,g),$(p,o,g),f(o,s),f(s,r),f(r,c),E(c,t[1]),f(s,a),f(s,i),f(i,u),f(s,d),f(s,m),f(m,b),f(s,k),f(s,T),f(T,O),E(O,t[4]),f(s,N),f(s,I),f(I,A),E(A,t[5]),f(s,L),f(s,S),f(S,C),E(C,t[6]),f(s,P),f(s,j),ot(R,j,null),M=!0,h&&l(H),H=[v(c,"input",t[11]),v(O,"input",t[12]),v(A,"input",t[13]),v(C,"input",t[14])]},p(t,e){2&e&&c.value!==t[1]&&E(c,t[1]),(!M||4&e)&&_(u,t[2]),(!M||8&e)&&_(b,t[3]),16&e&&w(O.value)!==t[4]&&E(O,t[4]),32&e&&w(A.value)!==t[5]&&E(A,t[5]),64&e&&w(C.value)!==t[6]&&E(C,t[6]);const n={};32768&e&&(n.$$scope={dirty:e,ctx:t}),R.$set(n)},i(t){M||(W(R.$$.fragment,t),M=!0)},o(t){K(R.$$.fragment,t),M=!1},d(t){t&&p(e),t&&p(n),t&&p(o),lt(R),l(H)}}}function kn(e){let n;return{c(){n=h("Loading coef...")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function wn(t){let e,n,o;return{c(){e=g("p"),n=h("ERROR: "),o=h(t[7]),T(e,"color","red")},m(t,l){$(t,e,l),f(e,n),f(e,o)},p(t,e){128&e&&_(o,t[7])},d(t){t&&p(e)}}}function _n(t){let e;return{c(){e=h("Atrás")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function En(t){let e,n,o,l,s,r,c,a,i,u,d,m,b=t[0].team+"",v={ctx:t,current:null,token:null,pending:kn,then:bn,catch:yn,value:8,blocks:[,,,]};Q(i=t[8],v);let k=t[7]&&wn(t);const w=new Bt({props:{outline:!0,color:"secondary",$$slots:{default:[_n]},$$scope:{ctx:t}}});return w.$on("click",ht),{c(){e=g("main"),n=g("div"),o=y(),l=g("h3"),s=h("Editar Coef "),r=g("strong"),c=h(b),a=y(),v.block.c(),u=y(),k&&k.c(),d=y(),nt(w.$$.fragment),x(n,"role","alert"),x(n,"id","div_alert"),T(n,"display","none")},m(t,i){$(t,e,i),f(e,n),f(e,o),f(e,l),f(l,s),f(l,r),f(r,c),f(e,a),v.block.m(e,v.anchor=null),v.mount=()=>e,v.anchor=u,f(e,u),k&&k.m(e,null),f(e,d),ot(w,e,null),m=!0},p(n,[o]){if(t=n,(!m||1&o)&&b!==(b=t[0].team+"")&&_(c,b),v.ctx=t,256&o&&i!==(i=t[8])&&Q(i,v));else{const e=t.slice();e[8]=v.resolved,v.block.p(e,o)}t[7]?k?k.p(t,o):(k=wn(t),k.c(),k.m(e,d)):k&&(k.d(1),k=null);const l={};32768&o&&(l.$$scope={dirty:o,ctx:t}),w.$set(l)},i(t){m||(W(v.block),W(w.$$.fragment,t),m=!0)},o(t){for(let t=0;t<3;t+=1){K(v.blocks[t])}K(w.$$.fragment,t),m=!1},d(t){t&&p(e),v.block.d(),v.token=null,v=null,k&&k.d(),lt(w)}}}function Tn(t){Nn();var e=document.getElementById("div_alert");e.style="position: fixed; top: 0px; top: 1%; width: 90%;",e.className="alert alert-dismissible in alert-danger ",e.innerHTML="<strong>ERROR</strong> Ha sucedido un error "+t,setTimeout(()=>{Nn()},3e3)}function On(){Nn();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 1%; width: 90%;",t.className="alert alert-dismissible in alert-info ",t.innerHTML="<strong>Dato actualizado</strong> El dato ha sido actualizado",setTimeout(()=>{Nn()},3e3)}function Nn(){var t=document.getElementById("div_alert");t.style="display: none; ",t.className="alert alert-dismissible in",t.innerHTML=""}function In(t,e,n){let{params:o={}}=e,l={},s="XXXX",r=2e3,c="ZZZZ",a=140,i=20,u=1,d="";async function f(){console.log("Fetching coef...");const t=await fetch("/api/v2/global-coef/"+o.team+"/"+o.year);if(t.ok){console.log("Ok:");const e=await t.json();n(8,l=e),n(1,s=l.country),n(2,r=l.year),n(3,c=l.team),n(4,a=l.coefficient),n(5,i=l.fed),n(6,u=l.classification),console.log("Received coef")}else n(7,d=t.status+": "+t.statusText),console.log("ERROR"+d)}return S(f),t.$set=t=>{"params"in t&&n(0,o=t.params)},[o,s,r,c,a,i,u,d,l,async function(){console.log("Updating coef..."+JSON.stringify(o.team)),await fetch("/api/v2/global-coef/"+o.team+"/"+o.year,{method:"PUT",body:JSON.stringify({country:s,year:parseInt(o.year),team:o.team,coefficient:a,fed:i,classification:u}),headers:{"Content-Type":"application/json"}}).then((function(t){t.ok?f():404==t.status?Tn("Se ha intentado borrar un elemento inexistente."):Tn("")}))},f,function(){s=this.value,n(1,s)},function(){a=w(this.value),n(4,a)},function(){i=w(this.value),n(5,i)},function(){u=w(this.value),n(6,u)}]}class An extends ct{constructor(t){super(),rt(this,t,In,En,r,{params:0})}}function Ln(t,e,n){const o=t.slice();return o[29]=e[n],o}function Sn(t,e,n){const o=t.slice();return o[32]=e[n],o}function Cn(t,e,n){const o=t.slice();return o[35]=e[n],o}function Pn(e){return{c:t,m:t,p:t,i:t,o:t,d:t}}function jn(t){let e,n,o,l,r;const c=new ge({props:{$$slots:{default:[zn]},$$scope:{ctx:t}}}),a=new ge({props:{$$slots:{default:[Fn]},$$scope:{ctx:t}}}),i=new Bt({props:{outline:!0,color:"secondary",class:"button-search",$$slots:{default:[Jn]},$$scope:{ctx:t}}});i.$on("click",(function(){s(t[12](t[3],t[4]))&&t[12](t[3],t[4]).apply(this,arguments)}));const u=new Bt({props:{color:"success",$$slots:{default:[Xn]},$$scope:{ctx:t}}});u.$on("click",t[8]),u.$on("click",$o);const d=new At({props:{bordered:!0,$$slots:{default:[Vn]},$$scope:{ctx:t}}});return{c(){nt(c.$$.fragment),e=y(),nt(a.$$.fragment),n=y(),nt(i.$$.fragment),o=y(),nt(u.$$.fragment),l=y(),nt(d.$$.fragment)},m(t,s){ot(c,t,s),$(t,e,s),ot(a,t,s),$(t,n,s),ot(i,t,s),$(t,o,s),ot(u,t,s),$(t,l,s),ot(d,t,s),r=!0},p(e,n){t=e;const o={};10&n[0]|128&n[1]&&(o.$$scope={dirty:n,ctx:t}),c.$set(o);const l={};20&n[0]|128&n[1]&&(l.$$scope={dirty:n,ctx:t}),a.$set(l);const s={};128&n[1]&&(s.$$scope={dirty:n,ctx:t}),i.$set(s);const r={};128&n[1]&&(r.$$scope={dirty:n,ctx:t}),u.$set(r);const f={};129&n[0]|128&n[1]&&(f.$$scope={dirty:n,ctx:t}),d.$set(f)},i(t){r||(W(c.$$.fragment,t),W(a.$$.fragment,t),W(i.$$.fragment,t),W(u.$$.fragment,t),W(d.$$.fragment,t),r=!0)},o(t){K(c.$$.fragment,t),K(a.$$.fragment,t),K(i.$$.fragment,t),K(u.$$.fragment,t),K(d.$$.fragment,t),r=!1},d(t){lt(c,t),t&&p(e),lt(a,t),t&&p(n),lt(i,t),t&&p(o),lt(u,t),t&&p(l),lt(d,t)}}}function Mn(t){let e;return{c(){e=h("Año")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Hn(t){let e,n,o,l=t[35]+"";return{c(){e=g("option"),n=h(l),e.__value=o=t[35],e.value=e.__value},m(t,o){$(t,e,o),f(e,n)},p(t,s){2&s[0]&&l!==(l=t[35]+"")&&_(n,l),2&s[0]&&o!==(o=t[35])&&(e.__value=o),e.value=e.__value},d(t){t&&p(e)}}}function Rn(t){let e,n,o=t[1],l=[];for(let e=0;e<o.length;e+=1)l[e]=Hn(Cn(t,o,e));return{c(){for(let t=0;t<l.length;t+=1)l[t].c();e=y(),n=g("option"),n.textContent="-",n.__value="-",n.value=n.__value},m(t,o){for(let e=0;e<l.length;e+=1)l[e].m(t,o);$(t,e,o),$(t,n,o)},p(t,n){if(2&n[0]){let s;for(o=t[1],s=0;s<o.length;s+=1){const r=Cn(t,o,s);l[s]?l[s].p(r,n):(l[s]=Hn(r),l[s].c(),l[s].m(e.parentNode,e))}for(;s<l.length;s+=1)l[s].d(1);l.length=o.length}},d(t){m(l,t),t&&p(e),t&&p(n)}}}function zn(t){let e,n,o;const l=new de({props:{for:"selectYear",$$slots:{default:[Mn]},$$scope:{ctx:t}}});function s(e){t[17].call(null,e)}let r={type:"select",name:"selectYear",id:"selectYear",$$slots:{default:[Rn]},$$scope:{ctx:t}};void 0!==t[3]&&(r.value=t[3]);const c=new ae({props:r});return M.push(()=>et(c,"value",s)),{c(){nt(l.$$.fragment),e=y(),nt(c.$$.fragment)},m(t,n){ot(l,t,n),$(t,e,n),ot(c,t,n),o=!0},p(t,e){const o={};128&e[1]&&(o.$$scope={dirty:e,ctx:t}),l.$set(o);const s={};2&e[0]|128&e[1]&&(s.$$scope={dirty:e,ctx:t}),!n&&8&e[0]&&(n=!0,s.value=t[3],q(()=>n=!1)),c.$set(s)},i(t){o||(W(l.$$.fragment,t),W(c.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),K(c.$$.fragment,t),o=!1},d(t){lt(l,t),t&&p(e),lt(c,t)}}}function Bn(t){let e;return{c(){e=h("Búsqueda por equipo")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Dn(t){let e,n,o,l=t[32]+"";return{c(){e=g("option"),n=h(l),e.__value=o=t[32],e.value=e.__value},m(t,o){$(t,e,o),f(e,n)},p(t,s){4&s[0]&&l!==(l=t[32]+"")&&_(n,l),4&s[0]&&o!==(o=t[32])&&(e.__value=o),e.value=e.__value},d(t){t&&p(e)}}}function qn(t){let e,n,o=t[2],l=[];for(let e=0;e<o.length;e+=1)l[e]=Dn(Sn(t,o,e));return{c(){for(let t=0;t<l.length;t+=1)l[t].c();e=y(),n=g("option"),n.textContent="-",n.__value="-",n.value=n.__value},m(t,o){for(let e=0;e<l.length;e+=1)l[e].m(t,o);$(t,e,o),$(t,n,o)},p(t,n){if(4&n[0]){let s;for(o=t[2],s=0;s<o.length;s+=1){const r=Sn(t,o,s);l[s]?l[s].p(r,n):(l[s]=Dn(r),l[s].c(),l[s].m(e.parentNode,e))}for(;s<l.length;s+=1)l[s].d(1);l.length=o.length}},d(t){m(l,t),t&&p(e),t&&p(n)}}}function Fn(t){let e,n,o;const l=new de({props:{for:"selectTeam",$$slots:{default:[Bn]},$$scope:{ctx:t}}});function s(e){t[18].call(null,e)}let r={type:"select",name:"selectTeam",id:"selectTeam",$$slots:{default:[qn]},$$scope:{ctx:t}};void 0!==t[4]&&(r.value=t[4]);const c=new ae({props:r});return M.push(()=>et(c,"value",s)),{c(){nt(l.$$.fragment),e=y(),nt(c.$$.fragment)},m(t,n){ot(l,t,n),$(t,e,n),ot(c,t,n),o=!0},p(t,e){const o={};128&e[1]&&(o.$$scope={dirty:e,ctx:t}),l.$set(o);const s={};4&e[0]|128&e[1]&&(s.$$scope={dirty:e,ctx:t}),!n&&16&e[0]&&(n=!0,s.value=t[4],q(()=>n=!1)),c.$set(s)},i(t){o||(W(l.$$.fragment,t),W(c.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),K(c.$$.fragment,t),o=!1},d(t){lt(l,t),t&&p(e),lt(c,t)}}}function Jn(t){let e,n;return{c(){e=g("i"),n=h(" Buscar"),x(e,"class","fas fa-search")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Xn(t){let e,n;return{c(){e=g("i"),n=h(" Carga Inicial API"),x(e,"class","fa fa-refresh"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Un(t){let e,n;return{c(){e=g("i"),n=h(" Insertar"),x(e,"class","fa fa-plus-circle"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Yn(t){let e,n;return{c(){e=g("i"),n=h(" Eliminar"),x(e,"class","fa fa-trash"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Zn(t){let e,n;return{c(){e=g("i"),n=h(" Editar"),x(e,"class","fa fa-edit"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Gn(t){let e,n,o,l,r,c,a,i,u,d,m,b,v,x,k,w,E,T,O,N,I,A,L,S,C=t[29].country+"",P=t[29].year+"",j=t[29].team+"",M=t[29].signing+"",H=t[29].sale+"",R=t[29].balance+"";const z=new Bt({props:{outline:!0,color:"danger",$$slots:{default:[Yn]},$$scope:{ctx:t}}});z.$on("click",(function(){s(t[10](t[29].year,t[29].team))&&t[10](t[29].year,t[29].team).apply(this,arguments)}));const B=new Bt({props:{outline:!0,color:"info",href:"#/global-transfers/"+t[29].year+"/"+t[29].team,$$slots:{default:[Zn]},$$scope:{ctx:t}}});return{c(){e=g("tr"),n=g("td"),o=h(C),l=y(),r=g("td"),c=h(P),a=y(),i=g("td"),u=h(j),d=y(),m=g("td"),b=h(M),v=y(),x=g("td"),k=h(H),w=y(),E=g("td"),T=h(R),O=y(),N=g("td"),nt(z.$$.fragment),I=y(),A=g("td"),nt(B.$$.fragment),L=y()},m(t,s){$(t,e,s),f(e,n),f(n,o),f(e,l),f(e,r),f(r,c),f(e,a),f(e,i),f(i,u),f(e,d),f(e,m),f(m,b),f(e,v),f(e,x),f(x,k),f(e,w),f(e,E),f(E,T),f(e,O),f(e,N),ot(z,N,null),f(e,I),f(e,A),ot(B,A,null),f(e,L),S=!0},p(e,n){t=e,(!S||128&n[0])&&C!==(C=t[29].country+"")&&_(o,C),(!S||128&n[0])&&P!==(P=t[29].year+"")&&_(c,P),(!S||128&n[0])&&j!==(j=t[29].team+"")&&_(u,j),(!S||128&n[0])&&M!==(M=t[29].signing+"")&&_(b,M),(!S||128&n[0])&&H!==(H=t[29].sale+"")&&_(k,H),(!S||128&n[0])&&R!==(R=t[29].balance+"")&&_(T,R);const l={};128&n[1]&&(l.$$scope={dirty:n,ctx:t}),z.$set(l);const s={};128&n[0]&&(s.href="#/global-transfers/"+t[29].year+"/"+t[29].team),128&n[1]&&(s.$$scope={dirty:n,ctx:t}),B.$set(s)},i(t){S||(W(z.$$.fragment,t),W(B.$$.fragment,t),S=!0)},o(t){K(z.$$.fragment,t),K(B.$$.fragment,t),S=!1},d(t){t&&p(e),lt(z),lt(B)}}}function Vn(t){let e,n,o,s,r,c,a,i,u,d,h,b,k,_,T,O,N,I,A,L,S,C,P,j,M,H;const R=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[Un]},$$scope:{ctx:t}}});R.$on("click",t[9]);let z=t[7],B=[];for(let e=0;e<z.length;e+=1)B[e]=Gn(Ln(t,z,e));const D=t=>K(B[t],1,1,()=>{B[t]=null});return{c(){e=g("thead"),e.innerHTML="<tr><th>Pais</th> \n\t\t\t\t\t<th>Año</th> \n\t\t\t\t\t<th>Equipo</th> \n\t\t\t\t\t<th>Fichajes</th> \n\t\t\t\t\t<th>Ventas</th> \n\t\t\t\t\t<th>Balance</th> \n\t\t\t\t\t<th>Acciones</th></tr>",n=y(),o=g("tbody"),s=g("tr"),r=g("td"),c=g("input"),a=y(),i=g("td"),u=g("input"),d=y(),h=g("td"),b=g("input"),k=y(),_=g("td"),T=g("input"),O=y(),N=g("td"),I=g("input"),A=y(),L=g("td"),S=g("input"),C=y(),P=g("td"),nt(R.$$.fragment),j=y();for(let t=0;t<B.length;t+=1)B[t].c();x(u,"type","number"),x(T,"type","number"),x(I,"type","number"),x(S,"type","number")},m(p,m,g){$(p,e,m),$(p,n,m),$(p,o,m),f(o,s),f(s,r),f(r,c),E(c,t[0].country),f(s,a),f(s,i),f(i,u),E(u,t[0].year),f(s,d),f(s,h),f(h,b),E(b,t[0].team),f(s,k),f(s,_),f(_,T),E(T,t[0].signing),f(s,O),f(s,N),f(N,I),E(I,t[0].sale),f(s,A),f(s,L),f(L,S),E(S,t[0].balance),f(s,C),f(s,P),ot(R,P,null),f(o,j);for(let t=0;t<B.length;t+=1)B[t].m(o,null);M=!0,g&&l(H),H=[v(c,"input",t[19]),v(u,"input",t[20]),v(b,"input",t[21]),v(T,"input",t[22]),v(I,"input",t[23]),v(S,"input",t[24])]},p(t,e){1&e[0]&&c.value!==t[0].country&&E(c,t[0].country),1&e[0]&&w(u.value)!==t[0].year&&E(u,t[0].year),1&e[0]&&b.value!==t[0].team&&E(b,t[0].team),1&e[0]&&w(T.value)!==t[0].signing&&E(T,t[0].signing),1&e[0]&&w(I.value)!==t[0].sale&&E(I,t[0].sale),1&e[0]&&w(S.value)!==t[0].balance&&E(S,t[0].balance);const n={};if(128&e[1]&&(n.$$scope={dirty:e,ctx:t}),R.$set(n),1152&e[0]){let n;for(z=t[7],n=0;n<z.length;n+=1){const l=Ln(t,z,n);B[n]?(B[n].p(l,e),W(B[n],1)):(B[n]=Gn(l),B[n].c(),W(B[n],1),B[n].m(o,null))}for(G(),n=z.length;n<B.length;n+=1)D(n);V()}},i(t){if(!M){W(R.$$.fragment,t);for(let t=0;t<z.length;t+=1)W(B[t]);M=!0}},o(t){K(R.$$.fragment,t),B=B.filter(Boolean);for(let t=0;t<B.length;t+=1)K(B[t]);M=!1},d(t){t&&p(e),t&&p(n),t&&p(o),lt(R),m(B,t),l(H)}}}function Wn(e){let n;return{c(){n=h("Loading transfers...")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function Kn(e){let n;const o=new Oe({props:{previous:!0,href:"#/globalTransfersAPI"}});return o.$on("click",e[25]),{c(){nt(o.$$.fragment)},m(t,e){ot(o,t,e),n=!0},p:t,i(t){n||(W(o.$$.fragment,t),n=!0)},o(t){K(o.$$.fragment,t),n=!1},d(t){lt(o,t)}}}function Qn(t){let e;const n=new ke({props:{$$slots:{default:[eo]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|128&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function to(t){let e,n=t[5]-1+"";return{c(){e=h(n)},m(t,n){$(t,e,n)},p(t,o){32&o[0]&&n!==(n=t[5]-1+"")&&_(e,n)},d(t){t&&p(e)}}}function eo(t){let e;const n=new Oe({props:{href:"#/globalTransfersAPI",$$slots:{default:[to]},$$scope:{ctx:t}}});return n.$on("click",t[26]),{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|128&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function no(t){let e;return{c(){e=h(t[5])},m(t,n){$(t,e,n)},p(t,n){32&n[0]&&_(e,t[5])},d(t){t&&p(e)}}}function oo(t){let e;const n=new Oe({props:{href:"#/globalTransfersAPI",$$slots:{default:[no]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|128&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function lo(t){let e;const n=new ke({props:{$$slots:{default:[ro]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|128&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function so(t){let e,n=t[5]+1+"";return{c(){e=h(n)},m(t,n){$(t,e,n)},p(t,o){32&o[0]&&n!==(n=t[5]+1+"")&&_(e,n)},d(t){t&&p(e)}}}function ro(t){let e;const n=new Oe({props:{href:"#/globalTransfersAPI",$$slots:{default:[so]},$$scope:{ctx:t}}});return n.$on("click",t[27]),{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32&e[0]|128&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function co(e){let n;const o=new Oe({props:{next:!0,href:"#/globalTransfersAPI"}});return o.$on("click",e[28]),{c(){nt(o.$$.fragment)},m(t,e){ot(o,t,e),n=!0},p:t,i(t){n||(W(o.$$.fragment,t),n=!0)},o(t){K(o.$$.fragment,t),n=!1},d(t){lt(o,t)}}}function ao(t){let e,n,o,l,s;const r=new ke({props:{class:1===t[5]?"disabled":"",$$slots:{default:[Kn]},$$scope:{ctx:t}}});let c=1!=t[5]&&Qn(t);const a=new ke({props:{active:!0,$$slots:{default:[oo]},$$scope:{ctx:t}}});let i=t[6]&&lo(t);const u=new ke({props:{class:t[6]?"":"disabled",$$slots:{default:[co]},$$scope:{ctx:t}}});return{c(){nt(r.$$.fragment),e=y(),c&&c.c(),n=y(),nt(a.$$.fragment),o=y(),i&&i.c(),l=y(),nt(u.$$.fragment)},m(t,d){ot(r,t,d),$(t,e,d),c&&c.m(t,d),$(t,n,d),ot(a,t,d),$(t,o,d),i&&i.m(t,d),$(t,l,d),ot(u,t,d),s=!0},p(t,e){const o={};32&e[0]&&(o.class=1===t[5]?"disabled":""),128&e[1]&&(o.$$scope={dirty:e,ctx:t}),r.$set(o),1!=t[5]?c?(c.p(t,e),32&e[0]&&W(c,1)):(c=Qn(t),c.c(),W(c,1),c.m(n.parentNode,n)):c&&(G(),K(c,1,1,()=>{c=null}),V());const s={};32&e[0]|128&e[1]&&(s.$$scope={dirty:e,ctx:t}),a.$set(s),t[6]?i?(i.p(t,e),64&e[0]&&W(i,1)):(i=lo(t),i.c(),W(i,1),i.m(l.parentNode,l)):i&&(G(),K(i,1,1,()=>{i=null}),V());const d={};64&e[0]&&(d.class=t[6]?"":"disabled"),128&e[1]&&(d.$$scope={dirty:e,ctx:t}),u.$set(d)},i(t){s||(W(r.$$.fragment,t),W(c),W(a.$$.fragment,t),W(i),W(u.$$.fragment,t),s=!0)},o(t){K(r.$$.fragment,t),K(c),K(a.$$.fragment,t),K(i),K(u.$$.fragment,t),s=!1},d(t){lt(r,t),t&&p(e),c&&c.d(t),t&&p(n),lt(a,t),t&&p(o),i&&i.d(t),t&&p(l),lt(u,t)}}}function io(t){let e,n;return{c(){e=g("i"),n=h(" Atrás"),x(e,"class","fas fa-arrow-circle-left")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function uo(t){let e,n;return{c(){e=g("i"),n=h(" Borrar todo"),x(e,"class","fa fa-trash"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function fo(t){let e,n,o,l,s,r,c,a,i={ctx:t,current:null,token:null,pending:Wn,then:jn,catch:Pn,value:7,blocks:[,,,]};Q(l=t[7],i);const u=new be({props:{style:"float:right;",ariaLabel:"Cambiar de página",$$slots:{default:[ao]},$$scope:{ctx:t}}}),d=new Bt({props:{outline:!0,color:"secondary",$$slots:{default:[io]},$$scope:{ctx:t}}});d.$on("click",ht);const m=new Bt({props:{outline:!0,color:"danger",$$slots:{default:[uo]},$$scope:{ctx:t}}});return m.$on("click",t[11]),{c(){e=g("main"),n=g("div"),o=y(),i.block.c(),s=y(),nt(u.$$.fragment),r=y(),nt(d.$$.fragment),c=y(),nt(m.$$.fragment),x(n,"role","alert"),x(n,"id","div_alert"),T(n,"display","none")},m(t,l){$(t,e,l),f(e,n),f(e,o),i.block.m(e,i.anchor=null),i.mount=()=>e,i.anchor=s,f(e,s),ot(u,e,null),f(e,r),ot(d,e,null),f(e,c),ot(m,e,null),a=!0},p(e,n){if(t=e,i.ctx=t,128&n[0]&&l!==(l=t[7])&&Q(l,i));else{const e=t.slice();e[7]=i.resolved,i.block.p(e,n)}const o={};96&n[0]|128&n[1]&&(o.$$scope={dirty:n,ctx:t}),u.$set(o);const s={};128&n[1]&&(s.$$scope={dirty:n,ctx:t}),d.$set(s);const r={};128&n[1]&&(r.$$scope={dirty:n,ctx:t}),m.$set(r)},i(t){a||(W(i.block),W(u.$$.fragment,t),W(d.$$.fragment,t),W(m.$$.fragment,t),a=!0)},o(t){for(let t=0;t<3;t+=1){K(i.blocks[t])}K(u.$$.fragment,t),K(d.$$.fragment,t),K(m.$$.fragment,t),a=!1},d(t){t&&p(e),i.block.d(),i.token=null,i=null,lt(u),lt(d),lt(m)}}}function $o(){mo();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-info ",t.innerHTML="<strong> Tabla Restaurada</strong> Se han cargado los datos iniciales",setTimeout(()=>{mo()},3e3)}function po(t){mo();var e=document.getElementById("div_alert");e.style="position: fixed; top: 0px; top: 2%; width: 90%;",e.className="alert alert-dismissible in alert-danger ",e.innerHTML="<strong> Error</strong> Ha ocurrido un error "+t,setTimeout(()=>{mo()},3e3)}function mo(){var t=document.getElementById("div_alert");t.style="display: none; ",t.className="alert alert-dismissible in",t.innerHTML=""}function go(t,e,n){let o=[],l={country:"",year:parseInt(""),team:"",signing:"",sale:"",balance:""},s=[],r=[],c="-",a="-",i=0,u=1,d=!0;async function f(){const t=await fetch("/api/v2/global-transfers");if(t.ok){const e=await t.json();n(1,s=e.map(t=>t.year)),n(1,s=Array.from(new Set(s))),n(2,r=e.map(t=>t.team)),n(2,r=Array.from(new Set(r))),console.log("Contados "+s.length+"años y "+r.length+"años distintos.")}else console.log("Error")}async function $(){console.log("Fetching transfers...");const t=await fetch("/api/v2/global-transfers?offset="+10*i+"&limit=10");if(t.ok){console.log("Ok:");const e=await t.json();if(n(7,o=e),console.log("Received "+o.length+" transfers."),10!=o.length)n(6,d=!1);else{const t=await fetch("/api/v2/global-transfers?offset="+10*(i+1)+"&limit=10");console.log("La variable NEXT tiene el estado: "+t.status),0==(await t.json()).length||404==t.status?n(6,d=!1):n(6,d=!0)}}else console.log("Error")}function p(t){i+=t,n(5,u+=t),$()}S($),S(f);return[l,s,r,c,a,u,d,o,async function(){const t=await fetch("/api/v2/global-transfers/loadInitialData");if(t.ok){const e=await t.json();console.log("Contados "+e.length+" datos de transferencias de fichajes"),$()}else console.log("No se han cargado correctamente los datos inicales")},async function(){if(console.log("Inserting transfer..."+JSON.stringify(l)),""==l.year||null==l.year||""==l.team||null==l.team)alert("Se debe incluir el año y el equipo vinculante obligatoriamente");else{await fetch("/api/v2/global-transfers",{method:"POST",body:JSON.stringify(l),headers:{"Content-Type":"application/json"}}).then((function(t){t.ok?($(),function(){mo();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-success ",t.innerHTML="<strong> Dato insertado</strong> Se ha insertado el dato correctamente",setTimeout(()=>{mo()},3e3)}(),n(0,l.country="",l),n(0,l.year="",l),n(0,l.team="",l),n(0,l.signing="",l),n(0,l.sale="",l),n(0,l.balance="",l)):po("Error interno al intentar insertar el elemento")}))}},async function(t,e){console.log("Deleting transfer..."+JSON.stringify(t)+ +JSON.stringify(e)),await fetch("/api/v2/global-transfers/"+t+"/"+e,{method:"DELETE"}).then((function(t){t.ok?($(),f(),function(){mo();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-danger ",t.innerHTML="<strong> Dato borrado</strong> Se ha borrado el dato correctamente",setTimeout(()=>{mo()},3e3)}()):404==t.status?po("El elemento que intentas borrar no existe"):po("Error al intentar borrar un elemento")}))},async function(){console.log("Deleting all transfers data..."),await fetch("/api/v2/global-transfers/",{method:"DELETE"}).then((function(t){t.ok?($(),f(),function(){mo();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-danger ",t.innerHTML="<strong> Datos borrados</strong> Se han borrado todos los datos correctamente",setTimeout(()=>{mo()},3e3)}()):po("Error al borrar todos los elementos")}))},async function(t,e){console.log("Searching data: "+t+" and "+e);var l="/api/v2/global-transfers";"-"!=t&&"-"!=e?l=l+"?year="+t+"&team="+e:"-"!=t&&"-"==e?l=l+"?year="+t:"-"==t&&"-"!=e&&(l=l+"?team="+e);const s=await fetch(l);if(s.ok){console.log("Ok:");const t=await s.json();n(7,o=t),console.log("Found "+o.length+" global transfers stats.")}else console.log("Error")},p,i,f,$,function(t){c=t,n(3,c)},function(t){a=t,n(4,a)},function(){l.country=this.value,n(0,l)},function(){l.year=w(this.value),n(0,l)},function(){l.team=this.value,n(0,l)},function(){l.signing=w(this.value),n(0,l)},function(){l.sale=w(this.value),n(0,l)},function(){l.balance=w(this.value),n(0,l)},()=>p(-1),()=>p(-1),()=>p(1),()=>p(1)]}class ho extends ct{constructor(t){super(),rt(this,t,go,fo,r,{},[-1,-1])}}function yo(e){let n,o,l,s;const r=new ho({});return{c(){n=g("main"),o=g("h1"),o.textContent="Administrador de datos de transferencias",l=y(),nt(r.$$.fragment),x(o,"class","display-4"),T(o,"text-align","center")},m(t,e){$(t,n,e),f(n,o),f(n,l),ot(r,n,null),s=!0},p:t,i(t){s||(W(r.$$.fragment,t),s=!0)},o(t){K(r.$$.fragment,t),s=!1},d(t){t&&p(n),lt(r)}}}class bo extends ct{constructor(t){super(),rt(this,t,null,yo,r,{})}}function vo(e){return{c:t,m:t,p:t,i:t,o:t,d:t}}function xo(t){let e;const n=new At({props:{bordered:!0,$$slots:{default:[wo]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};32894&e&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function ko(t){let e,n;return{c(){e=g("i"),n=h(" Actualizar"),x(e,"class","fa fa-refresh"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function wo(t){let e,n,o,s,r,c,a,i,u,d,m,b,k,T,O,N,I,A,L,S,C,P,j,M,H;const R=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[ko]},$$scope:{ctx:t}}});return R.$on("click",t[9]),{c(){e=g("thead"),e.innerHTML="<tr><th>Pais</th> \n                    <th>Año</th> \n                    <th>Equipo</th> \n                    <th>Fichajes</th> \n                    <th>Ventas</th> \n                    <th>Balance Final</th> \n                    <th>Acciones</th></tr>",n=y(),o=g("tbody"),s=g("tr"),r=g("td"),c=g("input"),a=y(),i=g("td"),u=h(t[2]),d=y(),m=g("td"),b=h(t[3]),k=y(),T=g("td"),O=g("input"),N=y(),I=g("td"),A=g("input"),L=y(),S=g("td"),C=g("input"),P=y(),j=g("td"),nt(R.$$.fragment),x(O,"type","number"),x(A,"type","number"),x(C,"type","number")},m(p,g,h){$(p,e,g),$(p,n,g),$(p,o,g),f(o,s),f(s,r),f(r,c),E(c,t[1]),f(s,a),f(s,i),f(i,u),f(s,d),f(s,m),f(m,b),f(s,k),f(s,T),f(T,O),E(O,t[4]),f(s,N),f(s,I),f(I,A),E(A,t[5]),f(s,L),f(s,S),f(S,C),E(C,t[6]),f(s,P),f(s,j),ot(R,j,null),M=!0,h&&l(H),H=[v(c,"input",t[11]),v(O,"input",t[12]),v(A,"input",t[13]),v(C,"input",t[14])]},p(t,e){2&e&&c.value!==t[1]&&E(c,t[1]),(!M||4&e)&&_(u,t[2]),(!M||8&e)&&_(b,t[3]),16&e&&w(O.value)!==t[4]&&E(O,t[4]),32&e&&w(A.value)!==t[5]&&E(A,t[5]),64&e&&w(C.value)!==t[6]&&E(C,t[6]);const n={};32768&e&&(n.$$scope={dirty:e,ctx:t}),R.$set(n)},i(t){M||(W(R.$$.fragment,t),M=!0)},o(t){K(R.$$.fragment,t),M=!1},d(t){t&&p(e),t&&p(n),t&&p(o),lt(R),l(H)}}}function _o(e){let n;return{c(){n=h("Cargando transfers...")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function Eo(t){let e,n,o;return{c(){e=g("p"),n=h("ERROR: "),o=h(t[7]),T(e,"color","red")},m(t,l){$(t,e,l),f(e,n),f(e,o)},p(t,e){128&e&&_(o,t[7])},d(t){t&&p(e)}}}function To(t){let e,n;return{c(){e=g("i"),n=h(" Atrás"),x(e,"class","fas fa-arrow-circle-left")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Oo(t){let e,n,o,l,s,r,c,a,i,u,d,m,b,v,k=t[0].team+"",w=t[0].year+"",E={ctx:t,current:null,token:null,pending:_o,then:xo,catch:vo,value:8,blocks:[,,,]};Q(d=t[8],E);let O=t[7]&&Eo(t);const N=new Bt({props:{outline:!0,color:"secondary",$$slots:{default:[To]},$$scope:{ctx:t}}});return N.$on("click",ht),{c(){e=g("main"),n=g("div"),o=y(),l=g("h3"),s=h("Editar Transfer "),r=g("strong"),c=h(k),a=h(" : "),i=h(w),u=y(),E.block.c(),m=y(),O&&O.c(),b=y(),nt(N.$$.fragment),x(n,"role","alert"),x(n,"id","div_alert"),T(n,"display","none")},m(t,d){$(t,e,d),f(e,n),f(e,o),f(e,l),f(l,s),f(l,r),f(r,c),f(r,a),f(r,i),f(e,u),E.block.m(e,E.anchor=null),E.mount=()=>e,E.anchor=m,f(e,m),O&&O.m(e,null),f(e,b),ot(N,e,null),v=!0},p(n,[o]){if(t=n,(!v||1&o)&&k!==(k=t[0].team+"")&&_(c,k),(!v||1&o)&&w!==(w=t[0].year+"")&&_(i,w),E.ctx=t,256&o&&d!==(d=t[8])&&Q(d,E));else{const e=t.slice();e[8]=E.resolved,E.block.p(e,o)}t[7]?O?O.p(t,o):(O=Eo(t),O.c(),O.m(e,b)):O&&(O.d(1),O=null);const l={};32768&o&&(l.$$scope={dirty:o,ctx:t}),N.$set(l)},i(t){v||(W(E.block),W(N.$$.fragment,t),v=!0)},o(t){for(let t=0;t<3;t+=1){K(E.blocks[t])}K(N.$$.fragment,t),v=!1},d(t){t&&p(e),E.block.d(),E.token=null,E=null,O&&O.d(),lt(N)}}}function No(t){Io();var e=document.getElementById("div_alert");e.style="position: fixed; top: 0px; top: 2%; width: 90%;",e.className="alert alert-dismissible in alert-danger ",e.innerHTML="<strong>Error</strong> Ha ocurrido un error "+t,setTimeout(()=>{Io()},3e3)}function Io(){var t=document.getElementById("div_alert");t.style="display: none; ",t.className="alert alert-dismissible in",t.innerHTML=""}function Ao(t,e,n){let{params:o={}}=e,l={},s="XXXX",r=12345,c="SevillaFC",a=17,i=32,u=108.2,d="";async function f(){console.log("Fetching transfer...");const t=await fetch("/api/v2/global-transfers/"+o.year+"/"+o.team);if(t.ok){console.log("Ok:");const e=await t.json();n(8,l=e),n(1,s=l.country),n(2,r=l.year),n(3,c=l.team),n(4,a=l.signing),n(5,i=l.sale),n(6,u=l.balance),console.log("Received transfer")}else n(7,d=t.status+": "+t.statusText),console.log("Error"+d)}return S(f),t.$set=t=>{"params"in t&&n(0,o=t.params)},[o,s,r,c,a,i,u,d,l,async function(){console.log("Updating transfer..."+JSON.stringify(o.year)),await fetch("/api/v2/global-transfers/"+o.year+"/"+o.team,{method:"PUT",body:JSON.stringify({country:s,year:parseInt(o.year),team:o.team,signing:a,sale:i,balance:u}),headers:{"Content-Type":"application/json"}}).then((function(t){t.ok?(f(),function(){Io();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-info ",t.innerHTML="<strong>Dato actualizado</strong> Se ha actualizado el dato correctamente",setTimeout(()=>{Io()},3e3)}()):404==t.status?No("Se ha intentado borrar un elemento inexistente."):No("")}))},f,function(){s=this.value,n(1,s)},function(){a=w(this.value),n(4,a)},function(){i=w(this.value),n(5,i)},function(){u=w(this.value),n(6,u)}]}class Lo extends ct{constructor(t){super(),rt(this,t,Ao,Oo,r,{params:0})}}function So(t,e,n){const o=t.slice();return o[27]=e[n],o}function Co(t,e,n){const o=t.slice();return o[30]=e[n],o}function Po(e){return{c:t,m:t,p:t,i:t,o:t,d:t}}function jo(t){let e,n,o;const l=new ge({props:{$$slots:{default:[zo]},$$scope:{ctx:t}}}),s=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[Bo]},$$scope:{ctx:t}}});s.$on("click",t[6]);const r=new At({props:{bordered:!0,$$slots:{default:[Xo]},$$scope:{ctx:t}}});return{c(){nt(l.$$.fragment),e=y(),nt(s.$$.fragment),n=y(),nt(r.$$.fragment)},m(t,c){ot(l,t,c),$(t,e,c),ot(s,t,c),$(t,n,c),ot(r,t,c),o=!0},p(t,e){const n={};6&e[0]|4&e[1]&&(n.$$scope={dirty:e,ctx:t}),l.$set(n);const o={};4&e[1]&&(o.$$scope={dirty:e,ctx:t}),s.$set(o);const c={};33&e[0]|4&e[1]&&(c.$$scope={dirty:e,ctx:t}),r.$set(c)},i(t){o||(W(l.$$.fragment,t),W(s.$$.fragment,t),W(r.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),K(s.$$.fragment,t),K(r.$$.fragment,t),o=!1},d(t){lt(l,t),t&&p(e),lt(s,t),t&&p(n),lt(r,t)}}}function Mo(t){let e;return{c(){e=h("Jugador que desea buscar")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function Ho(t){let e,n,o,l=t[30]+"";return{c(){e=g("option"),n=h(l),e.__value=o=t[30],e.value=e.__value},m(t,o){$(t,e,o),f(e,n)},p(t,s){2&s[0]&&l!==(l=t[30]+"")&&_(n,l),2&s[0]&&o!==(o=t[30])&&(e.__value=o),e.value=e.__value},d(t){t&&p(e)}}}function Ro(t){let e,n,o=t[1],l=[];for(let e=0;e<o.length;e+=1)l[e]=Ho(Co(t,o,e));return{c(){for(let t=0;t<l.length;t+=1)l[t].c();e=y(),n=g("option"),n.textContent="--Mostrar todos--",n.__value="--Mostrar todos--",n.value=n.__value},m(t,o){for(let e=0;e<l.length;e+=1)l[e].m(t,o);$(t,e,o),$(t,n,o)},p(t,n){if(2&n[0]){let s;for(o=t[1],s=0;s<o.length;s+=1){const r=Co(t,o,s);l[s]?l[s].p(r,n):(l[s]=Ho(r),l[s].c(),l[s].m(e.parentNode,e))}for(;s<l.length;s+=1)l[s].d(1);l.length=o.length}},d(t){m(l,t),t&&p(e),t&&p(n)}}}function zo(t){let e,n,o;const l=new de({props:{for:"selectName",$$slots:{default:[Mo]},$$scope:{ctx:t}}});function s(e){t[16].call(null,e)}let r={type:"select",name:"selectName",onchange:t[10](t[2]),id:"selectName",$$slots:{default:[Ro]},$$scope:{ctx:t}};void 0!==t[2]&&(r.value=t[2]);const c=new ae({props:r});return M.push(()=>et(c,"value",s)),{c(){nt(l.$$.fragment),e=y(),nt(c.$$.fragment)},m(t,n){ot(l,t,n),$(t,e,n),ot(c,t,n),o=!0},p(t,e){const o={};4&e[1]&&(o.$$scope={dirty:e,ctx:t}),l.$set(o);const s={};4&e[0]&&(s.onchange=t[10](t[2])),2&e[0]|4&e[1]&&(s.$$scope={dirty:e,ctx:t}),!n&&4&e[0]&&(n=!0,s.value=t[2],q(()=>n=!1)),c.$set(s)},i(t){o||(W(l.$$.fragment,t),W(c.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),K(c.$$.fragment,t),o=!1},d(t){lt(l,t),t&&p(e),lt(c,t)}}}function Bo(t){let e,n;return{c(){e=g("i"),n=h(" Cargar datos iniciales"),x(e,"class","fa fa-refresh")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Do(t){let e;return{c(){e=h("Insertar")},m(t,n){$(t,e,n)},d(t){t&&p(e)}}}function qo(t){let e,n;return{c(){e=g("i"),n=h(" Eliminar"),x(e,"class","fa fa-trash"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Fo(t){let e,n;return{c(){e=g("i"),n=h(" Editar"),x(e,"class","fa fa-edit"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function Jo(t){let e,n,o,l,r,c,a,i,u,d,m,b,v,x,k,w,E,T,O,N,I,A,L,S,C=t[27].name+"",P=t[27].country+"",j=t[27].debut+"",M=t[27].goals+"",H=t[27].matches+"",R=t[27].teams+"";const z=new Bt({props:{outline:!0,color:"danger",$$slots:{default:[qo]},$$scope:{ctx:t}}});z.$on("click",(function(){s(t[8](t[27].name))&&t[8](t[27].name).apply(this,arguments)}));const B=new Bt({props:{outline:!0,color:"info",href:"#/goalscorers/"+t[27].name,$$slots:{default:[Fo]},$$scope:{ctx:t}}});return{c(){e=g("tr"),n=g("td"),o=h(C),l=y(),r=g("td"),c=h(P),a=y(),i=g("td"),u=h(j),d=y(),m=g("td"),b=h(M),v=y(),x=g("td"),k=h(H),w=y(),E=g("td"),T=h(R),O=y(),N=g("td"),nt(z.$$.fragment),I=y(),A=g("td"),nt(B.$$.fragment),L=y()},m(t,s){$(t,e,s),f(e,n),f(n,o),f(e,l),f(e,r),f(r,c),f(e,a),f(e,i),f(i,u),f(e,d),f(e,m),f(m,b),f(e,v),f(e,x),f(x,k),f(e,w),f(e,E),f(E,T),f(e,O),f(e,N),ot(z,N,null),f(e,I),f(e,A),ot(B,A,null),f(e,L),S=!0},p(e,n){t=e,(!S||32&n[0])&&C!==(C=t[27].name+"")&&_(o,C),(!S||32&n[0])&&P!==(P=t[27].country+"")&&_(c,P),(!S||32&n[0])&&j!==(j=t[27].debut+"")&&_(u,j),(!S||32&n[0])&&M!==(M=t[27].goals+"")&&_(b,M),(!S||32&n[0])&&H!==(H=t[27].matches+"")&&_(k,H),(!S||32&n[0])&&R!==(R=t[27].teams+"")&&_(T,R);const l={};4&n[1]&&(l.$$scope={dirty:n,ctx:t}),z.$set(l);const s={};32&n[0]&&(s.href="#/goalscorers/"+t[27].name),4&n[1]&&(s.$$scope={dirty:n,ctx:t}),B.$set(s)},i(t){S||(W(z.$$.fragment,t),W(B.$$.fragment,t),S=!0)},o(t){K(z.$$.fragment,t),K(B.$$.fragment,t),S=!1},d(t){t&&p(e),lt(z),lt(B)}}}function Xo(t){let e,n,o,s,r,c,a,i,u,d,h,b,k,_,T,O,N,I,A,L,S,C,P,j,M,H;const R=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[Do]},$$scope:{ctx:t}}});R.$on("click",t[7]);let z=t[5],B=[];for(let e=0;e<z.length;e+=1)B[e]=Jo(So(t,z,e));const D=t=>K(B[t],1,1,()=>{B[t]=null});return{c(){e=g("thead"),e.innerHTML="<tr><th>Nombre</th> \n\t\t\t\t\t<th>País</th> \n\t\t\t\t\t<th>Debut</th> \n\t\t\t\t\t<th>Goles</th> \n\t\t\t\t\t<th>Partidos</th> \n\t\t\t\t\t<th>Equipos</th> \n\t\t\t\t\t<th>Acciones</th></tr>",n=y(),o=g("tbody"),s=g("tr"),r=g("td"),c=g("input"),a=y(),i=g("td"),u=g("input"),d=y(),h=g("td"),b=g("input"),k=y(),_=g("td"),T=g("input"),O=y(),N=g("td"),I=g("input"),A=y(),L=g("td"),S=g("input"),C=y(),P=g("td"),nt(R.$$.fragment),j=y();for(let t=0;t<B.length;t+=1)B[t].c();x(b,"type","number"),x(T,"type","number"),x(I,"type","number"),x(S,"type","number")},m(p,m,g){$(p,e,m),$(p,n,m),$(p,o,m),f(o,s),f(s,r),f(r,c),E(c,t[0].name),f(s,a),f(s,i),f(i,u),E(u,t[0].country),f(s,d),f(s,h),f(h,b),E(b,t[0].debut),f(s,k),f(s,_),f(_,T),E(T,t[0].goals),f(s,O),f(s,N),f(N,I),E(I,t[0].matches),f(s,A),f(s,L),f(L,S),E(S,t[0].teams),f(s,C),f(s,P),ot(R,P,null),f(o,j);for(let t=0;t<B.length;t+=1)B[t].m(o,null);M=!0,g&&l(H),H=[v(c,"input",t[17]),v(u,"input",t[18]),v(b,"input",t[19]),v(T,"input",t[20]),v(I,"input",t[21]),v(S,"input",t[22])]},p(t,e){1&e[0]&&c.value!==t[0].name&&E(c,t[0].name),1&e[0]&&u.value!==t[0].country&&E(u,t[0].country),1&e[0]&&w(b.value)!==t[0].debut&&E(b,t[0].debut),1&e[0]&&w(T.value)!==t[0].goals&&E(T,t[0].goals),1&e[0]&&w(I.value)!==t[0].matches&&E(I,t[0].matches),1&e[0]&&w(S.value)!==t[0].teams&&E(S,t[0].teams);const n={};if(4&e[1]&&(n.$$scope={dirty:e,ctx:t}),R.$set(n),288&e[0]){let n;for(z=t[5],n=0;n<z.length;n+=1){const l=So(t,z,n);B[n]?(B[n].p(l,e),W(B[n],1)):(B[n]=Jo(l),B[n].c(),W(B[n],1),B[n].m(o,null))}for(G(),n=z.length;n<B.length;n+=1)D(n);V()}},i(t){if(!M){W(R.$$.fragment,t);for(let t=0;t<z.length;t+=1)W(B[t]);M=!0}},o(t){K(R.$$.fragment,t),B=B.filter(Boolean);for(let t=0;t<B.length;t+=1)K(B[t]);M=!1},d(t){t&&p(e),t&&p(n),t&&p(o),lt(R),m(B,t),l(H)}}}function Uo(e){let n;return{c(){n=h("Loading goalscorers...")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function Yo(e){let n;const o=new Oe({props:{previous:!0,href:"#/goalscorersAPI"}});return o.$on("click",e[23]),{c(){nt(o.$$.fragment)},m(t,e){ot(o,t,e),n=!0},p:t,i(t){n||(W(o.$$.fragment,t),n=!0)},o(t){K(o.$$.fragment,t),n=!1},d(t){lt(o,t)}}}function Zo(t){let e;const n=new ke({props:{$$slots:{default:[Vo]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};8&e[0]|4&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function Go(t){let e,n=t[3]-1+"";return{c(){e=h(n)},m(t,n){$(t,e,n)},p(t,o){8&o[0]&&n!==(n=t[3]-1+"")&&_(e,n)},d(t){t&&p(e)}}}function Vo(t){let e;const n=new Oe({props:{href:"#/goalscorersAPI",$$slots:{default:[Go]},$$scope:{ctx:t}}});return n.$on("click",t[24]),{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};8&e[0]|4&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function Wo(t){let e;return{c(){e=h(t[3])},m(t,n){$(t,e,n)},p(t,n){8&n[0]&&_(e,t[3])},d(t){t&&p(e)}}}function Ko(t){let e;const n=new Oe({props:{href:"#/goalscorersAPI",$$slots:{default:[Wo]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};8&e[0]|4&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function Qo(t){let e;const n=new ke({props:{$$slots:{default:[el]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};8&e[0]|4&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function tl(t){let e,n=t[3]+1+"";return{c(){e=h(n)},m(t,n){$(t,e,n)},p(t,o){8&o[0]&&n!==(n=t[3]+1+"")&&_(e,n)},d(t){t&&p(e)}}}function el(t){let e;const n=new Oe({props:{href:"#/goalscorersAPI",$$slots:{default:[tl]},$$scope:{ctx:t}}});return n.$on("click",t[25]),{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};8&e[0]|4&e[1]&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function nl(e){let n;const o=new Oe({props:{next:!0,href:"#/goalscorersAPI"}});return o.$on("click",e[26]),{c(){nt(o.$$.fragment)},m(t,e){ot(o,t,e),n=!0},p:t,i(t){n||(W(o.$$.fragment,t),n=!0)},o(t){K(o.$$.fragment,t),n=!1},d(t){lt(o,t)}}}function ol(t){let e,n,o,l,s;const r=new ke({props:{class:1===t[3]?"disabled":"",$$slots:{default:[Yo]},$$scope:{ctx:t}}});let c=1!=t[3]&&Zo(t);const a=new ke({props:{active:!0,$$slots:{default:[Ko]},$$scope:{ctx:t}}});let i=t[4]&&Qo(t);const u=new ke({props:{class:t[4]?"":"disabled",$$slots:{default:[nl]},$$scope:{ctx:t}}});return{c(){nt(r.$$.fragment),e=y(),c&&c.c(),n=y(),nt(a.$$.fragment),o=y(),i&&i.c(),l=y(),nt(u.$$.fragment)},m(t,d){ot(r,t,d),$(t,e,d),c&&c.m(t,d),$(t,n,d),ot(a,t,d),$(t,o,d),i&&i.m(t,d),$(t,l,d),ot(u,t,d),s=!0},p(t,e){const o={};8&e[0]&&(o.class=1===t[3]?"disabled":""),4&e[1]&&(o.$$scope={dirty:e,ctx:t}),r.$set(o),1!=t[3]?c?(c.p(t,e),8&e[0]&&W(c,1)):(c=Zo(t),c.c(),W(c,1),c.m(n.parentNode,n)):c&&(G(),K(c,1,1,()=>{c=null}),V());const s={};8&e[0]|4&e[1]&&(s.$$scope={dirty:e,ctx:t}),a.$set(s),t[4]?i?(i.p(t,e),16&e[0]&&W(i,1)):(i=Qo(t),i.c(),W(i,1),i.m(l.parentNode,l)):i&&(G(),K(i,1,1,()=>{i=null}),V());const d={};16&e[0]&&(d.class=t[4]?"":"disabled"),4&e[1]&&(d.$$scope={dirty:e,ctx:t}),u.$set(d)},i(t){s||(W(r.$$.fragment,t),W(c),W(a.$$.fragment,t),W(i),W(u.$$.fragment,t),s=!0)},o(t){K(r.$$.fragment,t),K(c),K(a.$$.fragment,t),K(i),K(u.$$.fragment,t),s=!1},d(t){lt(r,t),t&&p(e),c&&c.d(t),t&&p(n),lt(a,t),t&&p(o),i&&i.d(t),t&&p(l),lt(u,t)}}}function ll(t){let e,n;return{c(){e=g("i"),n=h(" Atrás"),x(e,"class","fas fa-arrow-circle-left")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function sl(t){let e,n;return{c(){e=g("i"),n=h(" Borrar todo"),x(e,"class","fa fa-trash"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function rl(t){let e,n,o,l,s,r,c,a,i={ctx:t,current:null,token:null,pending:Uo,then:jo,catch:Po,value:5,blocks:[,,,]};Q(l=t[5],i);const u=new be({props:{style:"float:right;",ariaLabel:"Cambiar de página",$$slots:{default:[ol]},$$scope:{ctx:t}}}),d=new Bt({props:{outline:!0,color:"secondary",$$slots:{default:[ll]},$$scope:{ctx:t}}});d.$on("click",ht);const m=new Bt({props:{outline:!0,color:"danger",$$slots:{default:[sl]},$$scope:{ctx:t}}});return m.$on("click",t[9]),{c(){e=g("main"),n=g("div"),o=y(),i.block.c(),s=y(),nt(u.$$.fragment),r=y(),nt(d.$$.fragment),c=y(),nt(m.$$.fragment),x(n,"role","alert"),x(n,"id","div_alert"),T(n,"display","none")},m(t,l){$(t,e,l),f(e,n),f(e,o),i.block.m(e,i.anchor=null),i.mount=()=>e,i.anchor=s,f(e,s),ot(u,e,null),f(e,r),ot(d,e,null),f(e,c),ot(m,e,null),a=!0},p(e,n){if(t=e,i.ctx=t,32&n[0]&&l!==(l=t[5])&&Q(l,i));else{const e=t.slice();e[5]=i.resolved,i.block.p(e,n)}const o={};24&n[0]|4&n[1]&&(o.$$scope={dirty:n,ctx:t}),u.$set(o);const s={};4&n[1]&&(s.$$scope={dirty:n,ctx:t}),d.$set(s);const r={};4&n[1]&&(r.$$scope={dirty:n,ctx:t}),m.$set(r)},i(t){a||(W(i.block),W(u.$$.fragment,t),W(d.$$.fragment,t),W(m.$$.fragment,t),a=!0)},o(t){for(let t=0;t<3;t+=1){K(i.blocks[t])}K(u.$$.fragment,t),K(d.$$.fragment,t),K(m.$$.fragment,t),a=!1},d(t){t&&p(e),i.block.d(),i.token=null,i=null,lt(u),lt(d),lt(m)}}}function cl(t){al();var e=document.getElementById("div_alert");e.style="position: fixed; top: 0px; top: 2%; width: 90%;",e.className="alert alert-dismissible in alert-danger ",e.innerHTML="<strong> Error.</strong> Ha ocurrido un error "+t,setTimeout(()=>{al()},3e3)}function al(){var t=document.getElementById("div_alert");t.style="display: none; ",t.className="alert alert-dismissible in",t.innerHTML=""}function il(t,e,n){let o=[],l={name:"",country:"",debut:parseInt(""),goals:"",matches:"",teams:""},s=[],r="--Mostrar todos--",c=0,a=1,i=!0;async function u(){const t=await fetch("/api/v2/goalscorers");if(t.ok){const e=await t.json();n(1,s=e.map(t=>t.name)),console.log("Contados "+s.length+" goles.")}else console.log("Error")}async function d(){console.log("Fetching goalscorers...");const t=await fetch("/api/v2/goalscorers?offset="+10*c+"&limit=10");if(t.ok){console.log("Ok:");const e=await t.json();if(n(5,o=e),console.log("Received "+o.length+" goalscorers."),10!=o.length)n(4,i=!1);else{const t=await fetch("/api/v2/goalscorers?offset="+10*(c+1)+"&limit=10");console.log("La variable NEXT tiene el estado: "+t.status),0==(await t.json()).length||404==t.status?n(4,i=!1):n(4,i=!0)}}else console.log("ERROR!")}function f(t){c+=t,n(3,a+=t),d()}S(d),S(u);return[l,s,r,a,i,o,async function(){const t=await fetch("/api/v2/goalscorers/loadInitialData");if(t.ok){const e=await t.json();console.log("Contados "+e.length+" datos de goleadores."),function(){al();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-info ",t.innerHTML="<strong> Tabla Restaurada.</strong> Se han restaurado los datos",setTimeout(()=>{al()},3e3)}(),d()}else console.log("No se han cargado correctamente los datos iniciales")},async function(){if(console.log("Inserting goalscorer..."+JSON.stringify(l)),""==l.debut||null==l.debut||""==l.name||null==l.name||null==l.goals||""==l.goals)alert("Se debe incluir el nombre, el año de debut y los goles del goleador obligatoriamente");else{await fetch("/api/v2/goalscorers",{method:"POST",body:JSON.stringify(l),headers:{"Content-Type":"application/json"}}).then((function(t){t.ok?(d(),function(){al();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-success ",t.innerHTML="<strong> Dato insertado.</strong> Se ha insertado el dato correctamente",setTimeout(()=>{al()},3e3)}(),n(0,l.country="",l),n(0,l.debut="",l),n(0,l.goals="",l),n(0,l.matches="",l),n(0,l.name="",l),n(0,l.teams="",l)):cl("Error interno al intentar insertar un goleador")}))}},async function(t){console.log("Deleting goalscorer..."+JSON.stringify(t)),await fetch("/api/v2/goalscorers/"+t,{method:"DELETE"}).then((function(t){t.ok?(d(),function(){al();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-danger ",t.innerHTML="<strong> Dato borrado.</strong> Se ha borrado el dato correctamente",setTimeout(()=>{al()},3e3)}()):404==t.status?cl("El elemento que intentas borrar no existe"):cl("Error al intentar borrar un elemento")}))},async function(){console.log("Deleting all goalscorers data..."),await fetch("/api/v2/goalscorers/",{method:"DELETE"}).then((function(t){t.ok?(d(),function(){al();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-danger ",t.innerHTML="<strong> Datos borrados.</strong> Se han borrado todos los datos correctamente",setTimeout(()=>{al()},3e3)}()):cl("Error al borrar todos los elementos")}))},async function(t){console.log("Searching data: "+t);var e="/api/v2/goalscorers";"--Mostrar todos--"!=t&&(e=e+"?name="+t);const l=await fetch(e);if(l.ok){console.log("Ok:");const t=await l.json();n(5,o=t),console.log("Found "+o.length+" goalscorers stats.")}else console.log("ERROR!")},f,c,[],u,d,function(t){r=t,n(2,r)},function(){l.name=this.value,n(0,l)},function(){l.country=this.value,n(0,l)},function(){l.debut=w(this.value),n(0,l)},function(){l.goals=w(this.value),n(0,l)},function(){l.matches=w(this.value),n(0,l)},function(){l.teams=w(this.value),n(0,l)},()=>f(-1),()=>f(-1),()=>f(1),()=>f(1)]}class ul extends ct{constructor(t){super(),rt(this,t,il,rl,r,{},[-1,-1])}}function dl(e){let n,o,l,s;const r=new ul({});return{c(){n=g("main"),o=g("h1"),o.textContent="Administrador de datos de goleadores",l=y(),nt(r.$$.fragment),x(o,"class","display-4"),T(o,"text-align","center")},m(t,e){$(t,n,e),f(n,o),f(n,l),ot(r,n,null),s=!0},p:t,i(t){s||(W(r.$$.fragment,t),s=!0)},o(t){K(r.$$.fragment,t),s=!1},d(t){t&&p(n),lt(r)}}}class fl extends ct{constructor(t){super(),rt(this,t,null,dl,r,{})}}function $l(e){return{c:t,m:t,p:t,i:t,o:t,d:t}}function pl(t){let e;const n=new At({props:{bordered:!0,$$slots:{default:[gl]},$$scope:{ctx:t}}});return{c(){nt(n.$$.fragment)},m(t,o){ot(n,t,o),e=!0},p(t,e){const o={};16447&e&&(o.$$scope={dirty:e,ctx:t}),n.$set(o)},i(t){e||(W(n.$$.fragment,t),e=!0)},o(t){K(n.$$.fragment,t),e=!1},d(t){lt(n,t)}}}function ml(t){let e,n;return{c(){e=g("i"),n=h(" Actualizar"),x(e,"class","fa fa-refresh"),x(e,"aria-hidden","true")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function gl(t){let e,n,o,s,r,c,a,i,u,d,m,b,k,T,O,N,I,A,L,S,C,P,j,M,H;const R=new Bt({props:{outline:!0,color:"primary",$$slots:{default:[ml]},$$scope:{ctx:t}}});return R.$on("click",t[8]),{c(){e=g("thead"),e.innerHTML="<tr><th>Nombre</th> \n                    <th>País</th> \n                    <th>Debut</th> \n                    <th>Goles</th> \n                    <th>Partidos</th> \n                    <th>Equipos</th> \n                    <th>Acciones</th></tr>",n=y(),o=g("tbody"),s=g("tr"),r=g("td"),c=h(t[0]),a=y(),i=g("td"),u=h(t[2]),d=y(),m=g("td"),b=h(t[1]),k=y(),T=g("td"),O=g("input"),N=y(),I=g("td"),A=g("input"),L=y(),S=g("td"),C=g("input"),P=y(),j=g("td"),nt(R.$$.fragment),x(O,"type","number"),x(A,"type","number"),x(C,"type","number")},m(p,g,h){$(p,e,g),$(p,n,g),$(p,o,g),f(o,s),f(s,r),f(r,c),f(s,a),f(s,i),f(i,u),f(s,d),f(s,m),f(m,b),f(s,k),f(s,T),f(T,O),E(O,t[3]),f(s,N),f(s,I),f(I,A),E(A,t[4]),f(s,L),f(s,S),f(S,C),E(C,t[5]),f(s,P),f(s,j),ot(R,j,null),M=!0,h&&l(H),H=[v(O,"input",t[11]),v(A,"input",t[12]),v(C,"input",t[13])]},p(t,e){(!M||1&e)&&_(c,t[0]),(!M||4&e)&&_(u,t[2]),(!M||2&e)&&_(b,t[1]),8&e&&w(O.value)!==t[3]&&E(O,t[3]),16&e&&w(A.value)!==t[4]&&E(A,t[4]),32&e&&w(C.value)!==t[5]&&E(C,t[5]);const n={};16384&e&&(n.$$scope={dirty:e,ctx:t}),R.$set(n)},i(t){M||(W(R.$$.fragment,t),M=!0)},o(t){K(R.$$.fragment,t),M=!1},d(t){t&&p(e),t&&p(n),t&&p(o),lt(R),l(H)}}}function hl(e){let n;return{c(){n=h("Cargando goalscorers...")},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}function yl(t){let e,n,o;return{c(){e=g("p"),n=h("ERROR: "),o=h(t[6]),T(e,"color","red")},m(t,l){$(t,e,l),f(e,n),f(e,o)},p(t,e){64&e&&_(o,t[6])},d(t){t&&p(e)}}}function bl(t){let e,n;return{c(){e=g("i"),n=h(" Atrás"),x(e,"class","fas fa-arrow-circle-left")},m(t,o){$(t,e,o),$(t,n,o)},d(t){t&&p(e),t&&p(n)}}}function vl(t){let e,n,o,l,s,r,c,a,i,u={ctx:t,current:null,token:null,pending:hl,then:pl,catch:$l,value:7,blocks:[,,,]};Q(r=t[7],u);let d=t[6]&&yl(t);const m=new Bt({props:{outline:!0,color:"secondary",$$slots:{default:[bl]},$$scope:{ctx:t}}});return m.$on("click",ht),{c(){e=g("main"),n=g("div"),o=y(),l=g("h3"),l.innerHTML="Editar goleador <strong> params.name</strong>",s=y(),u.block.c(),c=y(),d&&d.c(),a=y(),nt(m.$$.fragment),x(n,"role","alert"),x(n,"id","div_alert"),T(n,"display","none")},m(t,r){$(t,e,r),f(e,n),f(e,o),f(e,l),f(e,s),u.block.m(e,u.anchor=null),u.mount=()=>e,u.anchor=c,f(e,c),d&&d.m(e,null),f(e,a),ot(m,e,null),i=!0},p(n,[o]){if(t=n,u.ctx=t,128&o&&r!==(r=t[7])&&Q(r,u));else{const e=t.slice();e[7]=u.resolved,u.block.p(e,o)}t[6]?d?d.p(t,o):(d=yl(t),d.c(),d.m(e,a)):d&&(d.d(1),d=null);const l={};16384&o&&(l.$$scope={dirty:o,ctx:t}),m.$set(l)},i(t){i||(W(u.block),W(m.$$.fragment,t),i=!0)},o(t){for(let t=0;t<3;t+=1){K(u.blocks[t])}K(m.$$.fragment,t),i=!1},d(t){t&&p(e),u.block.d(),u.token=null,u=null,d&&d.d(),lt(m)}}}function xl(t){kl();var e=document.getElementById("div_alert");e.style="position: fixed; top: 0px; top: 2%; width: 90%;",e.className="alert alert-dismissible in alert-danger ",e.innerHTML="<strong>Error</strong> Ha ocurrido un error "+t,setTimeout(()=>{kl()},3e3)}function kl(){var t=document.getElementById("div_alert");t.style="display: none; ",t.className="alert alert-dismissible in",t.innerHTML=""}function wl(t,e,n){let o,l,s,r,c,a,i,{params:u={}}=e,d={};async function f(){console.log("Fetching goalscorer...");const t=await fetch("/api/v2/goalscorers/"+u.name);if(t.ok){console.log("Ok:");const e=await t.json();n(7,d=e),n(0,o=d.name),n(1,l=d.debut),n(2,s=d.country),n(3,r=d.goals),n(4,c=d.matches),n(5,a=d.teams),console.log("Goalscorer received")}else n(6,i=t.status+": "+t.statusText),console.log("Error"+i)}return S(f),t.$set=t=>{"params"in t&&n(9,u=t.params)},[o,l,s,r,c,a,i,d,async function(){console.log("Updating goalscorer..."+JSON.stringify(u.name)),await fetch("/api/v2/goalscorers/"+u.name,{method:"PUT",body:JSON.stringify({name:o,debut:parseInt(l),country:s,goals:r,matches:c,teams:a}),headers:{"Content-Type":"application/json"}}).then((function(t){t.ok?(f(),function(){kl();var t=document.getElementById("div_alert");t.style="position: fixed; top: 0px; top: 2%; width: 90%;",t.className="alert alert-dismissible in alert-info ",t.innerHTML="<strong>Dato actualizado.</strong> Se ha actualizado el dato correctamente",setTimeout(()=>{kl()},3e3)}()):404==t.status?xl("Se ha intentado actualizar un elemento inexistente."):xl("")}))},u,f,function(){r=w(this.value),n(3,r)},function(){c=w(this.value),n(4,c)},function(){a=w(this.value),n(5,a)}]}class _l extends ct{constructor(t){super(),rt(this,t,wl,vl,r,{params:9})}}function El(e){let n;return{c(){n=g("main"),n.innerHTML="<h1>Página no encontrada</h1>"},m(t,e){$(t,n,e)},p:t,i:t,o:t,d(t){t&&p(n)}}}class Tl extends ct{constructor(t){super(),rt(this,t,null,El,r,{})}}function Ol(e){let n,o;const l=new bt({props:{routes:e[0]}});return{c(){n=g("main"),nt(l.$$.fragment)},m(t,e){$(t,n,e),ot(l,n,null),o=!0},p:t,i(t){o||(W(l.$$.fragment,t),o=!0)},o(t){K(l.$$.fragment,t),o=!1},d(t){t&&p(n),lt(l)}}}function Nl(t){return[{"/":xt,"/global-coef/:team/:year":An,"/globalCoefAPI":hn,"/global-transfers/:year/:team":Lo,"/globaltransfersAPI":bo,"/goalscorers/:name":_l,"/goalscorersAPI":fl,"*":Tl}]}return new class extends ct{constructor(t){super(),rt(this,t,Nl,Ol,r,{})}}({target:document.querySelector("#SvelteApp")})}();
->>>>>>> b7b9944e550cd955a959ad664f21ddbe7248b067
 //# sourceMappingURL=bundle.js.map
