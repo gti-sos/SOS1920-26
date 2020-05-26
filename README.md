@@ -1,4 +1,5 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/gti-sos/SOS1920-26/badge.svg)](https://snyk.io/test/github/gti-sos/SOS1920-26)
+[![Build Status](https://travis-ci.org/gti-sos/SOS1920-26.svg?branch=master)](https://travis-ci.org/gti-sos/SOS1920-26)
 
 ## SOS1920-26
 - **Team**
