@@ -124,9 +124,17 @@
 		if (newTransfer.year == ""
 			|| newTransfer.year == null
 			|| newTransfer.team == "" 
-			|| newTransfer.team == null) {
+			|| newTransfer.team == null
+			|| newTransfer.country == ""
+			|| newTransfer.country == null 
+			|| newTransfer.signing == ""
+			|| newTransfer.signing == null
+			|| newTransfer.sale == "" 
+			|| newTransfer.sale == null
+			|| newTransfer.balance == "" 
+			|| newTransfer.balance == null) {
 			
-			alert("Se debe incluir el año y el equipo vinculante obligatoriamente");
+			alert("No puede existir ningún campo vacío");
 
 		} else {
 				const res = await fetch(BASE_API_URL + "/global-transfers", {
