@@ -16,7 +16,7 @@
                 type: 'areaspline'
             },
             title: {
-                text: 'Turismo rural'
+                text: 'Equipos Europa'
             },
             
             xAxis: {

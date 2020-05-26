@@ -32,3 +32,6 @@
 
 	- [https://documenter.getpostman.com/view/10637393/SzYUa2Ee] (v1 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
   - [https://documenter.getpostman.com/view/10637393/Szme3xW3] (v2 developed by [Diego Monsalves Vázquez](https://github.com/diemonvaz))
+
+- **Gráficas**:
+<button type="button" class="btn btn-primary" onclick="window.location.href='#/global-coef'" style="margin-left: 6.75%; width: 25%;"> Grafica coef</button>

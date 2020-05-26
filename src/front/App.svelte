@@ -1,11 +1,13 @@
 <script>
 	import Router from 'svelte-spa-router';
-
-	import Home from './Home.svelte';   
+	import Home from './Home.svelte';
+	//import Integrations from './Integrations.svelte';
+	//import Analytics from './Analytics.svelte';  
+	import NotFound from './NotFound.svelte';
 //API COEF-----------------------------------------------------------------
 	import globalCoef from './CoefGUI/App.svelte';  
 	import EditCoef from './CoefGUI/EditCoef.svelte';
-	import GraphRoutes from './CoefGUI/GraphCoef.svelte';
+	import GraphCoef from './CoefGUI/GraphCoef.svelte';
 //API TRANSFERS------------------------------------------------------------
 	import globalTransfers from './TransfersGUI/App.svelte'; 
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
@@ -13,15 +15,21 @@
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
 
-	import NotFound from './NotFound.svelte';
 
 	
 
 
 	const routes = {
 		"/": Home,
+		//"/analytics": Analytics,
+		//"/integrations": Integrations,
+
+
 		"/global-coef/:team/:year": EditCoef,
 		"/globalCoefAPI":globalCoef,
+		"/global-coef/graph": GraphCoef,
+	//	"/global-coef/graph-v2": GraphCoefV2,
+
 
 		"/global-transfers/:year/:team": EditTransfer,
 		"/globaltransfersAPI":globalTransfers,

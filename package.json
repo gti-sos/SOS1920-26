@@ -31,6 +31,7 @@
   "dependencies": {
     "cool-ascii-faces": "^1.3.4",
     "express": "^4.17.1",
+    "graph": "^0.2.0",
     "heroku": "^7.39.0",
     "nedb": "^1.8.0",
     "relojs": "^1.0.5",
