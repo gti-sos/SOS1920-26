@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/{javibotella}/{SOS1920-26}/badge.svg)](https://snyk.io/test/github/{javibotella}/{SOS1920-26})
+
 ## SOS1920-26
 - **Team**
   - [Javier Botella Rodríguez](https://github.com/javibotella)
