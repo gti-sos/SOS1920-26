@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 2
+=======
+
+>>>>>>> 40e97c83b7a83edda69936dcbb70f63f9908a06e
 (function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 var app = (function () {
     'use strict';
@@ -9727,8 +9731,13 @@ var app = (function () {
     			create_component(coeftable.$$.fragment);
     			attr_dev(h1, "class", "display-4");
     			set_style(h1, "text-align", "center");
+<<<<<<< HEAD
     			add_location(h1, file$a, 5, 1, 73);
     			add_location(main, file$a, 4, 0, 65);
+=======
+    			add_location(h1, file$a, 5, 1, 78);
+    			add_location(main, file$a, 4, 0, 69);
+>>>>>>> 40e97c83b7a83edda69936dcbb70f63f9908a06e
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17389,7 +17398,11 @@ var app = (function () {
     			main = element("main");
     			h1 = element("h1");
     			h1.textContent = "Página no encontrada";
+<<<<<<< HEAD
     			add_location(h1, file$i, 1, 4, 11);
+=======
+    			add_location(h1, file$i, 1, 4, 12);
+>>>>>>> 40e97c83b7a83edda69936dcbb70f63f9908a06e
     			add_location(main, file$i, 0, 0, 0);
     		},
     		l: function claim(nodes) {
