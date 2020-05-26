@@ -1,13 +1,13 @@
 <script>
-		
+
 
 	import {
 		onMount
 	} from "svelte";
 
 	import {
-        pop
-    } from "svelte-spa-router";
+		pop
+	} from "svelte-spa-router";
 
 	import Table from "sveltestrap/src/Table.svelte";
 	import Button from "sveltestrap/src/Button.svelte";
@@ -22,11 +22,11 @@
 	let transfers = [];
 	let newTransfer = {
 		country: "",
-		year: parseInt("") ,
+		year: parseInt(""),
 		team: "",
-		signing:"",
-		sale:"",
-		balance:""
+		signing: "",
+		sale: "",
+		balance: ""
 	};
 
 	let BASE_API_URL = "/api/v2";
@@ -37,8 +37,8 @@
 
 	let numberElementsPages = 10;
 	let offset = 0;
-	let currentPage = 1; 
-	let moreData = true; 
+	let currentPage = 1;
+	let moreData = true;
 
 	onMount(getTransfers);
 	onMount(getYearsTeams);
@@ -50,28 +50,28 @@
 
 		if (res.ok) {
 			const initialTransfers = await res.json();
-			console.log("Contados "+ initialTransfers.length +" datos de transferencias de fichajes")
+			console.log("Contados " + initialTransfers.length + " datos de transferencias de fichajes")
 			getTransfers();
-		}else{
+		} else {
 			console.log("No se han cargado correctamente los datos inicales")
 		}
 	}
 
 	async function getYearsTeams() {
-		const res = await fetch(BASE_API_URL + "/global-transfers"); 
+		const res = await fetch(BASE_API_URL + "/global-transfers");
 
 		if (res.ok) {
 			const json = await res.json();
-			
-			years = json.map((d) => {   
-					return d.year;    
+
+			years = json.map((d) => {
+				return d.year;
 			});
-			years = Array.from(new Set(years));      
+			years = Array.from(new Set(years));
 
 			teams = json.map((d) => {
-					return d.team;             
+				return d.team;
 			});
-			teams = Array.from(new Set(teams));   
+			teams = Array.from(new Set(teams));
 
 			console.log("Contados " + years.length + "años y " + teams.length + "años distintos.");
 
@@ -80,13 +80,13 @@
 		}
 	}
 
-	
+
 
 
 	async function getTransfers() {
 
 		console.log("Fetching transfers...");
-		const res = await fetch(BASE_API_URL + "/global-transfers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
+		const res = await fetch(BASE_API_URL + "/global-transfers?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages);
 
 		if (res.ok) {
 			console.log("Ok:");
@@ -94,24 +94,24 @@
 			transfers = json;
 			console.log("Received " + transfers.length + " transfers.");
 
-			if (transfers.length!=10){
-				moreData=false
-			} else{
+			if (transfers.length != 10) {
+				moreData = false
+			} else {
 
-						const next = await fetch(BASE_API_URL + "/global-transfers?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
-						console.log("La variable NEXT tiene el estado: " + next.status)
-						const jsonNext = await next.json();
-						
-						
-						
-						if (jsonNext.length == 0 || next.status==404) {  
-							moreData = false;
-						} 
-						else {
-							moreData = true;  //Vemos si quedan aun mas datos en la siguiente pagina
-						}
-					}
-		} 
+				const next = await fetch(BASE_API_URL + "/global-transfers?offset=" + numberElementsPages * (offset + 1) + "&limit=" + numberElementsPages);
+				console.log("La variable NEXT tiene el estado: " + next.status)
+				const jsonNext = await next.json();
+
+
+
+				if (jsonNext.length == 0 || next.status == 404) {
+					moreData = false;
+				}
+				else {
+					moreData = true;  //Vemos si quedan aun mas datos en la siguiente pagina
+				}
+			}
+		}
 		else {
 			console.log("Error");
 		}
@@ -123,58 +123,69 @@
 
 		if (newTransfer.year == ""
 			|| newTransfer.year == null
-			|| newTransfer.team == "" 
+			|| newTransfer.team == ""
 			|| newTransfer.team == null
 			|| newTransfer.country == ""
-			|| newTransfer.country == null 
+			|| newTransfer.country == null
 			|| newTransfer.signing == ""
 			|| newTransfer.signing == null
-			|| newTransfer.sale == "" 
+			|| newTransfer.sale == ""
 			|| newTransfer.sale == null
-			|| newTransfer.balance == "" 
+			|| newTransfer.balance == ""
 			|| newTransfer.balance == null) {
-			
+
 			alert("No puede existir ningún campo vacío");
 
-		} else {
-				const res = await fetch(BASE_API_URL + "/global-transfers", {
-					method: "POST",
-					body: JSON.stringify(newTransfer),
-					headers: {
-						"Content-Type": "application/json"
-					}
-				}).then(function (res) {
-					if (res.ok) {
-						getTransfers();
-						insertAlert();
-						newTransfer.country="";
-						newTransfer.year="";
-						newTransfer.team="";
-						newTransfer.signing="";
-						newTransfer.sale="";
-						newTransfer.balance="";
+		} if (hasNumber(newTransfer.country)) {
+			if (!newTransfer.country == ""
+				|| !newTransfer.country == null) {
+
+				alert("El país no puede contener valores numéricos");
+			}
+		}
+		else {
+			const res = await fetch(BASE_API_URL + "/global-transfers", {
+				method: "POST",
+				body: JSON.stringify(newTransfer),
+				headers: {
+					"Content-Type": "application/json"
+				}
+			}).then(function (res) {
+				if (res.ok) {
+					getTransfers();
+					insertAlert();
+					newTransfer.country = "";
+					newTransfer.year = "";
+					newTransfer.team = "";
+					newTransfer.signing = "";
+					newTransfer.sale = "";
+					newTransfer.balance = "";
 
 				} else {
 					errorAlert("Error interno al intentar insertar el elemento");
 				}
-				
-				
+
+
 			});
 		}
 	}
 
+	async function hasNumber(myString) {
+		return /\d/.test(myString);
+	}
+
 
 	async function deleteTransfer(year, team) {
-		console.log("Deleting transfer..." + JSON.stringify(year)+ + JSON.stringify(team) );
+		console.log("Deleting transfer..." + JSON.stringify(year) + + JSON.stringify(team));
 
-		const res = await fetch(BASE_API_URL + "/global-transfers/" + year+"/"+team, {
+		const res = await fetch(BASE_API_URL + "/global-transfers/" + year + "/" + team, {
 			method: "DELETE"
 		}).then(function (res) {
-			if (res.ok){
-			getTransfers();
-			getYearsTeams();
-			deleteAlert();
-			
+			if (res.ok) {
+				getTransfers();
+				getYearsTeams();
+				deleteAlert();
+
 			} else if (res.status == 404) {
 				errorAlert("El elemento que intentas borrar no existe");
 			} else {
@@ -188,13 +199,13 @@
 		const res = await fetch(BASE_API_URL + "/global-transfers/", {
 			method: "DELETE"
 		}).then(function (res) {
-			if (res.ok){
-			getTransfers();
-			getYearsTeams();
-			deleteAllAlert();
-		} else{
-			errorAlert("Error al borrar todos los elementos")
-		}
+			if (res.ok) {
+				getTransfers();
+				getYearsTeams();
+				deleteAllAlert();
+			} else {
+				errorAlert("Error al borrar todos los elementos")
+			}
 		});
 	}
 
@@ -206,7 +217,7 @@
 		var url = BASE_API_URL + "/global-transfers";
 
 		if (year != "-" && team != "-") {
-			url = url + "?year=" + year + "&team=" + team; 
+			url = url + "?year=" + year + "&team=" + team;
 		} else if (year != "-" && team == "-") {
 			url = url + "?year=" + year;
 		} else if (year == "-" && team != "-") {
@@ -218,16 +229,16 @@
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
-			transfers = json;			
+			transfers = json;
 
 			console.log("Found " + transfers.length + " global transfers stats.");
 		} else {
 			console.log("Error");
 		}
-		
+
 	}
 
-	function addOffset (increment) {
+	function addOffset(increment) {
 		offset += increment;
 		currentPage += increment;
 		getTransfers();
@@ -239,19 +250,19 @@
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-success ";
 		alert_element.innerHTML = "<strong> Dato insertado</strong> Se ha insertado el dato correctamente";
-		
+
 		setTimeout(() => {
 			clearAlert();
 		}, 3000);
 	}
-	
+
 	function deleteAlert() {
 		clearAlert();
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
 		alert_element.innerHTML = "<strong> Dato borrado</strong> Se ha borrado el dato correctamente";
-		
+
 		setTimeout(() => {
 			clearAlert();
 		}, 3000);
@@ -263,20 +274,20 @@
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
 		alert_element.innerHTML = "<strong> Datos borrados</strong> Se han borrado todos los datos correctamente";
-		
+
 		setTimeout(() => {
 			clearAlert();
 		}, 3000);
 	}
 
-	
+
 	function ReloadTableAlert() {
 		clearAlert();
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-info ";
 		alert_element.innerHTML = "<strong> Tabla Restaurada</strong> Se han cargado los datos iniciales";
-		
+
 		setTimeout(() => {
 			clearAlert();
 		}, 3000);
@@ -289,13 +300,13 @@
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
 		alert_element.innerHTML = "<strong> Error</strong> Ha ocurrido un error " + error;
-		
+
 		setTimeout(() => {
 			clearAlert();
 		}, 3000);
 	}
 
-	function clearAlert () {
+	function clearAlert() {
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "display: none; ";
 		alert_element.className = "alert alert-dismissible in";
@@ -354,7 +365,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><input bind:value="{newTransfer.country}"></td>
+					<td><input type="text" bind:value="{newTransfer.country}"></td>
 					<td><input type="number" bind:value="{newTransfer.year}"></td>
 					<td><input bind:value="{newTransfer.team}"></td>
 					<td><input type="number" bind:value="{newTransfer.signing}"></td>
