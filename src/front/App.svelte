@@ -2,13 +2,14 @@
 	import Router from 'svelte-spa-router';
 
 	import Home from './Home.svelte';   
-
+//API COEF-----------------------------------------------------------------
 	import globalCoef from './CoefGUI/App.svelte';  
 	import EditCoef from './CoefGUI/EditCoef.svelte';
-
+	import GraphRoutes from './CoefGUI/GraphCoef.svelte';
+//API TRANSFERS------------------------------------------------------------
 	import globalTransfers from './TransfersGUI/App.svelte'; 
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
-
+//API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
 
