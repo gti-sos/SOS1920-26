@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "86904f13-c700-459f-a6fa-c220ce47f7da",
+		"name": "SOS1920-26-goalscorers/v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get goalscorers/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c414149-5804-4eee-999c-c160c1185e11",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers/loadInitialData",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post goalscorers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05a40641-5d63-4cce-97cf-db95725904c1",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"TestGoalscorer\",\n\t\"country\": \"Test\",\n\t\"debut\": 2020,\n\t\"goals\": 100,\n\t\"matches\": 100,\n\t\"teams\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get goalscorers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "871542eb-766a-4e9b-bca3-555a718d7435",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 goalscorer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Cristiano",
+							"disabled": true
+						},
+						{
+							"key": "country",
+							"value": "France",
+							"disabled": true
+						},
+						{
+							"key": "debut",
+							"value": "2005",
+							"disabled": true
+						},
+						{
+							"key": "goals",
+							"value": "114",
+							"disabled": true
+						},
+						{
+							"key": "matches",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "teams",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get goalscorers paginacion1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f67c92da-f1c6-441b-a88a-9d5468204f17",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 goalscorer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers?offset=0&limit=2",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get goalscorers paginacion2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "875773c4-c78e-449f-8f38-9b42f853a09d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There is only 1 goalscorer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers?offset=3&limit=1",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "3"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put goalscorers/TestGoalscorer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d788ca6-c562-405d-87ce-c3d6de580e40",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"TestGoalscorer\",\n\t\"country\": \"Test\",\n\t\"debut\": 50,\n\t\"goals\": 100,\n\t\"matches\": 100,\n\t\"teams\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers",
+						"TestGoalscorer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get goalscorers/TestGoalscorer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a69bf61-0a03-4151-a1ee-384d9cfb1595",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"It has the name property\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property(\"name\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers",
+						"TestGoalscorer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete goalscorers/TestGoalscorer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1164f4fe-74f5-47ce-8b54-047d5c70f5fb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers",
+						"TestGoalscorer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete goalscorers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "48f21aee-d1af-4dc8-946f-c06b1460cac0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post goalscorers/TestGoalscorer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0c7fd10-f3be-44e9-b786-b0b00801061e",
+						"exec": [
+							"pm.test(\"Status code is 405 because it is not allowed\", function () {",
+							"    pm.response.to.have.status(405)",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"TestGoalscorer\",\n\t\"country\": \"Test\",\n\t\"debut\": 2020,\n\t\"goals\": 100,\n\t\"matches\": 100,\n\t\"teams\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers",
+						"TestGoalscorer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put goalscorers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21658f74-2bfb-4092-bf3c-6a2e8d35e794",
+						"exec": [
+							"pm.test(\"Status code is 405 because it is not allowed\", function () {",
+							"    pm.response.to.have.status(405)",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"TestGoalscorer\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:1500/api/v2/goalscorers",
+					"host": [
+						"localhost:1500"
+					],
+					"path": [
+						"api",
+						"v2",
+						"goalscorers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
