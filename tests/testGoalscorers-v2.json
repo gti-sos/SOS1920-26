@@ -25,9 +25,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers/loadInitialData",
+					"raw": "localhost:1500/api/v3/goalscorers/loadInitialData",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -68,9 +68,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers",
+					"raw": "localhost:1500/api/v3/goalscorers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -105,9 +105,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers",
+					"raw": "localhost:1500/api/v3/goalscorers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -174,9 +174,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers?offset=0&limit=2",
+					"raw": "localhost:1500/api/v3/goalscorers?offset=0&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -221,9 +221,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers?offset=3&limit=1",
+					"raw": "localhost:1500/api/v3/goalscorers?offset=3&limit=1",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -273,9 +273,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
+					"raw": "localhost:1500/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -311,9 +311,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
+					"raw": "localhost:1500/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -345,9 +345,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
+					"raw": "localhost:1500/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -379,9 +379,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers",
+					"raw": "localhost:1500/api/v3/goalscorers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -421,9 +421,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
+					"raw": "localhost:1500/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -464,9 +464,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/goalscorers",
+					"raw": "localhost:1500/api/v3/goalscorers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
