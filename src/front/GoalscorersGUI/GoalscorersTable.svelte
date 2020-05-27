@@ -27,10 +27,10 @@
 		teams: ""
 	};
 
-	let BASE_API_URL = "/api/v2";
+	let BASE_API_URL = "/api/v3";
 	let teams = [];
 	let names = [];
-	let currentName = "--Mostrar todos--";
+	let valorInicial = "";
 
 	let numberElementsPages = 10;
 	let offset = 0;
@@ -103,17 +103,6 @@
 	async function insertGoalscorer() {
 
 		console.log("Inserting goalscorer..." + JSON.stringify(newGoalscorer));
-
-		if (newGoalscorer.debut == ""
-			|| newGoalscorer.debut == null
-			|| newGoalscorer.name == ""
-			|| newGoalscorer.name == null
-			|| newGoalscorer.goals == null
-			|| newGoalscorer.goals == "") {
-
-			alert("Se debe incluir el nombre, el año de debut y los goles del goleador obligatoriamente");
-
-		} else {
 			const res = await fetch(BASE_API_URL + "/goalscorers", {
 				method: "POST",
 				body: JSON.stringify(newGoalscorer),
@@ -121,8 +110,8 @@
 					"Content-Type": "application/json"
 				}
 			}).then(function (res) {
-				if (res.ok) {
-					getGoalscorers();
+				getGoalscorers();
+					if (res.ok) {
 					insertAlert();
 					newGoalscorer.country = "";
 					newGoalscorer.debut = "";
@@ -131,14 +120,16 @@
 					newGoalscorer.name = "";
 					newGoalscorer.teams = "";
 					
-				} else {
-					errorAlert("Error interno al intentar insertar un goleador");
+				} else if(res.status == 400){
+					errorAlert("Debe completar todos los campos.");
+				}else if(res.status == 409){
+					errorAlert("No se puede insertar el mismo nombre de un jugador dos veces. Si quiere, puede modificar el jugador con ese nombre.");
+				}else{
+					errorAlert("Error interno al intentar insertar un goleador.");
 				}
 
 
 			});
-
-		}
 	}
 
 
@@ -179,7 +170,7 @@
 
 		var url = BASE_API_URL + "/goalscorers";
 
-		if (name != "--Mostrar todos--") {
+		if (name != "") {
 			url = url + "?name=" + name;
 		}
 
@@ -258,11 +249,11 @@
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
 		alert_element.className = "alert alert-dismissible in alert-danger ";
-		alert_element.innerHTML = "<strong> Error.</strong> Ha ocurrido un error " + error;
+		alert_element.innerHTML = "<strong> Error.</strong> Ha ocurrido un error: " + error;
 		
 		setTimeout(() => {
 			clearAlert();
-		}, 3000);
+		}, 4000);
 	}
 
 	function clearAlert () {
@@ -282,17 +273,16 @@
 	
 	<FormGroup>
 		<Label for="selectName"> Jugador que desea buscar </Label>
-		<Input type="select" name="selectName" onchange="{search(currentName)}" id="selectName" bind:value="{currentName}">
+		<Input type="text" name="selectName" id="selectName" bind:value= "{valorInicial}" >
 			{#each names as name}
 			<option>{name}</option>
 			{/each}
-			<option>--Mostrar todos--</option>
+			<option>Escriba el jugador que desea buscar</option>
 		</Input>
+		<Button outline color="primary" onClick="window.location.reload();" > <i class="fas fa-search"></i> Mostrar todos los jugadores</Button>
+		<Button outline color="secondary" on:click="{search(valorInicial)}" class="button-search"> <i class="fas fa-search"></i> Buscar jugador</Button>
 	</FormGroup>
 
-
-	<!--	<Button outline color="secondary" on:click="{search(currentName)}" class="button-search" > <i class="fas fa-search"></i> Buscar </Button> -->
-		<Button outline color="primary" on:click="{ReloadTable}"> <i class="fa fa-refresh"></i> Cargar datos iniciales </Button>
 		<Table bordered>
 			<thead>
 				<tr>
@@ -362,5 +352,6 @@
 
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 	<Button outline on:click={deleteGoalscorers} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
+	<Button outline color="primary" on:click="{ReloadTable}"> <i class="fa fa-refresh"></i> Cargar datos iniciales </Button>
 
 </main>
