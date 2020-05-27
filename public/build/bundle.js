@@ -14474,10 +14474,9 @@ var app = (function () {
     	return block;
     }
 
-    // (281:1) {:then goalscorers}
+    // (272:1) {:then goalscorers}
     function create_then_block$4(ctx) {
-    	let t0;
-    	let t1;
+    	let t;
     	let current;
 
     	const formgroup = new FormGroup({
@@ -14488,22 +14487,10 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	const button = new Button({
-    			props: {
-    				outline: true,
-    				color: "primary",
-    				$$slots: { default: [create_default_slot_15$2] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	button.$on("click", /*ReloadTable*/ ctx[6]);
-
     	const table = new Table({
     			props: {
     				bordered: true,
-    				$$slots: { default: [create_default_slot_11$2] },
+    				$$slots: { default: [create_default_slot_12$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14512,34 +14499,23 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			create_component(formgroup.$$.fragment);
-    			t0 = space();
-    			create_component(button.$$.fragment);
-    			t1 = space();
+    			t = space();
     			create_component(table.$$.fragment);
     		},
     		m: function mount(target, anchor) {
     			mount_component(formgroup, target, anchor);
-    			insert_dev(target, t0, anchor);
-    			mount_component(button, target, anchor);
-    			insert_dev(target, t1, anchor);
+    			insert_dev(target, t, anchor);
     			mount_component(table, target, anchor);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
     			const formgroup_changes = {};
 
-    			if (dirty[0] & /*currentName, names*/ 6 | dirty[1] & /*$$scope*/ 16) {
+    			if (dirty[0] & /*valorInicial, names*/ 6 | dirty[1] & /*$$scope*/ 16) {
     				formgroup_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup.$set(formgroup_changes);
-    			const button_changes = {};
-
-    			if (dirty[1] & /*$$scope*/ 16) {
-    				button_changes.$$scope = { dirty, ctx };
-    			}
-
-    			button.$set(button_changes);
     			const table_changes = {};
 
     			if (dirty[0] & /*goalscorers, newGoalscorer*/ 33 | dirty[1] & /*$$scope*/ 16) {
@@ -14551,21 +14527,17 @@ var app = (function () {
     		i: function intro(local) {
     			if (current) return;
     			transition_in(formgroup.$$.fragment, local);
-    			transition_in(button.$$.fragment, local);
     			transition_in(table.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(formgroup.$$.fragment, local);
-    			transition_out(button.$$.fragment, local);
     			transition_out(table.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			destroy_component(formgroup, detaching);
-    			if (detaching) detach_dev(t0);
-    			destroy_component(button, detaching);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t);
     			destroy_component(table, detaching);
     		}
     	};
@@ -14574,15 +14546,15 @@ var app = (function () {
     		block,
     		id: create_then_block$4.name,
     		type: "then",
-    		source: "(281:1) {:then goalscorers}",
+    		source: "(272:1) {:then goalscorers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (284:2) <Label for="selectName">
-    function create_default_slot_18$2(ctx) {
+    // (275:2) <Label for="selectName">
+    function create_default_slot_20$2(ctx) {
     	let t;
 
     	const block = {
@@ -14599,16 +14571,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_18$2.name,
+    		id: create_default_slot_20$2.name,
     		type: "slot",
-    		source: "(284:2) <Label for=\\\"selectName\\\">",
+    		source: "(275:2) <Label for=\\\"selectName\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (286:3) {#each names as name}
+    // (277:3) {#each names as name}
     function create_each_block_1$2(ctx) {
     	let option;
     	let t_value = /*name*/ ctx[32] + "";
@@ -14621,7 +14593,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*name*/ ctx[32];
     			option.value = option.__value;
-    			add_location(option, file$h, 286, 3, 7626);
+    			add_location(option, file$h, 277, 3, 7492);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -14645,15 +14617,15 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(286:3) {#each names as name}",
+    		source: "(277:3) {#each names as name}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (285:2) <Input type="select" name="selectName" onchange="{search(currentName)}" id="selectName" bind:value="{currentName}">
-    function create_default_slot_17$2(ctx) {
+    // (276:2) <Input type="text" name="selectName" id="selectName" bind:value= "{valorInicial}" >
+    function create_default_slot_19$2(ctx) {
     	let t0;
     	let option;
     	let each_value_1 = /*names*/ ctx[1];
@@ -14672,10 +14644,10 @@ var app = (function () {
 
     			t0 = space();
     			option = element("option");
-    			option.textContent = "--Mostrar todos--";
-    			option.__value = "--Mostrar todos--";
+    			option.textContent = "Escriba el jugador que desea buscar";
+    			option.__value = "Escriba el jugador que desea buscar";
     			option.value = option.__value;
-    			add_location(option, file$h, 288, 3, 7666);
+    			add_location(option, file$h, 279, 3, 7532);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -14719,125 +14691,26 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_17$2.name,
+    		id: create_default_slot_19$2.name,
     		type: "slot",
-    		source: "(285:2) <Input type=\\\"select\\\" name=\\\"selectName\\\" onchange=\\\"{search(currentName)}\\\" id=\\\"selectName\\\" bind:value=\\\"{currentName}\\\">",
+    		source: "(276:2) <Input type=\\\"text\\\" name=\\\"selectName\\\" id=\\\"selectName\\\" bind:value= \\\"{valorInicial}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (283:1) <FormGroup>
-    function create_default_slot_16$2(ctx) {
-    	let t;
-    	let updating_value;
-    	let current;
-
-    	const label = new Label({
-    			props: {
-    				for: "selectName",
-    				$$slots: { default: [create_default_slot_18$2] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	function input_value_binding(value) {
-    		/*input_value_binding*/ ctx[18].call(null, value);
-    	}
-
-    	let input_props = {
-    		type: "select",
-    		name: "selectName",
-    		onchange: /*search*/ ctx[10](/*currentName*/ ctx[2]),
-    		id: "selectName",
-    		$$slots: { default: [create_default_slot_17$2] },
-    		$$scope: { ctx }
-    	};
-
-    	if (/*currentName*/ ctx[2] !== void 0) {
-    		input_props.value = /*currentName*/ ctx[2];
-    	}
-
-    	const input = new Input({ props: input_props, $$inline: true });
-    	binding_callbacks.push(() => bind(input, "value", input_value_binding));
-
-    	const block = {
-    		c: function create() {
-    			create_component(label.$$.fragment);
-    			t = space();
-    			create_component(input.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(label, target, anchor);
-    			insert_dev(target, t, anchor);
-    			mount_component(input, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const label_changes = {};
-
-    			if (dirty[1] & /*$$scope*/ 16) {
-    				label_changes.$$scope = { dirty, ctx };
-    			}
-
-    			label.$set(label_changes);
-    			const input_changes = {};
-    			if (dirty[0] & /*currentName*/ 4) input_changes.onchange = /*search*/ ctx[10](/*currentName*/ ctx[2]);
-
-    			if (dirty[0] & /*names*/ 2 | dirty[1] & /*$$scope*/ 16) {
-    				input_changes.$$scope = { dirty, ctx };
-    			}
-
-    			if (!updating_value && dirty[0] & /*currentName*/ 4) {
-    				updating_value = true;
-    				input_changes.value = /*currentName*/ ctx[2];
-    				add_flush_callback(() => updating_value = false);
-    			}
-
-    			input.$set(input_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(label.$$.fragment, local);
-    			transition_in(input.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(label.$$.fragment, local);
-    			transition_out(input.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(label, detaching);
-    			if (detaching) detach_dev(t);
-    			destroy_component(input, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_16$2.name,
-    		type: "slot",
-    		source: "(283:1) <FormGroup>",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (295:2) <Button outline color="primary" on:click="{ReloadTable}">
-    function create_default_slot_15$2(ctx) {
+    // (282:2) <Button outline color="primary" onClick="window.location.reload();" >
+    function create_default_slot_18$2(ctx) {
     	let i;
     	let t;
 
     	const block = {
     		c: function create() {
     			i = element("i");
-    			t = text(" Cargar datos iniciales");
-    			attr_dev(i, "class", "fa fa-refresh");
-    			add_location(i, file$h, 294, 60, 7942);
+    			t = text(" Mostrar todos los jugadores");
+    			attr_dev(i, "class", "fas fa-search");
+    			add_location(i, file$h, 281, 72, 7670);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -14851,17 +14724,206 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_15$2.name,
+    		id: create_default_slot_18$2.name,
     		type: "slot",
-    		source: "(295:2) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\">",
+    		source: "(282:2) <Button outline color=\\\"primary\\\" onClick=\\\"window.location.reload();\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (317:10) <Button outline  color="primary" on:click={insertGoalscorer}>
-    function create_default_slot_14$2(ctx) {
+    // (283:2) <Button outline color="secondary" on:click="{search(valorInicial)}" class="button-search">
+    function create_default_slot_17$2(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Buscar jugador");
+    			attr_dev(i, "class", "fas fa-search");
+    			add_location(i, file$h, 282, 93, 7831);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_17$2.name,
+    		type: "slot",
+    		source: "(283:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(valorInicial)}\\\" class=\\\"button-search\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (274:1) <FormGroup>
+    function create_default_slot_16$2(ctx) {
+    	let t0;
+    	let updating_value;
+    	let t1;
+    	let t2;
+    	let current;
+
+    	const label = new Label({
+    			props: {
+    				for: "selectName",
+    				$$slots: { default: [create_default_slot_20$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	function input_value_binding(value) {
+    		/*input_value_binding*/ ctx[18].call(null, value);
+    	}
+
+    	let input_props = {
+    		type: "text",
+    		name: "selectName",
+    		id: "selectName",
+    		$$slots: { default: [create_default_slot_19$2] },
+    		$$scope: { ctx }
+    	};
+
+    	if (/*valorInicial*/ ctx[2] !== void 0) {
+    		input_props.value = /*valorInicial*/ ctx[2];
+    	}
+
+    	const input = new Input({ props: input_props, $$inline: true });
+    	binding_callbacks.push(() => bind(input, "value", input_value_binding));
+
+    	const button0 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				onClick: "window.location.reload();",
+    				$$slots: { default: [create_default_slot_18$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const button1 = new Button({
+    			props: {
+    				outline: true,
+    				color: "secondary",
+    				class: "button-search",
+    				$$slots: { default: [create_default_slot_17$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button1.$on("click", function () {
+    		if (is_function(/*search*/ ctx[10](/*valorInicial*/ ctx[2]))) /*search*/ ctx[10](/*valorInicial*/ ctx[2]).apply(this, arguments);
+    	});
+
+    	const block = {
+    		c: function create() {
+    			create_component(label.$$.fragment);
+    			t0 = space();
+    			create_component(input.$$.fragment);
+    			t1 = space();
+    			create_component(button0.$$.fragment);
+    			t2 = space();
+    			create_component(button1.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(label, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(input, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			mount_component(button0, target, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(button1, target, anchor);
+    			current = true;
+    		},
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			const label_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16) {
+    				label_changes.$$scope = { dirty, ctx };
+    			}
+
+    			label.$set(label_changes);
+    			const input_changes = {};
+
+    			if (dirty[0] & /*names*/ 2 | dirty[1] & /*$$scope*/ 16) {
+    				input_changes.$$scope = { dirty, ctx };
+    			}
+
+    			if (!updating_value && dirty[0] & /*valorInicial*/ 4) {
+    				updating_value = true;
+    				input_changes.value = /*valorInicial*/ ctx[2];
+    				add_flush_callback(() => updating_value = false);
+    			}
+
+    			input.$set(input_changes);
+    			const button0_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16) {
+    				button0_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(label.$$.fragment, local);
+    			transition_in(input.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(label.$$.fragment, local);
+    			transition_out(input.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(label, detaching);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(input, detaching);
+    			if (detaching) detach_dev(t1);
+    			destroy_component(button0, detaching);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(button1, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_16$2.name,
+    		type: "slot",
+    		source: "(274:1) <FormGroup>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (307:10) <Button outline  color="primary" on:click={insertGoalscorer}>
+    function create_default_slot_15$2(ctx) {
     	let t;
 
     	const block = {
@@ -14878,17 +14940,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14$2.name,
+    		id: create_default_slot_15$2.name,
     		type: "slot",
-    		source: "(317:10) <Button outline  color=\\\"primary\\\" on:click={insertGoalscorer}>",
+    		source: "(307:10) <Button outline  color=\\\"primary\\\" on:click={insertGoalscorer}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (327:10) <Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" >
-    function create_default_slot_13$2(ctx) {
+    // (317:10) <Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" >
+    function create_default_slot_14$2(ctx) {
     	let i;
     	let t;
 
@@ -14898,7 +14960,41 @@ var app = (function () {
     			t = text(" Eliminar");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$h, 326, 90, 9118);
+    			add_location(i, file$h, 316, 90, 9015);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_14$2.name,
+    		type: "slot",
+    		source: "(317:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteGoalscorer(goalscorer.name)}\\\" >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (318:10) <Button outline color="info" href="#/goalscorers/{goalscorer.name}">
+    function create_default_slot_13$2(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Editar");
+    			attr_dev(i, "class", "fa fa-edit");
+    			attr_dev(i, "aria-hidden", "true");
+    			add_location(i, file$h, 317, 79, 9165);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -14914,48 +15010,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$2.name,
     		type: "slot",
-    		source: "(327:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteGoalscorer(goalscorer.name)}\\\" >",
+    		source: "(318:10) <Button outline color=\\\"info\\\" href=\\\"#/goalscorers/{goalscorer.name}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:10) <Button outline color="info" href="#/goalscorers/{goalscorer.name}">
-    function create_default_slot_12$2(ctx) {
-    	let i;
-    	let t;
-
-    	const block = {
-    		c: function create() {
-    			i = element("i");
-    			t = text(" Editar");
-    			attr_dev(i, "class", "fa fa-edit");
-    			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$h, 327, 79, 9268);
-    		},
-    		m: function mount(target, anchor) {
-    			insert_dev(target, i, anchor);
-    			insert_dev(target, t, anchor);
-    		},
-    		d: function destroy(detaching) {
-    			if (detaching) detach_dev(i);
-    			if (detaching) detach_dev(t);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_12$2.name,
-    		type: "slot",
-    		source: "(328:10) <Button outline color=\\\"info\\\" href=\\\"#/goalscorers/{goalscorer.name}\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (319:4) {#each goalscorers as goalscorer}
+    // (309:4) {#each goalscorers as goalscorer}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -14992,7 +15054,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_13$2] },
+    				$$slots: { default: [create_default_slot_14$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15007,7 +15069,7 @@ var app = (function () {
     				outline: true,
     				color: "info",
     				href: "#/goalscorers/" + /*goalscorer*/ ctx[29].name,
-    				$$slots: { default: [create_default_slot_12$2] },
+    				$$slots: { default: [create_default_slot_13$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15040,15 +15102,15 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$h, 320, 6, 8821);
-    			add_location(td1, file$h, 321, 6, 8855);
-    			add_location(td2, file$h, 322, 6, 8892);
-    			add_location(td3, file$h, 323, 6, 8927);
-    			add_location(td4, file$h, 324, 6, 8962);
-    			add_location(td5, file$h, 325, 6, 8999);
-    			add_location(td6, file$h, 326, 6, 9034);
-    			add_location(td7, file$h, 327, 6, 9195);
-    			add_location(tr, file$h, 319, 5, 8809);
+    			add_location(td0, file$h, 310, 6, 8718);
+    			add_location(td1, file$h, 311, 6, 8752);
+    			add_location(td2, file$h, 312, 6, 8789);
+    			add_location(td3, file$h, 313, 6, 8824);
+    			add_location(td4, file$h, 314, 6, 8859);
+    			add_location(td5, file$h, 315, 6, 8896);
+    			add_location(td6, file$h, 316, 6, 8931);
+    			add_location(td7, file$h, 317, 6, 9092);
+    			add_location(tr, file$h, 309, 5, 8706);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -15124,15 +15186,15 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(319:4) {#each goalscorers as goalscorer}",
+    		source: "(309:4) {#each goalscorers as goalscorer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (296:2) <Table bordered>
-    function create_default_slot_11$2(ctx) {
+    // (286:2) <Table bordered>
+    function create_default_slot_12$2(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -15178,7 +15240,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_14$2] },
+    				$$slots: { default: [create_default_slot_15$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15250,34 +15312,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$h, 298, 5, 8053);
-    			add_location(th1, file$h, 299, 5, 8075);
-    			add_location(th2, file$h, 300, 5, 8095);
-    			add_location(th3, file$h, 301, 5, 8116);
-    			add_location(th4, file$h, 302, 5, 8137);
-    			add_location(th5, file$h, 303, 5, 8161);
-    			add_location(th6, file$h, 304, 5, 8184);
-    			add_location(tr0, file$h, 297, 4, 8042);
-    			add_location(thead, file$h, 296, 3, 8029);
-    			add_location(input0, file$h, 310, 9, 8260);
-    			add_location(td0, file$h, 310, 5, 8256);
-    			add_location(input1, file$h, 311, 9, 8317);
-    			add_location(td1, file$h, 311, 5, 8313);
+    			add_location(th0, file$h, 288, 5, 7950);
+    			add_location(th1, file$h, 289, 5, 7972);
+    			add_location(th2, file$h, 290, 5, 7992);
+    			add_location(th3, file$h, 291, 5, 8013);
+    			add_location(th4, file$h, 292, 5, 8034);
+    			add_location(th5, file$h, 293, 5, 8058);
+    			add_location(th6, file$h, 294, 5, 8081);
+    			add_location(tr0, file$h, 287, 4, 7939);
+    			add_location(thead, file$h, 286, 3, 7926);
+    			add_location(input0, file$h, 300, 9, 8157);
+    			add_location(td0, file$h, 300, 5, 8153);
+    			add_location(input1, file$h, 301, 9, 8214);
+    			add_location(td1, file$h, 301, 5, 8210);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$h, 312, 9, 8377);
-    			add_location(td2, file$h, 312, 5, 8373);
+    			add_location(input2, file$h, 302, 9, 8274);
+    			add_location(td2, file$h, 302, 5, 8270);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$h, 313, 9, 8449);
-    			add_location(td3, file$h, 313, 5, 8445);
+    			add_location(input3, file$h, 303, 9, 8346);
+    			add_location(td3, file$h, 303, 5, 8342);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$h, 314, 9, 8521);
-    			add_location(td4, file$h, 314, 5, 8517);
+    			add_location(input4, file$h, 304, 9, 8418);
+    			add_location(td4, file$h, 304, 5, 8414);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$h, 315, 9, 8595);
-    			add_location(td5, file$h, 315, 5, 8591);
-    			add_location(td6, file$h, 316, 5, 8663);
-    			add_location(tr1, file$h, 309, 4, 8245);
-    			add_location(tbody, file$h, 308, 3, 8232);
+    			add_location(input5, file$h, 305, 9, 8492);
+    			add_location(td5, file$h, 305, 5, 8488);
+    			add_location(td6, file$h, 306, 5, 8560);
+    			add_location(tr1, file$h, 299, 4, 8142);
+    			add_location(tbody, file$h, 298, 3, 8129);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -15435,16 +15497,16 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11$2.name,
+    		id: create_default_slot_12$2.name,
     		type: "slot",
-    		source: "(296:2) <Table bordered>",
+    		source: "(286:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (279:21)     Loading goalscorers...   {:then goalscorers}
+    // (270:21)     Loading goalscorers...   {:then goalscorers}
     function create_pending_block$4(ctx) {
     	let t;
 
@@ -15467,15 +15529,15 @@ var app = (function () {
     		block,
     		id: create_pending_block$4.name,
     		type: "pending",
-    		source: "(279:21)     Loading goalscorers...   {:then goalscorers}",
+    		source: "(270:21)     Loading goalscorers...   {:then goalscorers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (338:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
-    function create_default_slot_10$2(ctx) {
+    // (328:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
+    function create_default_slot_11$2(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
@@ -15510,22 +15572,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10$2.name,
+    		id: create_default_slot_11$2.name,
     		type: "slot",
-    		source: "(338:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
+    		source: "(328:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (342:2) {#if currentPage != 1}
+    // (332:2) {#if currentPage != 1}
     function create_if_block_1$4(ctx) {
     	let current;
 
     	const paginationitem = new PaginationItem({
     			props: {
-    				$$slots: { default: [create_default_slot_8$2] },
+    				$$slots: { default: [create_default_slot_9$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15566,15 +15628,15 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(342:2) {#if currentPage != 1}",
+    		source: "(332:2) {#if currentPage != 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (344:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >
-    function create_default_slot_9$2(ctx) {
+    // (334:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >
+    function create_default_slot_10$2(ctx) {
     	let t_value = /*currentPage*/ ctx[3] - 1 + "";
     	let t;
 
@@ -15595,23 +15657,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9$2.name,
+    		id: create_default_slot_10$2.name,
     		type: "slot",
-    		source: "(344:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
+    		source: "(334:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (343:2) <PaginationItem>
-    function create_default_slot_8$2(ctx) {
+    // (333:2) <PaginationItem>
+    function create_default_slot_9$2(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
     			props: {
     				href: "#/goalscorersAPI",
-    				$$slots: { default: [create_default_slot_9$2] },
+    				$$slots: { default: [create_default_slot_10$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15652,17 +15714,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8$2.name,
+    		id: create_default_slot_9$2.name,
     		type: "slot",
-    		source: "(343:2) <PaginationItem>",
+    		source: "(333:2) <PaginationItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (348:3) <PaginationLink href="#/goalscorersAPI" >
-    function create_default_slot_7$2(ctx) {
+    // (338:3) <PaginationLink href="#/goalscorersAPI" >
+    function create_default_slot_8$2(ctx) {
     	let t;
 
     	const block = {
@@ -15682,23 +15744,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7$2.name,
+    		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(348:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" >",
+    		source: "(338:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (347:2) <PaginationItem active>
-    function create_default_slot_6$2(ctx) {
+    // (337:2) <PaginationItem active>
+    function create_default_slot_7$2(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
     			props: {
     				href: "#/goalscorersAPI",
-    				$$slots: { default: [create_default_slot_7$2] },
+    				$$slots: { default: [create_default_slot_8$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15737,22 +15799,22 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6$2.name,
+    		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(347:2) <PaginationItem active>",
+    		source: "(337:2) <PaginationItem active>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (351:2) {#if moreData}
+    // (341:2) {#if moreData}
     function create_if_block$a(ctx) {
     	let current;
 
     	const paginationitem = new PaginationItem({
     			props: {
-    				$$slots: { default: [create_default_slot_4$2] },
+    				$$slots: { default: [create_default_slot_5$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15793,15 +15855,15 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(351:2) {#if moreData}",
+    		source: "(341:2) {#if moreData}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (353:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">
-    function create_default_slot_5$2(ctx) {
+    // (343:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">
+    function create_default_slot_6$2(ctx) {
     	let t_value = /*currentPage*/ ctx[3] + 1 + "";
     	let t;
 
@@ -15822,23 +15884,23 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5$2.name,
+    		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(353:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
+    		source: "(343:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (352:2) <PaginationItem >
-    function create_default_slot_4$2(ctx) {
+    // (342:2) <PaginationItem >
+    function create_default_slot_5$2(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
     			props: {
     				href: "#/goalscorersAPI",
-    				$$slots: { default: [create_default_slot_5$2] },
+    				$$slots: { default: [create_default_slot_6$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15879,17 +15941,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4$2.name,
+    		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(352:2) <PaginationItem >",
+    		source: "(342:2) <PaginationItem >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (357:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
-    function create_default_slot_3$2(ctx) {
+    // (347:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
+    function create_default_slot_4$2(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
@@ -15924,17 +15986,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3$2.name,
+    		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(357:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
+    		source: "(347:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (335:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
-    function create_default_slot_2$4(ctx) {
+    // (325:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
+    function create_default_slot_3$2(ctx) {
     	let t0;
     	let t1;
     	let t2;
@@ -15944,7 +16006,7 @@ var app = (function () {
     	const paginationitem0 = new PaginationItem({
     			props: {
     				class: /*currentPage*/ ctx[3] === 1 ? "disabled" : "",
-    				$$slots: { default: [create_default_slot_10$2] },
+    				$$slots: { default: [create_default_slot_11$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15955,7 +16017,7 @@ var app = (function () {
     	const paginationitem1 = new PaginationItem({
     			props: {
     				active: true,
-    				$$slots: { default: [create_default_slot_6$2] },
+    				$$slots: { default: [create_default_slot_7$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -15966,7 +16028,7 @@ var app = (function () {
     	const paginationitem2 = new PaginationItem({
     			props: {
     				class: /*moreData*/ ctx[4] ? "" : "disabled",
-    				$$slots: { default: [create_default_slot_3$2] },
+    				$$slots: { default: [create_default_slot_4$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16101,17 +16163,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$4.name,
+    		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(335:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
+    		source: "(325:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (363:1) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot_1$4(ctx) {
+    // (353:1) <Button outline color="secondary" on:click="{pop}">
+    function create_default_slot_2$4(ctx) {
     	let i;
     	let t;
 
@@ -16120,7 +16182,41 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$h, 362, 53, 10383);
+    			add_location(i, file$h, 352, 53, 10280);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$4.name,
+    		type: "slot",
+    		source: "(353:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (354:1) <Button outline on:click={deleteGoalscorers} color="danger">
+    function create_default_slot_1$4(ctx) {
+    	let i;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			t = text(" Borrar todo");
+    			attr_dev(i, "class", "fa fa-trash");
+    			attr_dev(i, "aria-hidden", "true");
+    			add_location(i, file$h, 353, 62, 10400);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16136,14 +16232,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$4.name,
     		type: "slot",
-    		source: "(363:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(354:1) <Button outline on:click={deleteGoalscorers} color=\\\"danger\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (364:1) <Button outline on:click={deleteGoalscorers} color="danger">
+    // (355:1) <Button outline color="primary" on:click="{ReloadTable}">
     function create_default_slot$4(ctx) {
     	let i;
     	let t;
@@ -16151,10 +16247,9 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			i = element("i");
-    			t = text(" Borrar todo");
-    			attr_dev(i, "class", "fa fa-trash");
-    			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$h, 363, 62, 10503);
+    			t = text(" Cargar datos iniciales");
+    			attr_dev(i, "class", "fa fa-refresh");
+    			add_location(i, file$h, 354, 59, 10529);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16170,7 +16265,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(364:1) <Button outline on:click={deleteGoalscorers} color=\\\"danger\\\">",
+    		source: "(355:1) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\">",
     		ctx
     	});
 
@@ -16185,6 +16280,7 @@ var app = (function () {
     	let t1;
     	let t2;
     	let t3;
+    	let t4;
     	let current;
 
     	let info = {
@@ -16204,7 +16300,7 @@ var app = (function () {
     			props: {
     				style: "float:right;",
     				ariaLabel: "Cambiar de página",
-    				$$slots: { default: [create_default_slot_2$4] },
+    				$$slots: { default: [create_default_slot_3$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16214,7 +16310,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot_1$4] },
+    				$$slots: { default: [create_default_slot_2$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -16226,13 +16322,25 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot$4] },
+    				$$slots: { default: [create_default_slot_1$4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
     	button1.$on("click", /*deleteGoalscorers*/ ctx[9]);
+
+    	const button2 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				$$slots: { default: [create_default_slot$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button2.$on("click", /*ReloadTable*/ ctx[6]);
 
     	const block = {
     		c: function create() {
@@ -16246,11 +16354,13 @@ var app = (function () {
     			create_component(button0.$$.fragment);
     			t3 = space();
     			create_component(button1.$$.fragment);
+    			t4 = space();
+    			create_component(button2.$$.fragment);
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
-    			add_location(div, file$h, 277, 1, 7264);
-    			add_location(main, file$h, 276, 0, 7255);
+    			add_location(div, file$h, 268, 1, 7162);
+    			add_location(main, file$h, 267, 0, 7153);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16268,6 +16378,8 @@ var app = (function () {
     			mount_component(button0, main, null);
     			append_dev(main, t3);
     			mount_component(button1, main, null);
+    			append_dev(main, t4);
+    			mount_component(button2, main, null);
     			current = true;
     		},
     		p: function update(new_ctx, dirty) {
@@ -16301,6 +16413,13 @@ var app = (function () {
     			}
 
     			button1.$set(button1_changes);
+    			const button2_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 16) {
+    				button2_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button2.$set(button2_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -16308,6 +16427,7 @@ var app = (function () {
     			transition_in(pagination.$$.fragment, local);
     			transition_in(button0.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
+    			transition_in(button2.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -16319,6 +16439,7 @@ var app = (function () {
     			transition_out(pagination.$$.fragment, local);
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
+    			transition_out(button2.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -16329,6 +16450,7 @@ var app = (function () {
     			destroy_component(pagination);
     			destroy_component(button0);
     			destroy_component(button1);
+    			destroy_component(button2);
     		}
     	};
 
@@ -16408,13 +16530,13 @@ var app = (function () {
     	var alert_element = document.getElementById("div_alert");
     	alert_element.style = "position: fixed; top: 0px; top: 2%; width: 90%;";
     	alert_element.className = "alert alert-dismissible in alert-danger ";
-    	alert_element.innerHTML = "<strong> Error.</strong> Ha ocurrido un error " + error;
+    	alert_element.innerHTML = "<strong> Error.</strong> Ha ocurrido un error: " + error;
 
     	setTimeout(
     		() => {
     			clearAlert$4();
     		},
-    		3000
+    		4000
     	);
     }
 
@@ -16437,10 +16559,10 @@ var app = (function () {
     		teams: ""
     	};
 
-    	let BASE_API_URL = "/api/v2";
+    	let BASE_API_URL = "/api/v3";
     	let teams = [];
     	let names = [];
-    	let currentName = "--Mostrar todos--";
+    	let valorInicial = "";
     	let numberElementsPages = 10;
     	let offset = 0;
     	let currentPage = 1;
@@ -16508,28 +16630,29 @@ var app = (function () {
     	async function insertGoalscorer() {
     		console.log("Inserting goalscorer..." + JSON.stringify(newGoalscorer));
 
-    		if (newGoalscorer.debut == "" || newGoalscorer.debut == null || newGoalscorer.name == "" || newGoalscorer.name == null || newGoalscorer.goals == null || newGoalscorer.goals == "") {
-    			alert("Se debe incluir el nombre, el año de debut y los goles del goleador obligatoriamente");
-    		} else {
-    			const res = await fetch(BASE_API_URL + "/goalscorers", {
-    				method: "POST",
-    				body: JSON.stringify(newGoalscorer),
-    				headers: { "Content-Type": "application/json" }
-    			}).then(function (res) {
-    				if (res.ok) {
-    					getGoalscorers();
-    					insertAlert$2();
-    					$$invalidate(0, newGoalscorer.country = "", newGoalscorer);
-    					$$invalidate(0, newGoalscorer.debut = "", newGoalscorer);
-    					$$invalidate(0, newGoalscorer.goals = "", newGoalscorer);
-    					$$invalidate(0, newGoalscorer.matches = "", newGoalscorer);
-    					$$invalidate(0, newGoalscorer.name = "", newGoalscorer);
-    					$$invalidate(0, newGoalscorer.teams = "", newGoalscorer);
-    				} else {
-    					errorAlert$4("Error interno al intentar insertar un goleador");
-    				}
-    			});
-    		}
+    		const res = await fetch(BASE_API_URL + "/goalscorers", {
+    			method: "POST",
+    			body: JSON.stringify(newGoalscorer),
+    			headers: { "Content-Type": "application/json" }
+    		}).then(function (res) {
+    			getGoalscorers();
+
+    			if (res.ok) {
+    				insertAlert$2();
+    				$$invalidate(0, newGoalscorer.country = "", newGoalscorer);
+    				$$invalidate(0, newGoalscorer.debut = "", newGoalscorer);
+    				$$invalidate(0, newGoalscorer.goals = "", newGoalscorer);
+    				$$invalidate(0, newGoalscorer.matches = "", newGoalscorer);
+    				$$invalidate(0, newGoalscorer.name = "", newGoalscorer);
+    				$$invalidate(0, newGoalscorer.teams = "", newGoalscorer);
+    			} else if (res.status == 400) {
+    				errorAlert$4("Debe completar todos los campos.");
+    			} else if (res.status == 409) {
+    				errorAlert$4("No se puede insertar el mismo nombre de un jugador dos veces. Si quiere, puede modificar el jugador con ese nombre.");
+    			} else {
+    				errorAlert$4("Error interno al intentar insertar un goleador.");
+    			}
+    		});
     	}
 
     	async function deleteGoalscorer(name) {
@@ -16564,7 +16687,7 @@ var app = (function () {
     		console.log("Searching data: " + name);
     		var url = BASE_API_URL + "/goalscorers";
 
-    		if (name != "--Mostrar todos--") {
+    		if (name != "") {
     			url = url + "?name=" + name;
     		}
 
@@ -16596,8 +16719,8 @@ var app = (function () {
     	validate_slots("GoalscorersTable", $$slots, []);
 
     	function input_value_binding(value) {
-    		currentName = value;
-    		$$invalidate(2, currentName);
+    		valorInicial = value;
+    		$$invalidate(2, valorInicial);
     	}
 
     	function input0_input_handler() {
@@ -16651,7 +16774,7 @@ var app = (function () {
     		BASE_API_URL,
     		teams,
     		names,
-    		currentName,
+    		valorInicial,
     		numberElementsPages,
     		offset,
     		currentPage,
@@ -16678,7 +16801,7 @@ var app = (function () {
     		if ("BASE_API_URL" in $$props) BASE_API_URL = $$props.BASE_API_URL;
     		if ("teams" in $$props) teams = $$props.teams;
     		if ("names" in $$props) $$invalidate(1, names = $$props.names);
-    		if ("currentName" in $$props) $$invalidate(2, currentName = $$props.currentName);
+    		if ("valorInicial" in $$props) $$invalidate(2, valorInicial = $$props.valorInicial);
     		if ("numberElementsPages" in $$props) numberElementsPages = $$props.numberElementsPages;
     		if ("offset" in $$props) offset = $$props.offset;
     		if ("currentPage" in $$props) $$invalidate(3, currentPage = $$props.currentPage);
@@ -16692,7 +16815,7 @@ var app = (function () {
     	return [
     		newGoalscorer,
     		names,
-    		currentName,
+    		valorInicial,
     		currentPage,
     		moreData,
     		goalscorers,

@@ -25,8 +25,10 @@ transfersAPIv2(app);
 //----------------------------------goalscorers
 const goalscorersAPIv1 = require(path.join(__dirname, "./src/back/goalscorersAPI/v1"));
 const goalscorersAPIv2 = require(path.join(__dirname, "./src/back/goalscorersAPI/v2"));
+const goalscorersAPIv3 = require(path.join(__dirname, "./src/back/goalscorersAPI/v3"));
 goalscorersAPIv1(app);
 goalscorersAPIv2(app);
+goalscorersAPIv3(app);
 //----------------------------------goalscorers//
 
 app.use("/", express.static("./public"));
