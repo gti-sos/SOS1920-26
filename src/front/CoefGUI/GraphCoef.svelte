@@ -4,11 +4,12 @@
         
         let MyData = [];
         let MyDataGraph = [];
+        let BASE_API_URL = "/api/v3";
         
-        const resData = await fetch("/api/v2/global-coef");
+        const res = await fetch(BASE_API_URL + "/global-coef")
         MyData = await resData.json();
         MyData.forEach( (x) => {
-                MyDataGraph.push({name: x.province + " " + x.year, data: [parseInt(x.traveller), parseInt(x.overnightstay), parseInt(x.averagestay)], pointPlacement: 'on'});
+                MyDataGraph.push({name: x.team + " " + x.year, data: [parseInt(x.coefficient), parseInt(x.fed), parseInt(x.classification)], pointPlacement: 'on'});
             });
         
         Highcharts.chart('container', {
@@ -21,9 +22,9 @@
             
             xAxis: {
                 categories: [
-                    'País',
-                    'Año',
-                    'Equipo'
+                    'Coeficiente',
+                    'Fed',
+                    'Clasificación'
                 ],
                 plotBands: [{ // visualize the weekend
                     from: 4.5,
@@ -33,7 +34,7 @@
             },
             yAxis: {
                 title: {
-                    text: 'Coeficiente'
+                    text: 'units'
                 }
             },
             tooltip: {
