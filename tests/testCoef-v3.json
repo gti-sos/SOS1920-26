@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "de117ba7-e955-4e53-bd37-cdc21a2fd24d",
+		"name": "sos1920-26-v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET todos los recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8bacf9f0-f09f-4682-8d03-f50b9d4bc328",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 coef\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});",
+							"",
+							"/* test para tras emplear recurso \"year\"",
+							"",
+							"var jsonData = pm.response.json();",
+							"var theElement = jsonData[0];",
+							"",
+							"pm.test(\"Verify year\", function() {",
+							"    pm.expect(theElement.year).is.to.equal(2018);",
+							"});",
+							"",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2018",
+							"disabled": true
+						},
+						{
+							"key": "team",
+							"value": "juventus",
+							"disabled": true
+						},
+						{
+							"key": "coefficient",
+							"value": "124.000",
+							"disabled": true
+						},
+						{
+							"key": "fed",
+							"value": "14.945",
+							"disabled": true
+						},
+						{
+							"key": "classification",
+							"value": "7",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST  coef",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a78407e-f67d-40d3-aab4-4a1f8c3d5e31",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2015,\r\n\"team\": \"real-madrid\",\r\n\"coefficient\": 146,\r\n\"fed\": 20.703,\r\n\"classification\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST  error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56edfc1c-7ed9-4e26-a6db-10e318e8fafb",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2014,\r\n\"team\": \"real-madrid\",\r\n\"coefficient\": 146,\r\n\"fed\": 20.703,\r\n\"classification\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef/real-madrid/2014",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef",
+						"real-madrid",
+						"2014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebf8a14b-08fa-4fd4-a5ac-e54b0105febb",
+						"exec": [
+							"pm.test(\"There are 2 team\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef?offset=0&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d00009d-78f9-4949-9665-09ddd341d67d",
+						"exec": [
+							"pm.test(\"There are 2 team\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef?offset=2&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edfcf2f3-3509-4e96-a697-1e3a3d23d19b",
+						"exec": [
+							"pm.test(\"There are 2 team\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef?offset=4&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "4"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET coef/sevilla/2018",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4dd7ecf9-86cc-4500-b7b4-a68d911cc2df",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There is 1 team\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.property('team');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef/sevilla/2018",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef",
+						"sevilla",
+						"2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT coef/sevilla/2018",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae1f68dd-e12f-45cc-b30b-f24057ba5236",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2018,\r\n\"team\": \"sevilla\",\r\n\"coefficient\": 146,\r\n\"fed\": 20.703,\r\n\"classification\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef/sevilla/2018",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef",
+						"sevilla",
+						"2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1fd12cea-7706-4400-97ea-39cb301061f4",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2018,\r\n\"team\": \"sevilla\",\r\n\"coefficient\": 146,\r\n\"fed\": 20.703,\r\n\"classification\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE coef/sevilla/2018",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fee0730-18b3-4682-ad1d-7bb41d70c8f8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef/sevilla/2018",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef",
+						"sevilla",
+						"2018"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE coef",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0c5a4e1-9f24-4b1a-81cc-aaf6bc1c6c3e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "98019106-9563-4699-82c5-e1d1a7d0ef64",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 coef\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-coef/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-coef",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
