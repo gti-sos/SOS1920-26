@@ -11,8 +11,9 @@
 	import Label from "sveltestrap/src/Label.svelte";
 	import FormGroup from "sveltestrap/src/FormGroup.svelte";
 	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
-	let BASE_API_URL = "/api/v2";
+	let BASE_API_URL = "/api/v3";
 	let coef = [];
+	let valorInicial="";
 	let newCoef = {
 		country: "",
 		year: parseInt("") ,

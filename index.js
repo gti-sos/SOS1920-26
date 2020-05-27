@@ -11,8 +11,10 @@ const port = process.env.PORT || 1500;
 //----------------------------------coef
 const coefAPIv1 = require(path.join(__dirname, "./src/back/coefAPI/v1"));
 const coefAPIv2 = require(path.join(__dirname, "./src/back/coefAPI/v2"));
+const coefAPIv3 = require(path.join(__dirname, "./src/back/coefAPI/v3"));
 coefAPIv1(app);
 coefAPIv2(app);
+coefAPIv3(app);
 //----------------------------------fin-coef
 
 //----------------------------------transfers
