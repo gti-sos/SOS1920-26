@@ -29,7 +29,7 @@
 		balance: ""
 	};
 
-	let BASE_API_URL = "/api/v2";
+	let BASE_API_URL = "/api/v3";
 	let years = [];
 	let teams = [];
 	let currentYear = "-";
@@ -136,12 +136,8 @@
 
 			alert("No puede existir ningún campo vacío");
 
-		} if (hasNumber(newTransfer.country)) {
-			if (!newTransfer.country == ""
-				|| !newTransfer.country == null) {
-
+		} else if (hasNumber(newTransfer.country)) {
 				alert("El país no puede contener valores numéricos");
-			}
 		}
 		else {
 			const res = await fetch(BASE_API_URL + "/global-transfers", {
@@ -161,8 +157,12 @@
 					newTransfer.sale = "";
 					newTransfer.balance = "";
 
-				} else {
-					errorAlert("Error interno al intentar insertar el elemento");
+				} else if(res.status == 400){
+					errorAlert("Debe completar todos los campos");
+				}else if(res.status == 409){
+					errorAlert("No se puede insertar el mismo año y equipo dos veces");
+				}else{
+					errorAlert("Error interno al intentar insertar un dato");
 				}
 
 
@@ -170,7 +170,7 @@
 		}
 	}
 
-	async function hasNumber(myString) {
+	function hasNumber(myString) {
 		return /\d/.test(myString);
 	}
 

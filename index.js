@@ -20,8 +20,10 @@ coefAPIv3(app);
 //----------------------------------transfers
 const transfersAPIv1 = require(path.join(__dirname, "./src/back/transfersAPI/v1"));
 const transfersAPIv2 = require(path.join(__dirname, "./src/back/transfersAPI/v2"));
+const transfersAPIv3 = require(path.join(__dirname, "./src/back/transfersAPI/v3"));
 transfersAPIv1(app);
 transfersAPIv2(app);
+transfersAPIv3(app);
 //----------------------------------transfers//
 
 //----------------------------------goalscorers
