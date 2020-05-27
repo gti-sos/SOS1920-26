@@ -109,7 +109,9 @@
 			|| newCoef.classification == null) {
 			
 			alert("Debe rellenar todos los campos");
-		} else {
+		} else if (hasNumber(newCoef.country)) {
+				alert("El país no puede contener valores numéricos");
+		}else {
 				const res = await fetch(BASE_API_URL + "/global-coef", {
 					method: "POST",
 					body: JSON.stringify(newCoef),
@@ -120,13 +122,23 @@
 					if (res.ok) {
 						getCoef();
 						insertAlert();
-				} else {
-					errorAlert("Error interno al intentar insertar un elemento");
+				} else if(res.status == 400){
+					errorAlert("Debe completar todos los campos");
+				} else if(res.status == 409){
+					errorAlert("No se puede insertar el mismo año y equipo dos veces");
+				} else{
+					errorAlert("Error interno al intentar insertar un dato");
 				}
 				
 				});
 			}
 	}
+
+	
+	function hasNumber(myString) {
+		return /\d/.test(myString);
+	}
+
 //Borrar un equipo en un año 
 async function deleteCoef(team,year) {
 		console.log("Deleting coef..." + JSON.stringify(team)+ + JSON.stringify(year) );

@@ -90,8 +90,7 @@ module.exports = function (app) {
       if (coef.length != 0) {
         console.log("409. El objeto ya existe");
         res.sendStatus(409);
-      }
-      else if (
+      } else if (
         newCoef == {} ||
         newCoef.country == null ||
         newCoef.year == null ||
