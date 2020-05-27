@@ -40,9 +40,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"raw": "localhost:1500/api/v3/global-transfers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -119,9 +119,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers/2019/real-madrid",
+					"raw": "localhost:1500/api/v3/global-transfers/2019/real-madrid",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -163,9 +163,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"raw": "localhost:1500/api/v3/global-transfers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -205,9 +205,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers/2015/manchester-united",
+					"raw": "localhost:1500/api/v3/global-transfers/2015/manchester-united",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -245,9 +245,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=0&limit=2",
+					"raw": "localhost:1500/api/v3/global-transfers?offset=0&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -293,9 +293,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=2&limit=2",
+					"raw": "localhost:1500/api/v3/global-transfers?offset=2&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -341,9 +341,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=4&limit=2",
+					"raw": "localhost:1500/api/v3/global-transfers?offset=4&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -389,9 +389,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=6&limit=2",
+					"raw": "localhost:1500/api/v3/global-transfers?offset=6&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -441,9 +441,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"raw": "localhost:1500/api/v3/global-transfers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -483,9 +483,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers/2018/fc-barcelona",
+					"raw": "localhost:1500/api/v3/global-transfers/2018/fc-barcelona",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -527,9 +527,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers/2019/real-madrid",
+					"raw": "localhost:1500/api/v3/global-transfers/2019/real-madrid",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -571,9 +571,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"raw": "localhost:1500/api/v3/global-transfers",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -608,9 +608,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-transfers/loadInitialData",
+					"raw": "localhost:1500/api/v3/global-transfers/loadInitialData",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",

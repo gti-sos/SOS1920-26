@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "test": "npx newman run tests/testGoalscorers-v2.json",
+    "test": "npx newman run tests/testGoalscorers-v3.json & npx newman run tests/testCoef-v3.json & npx newman run tests/testTransfers-v3.json",
     "build": "rollup -c",
     "dev": "rollup -c -w"
   },

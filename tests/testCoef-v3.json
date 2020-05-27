@@ -52,9 +52,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef",
+					"raw": "localhost:1500/api/v3/global-coef",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -136,9 +136,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef",
+					"raw": "localhost:1500/api/v3/global-coef",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -178,9 +178,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef/real-madrid/2014",
+					"raw": "localhost:1500/api/v3/global-coef/real-madrid/2014",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -218,9 +218,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef?offset=0&limit=2",
+					"raw": "localhost:1500/api/v3/global-coef?offset=0&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -266,9 +266,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef?offset=2&limit=2",
+					"raw": "localhost:1500/api/v3/global-coef?offset=2&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -314,9 +314,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef?offset=4&limit=2",
+					"raw": "localhost:1500/api/v3/global-coef?offset=4&limit=2",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -373,9 +373,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef/sevilla/2018",
+					"raw": "localhost:1500/api/v3/global-coef/sevilla/2018",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -417,9 +417,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef/sevilla/2018",
+					"raw": "localhost:1500/api/v3/global-coef/sevilla/2018",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -461,9 +461,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef",
+					"raw": "localhost:1500/api/v3/global-coef",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -503,9 +503,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef/sevilla/2018",
+					"raw": "localhost:1500/api/v3/global-coef/sevilla/2018",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -551,9 +551,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef/",
+					"raw": "localhost:1500/api/v3/global-coef/",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
@@ -601,9 +601,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/api/v3/global-coef/loadInitialData",
+					"raw": "localhost:1500/api/v3/global-coef/loadInitialData",
 					"host": [
-						"{{BASE_URL}}"
+						"localhost:1500"
 					],
 					"path": [
 						"api",
