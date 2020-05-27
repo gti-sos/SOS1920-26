@@ -2,23 +2,16 @@
 	import {
 		onMount
 	} from "svelte";
-
 	import {
         pop
     } from "svelte-spa-router";
-
 	import Table from "sveltestrap/src/Table.svelte";
 	import Button from "sveltestrap/src/Button.svelte";
-
-
 	import Input from "sveltestrap/src/Input.svelte";
 	import Label from "sveltestrap/src/Label.svelte";
 	import FormGroup from "sveltestrap/src/FormGroup.svelte";
-
 	import { Pagination, PaginationItem, PaginationLink } from 'sveltestrap';
-
 	let BASE_API_URL = "/api/v2";
-
 	let coef = [];
 	let newCoef = {
 		country: "",
@@ -28,25 +21,19 @@
 		fed:"",
 		classification:""
 	};
-
 //Variables para paginacion y busqueda
 	let teams = [];
 	let years = [];
 	let currentTeam = "-";
 	let currentYear = "-";
-
 	let numberElementsPages = 10;
 	let offset = 0;
 	let currentPage = 1; 
 	let moreData = true; 
-
 	onMount(getCoef);
 	onMount(getTeamsYears);
-
-
 	async function ReloadTable() {
 		const res = await fetch(BASE_API_URL + "/global-coef/loadInitialData")
-
 		if (res.ok) {
 			const initialCoef = await res.json();
 			console.log("Contados "+ initialCoef.length +" datos de coef")
@@ -55,15 +42,11 @@
 			console.log("No se han cargado los datos inicales")
 		}
 	}
-
-
 //Funcion que devuelve array con los equipos y años
 	async function getTeamsYears() {
 		const res = await fetch(BASE_API_URL + "/global-coef");
-
 		if (res.ok) {
 			const json = await res.json();
-
 			teams = json.map((d) => {
 					return d.team;            
 			});
@@ -74,33 +57,23 @@
 					return d.year;    
 			});
 			years = Array.from(new Set(years));      
-
 			console.log("Contados " + teams.length + "equipos y " + years.length + "años distintos.");
-
 		} else {
 			console.log("ERROR");
 		}
 	}
-
-
 	
-
-
 	async function getCoef() {
-
 		console.log("Fetching coef...");
 		const res = await fetch(BASE_API_URL + "/global-coef?offset=" + numberElementsPages * offset + "&limit=" + numberElementsPages); 
-
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
 			coef = json;
 			console.log("Received " + coef.length + " coef.");
-
 			if (coef.length!=10){
 				moreData=false
 			} else{
-
 					const next = await fetch(BASE_API_URL + "/global-coef?offset=" + numberElementsPages * (offset+1) + "&limit=" + numberElementsPages); 
 					console.log("La variable NEXT tiene el estado: " + next.status)
 					const jsonNext = await next.json();
@@ -118,17 +91,23 @@
 		}
 	}
 
+
 	async function insertCoef() {
-
 		console.log("Inserting coef..." + JSON.stringify(newCoef));
-
 		if (newCoef.team == ""
 			|| newCoef.team == null
 			|| newCoef.year == "" 
-			|| newCoef.year == null) {
+			|| newCoef.year == null
+			|| newCoef.country == "" 
+			|| newCoef.country == null
+			|| newCoef.coefficient == "" 
+			|| newCoef.coefficient == null
+			|| newCoef.fed == "" 
+			|| newCoef.fed == null
+			|| newCoef.classification == "" 
+			|| newCoef.classification == null) {
 			
-			alert("Se debe incluir el nombre del equipo y año obligatoriamente");
-
+			alert("Debe rellenar todos los campos");
 		} else {
 				const res = await fetch(BASE_API_URL + "/global-coef", {
 					method: "POST",
@@ -140,7 +119,6 @@
 					if (res.ok) {
 						getCoef();
 						insertAlert();
-
 				} else {
 					errorAlert("Error interno al intentar insertar un elemento");
 				}
@@ -148,8 +126,6 @@
 				});
 			}
 	}
-
-
 //Borrar un equipo en un año 
 async function deleteCoef(team,year) {
 		console.log("Deleting coef..." + JSON.stringify(team)+ + JSON.stringify(year) );
@@ -161,7 +137,6 @@ async function deleteCoef(team,year) {
 			getTeamsYears();
 			//errorResponse(res)
 			deleteAlert();
-
 			} else if (res.status == 404) {
 				errorAlert("Se ha intentado borrar un elemento inexistente.");
 			} else {
@@ -169,7 +144,6 @@ async function deleteCoef(team,year) {
 			}
 		});
 	}
-
 //Borrar todos los equipos
 	async function deleteGlobalCoef() {
 		console.log("Deleting all coef data...");
@@ -184,14 +158,10 @@ async function deleteCoef(team,year) {
 		}
 		});
 	}
-
-
 	async function search(team, year) {
 		console.log("Searching data: " + team + " and " + year);
-
 		
 		var url = BASE_API_URL + "/global-coef";
-
 		if (team != "-" && year != "-") {
 			url = url + "?team=" + team + "&year=" + year; 
 		} else if (team != "-" && year == "-") {
@@ -199,28 +169,22 @@ async function deleteCoef(team,year) {
 		} else if (team == "-" && year != "-") {
 			url = url + "?year=" + year;
 		}
-
 		const res = await fetch(url);
-
 		if (res.ok) {
 			console.log("Ok:");
 			const json = await res.json();
 			coef = json;			
-
 			console.log("Found " + coef.length + " global coef stats.");
 		} else {
 			console.log("ERROR");
 		}
 		
 	}
-
 	function addOffset (increment) {
 		offset += increment;
 		currentPage += increment;
 		getCoef();
 	}
-
-
 	function insertAlert() {
 		clearAlert();
 		var alert_element = document.getElementById("div_alert");
@@ -244,7 +208,6 @@ async function deleteCoef(team,year) {
 			clearAlert();
 		}, 3000);
 	}
-
 	function deleteAllAlert() {
 		clearAlert();
 		var alert_element = document.getElementById("div_alert");
@@ -256,7 +219,6 @@ async function deleteCoef(team,year) {
 			clearAlert();
 		}, 3000);
 	}
-
 	
 	function ReloadTableAlert() {
 		clearAlert();
@@ -269,8 +231,6 @@ async function deleteCoef(team,year) {
 			clearAlert();
 		}, 3000);
 	}
-
-
 	function errorAlert(error) {
 		clearAlert();
 		var alert_element = document.getElementById("div_alert");
@@ -282,14 +242,12 @@ async function deleteCoef(team,year) {
 			clearAlert();
 		}, 3000);
 	}
-
 	function clearAlert () {
 		var alert_element = document.getElementById("div_alert");
 		alert_element.style = "display: none; ";
 		alert_element.className = "alert alert-dismissible in";
 		alert_element.innerHTML = "";
 	}
-
 	/*function errorResponse(res) {
 	var status = res.status
 	switch (status) {
@@ -313,9 +271,6 @@ async function deleteCoef(team,year) {
 			break;
 	}
 }*/
-
-
-
 </script>
 
 <main>
