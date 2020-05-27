@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "86904f13-c700-459f-a6fa-c220ce47f7da",
-		"name": "SOS1920-26-goalscorers/v2",
+		"_postman_id": "acab1203-8578-429d-9d0e-a9206bd44393",
+		"name": "SOS1920-26-goalscorers/v3",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6c414149-5804-4eee-999c-c160c1185e11",
+						"id": "b00d857c-8618-4d37-b697-bd464c26b7f6",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -25,13 +25,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers/loadInitialData",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers/loadInitialData",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers",
 						"loadInitialData"
 					]
@@ -45,7 +45,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "05a40641-5d63-4cce-97cf-db95725904c1",
+						"id": "50cb3d97-ac20-4d8b-a882-0b68711834cd",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -68,13 +68,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers"
 					]
 				}
@@ -87,7 +87,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "871542eb-766a-4e9b-bca3-555a718d7435",
+						"id": "0f52b4b4-3e13-47c4-b390-28cdcf38721d",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -105,13 +105,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers"
 					],
 					"query": [
@@ -156,7 +156,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f67c92da-f1c6-441b-a88a-9d5468204f17",
+						"id": "5ee93bd7-5c1f-4d6e-b93a-2c5f0a1face0",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -174,13 +174,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers?offset=0&limit=2",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers?offset=0&limit=2",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers"
 					],
 					"query": [
@@ -203,7 +203,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "875773c4-c78e-449f-8f38-9b42f853a09d",
+						"id": "89621e92-81d3-4407-81fa-73977f0aebbd",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -221,13 +221,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers?offset=3&limit=1",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers?offset=3&limit=1",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers"
 					],
 					"query": [
@@ -250,7 +250,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0d788ca6-c562-405d-87ce-c3d6de580e40",
+						"id": "d95c4728-2f0d-4e60-b312-6101fd55bfe5",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -273,13 +273,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers",
 						"TestGoalscorer"
 					]
@@ -293,7 +293,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7a69bf61-0a03-4151-a1ee-384d9cfb1595",
+						"id": "d9dc52be-b2db-4c66-8aba-9a1ad2a2fc46",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -311,13 +311,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers",
 						"TestGoalscorer"
 					]
@@ -331,7 +331,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "1164f4fe-74f5-47ce-8b54-047d5c70f5fb",
+						"id": "e80f95e3-a405-496a-ab0c-c3f740172172",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -345,13 +345,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers",
 						"TestGoalscorer"
 					]
@@ -365,7 +365,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "48f21aee-d1af-4dc8-946f-c06b1460cac0",
+						"id": "aee9af7c-7b68-4bff-ac0c-72c0ad1ecd61",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -379,13 +379,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers"
 					]
 				}
@@ -398,7 +398,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c0c7fd10-f3be-44e9-b786-b0b00801061e",
+						"id": "c3da24ec-3ae8-42c2-b260-9762dcb9ad12",
 						"exec": [
 							"pm.test(\"Status code is 405 because it is not allowed\", function () {",
 							"    pm.response.to.have.status(405)",
@@ -421,13 +421,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers/TestGoalscorer",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers/TestGoalscorer",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers",
 						"TestGoalscorer"
 					]
@@ -441,7 +441,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "21658f74-2bfb-4092-bf3c-6a2e8d35e794",
+						"id": "c1004047-117d-4a89-ab2c-f42a5f2caaab",
 						"exec": [
 							"pm.test(\"Status code is 405 because it is not allowed\", function () {",
 							"    pm.response.to.have.status(405)",
@@ -464,18 +464,40 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:1500/api/v2/goalscorers",
+					"raw": "{{BASE_URL}}/api/v3/goalscorers",
 					"host": [
-						"localhost:1500"
+						"{{BASE_URL}}"
 					],
 					"path": [
 						"api",
-						"v2",
+						"v3",
 						"goalscorers"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fda7fdf8-aa2c-4093-a663-aed56cf5aa4e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "89745d66-7550-4f10-881e-28534005f93c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
