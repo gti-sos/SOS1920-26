@@ -1,0 +1,627 @@
+{
+	"info": {
+		"_postman_id": "d3384cde-f3ac-4df8-917f-4059e327634a",
+		"name": "sos1920-26 v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get global-transfers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c3ad480-72c8-42e4-bf19-f6b454320c2a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 transfer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});",
+							"",
+							"/* test para tras emplear recurso \"team\"",
+							"",
+							"var jsonData = pm.response.json();",
+							"var theElement = jsonData[0];",
+							"",
+							"pm.test(\"Verify team\", function() {",
+							"    pm.expect(theElement.team).is.to.equal(real-madrid);",
+							"});",
+							"",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2019",
+							"disabled": true
+						},
+						{
+							"key": "team",
+							"value": "real-madrid",
+							"disabled": true
+						},
+						{
+							"key": "signing",
+							"value": "51",
+							"disabled": true
+						},
+						{
+							"key": "sale",
+							"value": "35",
+							"disabled": true
+						},
+						{
+							"key": "balance",
+							"value": "-236.15",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global-transfers/2019/real-madrid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e1d2563-fc65-42b6-8214-0f233b638624",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"There is 1 year\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('year');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers/2019/real-madrid",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers",
+						"2019",
+						"real-madrid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post global-transfers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43ef24dc-6f43-4c91-9e93-7a296ab41fac",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2004,\r\n\"team\": \"real-betis\",\r\n\"signing\": 20,\r\n\"sale\": 11,\r\n\"balance\": -36.15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post global-transfers/2015 (error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c3ba089-05eb-46a7-8c88-4fbc6d907abe",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2015,\r\n\"team\": \"manchester-united\",\r\n\"signing\": 20,\r\n\"sale\": 11,\r\n\"balance\": -36.15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers/2015/manchester-united",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers",
+						"2015",
+						"manchester-united"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion #1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17cd8977-09cf-479e-9151-75fa4318a59c",
+						"exec": [
+							"pm.test(\"There are 2 teams\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=0&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion #2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf484b31-3aad-4c99-b7e9-639975550d3f",
+						"exec": [
+							"pm.test(\"There are 2 teams\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=2&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion #3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "83d75e7a-a5ba-4ef7-92ff-b5a36bbbe537",
+						"exec": [
+							"pm.test(\"There are 2 teams\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=4&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "4"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET paginacion #4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb36ec1f-d9d4-4f35-a439-31da933e8da4",
+						"exec": [
+							"pm.test(\"There is 1 team\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.lengthOf(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers?offset=6&limit=2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "6"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put global-transfers (error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "70115629-2ce8-4e4b-a14b-5f4d8c17c0c1",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2018,\r\n\"team\": \"barcelona\",\r\n\"signing\": 20,\r\n\"sale\": 11,\r\n\"balance\": -36.15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put global-transfers/2018/fc-barcelona",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "35ef9124-0429-4b59-935b-1ee44e15708e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2018,\r\n\"team\": \"fc-barcelona\",\r\n\"signing\": 20,\r\n\"sale\": 11,\r\n\"balance\": -36.15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers/2018/fc-barcelona",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers",
+						"2018",
+						"fc-barcelona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete global-transfers/2019/real-madrid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e139b4ab-15f0-4bcc-88a2-8a3b176b1966",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers/2019/real-madrid",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers",
+						"2019",
+						"real-madrid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete global-transfers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "89d5d7b9-827f-4421-82f9-b611d34491af",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get global-transfers/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b0d278a-5487-4023-aaed-e50cca0b4786",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are more than 1 transfer\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.have.lengthOf.above(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v3/global-transfers/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v3",
+						"global-transfers",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
