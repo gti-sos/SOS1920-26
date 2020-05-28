@@ -15,7 +15,7 @@
 
     export let params = {};
 
-    let BASE_API_URL = "/api/v2";
+    let BASE_API_URL = "/api/v3";
     let goalscorer = {};
     let updatedName;
     let updatedDebut;
