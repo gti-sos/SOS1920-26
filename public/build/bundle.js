@@ -13157,7 +13157,7 @@ var app = (function () {
     	return block;
     }
 
-    // (424:1) <Button outline color="primary" type="button" class="btn btn-primary"  onclick="window.location.href='#/global-transfers/graph'" style="margin-left: 6.75%; width: 25%;">
+    // (424:1) <Button color="info" type="button" class="btn btn-primary"  onclick="window.location.href='#/global-transfers/graph'" style="margin-left: 20px;">
     function create_default_slot$3(ctx) {
     	let t;
 
@@ -13177,7 +13177,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(424:1) <Button outline color=\\\"primary\\\" type=\\\"button\\\" class=\\\"btn btn-primary\\\"  onclick=\\\"window.location.href='#/global-transfers/graph'\\\" style=\\\"margin-left: 6.75%; width: 25%;\\\">",
+    		source: "(424:1) <Button color=\\\"info\\\" type=\\\"button\\\" class=\\\"btn btn-primary\\\"  onclick=\\\"window.location.href='#/global-transfers/graph'\\\" style=\\\"margin-left: 20px;\\\">",
     		ctx
     	});
 
@@ -13244,12 +13244,11 @@ var app = (function () {
 
     	const button2 = new Button({
     			props: {
-    				outline: true,
-    				color: "primary",
+    				color: "info",
     				type: "button",
     				class: "btn btn-primary",
     				onclick: "window.location.href='#/global-transfers/graph'",
-    				style: "margin-left: 6.75%; width: 25%;",
+    				style: "margin-left: 20px;",
     				$$slots: { default: [create_default_slot$3] },
     				$$scope: { ctx }
     			},
@@ -14771,27 +14770,26 @@ var app = (function () {
     			i = element("i");
     			t4 = text(" Atrás");
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$h, 95, 2, 2298);
+    			add_location(script0, file$h, 79, 2, 1627);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/series-label.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$h, 96, 2, 2367);
+    			add_location(script1, file$h, 80, 2, 1696);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$h, 97, 2, 2446);
+    			add_location(script2, file$h, 81, 2, 1775);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$h, 98, 2, 2522);
+    			add_location(script3, file$h, 82, 2, 1851);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$h, 99, 2, 2600);
+    			add_location(script4, file$h, 83, 2, 1929);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$h, 104, 4, 2746);
+    			add_location(div, file$h, 88, 4, 2075);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$h, 105, 4, 2778);
+    			add_location(p, file$h, 89, 4, 2107);
     			attr_dev(figure, "class", "highcharts-figure svelte-2qjm18");
-    			add_location(figure, file$h, 103, 2, 2706);
+    			add_location(figure, file$h, 87, 2, 2035);
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$h, 111, 4, 2919);
-    			attr_dev(button, "outline", "");
-    			attr_dev(button, "color", "secondary");
-    			add_location(button, file$h, 110, 2, 2862);
-    			add_location(main, file$h, 102, 0, 2696);
+    			add_location(i, file$h, 95, 4, 2237);
+    			attr_dev(button, "color", "danger");
+    			add_location(button, file$h, 94, 2, 2191);
+    			add_location(main, file$h, 86, 0, 2025);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14849,13 +14847,13 @@ var app = (function () {
     	let MyData = [];
     	let MyDataGraph = [];
     	let BASE_API_URL = "/api/v3";
-    	const res = await fetch(BASE_API_URL + "/global-transfer");
+    	const resData = await fetch(BASE_API_URL + "/global-transfers");
     	MyData = await resData.json();
 
     	MyData.forEach(x => {
     		MyDataGraph.push({
-    			name: x.team + " " + x.year,
-    			data: [parseInt(x.signing), parseInt(x.sale), parseInt(x.balance)],
+    			name: [x.team, parseInt(x.year)],
+    			data: [parseFloat(x.balance)],
     			pointPlacement: "on"
     		});
     	});
@@ -14864,10 +14862,7 @@ var app = (function () {
     		title: { text: "GRÁFICA DEL MERCADO DE FICHAJES" },
     		yAxis: { title: { text: "Balance monetario" } },
     		xAxis: {
-    			accessibility: {
-    				rangeDescription: "Range: 2010 to 2017", //CAMBIAR AÑOS A TRANSFER.YEAR[0] +-
-    				
-    			}
+    			accessibility: { rangeDescription: "Range: 2010 to 2017" }
     		},
     		legend: {
     			layout: "vertical",
@@ -14877,31 +14872,10 @@ var app = (function () {
     		plotOptions: {
     			series: {
     				label: { connectorAllowed: false },
-    				pointStart: 2010
+    				pointStart: 2017
     			}
     		},
-    		series: [
-    			{
-    				name: "Installation",
-    				data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-    			},
-    			{
-    				name: "Manufacturing",
-    				data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-    			},
-    			{
-    				name: "Sales & Distribution",
-    				data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-    			},
-    			{
-    				name: "Project Development",
-    				data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-    			},
-    			{
-    				name: "Other",
-    				data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-    			}
-    		],
+    		series: MyDataGraph,
     		responsive: {
     			rules: [
     				{
@@ -14920,6 +14894,7 @@ var app = (function () {
     }
 
     function instance$i($$self, $$props, $$invalidate) {
+    	loadGraph$1();
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
