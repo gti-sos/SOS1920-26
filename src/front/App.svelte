@@ -8,6 +8,7 @@
 	import globalCoef from './CoefGUI/App.svelte.html';  
 	import EditCoef from './CoefGUI/EditCoef.svelte.html';
 	import GraphCoef from './CoefGUI/GraphCoef.svelte.html';
+	import GraphCoef2 from './CoefGUI/GraphCoef2.svelte.html';
 //API TRANSFERS------------------------------------------------------------
 	import globalTransfers from './TransfersGUI/App.svelte.html'; 
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte.html';
@@ -29,7 +30,7 @@
 		"/global-coef/:team/:year": EditCoef,
 		"/globalCoefAPI":globalCoef,
 		"/global-coef/graph": GraphCoef,
-	//	"/global-coef/graph-v2": GraphCoefV2,
+		"/global-coef/graph2": GraphCoef2,
 
 
 		"/global-transfers/:year/:team": EditTransfer,
