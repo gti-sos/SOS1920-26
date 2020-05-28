@@ -5,9 +5,9 @@
 	//import Analytics from './Analytics.svelte';  
 	import NotFound from './NotFound.svelte';
 //API COEF-----------------------------------------------------------------
-	import globalCoef from './CoefGUI/App.svelte';  
-	import EditCoef from './CoefGUI/EditCoef.svelte';
-	import GraphCoef from './CoefGUI/GraphCoef.svelte';
+	import globalCoef from './CoefGUI/App.svelte.html';  
+	import EditCoef from './CoefGUI/EditCoef.svelte.html';
+	import GraphCoef from './CoefGUI/GraphCoef.svelte.html';
 //API TRANSFERS------------------------------------------------------------
 	import globalTransfers from './TransfersGUI/App.svelte'; 
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
