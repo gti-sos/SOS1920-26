@@ -33,7 +33,7 @@ const goalscorersAPIv3 = require(path.join(__dirname, "./src/back/goalscorersAPI
 goalscorersAPIv1(app);
 goalscorersAPIv2(app);
 goalscorersAPIv3(app);
-//----------------------------------goalscorers//
+//----------------------------------goalscorers/
 
 app.use("/", express.static("./public"));
 
