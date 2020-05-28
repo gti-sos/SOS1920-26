@@ -8,7 +8,7 @@
         let MyDataGraph = [];
         let BASE_API_URL = "/api/v3";
         
-        const res = await fetch(BASE_API_URL + "/global-coef")
+        const resData = await fetch(BASE_API_URL + "/global-coef")
         MyData = await resData.json();
         MyData.forEach( (x) => {
                 MyDataGraph.push({name: x.team + " " + x.year, data: [parseInt(x.coefficient), parseInt(x.fed), parseInt(x.classification)], pointPlacement: 'on'});
@@ -54,6 +54,7 @@
             series: MyDataGraph
         });
     }
+    loadGraph();
     </script>
     
     <svelte:head>

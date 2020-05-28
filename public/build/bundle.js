@@ -7347,7 +7347,7 @@ var app = (function () {
 
     	const formgroup0 = new FormGroup({
     			props: {
-    				$$slots: { default: [create_default_slot_19] },
+    				$$slots: { default: [create_default_slot_20] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7355,7 +7355,7 @@ var app = (function () {
 
     	const formgroup1 = new FormGroup({
     			props: {
-    				$$slots: { default: [create_default_slot_16] },
+    				$$slots: { default: [create_default_slot_17] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7366,7 +7366,7 @@ var app = (function () {
     				outline: true,
     				color: "secondary",
     				class: "button-search",
-    				$$slots: { default: [create_default_slot_15] },
+    				$$slots: { default: [create_default_slot_16] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7379,7 +7379,7 @@ var app = (function () {
     	const table = new Table({
     			props: {
     				bordered: true,
-    				$$slots: { default: [create_default_slot_12] },
+    				$$slots: { default: [create_default_slot_13] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7474,7 +7474,7 @@ var app = (function () {
     }
 
     // (297:3) <Label for="selectTeam">
-    function create_default_slot_21(ctx) {
+    function create_default_slot_22(ctx) {
     	let t;
 
     	const block = {
@@ -7491,7 +7491,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_21.name,
+    		id: create_default_slot_22.name,
     		type: "slot",
     		source: "(297:3) <Label for=\\\"selectTeam\\\">",
     		ctx
@@ -7545,7 +7545,7 @@ var app = (function () {
     }
 
     // (298:3) <Input type="select" name="selectTeam" id="selectTeam" bind:value="{currentTeam}">
-    function create_default_slot_20(ctx) {
+    function create_default_slot_21(ctx) {
     	let t0;
     	let option;
     	let each_value_2 = /*teams*/ ctx[1];
@@ -7611,7 +7611,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_20.name,
+    		id: create_default_slot_21.name,
     		type: "slot",
     		source: "(298:3) <Input type=\\\"select\\\" name=\\\"selectTeam\\\" id=\\\"selectTeam\\\" bind:value=\\\"{currentTeam}\\\">",
     		ctx
@@ -7621,7 +7621,7 @@ var app = (function () {
     }
 
     // (296:2) <FormGroup>
-    function create_default_slot_19(ctx) {
+    function create_default_slot_20(ctx) {
     	let t;
     	let updating_value;
     	let current;
@@ -7629,7 +7629,7 @@ var app = (function () {
     	const label = new Label({
     			props: {
     				for: "selectTeam",
-    				$$slots: { default: [create_default_slot_21] },
+    				$$slots: { default: [create_default_slot_22] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7643,7 +7643,7 @@ var app = (function () {
     		type: "select",
     		name: "selectTeam",
     		id: "selectTeam",
-    		$$slots: { default: [create_default_slot_20] },
+    		$$slots: { default: [create_default_slot_21] },
     		$$scope: { ctx }
     	};
 
@@ -7708,7 +7708,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_19.name,
+    		id: create_default_slot_20.name,
     		type: "slot",
     		source: "(296:2) <FormGroup>",
     		ctx
@@ -7718,7 +7718,7 @@ var app = (function () {
     }
 
     // (307:3) <Label for="selectYear">
-    function create_default_slot_18(ctx) {
+    function create_default_slot_19(ctx) {
     	let t;
 
     	const block = {
@@ -7735,7 +7735,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_18.name,
+    		id: create_default_slot_19.name,
     		type: "slot",
     		source: "(307:3) <Label for=\\\"selectYear\\\">",
     		ctx
@@ -7789,7 +7789,7 @@ var app = (function () {
     }
 
     // (308:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
-    function create_default_slot_17(ctx) {
+    function create_default_slot_18(ctx) {
     	let t0;
     	let option;
     	let each_value_1 = /*years*/ ctx[2];
@@ -7855,7 +7855,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_17.name,
+    		id: create_default_slot_18.name,
     		type: "slot",
     		source: "(308:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
     		ctx
@@ -7865,7 +7865,7 @@ var app = (function () {
     }
 
     // (306:2) <FormGroup>
-    function create_default_slot_16(ctx) {
+    function create_default_slot_17(ctx) {
     	let t;
     	let updating_value;
     	let current;
@@ -7873,7 +7873,7 @@ var app = (function () {
     	const label = new Label({
     			props: {
     				for: "selectYear",
-    				$$slots: { default: [create_default_slot_18] },
+    				$$slots: { default: [create_default_slot_19] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7887,7 +7887,7 @@ var app = (function () {
     		type: "select",
     		name: "selectYear",
     		id: "selectYear",
-    		$$slots: { default: [create_default_slot_17] },
+    		$$slots: { default: [create_default_slot_18] },
     		$$scope: { ctx }
     	};
 
@@ -7952,7 +7952,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_16.name,
+    		id: create_default_slot_17.name,
     		type: "slot",
     		source: "(306:2) <FormGroup>",
     		ctx
@@ -7962,7 +7962,7 @@ var app = (function () {
     }
 
     // (316:2) <Button outline color="secondary" on:click="{search(currentTeam, currentYear)}" class="button-search" >
-    function create_default_slot_15(ctx) {
+    function create_default_slot_16(ctx) {
     	let i;
     	let t;
 
@@ -7985,7 +7985,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_15.name,
+    		id: create_default_slot_16.name,
     		type: "slot",
     		source: "(316:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(currentTeam, currentYear)}\\\" class=\\\"button-search\\\" >",
     		ctx
@@ -7995,7 +7995,7 @@ var app = (function () {
     }
 
     // (340:10) <Button outline  color="primary" on:click={insertCoef}>
-    function create_default_slot_14(ctx) {
+    function create_default_slot_15(ctx) {
     	let t;
 
     	const block = {
@@ -8012,7 +8012,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_14.name,
+    		id: create_default_slot_15.name,
     		type: "slot",
     		source: "(340:10) <Button outline  color=\\\"primary\\\" on:click={insertCoef}>",
     		ctx
@@ -8022,7 +8022,7 @@ var app = (function () {
     }
 
     // (352:10) <Button outline color="danger" on:click="{deleteCoef(coef.team,coef.year)}" on:click={deleteAlert}>
-    function create_default_slot_13(ctx) {
+    function create_default_slot_14(ctx) {
     	let t;
 
     	const block = {
@@ -8039,7 +8039,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_13.name,
+    		id: create_default_slot_14.name,
     		type: "slot",
     		source: "(352:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteCoef(coef.team,coef.year)}\\\" on:click={deleteAlert}>",
     		ctx
@@ -8085,7 +8085,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_13] },
+    				$$slots: { default: [create_default_slot_14] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8207,7 +8207,7 @@ var app = (function () {
     }
 
     // (319:2) <Table bordered >
-    function create_default_slot_12(ctx) {
+    function create_default_slot_13(ctx) {
     	let thead;
     	let tr0;
     	let th0;
@@ -8254,7 +8254,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot_14] },
+    				$$slots: { default: [create_default_slot_15] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8515,7 +8515,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_12.name,
+    		id: create_default_slot_13.name,
     		type: "slot",
     		source: "(319:2) <Table bordered >",
     		ctx
@@ -8555,7 +8555,7 @@ var app = (function () {
     }
 
     // (362:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
-    function create_default_slot_11(ctx) {
+    function create_default_slot_12(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
@@ -8590,7 +8590,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11.name,
+    		id: create_default_slot_12.name,
     		type: "slot",
     		source: "(362:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
     		ctx
@@ -8605,7 +8605,7 @@ var app = (function () {
 
     	const paginationitem = new PaginationItem({
     			props: {
-    				$$slots: { default: [create_default_slot_9] },
+    				$$slots: { default: [create_default_slot_10] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8654,7 +8654,7 @@ var app = (function () {
     }
 
     // (369:3) <PaginationLink href="#/globalCoefAPI" on:click="{() => addOffset(-1)}" >
-    function create_default_slot_10(ctx) {
+    function create_default_slot_11(ctx) {
     	let t_value = /*currentPage*/ ctx[5] - 1 + "";
     	let t;
 
@@ -8675,7 +8675,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10.name,
+    		id: create_default_slot_11.name,
     		type: "slot",
     		source: "(369:3) <PaginationLink href=\\\"#/globalCoefAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
     		ctx
@@ -8685,13 +8685,13 @@ var app = (function () {
     }
 
     // (368:2) <PaginationItem>
-    function create_default_slot_9(ctx) {
+    function create_default_slot_10(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
     			props: {
     				href: "#/globalCoefAPI",
-    				$$slots: { default: [create_default_slot_10] },
+    				$$slots: { default: [create_default_slot_11] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8732,7 +8732,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9.name,
+    		id: create_default_slot_10.name,
     		type: "slot",
     		source: "(368:2) <PaginationItem>",
     		ctx
@@ -8742,7 +8742,7 @@ var app = (function () {
     }
 
     // (373:3) <PaginationLink href="#/globalCoefAPI" >
-    function create_default_slot_8(ctx) {
+    function create_default_slot_9(ctx) {
     	let t;
 
     	const block = {
@@ -8762,7 +8762,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8.name,
+    		id: create_default_slot_9.name,
     		type: "slot",
     		source: "(373:3) <PaginationLink href=\\\"#/globalCoefAPI\\\" >",
     		ctx
@@ -8772,13 +8772,13 @@ var app = (function () {
     }
 
     // (372:2) <PaginationItem active>
-    function create_default_slot_7(ctx) {
+    function create_default_slot_8(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
     			props: {
     				href: "#/globalCoefAPI",
-    				$$slots: { default: [create_default_slot_8] },
+    				$$slots: { default: [create_default_slot_9] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8817,7 +8817,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_7.name,
+    		id: create_default_slot_8.name,
     		type: "slot",
     		source: "(372:2) <PaginationItem active>",
     		ctx
@@ -8832,7 +8832,7 @@ var app = (function () {
 
     	const paginationitem = new PaginationItem({
     			props: {
-    				$$slots: { default: [create_default_slot_5] },
+    				$$slots: { default: [create_default_slot_6] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8881,7 +8881,7 @@ var app = (function () {
     }
 
     // (379:3) <PaginationLink href="#/globalCoefAPI" on:click="{() => addOffset(1)}">
-    function create_default_slot_6(ctx) {
+    function create_default_slot_7(ctx) {
     	let t_value = /*currentPage*/ ctx[5] + 1 + "";
     	let t;
 
@@ -8902,7 +8902,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_6.name,
+    		id: create_default_slot_7.name,
     		type: "slot",
     		source: "(379:3) <PaginationLink href=\\\"#/globalCoefAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
     		ctx
@@ -8912,13 +8912,13 @@ var app = (function () {
     }
 
     // (378:2) <PaginationItem >
-    function create_default_slot_5(ctx) {
+    function create_default_slot_6(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
     			props: {
     				href: "#/globalCoefAPI",
-    				$$slots: { default: [create_default_slot_6] },
+    				$$slots: { default: [create_default_slot_7] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -8959,7 +8959,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_5.name,
+    		id: create_default_slot_6.name,
     		type: "slot",
     		source: "(378:2) <PaginationItem >",
     		ctx
@@ -8969,7 +8969,7 @@ var app = (function () {
     }
 
     // (383:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
-    function create_default_slot_4(ctx) {
+    function create_default_slot_5(ctx) {
     	let current;
 
     	const paginationlink = new PaginationLink({
@@ -9004,7 +9004,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_4.name,
+    		id: create_default_slot_5.name,
     		type: "slot",
     		source: "(383:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
     		ctx
@@ -9014,7 +9014,7 @@ var app = (function () {
     }
 
     // (359:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
-    function create_default_slot_3(ctx) {
+    function create_default_slot_4(ctx) {
     	let t0;
     	let t1;
     	let t2;
@@ -9024,7 +9024,7 @@ var app = (function () {
     	const paginationitem0 = new PaginationItem({
     			props: {
     				class: /*currentPage*/ ctx[5] === 1 ? "disabled" : "",
-    				$$slots: { default: [create_default_slot_11] },
+    				$$slots: { default: [create_default_slot_12] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9035,7 +9035,7 @@ var app = (function () {
     	const paginationitem1 = new PaginationItem({
     			props: {
     				active: true,
-    				$$slots: { default: [create_default_slot_7] },
+    				$$slots: { default: [create_default_slot_8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9046,7 +9046,7 @@ var app = (function () {
     	const paginationitem2 = new PaginationItem({
     			props: {
     				class: /*moreData*/ ctx[6] ? "" : "disabled",
-    				$$slots: { default: [create_default_slot_4] },
+    				$$slots: { default: [create_default_slot_5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9181,7 +9181,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_3.name,
+    		id: create_default_slot_4.name,
     		type: "slot",
     		source: "(359:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
     		ctx
@@ -9191,7 +9191,7 @@ var app = (function () {
     }
 
     // (389:1) <Button outline color="secondary" on:click="{pop}">
-    function create_default_slot_2(ctx) {
+    function create_default_slot_3(ctx) {
     	let i;
     	let t;
 
@@ -9214,7 +9214,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2.name,
+    		id: create_default_slot_3.name,
     		type: "slot",
     		source: "(389:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
@@ -9224,7 +9224,7 @@ var app = (function () {
     }
 
     // (390:1) <Button outline on:click={deleteGlobalCoef} color="danger" on:click={deleteAllAlert}>
-    function create_default_slot_1(ctx) {
+    function create_default_slot_2(ctx) {
     	let i;
     	let t;
 
@@ -9248,7 +9248,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1.name,
+    		id: create_default_slot_2.name,
     		type: "slot",
     		source: "(390:1) <Button outline on:click={deleteGlobalCoef} color=\\\"danger\\\" on:click={deleteAllAlert}>",
     		ctx
@@ -9258,7 +9258,7 @@ var app = (function () {
     }
 
     // (391:1) <Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}>
-    function create_default_slot(ctx) {
+    function create_default_slot_1(ctx) {
     	let i;
     	let t;
 
@@ -9281,9 +9281,36 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot.name,
+    		id: create_default_slot_1.name,
     		type: "slot",
     		source: "(391:1) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\"  on:click={ReloadTableAlert}>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (392:1) <Button outline color="primary" type="button" class="btn btn-primary"  onclick="window.location.href='#/global-coef/graph'" style="margin-left: 6.75%; width: 25%;">
+    function create_default_slot(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Gráfica Coef");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(392:1) <Button outline color=\\\"primary\\\" type=\\\"button\\\" class=\\\"btn btn-primary\\\"  onclick=\\\"window.location.href='#/global-coef/graph'\\\" style=\\\"margin-left: 6.75%; width: 25%;\\\">",
     		ctx
     	});
 
@@ -9300,7 +9327,6 @@ var app = (function () {
     	let t3;
     	let t4;
     	let t5;
-    	let button3;
     	let current;
 
     	let info = {
@@ -9320,7 +9346,7 @@ var app = (function () {
     			props: {
     				style: "float:right;",
     				ariaLabel: "Cambiar de página",
-    				$$slots: { default: [create_default_slot_3] },
+    				$$slots: { default: [create_default_slot_4] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9330,7 +9356,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "secondary",
-    				$$slots: { default: [create_default_slot_2] },
+    				$$slots: { default: [create_default_slot_3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9342,7 +9368,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "danger",
-    				$$slots: { default: [create_default_slot_1] },
+    				$$slots: { default: [create_default_slot_2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9355,7 +9381,7 @@ var app = (function () {
     			props: {
     				outline: true,
     				color: "primary",
-    				$$slots: { default: [create_default_slot] },
+    				$$slots: { default: [create_default_slot_1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -9363,6 +9389,20 @@ var app = (function () {
 
     	button2.$on("click", /*ReloadTable*/ ctx[8]);
     	button2.$on("click", ReloadTableAlert);
+
+    	const button3 = new Button({
+    			props: {
+    				outline: true,
+    				color: "primary",
+    				type: "button",
+    				class: "btn btn-primary",
+    				onclick: "window.location.href='#/global-coef/graph'",
+    				style: "margin-left: 6.75%; width: 25%;",
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -9379,18 +9419,11 @@ var app = (function () {
     			t4 = space();
     			create_component(button2.$$.fragment);
     			t5 = space();
-    			button3 = element("button");
-    			button3.textContent = "Grafica coef";
+    			create_component(button3.$$.fragment);
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
     			add_location(div, file$a, 289, 1, 8639);
-    			attr_dev(button3, "type", "button");
-    			attr_dev(button3, "class", "btn btn-primary");
-    			attr_dev(button3, "onclick", "window.location.href='GraphCoef'");
-    			set_style(button3, "margin-left", "6.75%");
-    			set_style(button3, "width", "25%");
-    			add_location(button3, file$a, 391, 1, 12057);
     			add_location(main, file$a, 288, 0, 8630);
     		},
     		l: function claim(nodes) {
@@ -9412,7 +9445,7 @@ var app = (function () {
     			append_dev(main, t4);
     			mount_component(button2, main, null);
     			append_dev(main, t5);
-    			append_dev(main, button3);
+    			mount_component(button3, main, null);
     			current = true;
     		},
     		p: function update(new_ctx, dirty) {
@@ -9453,6 +9486,13 @@ var app = (function () {
     			}
 
     			button2.$set(button2_changes);
+    			const button3_changes = {};
+
+    			if (dirty[1] & /*$$scope*/ 512) {
+    				button3_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button3.$set(button3_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -9461,6 +9501,7 @@ var app = (function () {
     			transition_in(button0.$$.fragment, local);
     			transition_in(button1.$$.fragment, local);
     			transition_in(button2.$$.fragment, local);
+    			transition_in(button3.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -9473,6 +9514,7 @@ var app = (function () {
     			transition_out(button0.$$.fragment, local);
     			transition_out(button1.$$.fragment, local);
     			transition_out(button2.$$.fragment, local);
+    			transition_out(button3.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -9484,6 +9526,7 @@ var app = (function () {
     			destroy_component(button0);
     			destroy_component(button1);
     			destroy_component(button2);
+    			destroy_component(button3);
     		}
     	};
 
@@ -9931,7 +9974,7 @@ var app = (function () {
     /* src\front\CoefGUI\GraphCoef.svelte.html generated by Svelte v3.23.0 */
     const file$b = "src\\front\\CoefGUI\\GraphCoef.svelte.html";
 
-    // (77:8) <Button outline color="secondary" on:click="{pop}">
+    // (78:8) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot$1(ctx) {
     	let i;
     	let t;
@@ -9941,7 +9984,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$b, 76, 60, 2529);
+    			add_location(i, file$b, 77, 60, 2551);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -9957,7 +10000,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(77:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(78:8) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
@@ -10015,23 +10058,23 @@ var app = (function () {
     			t3 = space();
     			create_component(button.$$.fragment);
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$b, 59, 8, 1716);
+    			add_location(script0, file$b, 60, 8, 1738);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/highcharts-more.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$b, 60, 8, 1791);
+    			add_location(script1, file$b, 61, 8, 1813);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$b, 61, 8, 1871);
+    			add_location(script2, file$b, 62, 8, 1893);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$b, 62, 8, 1953);
+    			add_location(script3, file$b, 63, 8, 1975);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$b, 63, 8, 2037);
+    			add_location(script4, file$b, 64, 8, 2059);
     			attr_dev(div, "id", "container");
     			attr_dev(div, "class", "svelte-1qntoz5");
-    			add_location(div, file$b, 70, 12, 2247);
+    			add_location(div, file$b, 71, 12, 2269);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$b, 71, 12, 2287);
+    			add_location(p, file$b, 72, 12, 2309);
     			attr_dev(figure, "class", "highcharts-figure svelte-1qntoz5");
-    			add_location(figure, file$b, 69, 8, 2199);
-    			add_location(main, file$b, 68, 4, 2183);
+    			add_location(figure, file$b, 70, 8, 2221);
+    			add_location(main, file$b, 69, 4, 2205);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10104,7 +10147,7 @@ var app = (function () {
     	let MyData = [];
     	let MyDataGraph = [];
     	let BASE_API_URL = "/api/v3";
-    	const res = await fetch(BASE_API_URL + "/global-coef");
+    	const resData = await fetch(BASE_API_URL + "/global-coef");
     	MyData = await resData.json();
 
     	MyData.forEach(x => {
@@ -10138,6 +10181,7 @@ var app = (function () {
     }
 
     function instance$c($$self, $$props, $$invalidate) {
+    	loadGraph();
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -10889,7 +10933,7 @@ var app = (function () {
 
     function instance$e($$self, $$props, $$invalidate) {
     	let { params = {} } = $$props;
-    	let BASE_API_URL = "/api/v2";
+    	let BASE_API_URL = "/api/v3";
     	let coef = {};
     	let updatedCountry = "XXXX";
     	let updatedYear = 2000;
@@ -11341,7 +11385,7 @@ var app = (function () {
     }
 
     // (330:3) <Input type="select"  name="selectYear" id="selectYear" bind:value="{currentYear}">
-    function create_default_slot_22(ctx) {
+    function create_default_slot_22$1(ctx) {
     	let t0;
     	let option;
     	let each_value_2 = /*years*/ ctx[1];
@@ -11407,7 +11451,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_22.name,
+    		id: create_default_slot_22$1.name,
     		type: "slot",
     		source: "(330:3) <Input type=\\\"select\\\"  name=\\\"selectYear\\\" id=\\\"selectYear\\\" bind:value=\\\"{currentYear}\\\">",
     		ctx
@@ -11439,7 +11483,7 @@ var app = (function () {
     		type: "select",
     		name: "selectYear",
     		id: "selectYear",
-    		$$slots: { default: [create_default_slot_22] },
+    		$$slots: { default: [create_default_slot_22$1] },
     		$$scope: { ctx }
     	};
 
@@ -14551,7 +14595,7 @@ var app = (function () {
 
     function instance$h($$self, $$props, $$invalidate) {
     	let { params = {} } = $$props;
-    	let BASE_API_URL = "/api/v2";
+    	let BASE_API_URL = "/api/v3";
     	let transfer = {};
     	let updatedCountry = "XXXX";
     	let updatedYear = 12345;
@@ -18077,7 +18121,7 @@ var app = (function () {
 
     function instance$l($$self, $$props, $$invalidate) {
     	let { params = {} } = $$props;
-    	let BASE_API_URL = "/api/v2";
+    	let BASE_API_URL = "/api/v3";
     	let goalscorer = {};
     	let updatedName;
     	let updatedDebut;
