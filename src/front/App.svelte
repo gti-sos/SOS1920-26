@@ -9,8 +9,9 @@
 	import EditCoef from './CoefGUI/EditCoef.svelte.html';
 	import GraphCoef from './CoefGUI/GraphCoef.svelte.html';
 //API TRANSFERS------------------------------------------------------------
-	import globalTransfers from './TransfersGUI/App.svelte'; 
-	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
+	import globalTransfers from './TransfersGUI/App.svelte.html'; 
+	import EditTransfer from './TransfersGUI/EditTransfer.svelte.html';
+	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte.html';
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
@@ -36,6 +37,12 @@
 		
 		"/goalscorers/:name":EditGoalscorer,
 		"/goalscorersAPI":goalscorers,  
+
+
+		"/global-transfers/graph": GraphTransfer,
+
+
+
 		"*": NotFound
 	};
 
