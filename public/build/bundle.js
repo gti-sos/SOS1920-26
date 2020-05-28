@@ -9290,7 +9290,7 @@ var app = (function () {
     	return block;
     }
 
-    // (392:1) <Button outline color="primary" type="button" class="btn btn-primary"  onclick="window.location.href='#/global-coef/graph'" style="margin-left: 6.75%; width: 25%;">
+    // (392:1) <Button type="button" class="btn btn-primary"  onclick="window.location.href='#/global-coef/graph'" style="margin-left: 6.75%; width: 25%;">
     function create_default_slot(ctx) {
     	let t;
 
@@ -9310,7 +9310,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(392:1) <Button outline color=\\\"primary\\\" type=\\\"button\\\" class=\\\"btn btn-primary\\\"  onclick=\\\"window.location.href='#/global-coef/graph'\\\" style=\\\"margin-left: 6.75%; width: 25%;\\\">",
+    		source: "(392:1) <Button type=\\\"button\\\" class=\\\"btn btn-primary\\\"  onclick=\\\"window.location.href='#/global-coef/graph'\\\" style=\\\"margin-left: 6.75%; width: 25%;\\\">",
     		ctx
     	});
 
@@ -9392,8 +9392,6 @@ var app = (function () {
 
     	const button3 = new Button({
     			props: {
-    				outline: true,
-    				color: "primary",
     				type: "button",
     				class: "btn btn-primary",
     				onclick: "window.location.href='#/global-coef/graph'",

@@ -389,6 +389,5 @@ async function deleteCoef(team,year) {
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 	<Button outline on:click={deleteGlobalCoef} color="danger" on:click={deleteAllAlert}> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
 	<Button outline color="primary" on:click="{ReloadTable}"  on:click={ReloadTableAlert}> <i class="fas fa-sync-alt"></i> Carga inicial de API </Button>
-	<Button outline color="primary" type="button" class="btn btn-primary"  onclick="window.location.href='#/global-coef/graph'" style="margin-left: 6.75%; width: 25%;"> Gráfica Coef</Button>
-
+	<Button type="button" class="btn btn-primary"  onclick="window.location.href='#/global-coef/graph'" style="margin-left: 6.75%; width: 25%;"> Gráfica Coef</Button>
 </main>
