@@ -1,2 +1,5 @@
 node_modules/
 public/build/
+src/back/coefAPI/v3/coef.db
+src/back/transfersAPI/v3/transfers.db
+src/back/goalscorersAPI/v3/goalscorers.db
