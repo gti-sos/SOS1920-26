@@ -3,3 +3,5 @@ public/build/
 src/back/coefAPI/v3/coef.db
 src/back/transfersAPI/v3/transfers.db
 src/back/goalscorersAPI/v3/goalscorers.db
+public/build/bundle.js
+public/build/bundle.js.map
