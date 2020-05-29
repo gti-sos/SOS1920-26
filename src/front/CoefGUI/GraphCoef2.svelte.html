@@ -1,3 +1,4 @@
+
 <script>
     import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
@@ -11,83 +12,55 @@
         const resData = await fetch(BASE_API_URL + "/global-coef")
         MyData = await resData.json();
         MyData.forEach((x) => {
-            MyDataGraph.push({ name: x.country + " " + x.team, data: [parseInt(x.coefficient), parseInt(x.fed), parseInt(x.classification)], pointPlacement: 'on' });
+            MyDataGraph.push({ name: x.team + " " + x.year, y:parseFloat(x.coefficient)});
         });
 
-        Highcharts.chart('container', {
+
+        console.log(MyDataGraph)
+        Highcharts.chart('container',{
 
             chart: {
-                styledMode: true
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
             },
-
             title: {
-                text: 'Pie point CSS'
+                text: 'Grafica solo de coeficientes'
             },
-
-            xAxis: {
-                categories: [
-                            'Coeficiente',
-                            'Fed',
-                            'Clasificación'
-                        ],
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             },
-
-            series: MyDataGraph
-        });
-        /*
-                Highcharts.chart('container', {
-                    chart: {
-                        type: 'pie'
-                    },
-                    title: {
-                        text: 'Equipos Europa'
-                    },
-        
-                    xAxis: {
-                        categories: [
-                            'Coeficiente',
-                            'Fed',
-                            'Clasificación'
-                        ],
-                        plotBands: [{ // visualize the weekend
-                            from: 4.5,
-                            to: 6.5,
-                            color: 'rgba(68, 170, 213, .2)'
-                        }]
-                    },
-                    yAxis: {
-                        title: {
-                            text: '%'
-                        }
-                    },
-                    tooltip: {
-                        shared: true,
-                        valueSuffix: ' %'
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    plotOptions: {
-                        areaspline: {
-                            fillOpacity: 0.5
-                        
-                        pie: {
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        //format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
                     }
                 }
-                    },
-                    series: MyDataGraph
-                });
-            }*/
-        }
-        loadGraph();
+            },
+            series: [
+                {
+                    name: "brands",
+                    colorByPoint: true,
+                    data: MyDataGraph
+                },
+            ],
+        });
+        
+    }
+    loadGraph();
 </script>
 
 <svelte:head>
+
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -100,7 +73,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            En la gráfica podemos observar el número de: equipos, coeficientes y clasificaciones.
+            En la gráfica podemos observar el número de: equipos, y sus coeficientes en formato de porcentajes.
         </p>
     </figure>
 
@@ -109,23 +82,10 @@
 </main>
 
 <style>
-    @import 'https://code.highcharts.com/css/highcharts.css';
-
-    .highcharts-pie-series .highcharts-point {
-        stroke: #EDE;
-        stroke-width: 2px;
-    }
-
-    .highcharts-pie-series .highcharts-data-label-connector {
-        stroke: silver;
-        stroke-dasharray: 2, 2;
-        stroke-width: 2px;
-    }
-
     .highcharts-figure,
     .highcharts-data-table table {
         min-width: 320px;
-        max-width: 600px;
+        max-width: 800px;
         margin: 1em auto;
     }
 
@@ -163,5 +123,10 @@
 
     .highcharts-data-table tr:hover {
         background: #f1f7ff;
+    }
+
+
+    input[type="number"] {
+        min-width: 50px;
     }
 </style>
