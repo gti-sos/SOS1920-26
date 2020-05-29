@@ -1086,7 +1086,7 @@ var app = (function () {
     	};
     });
 
-    const location = derived(loc, $loc => $loc.location);
+    const location$1 = derived(loc, $loc => $loc.location);
     const querystring = derived(loc, $loc => $loc.querystring);
 
     function push(location) {
@@ -1328,7 +1328,7 @@ var app = (function () {
     		wrap,
     		getLocation,
     		loc,
-    		location,
+    		location: location$1,
     		querystring,
     		push,
     		pop,
@@ -15163,7 +15163,7 @@ var app = (function () {
     	return block;
     }
 
-    // (272:1) {:then goalscorers}
+    // (275:1) {:then goalscorers}
     function create_then_block$4(ctx) {
     	let t;
     	let current;
@@ -15235,14 +15235,14 @@ var app = (function () {
     		block,
     		id: create_then_block$4.name,
     		type: "then",
-    		source: "(272:1) {:then goalscorers}",
+    		source: "(275:1) {:then goalscorers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (275:2) <Label for="selectName">
+    // (278:2) <Label for="selectName">
     function create_default_slot_20$2(ctx) {
     	let t;
 
@@ -15262,14 +15262,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_20$2.name,
     		type: "slot",
-    		source: "(275:2) <Label for=\\\"selectName\\\">",
+    		source: "(278:2) <Label for=\\\"selectName\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (277:3) {#each names as name}
+    // (280:3) {#each names as name}
     function create_each_block_1$2(ctx) {
     	let option;
     	let t_value = /*name*/ ctx[32] + "";
@@ -15282,7 +15282,7 @@ var app = (function () {
     			t = text(t_value);
     			option.__value = option_value_value = /*name*/ ctx[32];
     			option.value = option.__value;
-    			add_location(option, file$j, 277, 3, 7492);
+    			add_location(option, file$j, 280, 3, 7562);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option, anchor);
@@ -15306,14 +15306,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(277:3) {#each names as name}",
+    		source: "(280:3) {#each names as name}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (276:2) <Input type="text" name="selectName" id="selectName" bind:value= "{valorInicial}" >
+    // (279:2) <Input type="text" name="selectName" id="selectName" bind:value= "{valorInicial}" >
     function create_default_slot_19$2(ctx) {
     	let t0;
     	let option;
@@ -15336,7 +15336,7 @@ var app = (function () {
     			option.textContent = "Escriba el jugador que desea buscar";
     			option.__value = "Escriba el jugador que desea buscar";
     			option.value = option.__value;
-    			add_location(option, file$j, 279, 3, 7532);
+    			add_location(option, file$j, 282, 3, 7602);
     		},
     		m: function mount(target, anchor) {
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -15382,14 +15382,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19$2.name,
     		type: "slot",
-    		source: "(276:2) <Input type=\\\"text\\\" name=\\\"selectName\\\" id=\\\"selectName\\\" bind:value= \\\"{valorInicial}\\\" >",
+    		source: "(279:2) <Input type=\\\"text\\\" name=\\\"selectName\\\" id=\\\"selectName\\\" bind:value= \\\"{valorInicial}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (282:2) <Button outline color="primary" onClick="window.location.reload();" >
+    // (285:2) <Button outline color="primary" onClick="window.location.reload();" >
     function create_default_slot_18$2(ctx) {
     	let i;
     	let t;
@@ -15399,7 +15399,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Mostrar todos los jugadores");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$j, 281, 72, 7670);
+    			add_location(i, file$j, 284, 72, 7740);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -15415,14 +15415,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18$2.name,
     		type: "slot",
-    		source: "(282:2) <Button outline color=\\\"primary\\\" onClick=\\\"window.location.reload();\\\" >",
+    		source: "(285:2) <Button outline color=\\\"primary\\\" onClick=\\\"window.location.reload();\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (283:2) <Button outline color="secondary" on:click="{search(valorInicial)}" class="button-search">
+    // (286:2) <Button outline color="secondary" on:click="{search(valorInicial)}" class="button-search">
     function create_default_slot_17$2(ctx) {
     	let i;
     	let t;
@@ -15432,7 +15432,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Buscar jugador");
     			attr_dev(i, "class", "fas fa-search");
-    			add_location(i, file$j, 282, 93, 7831);
+    			add_location(i, file$j, 285, 93, 7901);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -15448,14 +15448,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_17$2.name,
     		type: "slot",
-    		source: "(283:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(valorInicial)}\\\" class=\\\"button-search\\\">",
+    		source: "(286:2) <Button outline color=\\\"secondary\\\" on:click=\\\"{search(valorInicial)}\\\" class=\\\"button-search\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (274:1) <FormGroup>
+    // (277:1) <FormGroup>
     function create_default_slot_16$2(ctx) {
     	let t0;
     	let updating_value;
@@ -15604,14 +15604,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_16$2.name,
     		type: "slot",
-    		source: "(274:1) <FormGroup>",
+    		source: "(277:1) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (307:10) <Button outline  color="primary" on:click={insertGoalscorer}>
+    // (310:10) <Button outline  color="primary" on:click={insertGoalscorer}>
     function create_default_slot_15$2(ctx) {
     	let t;
 
@@ -15631,14 +15631,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_15$2.name,
     		type: "slot",
-    		source: "(307:10) <Button outline  color=\\\"primary\\\" on:click={insertGoalscorer}>",
+    		source: "(310:10) <Button outline  color=\\\"primary\\\" on:click={insertGoalscorer}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (317:10) <Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" >
+    // (320:10) <Button outline color="danger" on:click="{deleteGoalscorer(goalscorer.name)}" >
     function create_default_slot_14$2(ctx) {
     	let i;
     	let t;
@@ -15649,7 +15649,7 @@ var app = (function () {
     			t = text(" Eliminar");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$j, 316, 90, 9015);
+    			add_location(i, file$j, 319, 90, 9085);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -15665,14 +15665,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14$2.name,
     		type: "slot",
-    		source: "(317:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteGoalscorer(goalscorer.name)}\\\" >",
+    		source: "(320:10) <Button outline color=\\\"danger\\\" on:click=\\\"{deleteGoalscorer(goalscorer.name)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (318:10) <Button outline color="info" href="#/goalscorers/{goalscorer.name}">
+    // (321:10) <Button outline color="info" href="#/goalscorers/{goalscorer.name}">
     function create_default_slot_13$2(ctx) {
     	let i;
     	let t;
@@ -15683,7 +15683,7 @@ var app = (function () {
     			t = text(" Editar");
     			attr_dev(i, "class", "fa fa-edit");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$j, 317, 79, 9165);
+    			add_location(i, file$j, 320, 79, 9235);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -15699,14 +15699,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13$2.name,
     		type: "slot",
-    		source: "(318:10) <Button outline color=\\\"info\\\" href=\\\"#/goalscorers/{goalscorer.name}\\\">",
+    		source: "(321:10) <Button outline color=\\\"info\\\" href=\\\"#/goalscorers/{goalscorer.name}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (309:4) {#each goalscorers as goalscorer}
+    // (312:4) {#each goalscorers as goalscorer}
     function create_each_block$2(ctx) {
     	let tr;
     	let td0;
@@ -15791,15 +15791,15 @@ var app = (function () {
     			td7 = element("td");
     			create_component(button1.$$.fragment);
     			t13 = space();
-    			add_location(td0, file$j, 310, 6, 8718);
-    			add_location(td1, file$j, 311, 6, 8752);
-    			add_location(td2, file$j, 312, 6, 8789);
-    			add_location(td3, file$j, 313, 6, 8824);
-    			add_location(td4, file$j, 314, 6, 8859);
-    			add_location(td5, file$j, 315, 6, 8896);
-    			add_location(td6, file$j, 316, 6, 8931);
-    			add_location(td7, file$j, 317, 6, 9092);
-    			add_location(tr, file$j, 309, 5, 8706);
+    			add_location(td0, file$j, 313, 6, 8788);
+    			add_location(td1, file$j, 314, 6, 8822);
+    			add_location(td2, file$j, 315, 6, 8859);
+    			add_location(td3, file$j, 316, 6, 8894);
+    			add_location(td4, file$j, 317, 6, 8929);
+    			add_location(td5, file$j, 318, 6, 8966);
+    			add_location(td6, file$j, 319, 6, 9001);
+    			add_location(td7, file$j, 320, 6, 9162);
+    			add_location(tr, file$j, 312, 5, 8776);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -15875,14 +15875,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(309:4) {#each goalscorers as goalscorer}",
+    		source: "(312:4) {#each goalscorers as goalscorer}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (286:2) <Table bordered>
+    // (289:2) <Table bordered>
     function create_default_slot_12$2(ctx) {
     	let thead;
     	let tr0;
@@ -16001,34 +16001,34 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$j, 288, 5, 7950);
-    			add_location(th1, file$j, 289, 5, 7972);
-    			add_location(th2, file$j, 290, 5, 7992);
-    			add_location(th3, file$j, 291, 5, 8013);
-    			add_location(th4, file$j, 292, 5, 8034);
-    			add_location(th5, file$j, 293, 5, 8058);
-    			add_location(th6, file$j, 294, 5, 8081);
-    			add_location(tr0, file$j, 287, 4, 7939);
-    			add_location(thead, file$j, 286, 3, 7926);
-    			add_location(input0, file$j, 300, 9, 8157);
-    			add_location(td0, file$j, 300, 5, 8153);
-    			add_location(input1, file$j, 301, 9, 8214);
-    			add_location(td1, file$j, 301, 5, 8210);
+    			add_location(th0, file$j, 291, 5, 8020);
+    			add_location(th1, file$j, 292, 5, 8042);
+    			add_location(th2, file$j, 293, 5, 8062);
+    			add_location(th3, file$j, 294, 5, 8083);
+    			add_location(th4, file$j, 295, 5, 8104);
+    			add_location(th5, file$j, 296, 5, 8128);
+    			add_location(th6, file$j, 297, 5, 8151);
+    			add_location(tr0, file$j, 290, 4, 8009);
+    			add_location(thead, file$j, 289, 3, 7996);
+    			add_location(input0, file$j, 303, 9, 8227);
+    			add_location(td0, file$j, 303, 5, 8223);
+    			add_location(input1, file$j, 304, 9, 8284);
+    			add_location(td1, file$j, 304, 5, 8280);
     			attr_dev(input2, "type", "number");
-    			add_location(input2, file$j, 302, 9, 8274);
-    			add_location(td2, file$j, 302, 5, 8270);
+    			add_location(input2, file$j, 305, 9, 8344);
+    			add_location(td2, file$j, 305, 5, 8340);
     			attr_dev(input3, "type", "number");
-    			add_location(input3, file$j, 303, 9, 8346);
-    			add_location(td3, file$j, 303, 5, 8342);
+    			add_location(input3, file$j, 306, 9, 8416);
+    			add_location(td3, file$j, 306, 5, 8412);
     			attr_dev(input4, "type", "number");
-    			add_location(input4, file$j, 304, 9, 8418);
-    			add_location(td4, file$j, 304, 5, 8414);
+    			add_location(input4, file$j, 307, 9, 8488);
+    			add_location(td4, file$j, 307, 5, 8484);
     			attr_dev(input5, "type", "number");
-    			add_location(input5, file$j, 305, 9, 8492);
-    			add_location(td5, file$j, 305, 5, 8488);
-    			add_location(td6, file$j, 306, 5, 8560);
-    			add_location(tr1, file$j, 299, 4, 8142);
-    			add_location(tbody, file$j, 298, 3, 8129);
+    			add_location(input5, file$j, 308, 9, 8562);
+    			add_location(td5, file$j, 308, 5, 8558);
+    			add_location(td6, file$j, 309, 5, 8630);
+    			add_location(tr1, file$j, 302, 4, 8212);
+    			add_location(tbody, file$j, 301, 3, 8199);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, thead, anchor);
@@ -16188,14 +16188,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12$2.name,
     		type: "slot",
-    		source: "(286:2) <Table bordered>",
+    		source: "(289:2) <Table bordered>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (270:21)     Loading goalscorers...   {:then goalscorers}
+    // (273:21)     Loading goalscorers...   {:then goalscorers}
     function create_pending_block$4(ctx) {
     	let t;
 
@@ -16218,14 +16218,14 @@ var app = (function () {
     		block,
     		id: create_pending_block$4.name,
     		type: "pending",
-    		source: "(270:21)     Loading goalscorers...   {:then goalscorers}",
+    		source: "(273:21)     Loading goalscorers...   {:then goalscorers}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
+    // (331:2) <PaginationItem class="{currentPage === 1 ? 'disabled' : ''}">
     function create_default_slot_11$2(ctx) {
     	let current;
 
@@ -16263,14 +16263,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11$2.name,
     		type: "slot",
-    		source: "(328:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
+    		source: "(331:2) <PaginationItem class=\\\"{currentPage === 1 ? 'disabled' : ''}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (332:2) {#if currentPage != 1}
+    // (335:2) {#if currentPage != 1}
     function create_if_block_1$4(ctx) {
     	let current;
 
@@ -16317,14 +16317,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(332:2) {#if currentPage != 1}",
+    		source: "(335:2) {#if currentPage != 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (334:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >
+    // (337:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(-1)}" >
     function create_default_slot_10$2(ctx) {
     	let t_value = /*currentPage*/ ctx[3] - 1 + "";
     	let t;
@@ -16348,14 +16348,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10$2.name,
     		type: "slot",
-    		source: "(334:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
+    		source: "(337:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(-1)}\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (333:2) <PaginationItem>
+    // (336:2) <PaginationItem>
     function create_default_slot_9$2(ctx) {
     	let current;
 
@@ -16405,14 +16405,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9$2.name,
     		type: "slot",
-    		source: "(333:2) <PaginationItem>",
+    		source: "(336:2) <PaginationItem>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (338:3) <PaginationLink href="#/goalscorersAPI" >
+    // (341:3) <PaginationLink href="#/goalscorersAPI" >
     function create_default_slot_8$2(ctx) {
     	let t;
 
@@ -16435,14 +16435,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8$2.name,
     		type: "slot",
-    		source: "(338:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" >",
+    		source: "(341:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (337:2) <PaginationItem active>
+    // (340:2) <PaginationItem active>
     function create_default_slot_7$2(ctx) {
     	let current;
 
@@ -16490,14 +16490,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7$2.name,
     		type: "slot",
-    		source: "(337:2) <PaginationItem active>",
+    		source: "(340:2) <PaginationItem active>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (341:2) {#if moreData}
+    // (344:2) {#if moreData}
     function create_if_block$a(ctx) {
     	let current;
 
@@ -16544,14 +16544,14 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(341:2) {#if moreData}",
+    		source: "(344:2) {#if moreData}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (343:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">
+    // (346:3) <PaginationLink href="#/goalscorersAPI" on:click="{() => addOffset(1)}">
     function create_default_slot_6$2(ctx) {
     	let t_value = /*currentPage*/ ctx[3] + 1 + "";
     	let t;
@@ -16575,14 +16575,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6$2.name,
     		type: "slot",
-    		source: "(343:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
+    		source: "(346:3) <PaginationLink href=\\\"#/goalscorersAPI\\\" on:click=\\\"{() => addOffset(1)}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (342:2) <PaginationItem >
+    // (345:2) <PaginationItem >
     function create_default_slot_5$2(ctx) {
     	let current;
 
@@ -16632,14 +16632,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5$2.name,
     		type: "slot",
-    		source: "(342:2) <PaginationItem >",
+    		source: "(345:2) <PaginationItem >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (347:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
+    // (350:2) <PaginationItem class="{moreData ? '' : 'disabled'}">
     function create_default_slot_4$2(ctx) {
     	let current;
 
@@ -16677,14 +16677,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$2.name,
     		type: "slot",
-    		source: "(347:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
+    		source: "(350:2) <PaginationItem class=\\\"{moreData ? '' : 'disabled'}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (325:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
+    // (328:1) <Pagination style="float:right;" ariaLabel="Cambiar de página">
     function create_default_slot_3$2(ctx) {
     	let t0;
     	let t1;
@@ -16854,14 +16854,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$2.name,
     		type: "slot",
-    		source: "(325:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
+    		source: "(328:1) <Pagination style=\\\"float:right;\\\" ariaLabel=\\\"Cambiar de página\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (353:1) <Button outline color="secondary" on:click="{pop}">
+    // (356:1) <Button outline color="secondary" on:click="{pop}">
     function create_default_slot_2$4(ctx) {
     	let i;
     	let t;
@@ -16871,7 +16871,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Atrás");
     			attr_dev(i, "class", "fas fa-arrow-circle-left");
-    			add_location(i, file$j, 352, 53, 10280);
+    			add_location(i, file$j, 355, 53, 10350);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16887,14 +16887,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$4.name,
     		type: "slot",
-    		source: "(353:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
+    		source: "(356:1) <Button outline color=\\\"secondary\\\" on:click=\\\"{pop}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (354:1) <Button outline on:click={deleteGoalscorers} color="danger">
+    // (357:1) <Button outline on:click={deleteGoalscorers} color="danger">
     function create_default_slot_1$4(ctx) {
     	let i;
     	let t;
@@ -16905,7 +16905,7 @@ var app = (function () {
     			t = text(" Borrar todo");
     			attr_dev(i, "class", "fa fa-trash");
     			attr_dev(i, "aria-hidden", "true");
-    			add_location(i, file$j, 353, 62, 10400);
+    			add_location(i, file$j, 356, 62, 10470);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16921,14 +16921,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$4.name,
     		type: "slot",
-    		source: "(354:1) <Button outline on:click={deleteGoalscorers} color=\\\"danger\\\">",
+    		source: "(357:1) <Button outline on:click={deleteGoalscorers} color=\\\"danger\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (355:1) <Button outline color="primary" on:click="{ReloadTable}">
+    // (358:1) <Button outline color="primary" on:click="{ReloadTable}">
     function create_default_slot$6(ctx) {
     	let i;
     	let t;
@@ -16938,7 +16938,7 @@ var app = (function () {
     			i = element("i");
     			t = text(" Cargar datos iniciales");
     			attr_dev(i, "class", "fa fa-refresh");
-    			add_location(i, file$j, 354, 59, 10529);
+    			add_location(i, file$j, 357, 59, 10599);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, i, anchor);
@@ -16954,7 +16954,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$6.name,
     		type: "slot",
-    		source: "(355:1) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\">",
+    		source: "(358:1) <Button outline color=\\\"primary\\\" on:click=\\\"{ReloadTable}\\\">",
     		ctx
     	});
 
@@ -17048,8 +17048,8 @@ var app = (function () {
     			attr_dev(div, "role", "alert");
     			attr_dev(div, "id", "div_alert");
     			set_style(div, "display", "none");
-    			add_location(div, file$j, 268, 1, 7162);
-    			add_location(main, file$j, 267, 0, 7153);
+    			add_location(div, file$j, 271, 1, 7232);
+    			add_location(main, file$j, 270, 0, 7223);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17267,6 +17267,7 @@ var app = (function () {
     			console.log("Contados " + initialGoalscorers.length + " datos de goleadores.");
     			ReloadTableAlert$2();
     			getGoalscorers();
+    			location.reload();
     		} else {
     			console.log("No se han cargado correctamente los datos iniciales");
     		}
@@ -17351,6 +17352,7 @@ var app = (function () {
     			if (res.ok) {
     				getGoalscorers();
     				deleteAlert$2();
+    				location.reload();
     			} else if (res.status == 404) {
     				errorAlert$4("El elemento que intentas borrar no existe");
     			} else {
@@ -17366,6 +17368,7 @@ var app = (function () {
     			if (res.ok) {
     				getGoalscorers();
     				deleteAllAlert$2();
+    				location.reload();
     			} else {
     				errorAlert$4("Error al borrar todos los elementos");
     			}
@@ -17587,26 +17590,26 @@ var app = (function () {
     			div = element("div");
     			t1 = space();
     			p = element("p");
-    			p.textContent = "Chart showing browser market shares. Clicking on individual columns\r\n        brings up more detailed data. This chart makes use of the drilldown\r\n        feature in Highcharts to easily switch between datasets.";
+    			p.textContent = "Gráfico que muestra los goles marcados por los máximos goleadores.";
     			if (script0.src !== (script0_src_value = "https://code.highcharts.com/highcharts.js")) attr_dev(script0, "src", script0_src_value);
-    			add_location(script0, file$k, 338, 4, 8792);
+    			add_location(script0, file$k, 90, 4, 2080);
     			if (script1.src !== (script1_src_value = "https://code.highcharts.com/modules/data.js")) attr_dev(script1, "src", script1_src_value);
-    			add_location(script1, file$k, 339, 4, 8863);
+    			add_location(script1, file$k, 91, 4, 2151);
     			if (script2.src !== (script2_src_value = "https://code.highcharts.com/modules/drilldown.js")) attr_dev(script2, "src", script2_src_value);
-    			add_location(script2, file$k, 340, 4, 8936);
+    			add_location(script2, file$k, 92, 4, 2224);
     			if (script3.src !== (script3_src_value = "https://code.highcharts.com/modules/exporting.js")) attr_dev(script3, "src", script3_src_value);
-    			add_location(script3, file$k, 341, 4, 9014);
+    			add_location(script3, file$k, 93, 4, 2302);
     			if (script4.src !== (script4_src_value = "https://code.highcharts.com/modules/export-data.js")) attr_dev(script4, "src", script4_src_value);
-    			add_location(script4, file$k, 342, 4, 9092);
+    			add_location(script4, file$k, 94, 4, 2380);
     			if (script5.src !== (script5_src_value = "https://code.highcharts.com/modules/accessibility.js")) attr_dev(script5, "src", script5_src_value);
-    			add_location(script5, file$k, 343, 4, 9172);
+    			add_location(script5, file$k, 95, 4, 2460);
     			attr_dev(div, "id", "container");
-    			add_location(div, file$k, 348, 4, 9336);
+    			add_location(div, file$k, 100, 4, 2624);
     			attr_dev(p, "class", "highcharts-description");
-    			add_location(p, file$k, 349, 4, 9368);
+    			add_location(p, file$k, 101, 4, 2656);
     			attr_dev(figure, "class", "highcharts-figure");
-    			add_location(figure, file$k, 347, 0, 9296);
-    			add_location(main, file$k, 345, 0, 9286);
+    			add_location(figure, file$k, 99, 0, 2584);
+    			add_location(main, file$k, 97, 0, 2574);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -17625,7 +17628,7 @@ var app = (function () {
     			append_dev(figure, t1);
     			append_dev(figure, p);
     			if (remount) dispose();
-    			dispose = listen_dev(script5, "load", loadGraph$3, false, false, false);
+    			dispose = listen_dev(script5, "load", /*loadGraph*/ ctx[0], false, false, false);
     		},
     		p: noop,
     		i: noop,
@@ -17654,142 +17657,75 @@ var app = (function () {
     	return block;
     }
 
-    async function loadGraph$3() {
-    	// Create the chart
-    	Highcharts.chart("container", {
-    		chart: { type: "column" },
-    		title: {
-    			text: "Browser market shares. January, 2018"
-    		},
-    		subtitle: {
-    			text: "Click the columns to view versions. Source: <a href=\"http://statcounter.com\" target=\"_blank\">statcounter.com</a>"
-    		},
-    		accessibility: { announceNewData: { enabled: true } },
-    		xAxis: { type: "category" },
-    		yAxis: {
-    			title: { text: "Total percent market share" }
-    		},
-    		legend: { enabled: false },
-    		plotOptions: {
-    			series: {
-    				borderWidth: 0,
-    				dataLabels: { enabled: true, format: "{point.y:.1f}%" }
-    			}
-    		},
-    		tooltip: {
-    			headerFormat: "<span style=\"font-size:11px\">{series.name}</span><br>",
-    			pointFormat: "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>"
-    		},
-    		series: [
-    			{
-    				name: "Browsers",
-    				colorByPoint: true,
-    				data: [
-    					{
-    						name: "Chrome",
-    						y: 62.74,
-    						drilldown: "Chrome"
-    					},
-    					{
-    						name: "Firefox",
-    						y: 10.57,
-    						drilldown: "Firefox"
-    					},
-    					{
-    						name: "Internet Explorer",
-    						y: 7.23,
-    						drilldown: "Internet Explorer"
-    					},
-    					{
-    						name: "Safari",
-    						y: 5.58,
-    						drilldown: "Safari"
-    					},
-    					{ name: "Edge", y: 4.02, drilldown: "Edge" },
-    					{
-    						name: "Opera",
-    						y: 1.92,
-    						drilldown: "Opera"
-    					},
-    					{ name: "Other", y: 7.62, drilldown: null }
-    				]
-    			}
-    		],
-    		drilldown: {
+    function instance$l($$self, $$props, $$invalidate) {
+    	let BASE_API_URL = "/api/v3";
+
+    	/*
+    async function getCountries(){
+        MyData = [];
+        countries = [];
+        const res = await fetch(BASE_API_URL + "/goalscorers");
+        MyData = await resData.json();
+        if(res.ok){
+            const json = await res.json();
+            goalscorers = json;
+            for(i = 0; i < goalscorers.length; i++){
+                if(countries.includes(goalscorers[i].country)){
+
+                }else{
+                    countries.push(goalscorers[i].country);
+                }
+            }
+        }
+
+    }
+    getCountries();
+    */
+    	async function loadGraph() {
+    		let MyData = [];
+    		let MyDataGraph = [];
+    		const resData = await fetch(BASE_API_URL + "/goalscorers");
+    		MyData = await resData.json();
+
+    		MyData.forEach(x => {
+    			MyDataGraph.push({
+    				name: x.name,
+    				y: x.goals,
+    				drilldown: "null"
+    			});
+    		});
+
+    		// Create the chart
+    		Highcharts.chart("container", {
+    			chart: { type: "column" },
+    			title: {
+    				text: "Goles de los máximos goleadores de la UCL"
+    			},
+    			accessibility: { announceNewData: { enabled: true } },
+    			xAxis: { type: "category" },
+    			yAxis: { title: { text: "Goles totales" } },
+    			legend: { enabled: false },
+    			plotOptions: {
+    				series: {
+    					borderWidth: 0,
+    					dataLabels: { enabled: true, format: "{point.y}" }
+    				}
+    			},
+    			tooltip: {
+    				headerFormat: "<span style=\"font-size:11px\">{series.name}</span><br>",
+    				pointFormat: "<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y}</b> goles desde que debutó.<br/>"
+    			},
     			series: [
     				{
-    					name: "Chrome",
-    					id: "Chrome",
-    					data: [
-    						["v65.0", 0.1],
-    						["v64.0", 1.3],
-    						["v63.0", 53.02],
-    						["v62.0", 1.4],
-    						["v61.0", 0.88],
-    						["v60.0", 0.56],
-    						["v59.0", 0.45],
-    						["v58.0", 0.49],
-    						["v57.0", 0.32],
-    						["v56.0", 0.29],
-    						["v55.0", 0.79],
-    						["v54.0", 0.18],
-    						["v51.0", 0.13],
-    						["v49.0", 2.16],
-    						["v48.0", 0.13],
-    						["v47.0", 0.11],
-    						["v43.0", 0.17],
-    						["v29.0", 0.26]
-    					]
-    				},
-    				{
-    					name: "Firefox",
-    					id: "Firefox",
-    					data: [
-    						["v58.0", 1.02],
-    						["v57.0", 7.36],
-    						["v56.0", 0.35],
-    						["v55.0", 0.11],
-    						["v54.0", 0.1],
-    						["v52.0", 0.95],
-    						["v51.0", 0.15],
-    						["v50.0", 0.1],
-    						["v48.0", 0.31],
-    						["v47.0", 0.12]
-    					]
-    				},
-    				{
-    					name: "Internet Explorer",
-    					id: "Internet Explorer",
-    					data: [["v11.0", 6.2], ["v10.0", 0.29], ["v9.0", 0.27], ["v8.0", 0.47]]
-    				},
-    				{
-    					name: "Safari",
-    					id: "Safari",
-    					data: [
-    						["v11.0", 3.39],
-    						["v10.1", 0.96],
-    						["v10.0", 0.36],
-    						["v9.1", 0.54],
-    						["v9.0", 0.13],
-    						["v5.1", 0.2]
-    					]
-    				},
-    				{
-    					name: "Edge",
-    					id: "Edge",
-    					data: [["v16", 2.6], ["v15", 0.92], ["v14", 0.4], ["v13", 0.1]]
-    				},
-    				{
-    					name: "Opera",
-    					id: "Opera",
-    					data: [["v50.0", 0.96], ["v49.0", 0.82], ["v12.1", 0.14]]
+    					name: "Goleadores",
+    					colorByPoint: true,
+    					dataSorting: { enabled: true },
+    					data: MyDataGraph
     				}
     			]
-    		}
-    	});
-    }
+    		});
+    	}
 
-    function instance$l($$self, $$props, $$invalidate) {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -17798,8 +17734,17 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("MyGraph", $$slots, []);
-    	$$self.$capture_state = () => ({ loadGraph: loadGraph$3 });
-    	return [];
+    	$$self.$capture_state = () => ({ BASE_API_URL, loadGraph });
+
+    	$$self.$inject_state = $$props => {
+    		if ("BASE_API_URL" in $$props) BASE_API_URL = $$props.BASE_API_URL;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [loadGraph];
     }
 
     class MyGraph extends SvelteComponentDev {
@@ -17839,8 +17784,8 @@ var app = (function () {
     			create_component(mygraph.$$.fragment);
     			attr_dev(h1, "class", "display-4");
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file$l, 6, 1, 133);
-    			add_location(main, file$l, 5, 0, 124);
+    			add_location(h1, file$l, 6, 1, 134);
+    			add_location(main, file$l, 5, 0, 125);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

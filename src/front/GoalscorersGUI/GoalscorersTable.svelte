@@ -48,6 +48,7 @@
 			console.log("Contados " + initialGoalscorers.length + " datos de goleadores.");
 			ReloadTableAlert();
 			getGoalscorers();
+			location.reload();
 		} else {
 			console.log("No se han cargado correctamente los datos iniciales")
 		}
@@ -142,6 +143,7 @@
 			if (res.ok){
 				getGoalscorers();
 				deleteAlert();
+				location.reload();
 			}else if(res.status==404){
 				errorAlert("El elemento que intentas borrar no existe");
 			}else{
@@ -158,6 +160,7 @@
 			if(res.ok){
 			getGoalscorers();
 			deleteAllAlert();
+			location.reload();
 			}else{
 				errorAlert("Error al borrar todos los elementos");
 			}
