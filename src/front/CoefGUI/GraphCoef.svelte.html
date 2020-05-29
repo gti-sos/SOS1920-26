@@ -11,7 +11,7 @@
         const resData = await fetch(BASE_API_URL + "/global-coef")
         MyData = await resData.json();
         MyData.forEach( (x) => {
-                MyDataGraph.push({name: x.team + " " + x.year, data: [parseInt(x.coefficient), parseInt(x.fed), parseInt(x.classification)], pointPlacement: 'on'});
+                MyDataGraph.push({name: x.team + " " + x.year, data: [parseFloat(x.coefficient), parseFloat(x.fed), parseInt(x.classification)], pointPlacement: 'on'});
             });
         
         Highcharts.chart('container', {
