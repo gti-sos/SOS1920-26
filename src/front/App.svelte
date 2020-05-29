@@ -13,6 +13,7 @@
 	import globalTransfers from './TransfersGUI/App.svelte.html'; 
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte.html';
 	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte.html';
+	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte.html';
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
@@ -41,6 +42,7 @@
 
 
 		"/global-transfers/graph": GraphTransfer,
+		"/global-transfers/graph2": GraphTransfer2,
 
 
 
