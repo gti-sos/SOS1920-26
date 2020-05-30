@@ -31,6 +31,7 @@
   "homepage": "https://github.com/gti-sos/SOS1920-26#readme",
   "dependencies": {
     "cool-ascii-faces": "^1.3.4",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "graph": "^0.2.0",
     "heroku": "^7.39.0",
