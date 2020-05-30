@@ -22,6 +22,7 @@
 
 //INTEGRACIONES DIEGO
 	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
+	import IntegrationsTransferG8 from './TransfersGUI/Integrations1.svelte';
 
 //FIN INTEGRACIONES	
 
@@ -57,6 +58,7 @@
 		//INTEGRACIONES DIEGO
 		
 		"/Integrations/global-transfers": IntegrationsTransfer,
+		"/Integrations/global-transfers/IntegrationsG8": IntegrationsTransferG8,
 
 		//FIN INTEGRACIONES
 
