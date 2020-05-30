@@ -1,5 +1,5 @@
 <script>
-	import CoefTable from './CoefTable.svelte.html';
+	import CoefTable from './CoefTable.svelte';
 	//import GraphCoef from './GraphCoef.svelte.html';
 </script>
 
