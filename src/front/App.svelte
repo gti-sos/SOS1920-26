@@ -10,10 +10,10 @@
 	import GraphCoef from './CoefGUI/GraphCoef.svelte';
 	import GraphCoef2 from './CoefGUI/GraphCoef2.svelte';
 //API TRANSFERS------------------------------------------------------------
-	import globalTransfers from './TransfersGUI/App.svelte.html'; 
-	import EditTransfer from './TransfersGUI/EditTransfer.svelte.html';
-	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte.html';
-	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte.html';
+	import globalTransfers from './TransfersGUI/App.svelte'; 
+	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
+	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte';
+	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte';
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
