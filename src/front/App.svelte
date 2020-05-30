@@ -1,7 +1,7 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Home from './Home.svelte';
-	//import Integrations from './Integrations.svelte';
+	import Integrations from './Integrations.svelte';
 	//import Analytics from './Analytics.svelte';  
 	import NotFound from './NotFound.svelte';
 //API COEF-----------------------------------------------------------------
@@ -20,14 +20,20 @@
 	import GraphGoalscorers from './GoalscorersGUI/GraphGoalscorers.svelte';
 	import GraphGoalscorers2 from './GoalscorersGUI/GraphGoalscorers2.svelte';
 
+//INTEGRACIONES DIEGO
+	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
 
-	
+//FIN INTEGRACIONES	
 
 
 	const routes = {
 		"/": Home,
 		//"/analytics": Analytics,
-		//"/integrations": Integrations,
+		"/integrations": Integrations,
+
+
+	
+	 
 
 
 		"/global-coef/:team/:year": EditCoef,
@@ -46,6 +52,14 @@
 
 		"/global-transfers/graph": GraphTransfer,
 		"/global-transfers/graph2": GraphTransfer2,
+
+
+		//INTEGRACIONES DIEGO
+		
+		"/Integrations/global-transfers": IntegrationsTransfer,
+
+		//FIN INTEGRACIONES
+
 
 
 

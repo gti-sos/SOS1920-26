@@ -1,12 +1,4 @@
 {"name":"Henry","country":"France","debut":1993,"goals":51,"matches":115,"teams":3,"_id":"51e1fAV6b2q4xtdJ"}
 {"name":"Messi","country":"Argentina","debut":2004,"goals":114,"matches":136,"teams":1,"_id":"Ci6OB1Xg544bz0ek"}
-{"name":"Benzema","country":"France","debut":2005,"goals":64,"matches":115,"teams":2,"_id":"FBp5c2bqR9IX4oC5"}
-{"name":"Cristiano","country":"Portugal","debut":2002,"goals":128,"matches":167,"teams":3,"_id":"fgEZx1PdS8eksUJQ"}
-{"name":"vanNistelrooy","country":"Holland","debut":1998,"goals":60,"matches":81,"teams":3,"_id":"oDC80w2FltHS4qfP"}
 {"name":"Shevchenko","country":"Ukraine","debut":1993,"goals":59,"matches":116,"teams":3,"_id":"rePnnic7GWXTXuNV"}
 {"name":"Raul","country":"Spain","debut":1995,"goals":71,"matches":144,"teams":2,"_id":"sCOmSnM06bvcWV3M"}
-{"name":"Lewandowski","country":"Poland","debut":2011,"goals":64,"matches":86,"teams":2,"_id":"xZZOcYQW0pvdS7A3"}
-{"$$deleted":true,"_id":"xZZOcYQW0pvdS7A3"}
-{"$$deleted":true,"_id":"FBp5c2bqR9IX4oC5"}
-{"$$deleted":true,"_id":"fgEZx1PdS8eksUJQ"}
-{"$$deleted":true,"_id":"oDC80w2FltHS4qfP"}

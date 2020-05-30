@@ -4,12 +4,6 @@
     
     const URL_BASE = "api/v3/global-transfers";
     
-/* Las integraciones que se van a realizar son las siguientes:
-    Grupo 05  ---> (Cors)      https://sos1920-05.herokuapp.com/api/v1/books-exports
-    Grupo 26  ---> (Proxy)     https://sos1920-26.herokuapp.com/api/v2/global-coef
-    Grupo 21  ---> (Cors)      https://sos1920-21.herokuapp.com/api/v2/traffic-injuries
-    Grupo 01  ---> (Cors)      https://sos1920-01.herokuapp.com/api/v2/emigrants-stats
-*/
 
 /* Las integraciones que se van a realizar son las siguientes:
     Grupo 08  ---> (Cors)      http://sos1920-08.herokuapp.com/api/v2/ucl_stats
@@ -27,7 +21,7 @@
     let country = Array.from(new Set(MyData.map((d) => {return d.country;})));
     let signing = Array.from(new Set(MyData.map((d) => {return d.signing;})));
     let sale = Array.from(new Set(MyData.map((d) => {return d.sale;})));
-    //let balance = Array.from(new Set(MyData.map((d) => {return d.balance;})));
+    let balance = Array.from(new Set(MyData.map((d) => {return d.balance;})));
     
      //Integracion con el grupo 08 por CORS
     const URL_BASE_grupo_08 = "/api/v2/ucl_stats";
@@ -86,7 +80,7 @@
             text: 'Datos del mercado de fichajes'
         },
         subtitle: {
-            text: 'Fuente: <a href="https://www.transfermarkt.es/transfers/einnahmenausgaben/statistik/plus/0?ids=a&sa=&saison_id=2018&saison_id_bis=2019&land_id=&nat=&pos=&altersklasse=&w_s=&leihe=&intern=0">Wikipedia.org</a>'
+            text: 'Fuente: <a href="https://www.transfermarkt.es/transfers/einnahmenausgaben/statistik/plus/0?ids=a&sa=&saison_id=2018&saison_id_bis=2019&land_id=&nat=&pos=&altersklasse=&w_s=&leihe=&intern=0"> TRANSFERMARKT</a>'
        
         },
         xAxis: {
@@ -98,7 +92,7 @@
         yAxis: {
             min: 0,
             title: {
-                text: 'Suicidios por cada 100.000 personas.',
+                text: 'Transacciones',
                 align: 'high'
             },
             labels: {
@@ -106,7 +100,7 @@
             }
         },
         tooltip: {
-            valueSuffix: 'Personas'
+            valueSuffix: ' Jugadores'
         },
         plotOptions: {
             bar: {
@@ -131,14 +125,11 @@
             enabled: false
         },
         series: [{
-            name: 'Hombres',
-            data: avg_ms
+            name: 'Fichajes',
+            data: signing
         }, {
-            name: 'Mujeres',
-            data: avg_wms
-        }, {
-            name: 'Matrimonios',
-            data: marriages
+            name: 'Ventas',
+            data: sale
         }]
     });
     }
@@ -154,13 +145,12 @@
     </svelte:head>
     
     <main>
-        <h2>Integraciones con SOS1920</h2>
+        <h2>Integraciones con SOS1920-26</h2>
         <Button color="info" on:click="{pop}">Atrás</Button>
         <figure class="highcharts-figure">
             <div id="container"></div>
             <p class="highcharts-description">
-                El gráfico de barras muestra un estudio de personas que se han suicidado por cada 100.000 habitantes
-                en distintos países.
+                Gráfico con el número de transacciones de distintos equipos
             </p>
         </figure>
     </main>
