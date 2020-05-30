@@ -2,12 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const dataStore = require("nedb");
 const path = require("path");
-const cors =require("cors");
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 1500;
 
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 
 //----------------------------------coef
 const coefAPIv1 = require(path.join(__dirname, "./src/back/coefAPI/v1"));
