@@ -1,5 +1,6 @@
 <script>
-
+import { pop } from "svelte-spa-router";
+import Button from "sveltestrap/src/Button.svelte";
 let BASE_API_URL = "/api/v3";
 /*
 async function getCountries(){
@@ -83,9 +84,6 @@ Highcharts.chart('container', {
     ]
 });
 }
-/*
-document.getElementById("demo").innerHTML = countries;
-*/
 </script>
 <svelte:head>
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -103,5 +101,5 @@ document.getElementById("demo").innerHTML = countries;
         Gráfico que muestra los goles marcados por los máximos goleadores.
     </p>
 </figure>
-
+<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>

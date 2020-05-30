@@ -17,6 +17,8 @@
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
+	import GraphGoalscorers from './GoalscorersGUI/GraphGoalscorers.svelte';
+	import GraphGoalscorers2 from './GoalscorersGUI/GraphGoalscorers2.svelte';
 
 
 	
@@ -39,7 +41,8 @@
 		
 		"/goalscorers/:name":EditGoalscorer,
 		"/goalscorersAPI":goalscorers,  
-
+		"/goalscorers/graphs/graph1": GraphGoalscorers,
+		"/goalscorers/graphs/graph2": GraphGoalscorers2,
 
 		"/global-transfers/graph": GraphTransfer,
 		"/global-transfers/graph2": GraphTransfer2,
