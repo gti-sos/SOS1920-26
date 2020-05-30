@@ -58,7 +58,7 @@
         const res = await fetch(BASE_API_URL + "/goalscorers/" + params.name, {
             method: "PUT",
             body: JSON.stringify({
-                name: updatedName,
+                name: params.name,
                 debut: parseInt(updatedDebut),
                 country: updatedCountry,
                 goals: updatedGoals,
@@ -115,7 +115,7 @@
 <main>
     <div role="alert" id="div_alert" style="display: none;">
 	</div>
-    <h3>Editar goleador <strong> params.name</strong></h3>
+    <h3>Editar goleador <strong>{params.name}</strong></h3>
     {#await goalscorer}
         Cargando goalscorers...
     {:then goalscorer}

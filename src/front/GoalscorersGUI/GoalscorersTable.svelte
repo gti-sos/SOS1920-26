@@ -353,5 +353,6 @@
 	<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 	<Button outline on:click={deleteGoalscorers} color="danger"> <i class="fa fa-trash" aria-hidden="true"></i> Borrar todo </Button>
 	<Button outline color="primary" on:click="{ReloadTable}"> <i class="fa fa-refresh"></i> Cargar datos iniciales </Button>
-
+	<Button color="info" type="button" class="btn btn-primary"  onclick="window.location.href='#/goalscorers/graphs/graph1'" style="margin-left: 20px;"> Gráfica Goleadores [Highchart]</Button>
+	<Button color="info" type="button" class="btn btn-primary"  onclick="window.location.href='#/goalscorers/graphs/graph2'" style="margin-left: 40px;"> Gráfica Goleadores [Fusioncharts]</Button>
 </main>
