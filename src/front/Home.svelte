@@ -6,7 +6,7 @@
 		<button type="button" class="btn btn-outline-success" onclick="window.location.href='#/goalscorersAPI'"><i class="fas fa-futbol" aria-hidden="true"></i> API de goleadores</button>
 		<hr>
 		<div class="div">
-			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/Integrations'"><i class="fas fa-info" aria-hidden="true"></i> Integraciones</button>
+			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/integrations'"><i class="fas fa-info" aria-hidden="true"></i> Integraciones</button>
 		</div>
 
 	</div>
