@@ -1,7 +1,5 @@
 <script>
 	import GoalscorersTable from './GoalscorersTable.svelte';
-//	import Graph1 from './GraphGoalscorers.svelte';
-//	import Graph2 from './GraphGoalscorers2.svelte';
 </script>
 
 <main>

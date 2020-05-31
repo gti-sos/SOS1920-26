@@ -2,104 +2,118 @@
 import { pop } from "svelte-spa-router";
 import Button from "sveltestrap/src/Button.svelte";
 let BASE_API_URL = "/api/v3";
-/*
-async function getCountries(){
-    MyData = [];
-    countries = [];
-    const res = await fetch(BASE_API_URL + "/goalscorers");
-    MyData = await resData.json();
-    if(res.ok){
-        const json = await res.json();
-        goalscorers = json;
-        for(i = 0; i < goalscorers.length; i++){
-            if(countries.includes(goalscorers[i].country)){
-
-            }else{
-                countries.push(goalscorers[i].country);
-            }
-        }
-    }
-
-}
-getCountries();
-*/
 
 async function loadGraph() {
-    let MyData = [];
-        let MyDataGraph = [];
-        const resData = await fetch(BASE_API_URL + "/goalscorers");
-        MyData = await resData.json();
-        MyData.forEach( (x) => {
-            MyDataGraph.push({name: x.name, y: x.goals, drilldown: 'null'});
-        });
-// Create the chart
-Highcharts.chart('container', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Goles de los máximos goleadores de la UCL'
-    },
-    accessibility: {
-        announceNewData: {
-            enabled: true
-        }
-    },
-    xAxis: {
-        type: 'category'
-    },
-    yAxis: {
-        title: {
-            text: 'Goles totales'
-        }
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+  width = 445 - margin.left - margin.right,
+  height = 445 - margin.top - margin.bottom;
 
-    },
-    legend: {
-        enabled: false
-    },
-    plotOptions: {
-        series: {
-            borderWidth: 0,
-            dataLabels: {
-                enabled: true,
-                format: '{point.y}'
-            }
-        }
-    },
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
 
-    tooltip: {
-        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> goles desde que debutó.<br/>'
-    },
+// read json data
+d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram_full.json", function(data) {
 
-    series:  [
-        {
-            name: "Goleadores",
-            colorByPoint: true, 
-            dataSorting: {
-                enabled: true
-            },
-            data: MyDataGraph
-        }
-    ]
-});
+  // Give the data to this cluster layout:
+  var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
+
+  // Then d3.treemap computes the position of each element of the hierarchy
+  d3.treemap()
+    .size([width, height])
+    .paddingTop(28)
+    .paddingRight(7)
+    .paddingInner(3)      // Padding between each rectangle
+    //.paddingOuter(6)
+    //.padding(20)
+    (root)
+
+  // prepare a color scale
+  var color = d3.scaleOrdinal()
+    .domain(["boss1", "boss2", "boss3"])
+    .range([ "#402D54", "#D18975", "#8FD175"])
+
+  // And a opacity scale
+  var opacity = d3.scaleLinear()
+    .domain([10, 30])
+    .range([.5,1])
+
+  // use this information to add rectangles:
+  svg
+    .selectAll("rect")
+    .data(root.leaves())
+    .enter()
+    .append("rect")
+      .attr('x', function (d) { return d.x0; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', function (d) { return d.x1 - d.x0; })
+      .attr('height', function (d) { return d.y1 - d.y0; })
+      .style("stroke", "black")
+      .style("fill", function(d){ return color(d.parent.data.name)} )
+      .style("opacity", function(d){ return opacity(d.data.value)})
+
+  // and to add the text labels
+  svg
+    .selectAll("text")
+    .data(root.leaves())
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
+      .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
+      .text(function(d){ return d.data.name.replace('mister_','') })
+      .attr("font-size", "19px")
+      .attr("fill", "white")
+
+  // and to add the text labels
+  svg
+    .selectAll("vals")
+    .data(root.leaves())
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
+      .attr("y", function(d){ return d.y0+35})    // +20 to adjust position (lower)
+      .text(function(d){ return d.data.value })
+      .attr("font-size", "11px")
+      .attr("fill", "white")
+
+  // Add title for the 3 groups
+  svg
+    .selectAll("titles")
+    .data(root.descendants().filter(function(d){return d.depth==1}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0})
+      .attr("y", function(d){ return d.y0+21})
+      .text(function(d){ return d.data.name })
+      .attr("font-size", "19px")
+      .attr("fill",  function(d){ return color(d.data.name)} )
+
+  // Add title for the 3 groups
+  svg
+    .append("text")
+      .attr("x", 0)
+      .attr("y", 14)    // +20 to adjust position (lower)
+      .text("Three group leaders and 14 employees")
+      .attr("font-size", "19px")
+      .attr("fill",  "grey" )
+
+})
 }
 </script>
-<svelte:head>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/data.js"></script>
-    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
-</svelte:head>
-<main>
 
-<figure class="highcharts-figure">
-    <div id="container"></div>
-    <p class="highcharts-description">
-        Gráfico que muestra los goles marcados por los máximos goleadores.
-    </p>
-</figure>
+<svelte:head>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js" on:load={loadGraph}></script>
+</svelte:head>
+
+<main>
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
 <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 </main>
