@@ -1,119 +1,60 @@
 <script>
-import { pop } from "svelte-spa-router";
-import Button from "sveltestrap/src/Button.svelte";
-let BASE_API_URL = "/api/v3";
+  import { pop } from "svelte-spa-router";
+  import Button from "sveltestrap/src/Button.svelte";
+  let BASE_API_URL = "/api/v3";
+  function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    return bgColor;
+  }
 
-async function loadGraph() {
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 10, bottom: 10, left: 10},
-  width = 445 - margin.left - margin.right,
-  height = 445 - margin.top - margin.bottom;
+  async function loadGraph() {
+    let MyData = [];
+    let MyNames = [];
+    let MyGoals = [];
+    let MyBackground = [];
+    const resData = await fetch(BASE_API_URL + "/goalscorers");
+    MyData = await resData.json();
+    MyData.forEach(x => {
+      MyNames.push(x.name);
+      MyGoals.push(x.goals);
+      MyBackground.push(random_bg_color());
+    });
+    var data = {
+      datasets: [
+        {
+          data: MyGoals,
+          backgroundColor: MyBackground
+        }
+      ],
+      labels: MyNames
+    };
 
-// append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
-.append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
-.append("g")
-  .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
-
-// read json data
-d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram_full.json", function(data) {
-
-  // Give the data to this cluster layout:
-  var root = d3.hierarchy(data).sum(function(d){ return d.value}) // Here the size of each leave is given in the 'value' field in input data
-
-  // Then d3.treemap computes the position of each element of the hierarchy
-  d3.treemap()
-    .size([width, height])
-    .paddingTop(28)
-    .paddingRight(7)
-    .paddingInner(3)      // Padding between each rectangle
-    //.paddingOuter(6)
-    //.padding(20)
-    (root)
-
-  // prepare a color scale
-  var color = d3.scaleOrdinal()
-    .domain(["boss1", "boss2", "boss3"])
-    .range([ "#402D54", "#D18975", "#8FD175"])
-
-  // And a opacity scale
-  var opacity = d3.scaleLinear()
-    .domain([10, 30])
-    .range([.5,1])
-
-  // use this information to add rectangles:
-  svg
-    .selectAll("rect")
-    .data(root.leaves())
-    .enter()
-    .append("rect")
-      .attr('x', function (d) { return d.x0; })
-      .attr('y', function (d) { return d.y0; })
-      .attr('width', function (d) { return d.x1 - d.x0; })
-      .attr('height', function (d) { return d.y1 - d.y0; })
-      .style("stroke", "black")
-      .style("fill", function(d){ return color(d.parent.data.name)} )
-      .style("opacity", function(d){ return opacity(d.data.value)})
-
-  // and to add the text labels
-  svg
-    .selectAll("text")
-    .data(root.leaves())
-    .enter()
-    .append("text")
-      .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-      .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
-      .text(function(d){ return d.data.name.replace('mister_','') })
-      .attr("font-size", "19px")
-      .attr("fill", "white")
-
-  // and to add the text labels
-  svg
-    .selectAll("vals")
-    .data(root.leaves())
-    .enter()
-    .append("text")
-      .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-      .attr("y", function(d){ return d.y0+35})    // +20 to adjust position (lower)
-      .text(function(d){ return d.data.value })
-      .attr("font-size", "11px")
-      .attr("fill", "white")
-
-  // Add title for the 3 groups
-  svg
-    .selectAll("titles")
-    .data(root.descendants().filter(function(d){return d.depth==1}))
-    .enter()
-    .append("text")
-      .attr("x", function(d){ return d.x0})
-      .attr("y", function(d){ return d.y0+21})
-      .text(function(d){ return d.data.name })
-      .attr("font-size", "19px")
-      .attr("fill",  function(d){ return color(d.data.name)} )
-
-  // Add title for the 3 groups
-  svg
-    .append("text")
-      .attr("x", 0)
-      .attr("y", 14)    // +20 to adjust position (lower)
-      .text("Three group leaders and 14 employees")
-      .attr("font-size", "19px")
-      .attr("fill",  "grey" )
-
-})
-}
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var chart = new Chart(ctx, {
+      data: data,
+      type: "polarArea"
+    });
+  }
 </script>
 
 <svelte:head>
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js" on:load={loadGraph}></script>
-</svelte:head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" on:load={loadGraph}>
 
+  </script>
+</svelte:head>
 <main>
-<!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
-<Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
+  <figure>
+  <p align="center">
+  Gráfico que muestra los goles marcados por los máximos goleadores.
+  </p>
+  </figure>
+  <canvas id="myChart" />
+
+  <Button outline color="secondary" on:click={pop}>
+    <i class="fas fa-arrow-circle-left" />
+    Atrás
+  </Button>
 </main>

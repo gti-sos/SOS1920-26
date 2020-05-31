@@ -2,28 +2,6 @@
 import { pop } from "svelte-spa-router";
 import Button from "sveltestrap/src/Button.svelte";
 let BASE_API_URL = "/api/v3";
-/*
-async function getCountries(){
-    MyData = [];
-    countries = [];
-    const res = await fetch(BASE_API_URL + "/goalscorers");
-    MyData = await resData.json();
-    if(res.ok){
-        const json = await res.json();
-        goalscorers = json;
-        for(i = 0; i < goalscorers.length; i++){
-            if(countries.includes(goalscorers[i].country)){
-
-            }else{
-                countries.push(goalscorers[i].country);
-            }
-        }
-    }
-
-}
-getCountries();
-*/
-
 async function loadGraph() {
     let MyData = [];
         let MyDataGraph = [];
