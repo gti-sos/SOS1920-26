@@ -1,5 +1,5 @@
 <script>
-	import TransfersTable from './TransfersTable.svelte.html';
+	import TransfersTable from './TransfersTable.svelte';
 </script>
 
 <main>

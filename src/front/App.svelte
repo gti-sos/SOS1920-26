@@ -1,7 +1,7 @@
 <script>
 	import Router from 'svelte-spa-router';
 	import Home from './Home.svelte';
-	//import Integrations from './Integrations.svelte';
+	import Integrations from './Integrations.svelte';
 	//import Analytics from './Analytics.svelte';  
 	import NotFound from './NotFound.svelte';
 //API COEF-----------------------------------------------------------------
@@ -10,24 +10,31 @@
 	import GraphCoef from './CoefGUI/GraphCoef.svelte';
 	import GraphCoef2 from './CoefGUI/GraphCoef2.svelte';
 //API TRANSFERS------------------------------------------------------------
-	import globalTransfers from './TransfersGUI/App.svelte.html'; 
-	import EditTransfer from './TransfersGUI/EditTransfer.svelte.html';
-	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte.html';
-	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte.html';
+	import globalTransfers from './TransfersGUI/App.svelte'; 
+	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
+	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte';
+	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte';
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
 	import GraphGoalscorers from './GoalscorersGUI/GraphGoalscorers.svelte';
 	import GraphGoalscorers2 from './GoalscorersGUI/GraphGoalscorers2.svelte';
 
+//INTEGRACIONES DIEGO
+	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
+	import IntegrationsTransferG8 from './TransfersGUI/Integrations1.svelte';
 
-	
+//FIN INTEGRACIONES	
 
 
 	const routes = {
 		"/": Home,
 		//"/analytics": Analytics,
-		//"/integrations": Integrations,
+		"/integrations": Integrations,
+
+
+	
+	 
 
 
 		"/global-coef/:team/:year": EditCoef,
@@ -46,6 +53,15 @@
 
 		"/global-transfers/graph": GraphTransfer,
 		"/global-transfers/graph2": GraphTransfer2,
+
+
+		//INTEGRACIONES DIEGO
+		
+		"/Integrations/global-transfers": IntegrationsTransfer,
+		"/Integrations/global-transfers/IntegrationsG8": IntegrationsTransferG8,
+
+		//FIN INTEGRACIONES
+
 
 
 
