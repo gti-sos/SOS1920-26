@@ -8,7 +8,7 @@
 /* Las integraciones que se van a realizar son las siguientes:
     Grupo 01  ---> (Cors)      https://sos1920-01.herokuapp.com/api/v2/emigrants-stats
     Grupo 05  ---> (Cors)      https://sos1920-05.herokuapp.com/api/v1/books-exports
-    Grupo 06  ---> (Cors)      https://sos1920-06.herokuapp.com/api/v1/my-awesome-resource-1/docs   /  https://sos1920-06.herokuapp.com/api/v2/accstats
+    Grupo 06  ---> (Cors)      https://sos1920-06.herokuapp.com/api/v2/accstats
     Grupo 10  ---> (Proxy)     https://sos1920-10.herokuapp.com/api/v3/global-marriages
     Grupo 24  ---> (Cors)      https://sos1920-24.herokuapp.com/api/v2/atc-stats
     Grupo 30  ---> (Proxy)     https://sos1920-30.herokuapp.com/api/v3/indice_de_masa_corporal
