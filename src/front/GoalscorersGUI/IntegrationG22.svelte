@@ -23,7 +23,7 @@
     Highcharts.chart("container", {
       chart: {
         type: "packedbubble",
-        height: "100%"
+        height: "30%"
       },
       title: {
         text: "Gráfica con goleadores de la UCL y sus respectivos goles frente a los puntos obtenidos en F1 cada año por país."
@@ -34,7 +34,7 @@
       },
       plotOptions: {
         packedbubble: {
-          minSize: "30%",
+          minSize: "80%",
           maxSize: "120%",
           zMin: 0,
           zMax: 1000,
@@ -92,11 +92,8 @@
 
   <figure class="highcharts-figure">
     <div id="container" />
-    <p class="highcharts-description">
-      Packed bubble charts are visualizations where the size and optionally the
-      color of the bubbles are used to visualize the data. The positioning of
-      the bubbles is not significant, but is optimized for compactness. Try
-      dragging the bubbles in this chart around, and see the effects.
+    <p class="highcharts-description" align="center">
+      Los goleadores están de un color y los puntos de la F1 de otro color.
     </p>
   </figure>
 

@@ -2,6 +2,7 @@
   import { pop } from "svelte-spa-router";
   import Button from "sveltestrap/src/Button.svelte";
   let BASE_API_URL = "/api/v3";
+  
   function random_bg_color() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
