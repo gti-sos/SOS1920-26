@@ -1,47 +1,45 @@
+
+
+<html lang="EN">
+    <div id="piechart"></div>
+    
+    </html>
+
 <script>
-    import {pop} from "svelte-spa-router";
-    import Button from "sveltestrap/src/Button.svelte";
-    //import { onMount } from "svelte";
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
 
-    //onMount(async () => { });
-
-    async function renderChart() {
+    async function drawChart() {
 
         const BASE_API_URL = "/api/v3/global-coef";
+
         const resData = await fetch(BASE_API_URL);
         let MyData = await resData.json();
-        let MyNumeros = [];
+        console.log(MyData)
 
-
-        var ctx = document.getElementById("myChart").getContext("2d");
+        /* Getting the countries */
         let countries = Array.from(new Set(MyData.map((d) => { return d.country; })));
-        /*MyData = MyData.map((d) => {
-            return [countries.indexOf(d.country), d.year, d["coefficient"]];
-        });*/
-        MyData.forEach(x => {
-            MyNumeros.push(x.coefficient);
+        /* Mapping the data in the right format */
+       
+        MyData = await MyData.map((d) => {
+            return [d.country, d.coefficient, d.year];
         });
 
+        let DataTypes = [["Pais", "coefficient", "Year"]]
+
+        Array.prototype.push.apply(DataTypes, MyData)
 
 
-        var chart = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: countries,
-                datasets: [
-                    {
-                        label: "Coeficientes por países",
-                        backgroundColor: "rgb(255, 99, 132)",
-                        borderColor: "rgb(255, 99, 132)",
-                        data:MyNumeros
-                    }
-                ]
-            },
-            options: {}
-        });
+        console.log(DataTypes)
+
+        var data = google.visualization.arrayToDataTable(DataTypes);
+
+        var options = {
+            title: 'Matrimonios registrados a nivel global'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
     }
-
 </script>
-<button on:click={renderChart}>Visualizar</button>
-<canvas id="myChart"></canvas>
-<main> <button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </button></main>
