@@ -7,7 +7,9 @@
     "start": "node index",
     "test": "npx newman run tests/testGoalscorers-v3.json & npx newman run tests/testCoef-v3.json & npx newman run tests/testTransfers-v3.json",
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
@@ -45,6 +47,8 @@
     "relojs": "^1.0.5",
     "svelte-fusioncharts": "^1.0.0",
     "svelte-spa-router": "^2.2.0",
-    "sveltestrap": "^3.3.3"
-  }
+    "sveltestrap": "^3.3.3",
+    "snyk": "^1.334.0"
+  },
+  "snyk": true
 }
