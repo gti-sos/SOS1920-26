@@ -39,6 +39,7 @@
     "heroku": "^7.39.0",
     "nedb": "^1.8.0",
     "relojs": "^1.0.5",
+    "request": "^2.88.2",
     "svelte-fusioncharts": "^1.0.0",
     "svelte-spa-router": "^2.1.0",
     "sveltestrap": "^3.3.3"

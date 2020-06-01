@@ -24,6 +24,9 @@
 	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
 	import IntegrationsTransferG8 from './TransfersGUI/Integrations1.svelte';
 	import IntegrationsTransferG9 from './TransfersGUI/Integrations2.svelte';
+	import IntegrationsTransferG10 from './TransfersGUI/Integrations3.svelte';
+	import IntegrationsTransferG21 from './TransfersGUI/Integrations4.svelte';
+	import IntegrationsTransferG24 from './TransfersGUI/Integrations5.svelte';
 
 //INTEGRACIONES GOALSCORERS
 	import IntegrationsGoalscorers from './GoalscorersGUI/Integrations.svelte';
@@ -64,6 +67,9 @@
 		"/integrations/global-transfers": IntegrationsTransfer,
 		"/integrations/global-transfers/IntegrationsG8": IntegrationsTransferG8,
 		"/integrations/global-transfers/IntegrationsG9": IntegrationsTransferG9,
+		"/integrations/global-transfers/IntegrationsG10": IntegrationsTransferG10,
+		"/integrations/global-transfers/IntegrationsG21": IntegrationsTransferG21,
+		"/integrations/global-transfers/IntegrationsG24": IntegrationsTransferG24,
 
 		//INTEGRACIONES GOALSCORERS
 		"/integrations/goalscorers": IntegrationsGoalscorers,

@@ -2,30 +2,28 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
   
-    //Grupo 10  ---> (Cors)      https://sos1920-10.herokuapp.com/api/v2/global-divorces
+    //Grupo 24  ---> (Proxy)      https://sos1920-24.herokuapp.com/api/v2/univregs-stats
   
   
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-transfers";
-      const BASE_API_URL_10 = "https://sos1920-10.herokuapp.com/api/v2/global-divorces";
+      const BASE_API_URL_24 = "/api/v2/univregs-stats";
       
   
       const resData = await fetch(BASE_API_URL);
-      const resData10 = await fetch(BASE_API_URL_10);
-
+      const resData24 = await fetch(BASE_API_URL_24);
       let MyDataGraph = [];
-      let DataGraph10 = [];
+      let DataGraph24 = [];
   
       let MyData = await resData.json();
-      let Data10 = await resData10.json();
-      console.log(Data10);
+      let Data24 = await resData24.json();
   
       MyData.forEach(x => {
         MyDataGraph.push({ name: x.team + " " + x.year, value: x.balance});
       });
   
-      Data10.forEach(x => {
-          DataGraph10.push({name: x.country + " " + x.year, value: x.divorce});
+      Data24.forEach(x => {
+          DataGraph24.push({name: x.community + " " + x.year, value: x.univreg_gob});
       });
   
   
@@ -35,13 +33,12 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el número de divorcios por país y año"
+          text: "Integración entre el balance de los equipos en el mercado de fichajes, y la demanda segun gobierno y año de las plazas universitarias en Andalucía"
         },
         tooltip: {
           useHTML: true,
           pointFormat: "<b>{point.name}:</b> {point.value}"
         },
-        
         plotOptions: {
           packedbubble: {
             minSize: "80%",
@@ -73,15 +70,15 @@
             name: "Balance total",
             data: MyDataGraph,
             tooltip: {
-                  valueSuffix: ' M'
-          },
+                    valueSuffix: ' M'
+            }
           },
           {
-            name: "Divorcios en ese año",
-            data: DataGraph10, 
+            name: "Demanda según gobierno",
+            data: DataGraph24,
             tooltip: {
-                  valueSuffix: ' Divorcios'
-          },
+                    valueSuffix: ' demandas'
+            }
           }
         ]
       });
@@ -109,7 +106,7 @@
     <figure class="highcharts-figure">
       <div id="container" />
       <p class="highcharts-description">
-          <a href="https://sos1920-10.herokuapp.com/api/v2/global-divorces" target="_blank"> Enlace a la API integrada (Grupo 10) </a>
+          <a href="https://sos1920-24.herokuapp.com/api/v2/univregs-stats" target="_blank"> Enlace a la API integrada (Grupo 24) </a>
       </p>
     </figure>
   

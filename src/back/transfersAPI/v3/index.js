@@ -6,6 +6,8 @@ module.exports = function (app) {
   const path = require("path");
   const dbFileName = path.join(__dirname, "./transfers.db");
   const BASE_API_URL = "/api/v3";
+  const express = require("express");
+  const request = require("request");
 
   const dbTransfers = new dataStore({
     filename: dbFileName,
@@ -71,6 +73,18 @@ module.exports = function (app) {
     });
   }
 
+  //INTEGRACIONES
+  const URL_24 = "https://sos1920-24.herokuapp.com";
+  app.use("/api/v2/univregs-stats", function (req, res) {
+    console.log("GET API G24");
+    var url = URL_24 + req.baseUrl + req.url;
+    console.log("URL_G24: " + url);
+    console.log("piped: " + req.baseUrl + req.url);
+    req.pipe(request(url)).pipe(res);
+  });
+  app.use(express.static("."));
+
+  //////////////////////
   //LOADINITIALDATA
   app.get(BASE_API_URL + "/global-transfers/loadInitialData", (req, res) => {
     dbTransfers.remove({}, { multi: true });

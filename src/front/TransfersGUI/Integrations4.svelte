@@ -2,30 +2,31 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
   
-    //Grupo 10  ---> (Cors)      https://sos1920-10.herokuapp.com/api/v2/global-divorces
+    //Grupo 21  ---> (Cors)      https://sos1920-21.herokuapp.com/api/v2/driving-licenses
   
   
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-transfers";
-      const BASE_API_URL_10 = "https://sos1920-10.herokuapp.com/api/v2/global-divorces";
+      const BASE_API_URL_21 = "https://sos1920-21.herokuapp.com/api/v2/driving-licenses";
       
   
       const resData = await fetch(BASE_API_URL);
-      const resData10 = await fetch(BASE_API_URL_10);
+      const resData21 = await fetch(BASE_API_URL_21);
 
       let MyDataGraph = [];
-      let DataGraph10 = [];
+      let DataGraph21 = [];
   
       let MyData = await resData.json();
-      let Data10 = await resData10.json();
-      console.log(Data10);
+      let Data21 = await resData21.json();
+      console.log(Data21);
   
       MyData.forEach(x => {
         MyDataGraph.push({ name: x.team + " " + x.year, value: x.balance});
       });
   
-      Data10.forEach(x => {
-          DataGraph10.push({name: x.country + " " + x.year, value: x.divorce});
+      Data21.forEach(x => { if(x.aut_com == "andalusia"){
+          DataGraph21.push({name: x.aut_com + " " + x.year, value: x.total_cars});
+      }
       });
   
   
@@ -35,7 +36,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el número de divorcios por país y año"
+          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el número de licencias por año en Andalucía"
         },
         tooltip: {
           useHTML: true,
@@ -47,7 +48,7 @@
             minSize: "80%",
             maxSize: "120%",
             zMin: 0,
-            zMax: 1000,
+            zMax: 2210,
             layoutAlgorithm: {
               splitSeries: false,
               gravitationalConstant: 0.02
@@ -77,10 +78,10 @@
           },
           },
           {
-            name: "Divorcios en ese año",
-            data: DataGraph10, 
+            name: "Licencias de conducir",
+            data: DataGraph21, 
             tooltip: {
-                  valueSuffix: ' Divorcios'
+                  valueSuffix: ' Coches totales'
           },
           }
         ]
@@ -109,7 +110,7 @@
     <figure class="highcharts-figure">
       <div id="container" />
       <p class="highcharts-description">
-          <a href="https://sos1920-10.herokuapp.com/api/v2/global-divorces" target="_blank"> Enlace a la API integrada (Grupo 10) </a>
+          <a href="https://sos1920-21.herokuapp.com/api/v2/driving-licenses" target="_blank"> Enlace a la API integrada (Grupo 21) </a>
       </p>
     </figure>
   
