@@ -2,12 +2,12 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
   
-    //Grupo 09  ---> (Cors)      https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats
+    //Grupo 10  ---> (Cors)      https://sos1920-10.herokuapp.com/api/v2/global-divorces
   
   
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-transfers";
-      const BASE_API_URL_09 = "https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats";
+      const BASE_API_URL_09 = "https://sos1920-10.herokuapp.com/api/v2/global-divorces";
       
   
       const resData = await fetch(BASE_API_URL);

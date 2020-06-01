@@ -23,6 +23,7 @@
 //INTEGRACIONES DIEGO
 	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
 	import IntegrationsTransferG8 from './TransfersGUI/Integrations1.svelte';
+	import IntegrationsTransferG9 from './TransfersGUI/Integrations2.svelte';
 
 //INTEGRACIONES GOALSCORERS
 	import IntegrationsGoalscorers from './GoalscorersGUI/Integrations.svelte';
@@ -62,6 +63,7 @@
 		
 		"/integrations/global-transfers": IntegrationsTransfer,
 		"/integrations/global-transfers/IntegrationsG8": IntegrationsTransferG8,
+		"/integrations/global-transfers/IntegrationsG9": IntegrationsTransferG9,
 
 		//INTEGRACIONES GOALSCORERS
 		"/integrations/goalscorers": IntegrationsGoalscorers,
