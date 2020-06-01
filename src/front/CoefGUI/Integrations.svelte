@@ -4,19 +4,14 @@
     
     const URL_BASE = "api/v3/global-coef";
     
+
 /* Las integraciones que se van a realizar son las siguientes:
-    Grupo 05  ---> (Cors)      https://sos1920-05.herokuapp.com/api/v1/books-exports
-    Grupo 26  ---> (Proxy)      https://sos1920-26.herokuapp.com/api/v2/global-coef
-    Grupo 21  ---> (Cors)      https://sos1920-21.herokuapp.com/api/v2/traffic-injuries
-    Grupo 01  ---> (Cors)      https://sos1920-01.herokuapp.com/api/v2/emigrants-stats
-*/
-    /* Las integraciones que se van a realizar son las siguientes:
     Grupo 01  ---> (Cors)      https://sos1920-01.herokuapp.com/api/v2/emigrants-stats
     Grupo 05  ---> (Cors)      https://sos1920-05.herokuapp.com/api/v1/books-exports
-    Grupo 06  ---> (Cors)      https://sos1920-06.herokuapp.com/api/v1/my-awesome-resource-1/docs
+    Grupo 06  ---> (Cors)      https://sos1920-06.herokuapp.com/api/v1/my-awesome-resource-1/docs   /  https://sos1920-06.herokuapp.com/api/v2/accstats
     Grupo 10  ---> (Proxy)     https://sos1920-10.herokuapp.com/api/v3/global-marriages
     Grupo 24  ---> (Cors)      https://sos1920-24.herokuapp.com/api/v2/atc-stats
-    Grupo 30  ---> (Proxy)     https://sos1920-30.herokuapp.com/api/v2/indice_de_masa_corporal
+    Grupo 30  ---> (Proxy)     https://sos1920-30.herokuapp.com/api/v3/indice_de_masa_corporal
 */
     async function loadGraph(){
     
@@ -28,7 +23,7 @@
     let coefficient = Array.from(new Set(MyData.map((d) => {return d.coefficient;})));
     let fed = Array.from(new Set(MyData.map((d) => {return d.fed;})));
 
-     //Integracion con el grupo 01 por CORS
+//Integracion con el grupo 01 por CORS
     const URL_BASE_grupo_01 = "/api/v2/emigrants-stats";
     console.log("fetch a " + URL_BASE_grupo_01);
     const resData_01 = await fetch(URL_BASE_grupo_01);
@@ -37,41 +32,50 @@
     console.log("Datos emigrantes Antonio :");
     console.log(coef_01);
 
-    //Integracion con el grupo 05 por CORS
+//Integracion con el grupo 05 por CORS
     const URL_BASE_grupo_05 = "/api/v1/books-exports";
     const resData_05 = await fetch(URL_BASE_grupo_05);
     console.log("fetch a " + URL_BASE_grupo_05);
     let MyData_05 = await resData_05.json();
-    let coef_05 = Array.from(new Set(MyData_05.map((d) => {return d.exp_book;})));
-    console.log("Datos libros exportados Diego:");
+    let coef_05 = Array.from(new Set(MyData_05.map((d) => {return d.exp_graphic_sector;})));
+    console.log("Datos libros exportados del sector Diego:");
     console.log(coef_05);
 
-    //Integracion con el grupo 06 por CORS
-    const URL_BASE_grupo_05 = "/api/v1/my-awesome-resource-1/docs";
-    const resData_05 = await fetch(URL_BASE_grupo_05);
-    console.log("fetch a " + URL_BASE_grupo_05);
-    let MyData_05 = await resData_05.json();
-    let coef_05 = Array.from(new Set(MyData_05.map((d) => {return d.exp_book;})));
-    console.log("Datos libros exportados Diego:");
-    console.log(coef_05);
+//Integracion con el grupo 06 por CORS
+   /* const URL_BASE_grupo_06 = "/api/v2/accstats";
+    const resData_06 = await fetch(URL_BASE_grupo_06);
+    console.log("fetch a " + URL_BASE_grupo_06);
+    let MyData_06 = await resData_06.json();
+    let coef_06 = Array.from(new Set(MyData_06.map((d) => {return d.exp_book;}))); //no se saben los datos
+    console.log("Datos libros exportados Leandro:");
+    console.log(coef_06);*/
     
-    //Integracion con el grupo 26 a traves de proxy
-    const URL_BASE_grupo_26 = "/api/v3/global-coef";
-    const resData_1 = await fetch(URL_BASE_grupo_26);
-    console.log("fetch a " + URL_BASE_grupo_26);
-    let MyData_1 = await resData_1.json();
-    let avg_1 = Array.from(new Set(MyData_1.map((d) => {return d.team;})));
-    console.log("Datos equipos Creus:");
-    console.log(avg_1);
+//Integracion con el grupo 10 a traves de proxy
+    const URL_BASE_grupo_10 = "/api/v3/global-marriages";
+    const resData_10 = await fetch(URL_BASE_grupo_10);
+    console.log("fetch a " + URL_BASE_grupo_10);
+    let MyData_10 = await resData_10.json();
+    let coef_10 = Array.from(new Set(MyData_10.map((d) => {return d.marriages;})));
+    console.log("Datos matrimonios Jesús:");
+    console.log(coef_10);
     
-     //Integracion con el grupo 21 por CORS
-    const URL_BASE_grupo_21 = "/api/v2/traffic-injuries";
-    console.log("fetch a " + URL_BASE_grupo_21);
-    const resData_3 = await fetch(URL_BASE_grupo_21);
-    let MyData_3 = await resData_3.json();
-    let avg_3 = Array.from(new Set(MyData_3.map((d) => {return d.accident;})));
-    console.log("Datos accidentes Juan:");
-    console.log(avg_3);
+//Integracion con el grupo 24 por CORS
+    const URL_BASE_grupo_24 = "/api/v2/atc-stats";
+    console.log("fetch a " + URL_BASE_grupo_24);
+    const resData_24 = await fetch(URL_BASE_grupo_24);
+    let MyData_24 = await resData_24.json();
+    let coef_24 = Array.from(new Set(MyData_24.map((d) => {return d.obu;})));
+    console.log("Datos emigrantes Antonio :");
+    console.log(coef_24);
+
+//Integracion con el grupo 30 a traves de proxy
+    const URL_BASE_grupo_30 = "/api/v3/indice_de_masa_corporal";
+    const resData_10 = await fetch(URL_BASE_grupo_30);
+    console.log("fetch a " + URL_BASE_grupo_30);
+    let MyData_30 = await resData_30.json();
+    let coef_30 = Array.from(new Set(MyData_30.map((d) => {return d.indice_de_masa_corporal;})));
+    console.log("Datos matrimonios Jesús:");
+    console.log(coef_30);
     
     
     
@@ -84,7 +88,7 @@
             text: 'Tasa de suicidio por países.'
         },
         subtitle: {
-            text: 'Fuente: <a href="https://es.wikipedia.org/wiki/Anexo:Pa%C3%ADses_por_tasa_de_suicidio">Wikipedia.org</a>'
+            text: 'Fuente: <a href="https://es.uefa.com/memberassociations/uefarankings/club/#/yr/2020">UEFA.com</a>'
        
         },
         xAxis: {
@@ -129,14 +133,14 @@
             enabled: false
         },
         series: [{
-            name: 'Hombres',
-            data: avg_ms
+            name: 'Coeficiente',
+            data: coefficient
         }, {
-            name: 'Mujeres',
-            data: avg_wms
+            name: 'Fed',
+            data: fed
         }, {
-            name: 'Matrimonios',
-            data: marriages
+            name: 'Clasificación',
+            data: classification
         }]
     });
     }

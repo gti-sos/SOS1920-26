@@ -6,6 +6,8 @@ module.exports = function (app) {
   const path = require("path");
   const dbFileName = path.join(__dirname, "./coef.db");
   const BASE_API_URL = "/api/v3";
+  //const request = require('request');
+	const express = require("express");
 
   const dbCoef = new dataStore({
     filename: dbFileName,
@@ -69,6 +71,88 @@ module.exports = function (app) {
       delete m._id;
     });
   }
+
+
+  //Configuracion para el PROXY con el grupo 10 
+  var paths_10 = '/api/v3/global-marriages';          //Aqui seria donde esta ubicada nuestra API
+  var apiServerHost_10 = 'http://sos1920-10.herokuapp.com';     //Aqui es a donde redirigimos 
+
+  //Para que el PROXY redireccione
+  app.use(paths_10, function (req, res) {
+    var url = apiServerHost_10 + req.baseUrl + req.url;
+    console.log('piped: ' + req.baseUrl + req.url);
+    req.pipe(request(url)).pipe(res);
+  });
+
+
+
+  //Configuracion para el PROXY con el grupo 30 
+  var paths_30 = '/api/v3/indice_de_masa_corporal';          //Aqui seria donde esta ubicada nuestra API
+  var apiServerHost_30 = 'http://sos1920-30.herokuapp.com';     //Aqui es a donde redirigimos 
+
+  //Para que el PROXY redireccione
+  app.use(paths_30, function (req, res) {
+    var url = apiServerHost_30 + req.baseUrl + req.url;
+    console.log('piped: ' + req.baseUrl + req.url);
+    req.pipe(request(url)).pipe(res);
+  });
+
+
+
+
+  //------------------------------------------CORS------------------------------------------------------
+
+  const URL_01 = "https://sos1920-01.herokuapp.com";
+  app.use("/api/v2/emigrants-stats", function(req, res) {
+      console.log("GET API ANTONIO");
+      var url = URL_01 + req.baseUrl + req.url;
+      console.log("URL_ANTONIO: "+url);
+      console.log('piped: ' + req.baseUrl + req.url);
+      req.pipe(request(url)).pipe(res);
+  });
+  app.use(express.static('.'));
+
+
+  const URL_05 = "https://sos1920-05.herokuapp.com";
+  app.use("/api/v1/books-exports", function(req, res) {
+      console.log("GET API DIEGO");
+      var url = URL_05 + req.baseUrl + req.url;
+      console.log("URL_DIEGO: "+url);
+      console.log('piped: ' + req.baseUrl + req.url);
+      req.pipe(request(url)).pipe(res);
+  });
+  app.use(express.static('.'));
+
+
+
+/*
+  const URL_06 = "https://sos1920-06.herokuapp.com";
+  app.use("/api/v2/accstats", function(req, res) {
+      console.log("GET API JUAN");
+      var url = URL_06 + req.baseUrl + req.url;
+      console.log("URL_Leandro: "+url);
+      console.log('piped: ' + req.baseUrl + req.url);
+      req.pipe(request(url)).pipe(res);
+  });
+  app.use(express.static('.'));
+*/
+
+const URL_24 = "https://sos1920-24.herokuapp.com";
+app.use("/api/v2/atc-stats", function(req, res) {
+    console.log("GET API VICTOR");
+    var url = URL_24 + req.baseUrl + req.url;
+    console.log("URL_Victor: "+url);
+    console.log('piped: ' + req.baseUrl + req.url);
+    req.pipe(request(url)).pipe(res);
+});
+app.use(express.static('.'));
+
+
+
+  
+//-------------------------------------------------------------------------------------------------
+
+
 
   //LOADINITIALDATA coefBD-----------------------------------------------
   app.get(BASE_API_URL + "/global-coef/loadInitialData", (req, res) => {
