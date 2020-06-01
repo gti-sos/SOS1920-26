@@ -2,7 +2,7 @@
     import {pop} from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
     //import { onMount } from "svelte";
-    import Chart from "chart.js";
+
     //onMount(async () => { });
 
     async function renderChart() {
