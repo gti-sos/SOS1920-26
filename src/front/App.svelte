@@ -36,6 +36,7 @@
 	import IntegrationsTransferG10 from './TransfersGUI/Integrations3.svelte';
 	import IntegrationsTransferG21 from './TransfersGUI/Integrations4.svelte';
 	import IntegrationsTransferG24 from './TransfersGUI/Integrations5.svelte';
+	import IntegrationsTransferEXT1 from './TransfersGUI/IntegrationsExt1.svelte';
 
 //INTEGRACIONES GOALSCORERS
 	import IntegrationsGoalscorers from './GoalscorersGUI/Integrations.svelte';
@@ -79,7 +80,9 @@
 		"/integrations/global-transfers/IntegrationsG10": IntegrationsTransferG10,
 		"/integrations/global-transfers/IntegrationsG21": IntegrationsTransferG21,
 		"/integrations/global-transfers/IntegrationsG24": IntegrationsTransferG24,
+		"/integrations/global-transfers/IntegrationsExt1": IntegrationsTransferEXT1,
 
+		
 		//INTEGRACIONES Coef
 		"/integrations/global-coef": IntegrationsCoef,
 		"/integrations/global-coef/IntegrationsG1": IntegrationsCoefG1,

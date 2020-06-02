@@ -19,6 +19,7 @@
   
     <button type="button" class="btn btn-danger" onclick="window.location.href='#/integrations/global-transfers/integrationsG21'" style="margin-left: 12.5%; width: 25%;"> Integración con Grupo 21</button>
     <button type="button" class="btn btn-success" onclick="window.location.href='#/integrations/global-transfers/integrationsG24'" style="margin-left: 0.5%; width: 25%;"> Integración con Grupo 24</button>
+    <button type="button" class="btn btn-info" onclick="window.location.href='#/integrations/global-transfers/integrationsExt1'" style="margin-left: 0.5%; width: 25%;"> Integración API EXTERNA 1</button>
 
 </div>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
