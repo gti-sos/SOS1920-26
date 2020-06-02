@@ -24,15 +24,21 @@
     <div class="row">
         <hr>
     </div>
-    <h6 style="text-align: center;">APIs integradas mediante Proxy:</h6>
+    <h5 style="text-align: center;">APIs integradas mediante Proxy:</h5>
     <div class="row">
-        
+        <button type="button" class="btn btn-success"
+            onclick="window.location.href='#/integrations/global-coef/integrationsG6'"
+            style="margin-left: 12.5%; width: 25%;"> Integración con Grupo 6</button>
+
+
         <button type="button" class="btn btn-danger"
             onclick="window.location.href='#/integrations/global-coef/integrationsG10'"
-            style="margin-left: 12.5%; width: 25%;"> Integración con Grupo 10</button>
+            style="margin-left: 0.5%; width: 25%;"> Integración con Grupo 10</button>
+
         <button type="button" class="btn btn-success"
             onclick="window.location.href='#/integrations/global-coef/integrationsG30'"
             style="margin-left: 0.5%; width: 25%;"> Integración con Grupo 30</button>
+
 
     </div>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>

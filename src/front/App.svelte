@@ -25,6 +25,7 @@
 	import IntegrationsCoef from './CoefGUI/Integrations.svelte';
 	import IntegrationsCoefG1 from './CoefGUI/Integrations1.svelte';
 	import IntegrationsCoefG5 from './CoefGUI/Integrations2.svelte';
+	import IntegrationsCoefG6 from './CoefGUI/Integrations6.svelte';
 	import IntegrationsCoefG24 from './CoefGUI/Integrations3.svelte';
 	import IntegrationsCoefG10 from './CoefGUI/Integrations4.svelte';
 	import IntegrationsCoefG30 from './CoefGUI/Integrations5.svelte';
@@ -86,6 +87,7 @@
 		"/integrations/global-coef": IntegrationsCoef,
 		"/integrations/global-coef/IntegrationsG1": IntegrationsCoefG1,
 		"/integrations/global-coef/IntegrationsG5": IntegrationsCoefG5,
+		"/integrations/global-coef/IntegrationsG6": IntegrationsCoefG6,
 		"/integrations/global-coef/IntegrationsG24": IntegrationsCoefG24,
 		"/integrations/global-coef/IntegrationsG10": IntegrationsCoefG10,
 		"/integrations/global-coef/IntegrationsG30": IntegrationsCoefG30,

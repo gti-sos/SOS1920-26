@@ -19,7 +19,7 @@
     let Data10 = await resData10.json();
 
     MyData.forEach(x => {
-      MyDataGraph.push({ name: x.team + " " + x.year, value: x.coefficient});
+      MyDataGraph.push({ name: x.country + " " + x.year, value: x.coefficient});
     });
 
     Data10.forEach(x => {
@@ -33,7 +33,7 @@
         height: "30%"
       },
       title: {
-        text: "Integración entre el balance de los equipos en el mercado de fichajes, y marriages"
+        text: "Integración entre los coeficientes de los países pertenecientes a la UEFA, y los casamientos efectuados"
       },
       tooltip: {
         useHTML: true,
@@ -67,17 +67,17 @@
       },
       series: [
         {
-          name: "Balance total",
+          name: "Coeficiente",
           data: MyDataGraph,
           tooltip: {
-                  valueSuffix: ' M'
+                  valueSuffix: ' '
           }
         },
         {
-          name: "Demanda según gobierno",
+          name: "Casamientos",
           data: DataGraph10,
           tooltip: {
-                  valueSuffix: ' demandas'
+                  valueSuffix: ' '
           }
         }
       ]

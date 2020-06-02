@@ -2,28 +2,28 @@
   import Button from "sveltestrap/src/Button.svelte";
   import { pop } from "svelte-spa-router";
 
-  //Grupo 30  ---> (Proxy)       https://sos1920-30.herokuapp.com/api/v3/indice_de_masa_corporal
+  //Grupo 6  ---> (Proxy)       https://sos1920-06.herokuapp.com/api/v2/accstats
 
 
   async function loadGraph() {
     const BASE_API_URL  = "/api/v3/global-coef";
-    const BASE_API_URL_30 = "/api/v3/indice_de_masa_corporal";
+    const BASE_API_URL_06 = "/api/v2/accstats";
     
 
     const resData = await fetch(BASE_API_URL);
-    const resData30 = await fetch(BASE_API_URL_30);
+    const resData06 = await fetch(BASE_API_URL_06);
     let MyDataGraph = [];
-    let DataGraph30 = [];
+    let DataGraph06 = [];
 
     let MyData = await resData.json();
-    let Data30 = await resData30.json();
+    let Data06 = await resData06.json();
 
     MyData.forEach(x => {
       MyDataGraph.push({ name: x.country+" " + x.team + " " + x.year, value: x.coefficient});
     });
 
-    Data30.forEach(x => {
-        DataGraph30.push({name: x.place + " " + x.year, value: x.indice_de_masa_corporal});
+    Data06.forEach(x => {
+        DataGraph06.push({name: x.province + " " + x.year, value: x.accvictotal});
     });
 
 
@@ -33,7 +33,7 @@
         height: "30%"
       },
       title: {
-        text: "Integración entre los coeficientes de los países y equipos pertenecientes a la UEFA, y índice de masa corporal de cada país"
+        text: "Integración entre los coeficientes de los países y equipos pertenecientes a la UEFA, y los accidentes de tráfico totales por provincias"
       },
       tooltip: {
         useHTML: true,
@@ -74,8 +74,8 @@
           }
         },
         {
-          name: "Índice de masa corporal",
-          data: DataGraph30,
+          name: "Accidentes de tráfico",
+          data: DataGraph06,
           tooltip: {
                   valueSuffix: ' '
           }
@@ -106,7 +106,7 @@
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description">
-        <a href="https://sos1920-30.herokuapp.com/api/v3/indice_de_masa_corporal" target="_blank"> Enlace a la API integrada (Grupo 30) </a>
+        <a href="https://sos1920-06.herokuapp.com/api/v2/accstats" target="_blank"> Enlace a la API integrada (Grupo 6) </a>
     </p>
   </figure>
 

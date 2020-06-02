@@ -61,7 +61,7 @@
             name: "Coeficiente",
             data: MyDataGraph,
             tooltip: {
-                    valueSuffix: ' M'
+                    valueSuffix: ' '
             }
           },
           {

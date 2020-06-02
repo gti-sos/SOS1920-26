@@ -13,10 +13,10 @@
       let MyData = await resData.json();
       let Data24 = await resData24.json();
       MyData.forEach(x => {
-        MyDataGraph.push({ name: x.team + " " + x.year, value: x.coefficient});
+        MyDataGraph.push({ name: x.country + " " + x.year, value: x.coefficient});
       });
       Data24.forEach(x => {
-          DataGraph24.push({name: x.team, value: x.obu});
+          DataGraph24.push({name: x.aut_com + " " + x.year, value: x.obu});
       });
       Highcharts.chart("container", {
         chart: {
@@ -24,7 +24,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el obu de los equipos en el mercado de fichajes, y los títulos de otros de UEFA Champions League"
+          text: "Integración entre los coeficientes de los países pertenecientes a la UEFA, y los costes de las matrículas por comunidades autónomas"
         },
         tooltip: {
           useHTML: true,
@@ -58,17 +58,17 @@
         },
         series: [
           {
-            name: "Balance total",
+            name: "Coeficiente",
             data: MyDataGraph,
             tooltip: {
-                    valueSuffix: ' M'
+                    valueSuffix: ' '
             }
           },
           {
-            name: "Títulos UCL",
+            name: "Costes",
             data: DataGraph24,
             tooltip: {
-                    valueSuffix: ' Títulos'
+                    valueSuffix: ' €'
             }
           }
         ]
