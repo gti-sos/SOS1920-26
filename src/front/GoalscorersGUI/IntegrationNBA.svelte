@@ -13,7 +13,7 @@
     const resData = await fetch(BASE_API_URL + "/goalscorers");
     MyData = await resData.json();
     MyData.forEach(x => {
-      MyDataGraph.push({ name: x.name, value: x.goals });
+      MyDataGraph.push({name: x.name, y: 2020 - x.debut, drilldown: 'null'});
     });
 
     const resDataAPI = await fetch(
@@ -24,101 +24,94 @@
           "x-rapidapi-host": "api-nba-v1.p.rapidapi.com",
           "x-rapidapi-key": "45a177f5c0msh64fa2c118add799p118a18jsn7e63bf635a62"
         }
-      });
+      }
+    );
 
-    if (resDataAPI.ok){
+    if (resDataAPI.ok) {
       console.log("Ok, api externa 1 cargada");
       const json = await resDataAPI.json();
       DataGraphAPI = json;
-    }else{
+    } else {
       console.log("ERROR");
     }
     DataGraphAPIExterna = DataGraphAPI.api;
     MyData2 = DataGraphAPIExterna.players;
     MyData2.forEach(x => {
-      if(parseInt(x.startNba) != 0){
-        DataAPI.push({name: x.firstName + " " + x.lastName, value: parseInt(x.startNba)});
+      if (parseInt(x.startNba) != 0) {
+        DataAPI.push({name: x.firstName + " " + x.lastName, y: 2020 - parseInt(x.startNba), drilldown: 'null'});
       }
     });
     console.log(MyDataGraph);
     console.log(DataAPI);
-    Highcharts.chart("container", {
-      chart: {
-        type: "packedbubble",
-        height: "30%"
-      },
-      title: {
-        text:
-          "Gráfica con goleadores de la UCL y sus respectivos goles frente a las muertes por accidentes de tráfico según la comunidad autónoma y el año."
-      },
-      tooltip: {
-        useHTML: true,
-        pointFormat: "<b>{point.name}:</b> {point.value}"
-      },
-      plotOptions: {
-        packedbubble: {
-          minSize: "80%",
-          maxSize: "120%",
-          zMin: 0,
-          zMax: 1000,
-          layoutAlgorithm: {
-            splitSeries: false,
-            gravitationalConstant: 0.02
-          },
-          dataLabels: {
-            enabled: true,
-            format: "{point.name}",
-            filter: {
-              property: "y",
-              operator: ">",
-              value: 250
-            },
-            style: {
-              color: "black",
-              textOutline: "none",
-              fontWeight: "normal"
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Años que han pasado desde que debutaron los jugadores.'
+    },
+    accessibility: {
+        announceNewData: {
+            enabled: true
+        }
+    },
+    xAxis: {
+        type: 'category'
+    },
+    yAxis: {
+        title: {
+            text: 'Años desde su debut'
+        }
+
+    },
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        series: {
+            borderWidth: 0,
+            dataLabels: {
+                enabled: true,
+                format: '{point.y}'
             }
-          }
         }
-      },
-      series: [
+    },
+
+    tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> años desde que debutó.<br/>'
+    },
+
+    series:  [
         {
-          name: "Goles del goleador",
-          data: MyDataGraph
-        },
-        {
-          name: "Muertes según comunidad y año",
-          data: DataAPI
+            name: "Jugadores",
+            colorByPoint: true, 
+            dataSorting: {
+                enabled: true
+            },
+            data: MyDataGraph.concat(DataAPI)
         }
-      ]
-    });
+    ]
+});
   }
 </script>
 
 <svelte:head>
-  <script src="https://code.highcharts.com/highcharts.js">
-
-  </script>
-  <script src="https://code.highcharts.com/highcharts-more.js">
-
-  </script>
-  <script src="https://code.highcharts.com/modules/exporting.js">
-
-  </script>
-  <script
-    src="https://code.highcharts.com/modules/accessibility.js"
-    on:load={loadGraph}>
-
-  </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
 </svelte:head>
 <main>
 
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description" align="center">
-      Los goleadores están de un color y los accidentes de tráfico según la
-      comunidad autónoma y el año de otro color. Integración hecha a la
-      dirección http://sos1920-21.herokuapp.com/api/v2/traffic-injuries.
+      Integración de la API https://rapidapi.com/api-sports/api/api-nba, se comparan los años pasados desde
+      el debut de los jugadores del Atlanta Hawks y los años pasados desde el debut de los máximos goleadores de la UCL.
     </p>
   </figure>
 
