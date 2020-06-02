@@ -13,10 +13,10 @@
       let MyData = await resData.json();
       let Data01 = await resData01.json();
       MyData.forEach(x => {
-        MyDataGraph.push({ name: x.team + " " + x.year, value: x.coefficient});
+        MyDataGraph.push({ name: x.country+ " " + x.year, value: x.coefficient});
       });
       Data01.forEach(x => {
-          DataGraph01.push({name: x.team, value: x.em_totals});
+          DataGraph01.push({name: x.country, value: x.em_totals});
       });
       Highcharts.chart("container", {
         chart: {
@@ -24,7 +24,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el em_totals de los equipos en el mercado de fichajes, y los títulos de otros de UEFA Champions League"
+          text: "Integración entre los coeficientes de los países pertenecientes a la UEFA, y la emigración total de los mismos"
         },
         tooltip: {
           useHTML: true,
@@ -58,17 +58,17 @@
         },
         series: [
           {
-            name: "Balance total",
+            name: "Coeficiente",
             data: MyDataGraph,
             tooltip: {
                     valueSuffix: ' M'
             }
           },
           {
-            name: "Títulos UCL",
+            name: "Emigrantes",
             data: DataGraph01,
             tooltip: {
-                    valueSuffix: ' Títulos'
+                    valueSuffix: ' de personas'
             }
           }
         ]

@@ -4,8 +4,8 @@
 </script>
 
 <main>
-    <h2 style="text-align: center;">Integracion de coef</h2>
-    <h6 style="text-align: center;">La integración con el Grupo 10 se ha realizado con Proxy</h6>
+    <h2 style="text-align: center;">Integraciones de coef</h2>
+    
     <br><br>
     <div class="row">
        
@@ -24,8 +24,9 @@
     <div class="row">
         <hr>
     </div>
+    <h6 style="text-align: center;">APIs integradas mediante Proxy:</h6>
     <div class="row">
-
+        
         <button type="button" class="btn btn-danger"
             onclick="window.location.href='#/integrations/global-coef/integrationsG10'"
             style="margin-left: 12.5%; width: 25%;"> Integración con Grupo 10</button>

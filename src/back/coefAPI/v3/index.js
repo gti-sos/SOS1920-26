@@ -6,8 +6,8 @@ module.exports = function (app) {
   const path = require("path");
   const dbFileName = path.join(__dirname, "./coef.db");
   const BASE_API_URL = "/api/v3";
-  //const request = require('request');
-	const express = require("express");
+  const express = require("express");
+  const request = require("request");
 
   const dbCoef = new dataStore({
     filename: dbFileName,
@@ -73,20 +73,20 @@ module.exports = function (app) {
   }
 
 
- 
+
 
 
   //-------------------------------------Integraciones---Proxy---------------------------------------
 
   const URL_10 = "https://sos1920-10.herokuapp.com";
-  app.use("/api/v2/global-marriages", function (req, res) {
-    console.log("GET API G10");
-    var url = URL_10 + req.baseUrl + req.url;
-    console.log("URL_G10: " + url);
-    console.log("piped: " + req.baseUrl + req.url);
-    req.pipe(request(url)).pipe(res);
-  });
-  app.use(express.static("."));
+    app.use("/api/v2/global-marriages", function (req, res) {
+        console.log("GET API G10");
+        var url = URL_10 + req.baseUrl + req.url;
+        console.log("URL_G10: " + url);
+        console.log("piped: " + req.baseUrl + req.url);
+        req.pipe(request(url)).pipe(res);
+    });
+    app.use(express.static("."));
 
 
   const URL_30 = "https://sos1920-30.herokuapp.com";
@@ -101,8 +101,8 @@ module.exports = function (app) {
 
 
 
-  
-//-------------------------------------------------------------------------------------------------
+
+  //-------------------------------------------------------------------------------------------------
 
 
 
