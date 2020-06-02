@@ -1,22 +1,22 @@
 <script>
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
-    //Grupo 05  ---> (Cors)    https://sos1920-05.herokuapp.com/api/v1/books-exports
+    //Grupo 01  ---> (Cors)     "https://sos1920-01.herokuapp.com/api/v2/emigrants-stats";
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-coef";
-      const BASE_API_URL_05 = "https://sos1920-05.herokuapp.com/api/v1/books-exports";
+      const BASE_API_URL_01 = "https://sos1920-01.herokuapp.com/api/v2/emigrants-stats";
       
       const resData = await fetch(BASE_API_URL);
-      const resData05 = await fetch(BASE_API_URL_05);
+      const resData01 = await fetch(BASE_API_URL_01);
       let MyDataGraph = [];
-      let DataGraph05 = [];
+      let DataGraph01 = [];
       let MyData = await resData.json();
-      let Data05 = await resData05.json();
+      let Data01 = await resData01.json();
       MyData.forEach(x => {
         MyDataGraph.push({ name: x.team + " " + x.year, value: x.coefficient});
       });
-      Data05.forEach(x => {
-          DataGraph05.push({name: x.team, value: x.exp_graphic_sector});
+      Data01.forEach(x => {
+          DataGraph01.push({name: x.team, value: x.em_totals});
       });
       Highcharts.chart("container", {
         chart: {
@@ -24,7 +24,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el exp_graphic_sector de los equipos en el mercado de fichajes, y los títulos de otros de UEFA Champions League"
+          text: "Integración entre el em_totals de los equipos en el mercado de fichajes, y los títulos de otros de UEFA Champions League"
         },
         tooltip: {
           useHTML: true,
@@ -66,7 +66,7 @@
           },
           {
             name: "Títulos UCL",
-            data: DataGraph05,
+            data: DataGraph01,
             tooltip: {
                     valueSuffix: ' Títulos'
             }
@@ -93,7 +93,7 @@
     <figure class="highcharts-figure">
       <div id="container" />
       <p class="highcharts-description">
-          <a href="https://sos1920-05.herokuapp.com/api/v1/books-exports" target="_blank"> Enlace a la API integrada (Grupo 5) </a>
+          <a href="https://sos1920-01.herokuapp.com/api/v2/emigrants-stats" target="_blank"> Enlace a la API integrada (Grupo 1) </a>
       </p>
     </figure>
   

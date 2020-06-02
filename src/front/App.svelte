@@ -20,6 +20,15 @@
 	import GraphGoalscorers from './GoalscorersGUI/GraphGoalscorers.svelte';
 	import GraphGoalscorers2 from './GoalscorersGUI/GraphGoalscorers2.svelte';
 
+
+//INTEGRACIONES Coef
+	import IntegrationsCoef from './CoefGUI/Integrations.svelte';
+	import IntegrationsCoefG1 from './CoefGUI/Integrations1.svelte';
+	import IntegrationsCoefG5 from './CoefGUI/Integrations2.svelte';
+	import IntegrationsCoefG24 from './CoefGUI/Integrations3.svelte';
+	import IntegrationsCoefG10 from './CoefGUI/Integrations4.svelte';
+	import IntegrationsCoefG30 from './CoefGUI/Integrations5.svelte';
+
 //INTEGRACIONES DIEGO
 	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
 	import IntegrationsTransferG8 from './TransfersGUI/Integrations1.svelte';
@@ -41,10 +50,6 @@
 		"/": Home,
 		//"/analytics": Analytics,
 		"/integrations": Integrations,
-
-
-	
-	 
 
 
 		"/global-coef/:team/:year": EditCoef,
@@ -73,6 +78,14 @@
 		"/integrations/global-transfers/IntegrationsG10": IntegrationsTransferG10,
 		"/integrations/global-transfers/IntegrationsG21": IntegrationsTransferG21,
 		"/integrations/global-transfers/IntegrationsG24": IntegrationsTransferG24,
+
+		//INTEGRACIONES Coef
+		"/integrations/global-coef": IntegrationsCoef,
+		"/integrations/global-coef/IntegrationsG1": IntegrationsCoefG1,
+		"/integrations/global-coef/IntegrationsG5": IntegrationsCoefG5,
+		"/integrations/global-coef/IntegrationsG24": IntegrationsCoefG24,
+		"/integrations/global-coef/IntegrationsG10": IntegrationsCoefG10,
+		"/integrations/global-coef/IntegrationsG30": IntegrationsCoefG30,
 
 		//INTEGRACIONES GOALSCORERS
 		"/integrations/goalscorers": IntegrationsGoalscorers,
