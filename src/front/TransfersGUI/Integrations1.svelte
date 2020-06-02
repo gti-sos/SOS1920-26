@@ -19,7 +19,7 @@
     let Data08 = await resData08.json();
 
     MyData.forEach(x => {
-      MyDataGraph.push({ name: x.team, value: x.balance});
+      MyDataGraph.push({ name: x.team + " " + x.year, value: x.balance});
     });
 
     Data08.forEach(x => {
@@ -33,7 +33,7 @@
         height: "30%"
       },
       title: {
-        text: "Integración entre el balance de los equipos, y sus títulos de UEFA Champions League"
+        text: "Integración entre el balance de los equipos en el mercado de fichajes, y los títulos de otros de UEFA Champions League"
       },
       tooltip: {
         useHTML: true,
@@ -68,11 +68,17 @@
       series: [
         {
           name: "Balance total",
-          data: MyDataGraph
+          data: MyDataGraph,
+          tooltip: {
+                  valueSuffix: ' M'
+          }
         },
         {
           name: "Títulos UCL",
-          data: DataGraph08
+          data: DataGraph08,
+          tooltip: {
+                  valueSuffix: ' Títulos'
+          }
         }
       ]
     });
@@ -100,7 +106,7 @@
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description">
-        <a href="http://sos1920-08.herokuapp.com/api/v2/ucl_stats"> Enlace a la API integrada (Grupo 8) </a>
+        <a href="http://sos1920-08.herokuapp.com/api/v2/ucl_stats" target="_blank"> Enlace a la API integrada (Grupo 8) </a>
     </p>
   </figure>
 

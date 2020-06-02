@@ -2,30 +2,30 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
   
-    //Grupo 09  ---> (Cors)      https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats
+    //Grupo 10  ---> (Cors)      https://sos1920-10.herokuapp.com/api/v2/global-divorces
   
   
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-transfers";
-      const BASE_API_URL_09 = "https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats";
+      const BASE_API_URL_10 = "https://sos1920-10.herokuapp.com/api/v2/global-divorces";
       
   
       const resData = await fetch(BASE_API_URL);
-      const resData09 = await fetch(BASE_API_URL_09);
+      const resData10 = await fetch(BASE_API_URL_10);
 
       let MyDataGraph = [];
-      let DataGraph09 = [];
+      let DataGraph10 = [];
   
       let MyData = await resData.json();
-      let Data09 = await resData09.json();
-      console.log(Data09);
+      let Data10 = await resData10.json();
+      console.log(Data10);
   
       MyData.forEach(x => {
         MyDataGraph.push({ name: x.team + " " + x.year, value: x.balance});
       });
   
-      Data09.forEach(x => {
-          DataGraph09.push({name: x.country + " " + x.year, value:x["oil-consumption"]});
+      Data10.forEach(x => {
+          DataGraph10.push({name: x.country + " " + x.year, value: x.divorce});
       });
   
   
@@ -35,7 +35,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el consumo de aceite por países y año"
+          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el número de divorcios por país y año"
         },
         tooltip: {
           useHTML: true,
@@ -77,10 +77,10 @@
           },
           },
           {
-            name: "Consumo Aceite",
-            data: DataGraph09, 
+            name: "Divorcios en ese año",
+            data: DataGraph10, 
             tooltip: {
-                  valueSuffix: ' L'
+                  valueSuffix: ' Divorcios'
           },
           }
         ]
@@ -109,7 +109,7 @@
     <figure class="highcharts-figure">
       <div id="container" />
       <p class="highcharts-description">
-          <a href="https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats" target="_blank"> Enlace a la API integrada (Grupo 9) </a>
+          <a href="https://sos1920-10.herokuapp.com/api/v2/global-divorces" target="_blank"> Enlace a la API integrada (Grupo 10) </a>
       </p>
     </figure>
   

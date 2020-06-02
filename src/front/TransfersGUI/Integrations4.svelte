@@ -2,30 +2,31 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
   
-    //Grupo 09  ---> (Cors)      https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats
+    //Grupo 21  ---> (Cors)      https://sos1920-21.herokuapp.com/api/v2/driving-licenses
   
   
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-transfers";
-      const BASE_API_URL_09 = "https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats";
+      const BASE_API_URL_21 = "https://sos1920-21.herokuapp.com/api/v2/driving-licenses";
       
   
       const resData = await fetch(BASE_API_URL);
-      const resData09 = await fetch(BASE_API_URL_09);
+      const resData21 = await fetch(BASE_API_URL_21);
 
       let MyDataGraph = [];
-      let DataGraph09 = [];
+      let DataGraph21 = [];
   
       let MyData = await resData.json();
-      let Data09 = await resData09.json();
-      console.log(Data09);
+      let Data21 = await resData21.json();
+      console.log(Data21);
   
       MyData.forEach(x => {
         MyDataGraph.push({ name: x.team + " " + x.year, value: x.balance});
       });
   
-      Data09.forEach(x => {
-          DataGraph09.push({name: x.country + " " + x.year, value:x["oil-consumption"]});
+      Data21.forEach(x => { if(x.aut_com == "andalusia"){
+          DataGraph21.push({name: x.aut_com + " " + x.year, value: x.total_cars});
+      }
       });
   
   
@@ -35,7 +36,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el consumo de aceite por países y año"
+          text: "Integración entre el balance de los equipos en el mercado de fichajes, y el número de licencias por año en Andalucía"
         },
         tooltip: {
           useHTML: true,
@@ -47,7 +48,7 @@
             minSize: "80%",
             maxSize: "120%",
             zMin: 0,
-            zMax: 1000,
+            zMax: 2210,
             layoutAlgorithm: {
               splitSeries: false,
               gravitationalConstant: 0.02
@@ -77,10 +78,10 @@
           },
           },
           {
-            name: "Consumo Aceite",
-            data: DataGraph09, 
+            name: "Licencias de conducir",
+            data: DataGraph21, 
             tooltip: {
-                  valueSuffix: ' L'
+                  valueSuffix: ' Coches totales'
           },
           }
         ]
@@ -109,7 +110,7 @@
     <figure class="highcharts-figure">
       <div id="container" />
       <p class="highcharts-description">
-          <a href="https://sos1920-09.herokuapp.com/api/v3/oil-coal-nuclear-energy-consumption-stats" target="_blank"> Enlace a la API integrada (Grupo 9) </a>
+          <a href="https://sos1920-21.herokuapp.com/api/v2/driving-licenses" target="_blank"> Enlace a la API integrada (Grupo 21) </a>
       </p>
     </figure>
   

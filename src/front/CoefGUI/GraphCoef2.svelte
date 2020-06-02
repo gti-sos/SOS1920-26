@@ -1,47 +1,47 @@
 <script>
-    import {pop} from "svelte-spa-router";
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+    import { pop } from "svelte-spa-router";
     import Button from "sveltestrap/src/Button.svelte";
-    //import { onMount } from "svelte";
-    import Chart from "chart.js";
-    //onMount(async () => { });
 
-    async function renderChart() {
+    async function drawChart() {
 
         const BASE_API_URL = "/api/v3/global-coef";
+
         const resData = await fetch(BASE_API_URL);
         let MyData = await resData.json();
-        let MyNumeros = [];
+        console.log(MyData)
 
 
-        var ctx = document.getElementById("myChart").getContext("2d");
-        let countries = Array.from(new Set(MyData.map((d) => { return d.country; })));
-        /*MyData = MyData.map((d) => {
-            return [countries.indexOf(d.country), d.year, d["coefficient"]];
-        });*/
-        MyData.forEach(x => {
-            MyNumeros.push(x.coefficient);
+        MyData = await MyData.map((d) => {
+            return [d.team, d.fed, d.coefficient];
         });
 
+        let DataTypes = [["Equipo", "Clasificación", "Coeficiente"]]
+
+        Array.prototype.push.apply(DataTypes, MyData)
 
 
-        var chart = new Chart(ctx, {
-            type: "line",
-            data: {
-                labels: countries,
-                datasets: [
-                    {
-                        label: "Coeficientes por países",
-                        backgroundColor: "rgb(255, 99, 132)",
-                        borderColor: "rgb(255, 99, 132)",
-                        data:MyNumeros
-                    }
-                ]
-            },
-            options: {}
-        });
+        console.log(DataTypes)
+
+        var data = google.visualization.arrayToDataTable(DataTypes);
+
+        var options = {
+            title: 'Equipos y feds del top 10 en el ranking UEFA'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
     }
-
 </script>
-<button on:click={renderChart}>Visualizar</button>
-<canvas id="myChart"></canvas>
-<main> <button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </button></main>
+
+<main>
+    <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
+</main>
+
+<html lang="EN">
+<div id="piechart"></div>
+
+
+</html>
