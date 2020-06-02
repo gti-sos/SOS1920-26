@@ -77,6 +77,16 @@ module.exports = function (app) {
 
 
   //-------------------------------------Integraciones---Proxy---------------------------------------
+  const URL_06 = "https://sos1920-06.herokuapp.com";
+    app.use("/api/v2/accstats", function (req, res) {
+        console.log("GET API 06");
+        var url = URL_06 + req.baseUrl + req.url;
+        console.log("URL_G06: " + url);
+        console.log("piped: " + req.baseUrl + req.url);
+        req.pipe(request(url)).pipe(res);
+    });
+    app.use(express.static("."));
+    
 
   const URL_10 = "https://sos1920-10.herokuapp.com";
     app.use("/api/v2/global-marriages", function (req, res) {

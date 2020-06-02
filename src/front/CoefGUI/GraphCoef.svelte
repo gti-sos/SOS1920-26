@@ -11,7 +11,7 @@
         const resData = await fetch(BASE_API_URL + "/global-coef")
         MyData = await resData.json();
         MyData.forEach( (x) => {
-                MyDataGraph.push({name: x.team + " " + x.year, data: [parseFloat(x.coefficient), parseFloat(x.fed), parseInt(x.classification)], pointPlacement: 'on'});
+                MyDataGraph.push({name: x.team + " " + x.year, data: [parseFloat(x.fed), parseFloat(x.coefficient), parseInt(x.classification)], pointPlacement: 'on'});
             });
         
         Highcharts.chart('container', {
@@ -19,13 +19,13 @@
                 type: 'areaspline'
             },
             title: {
-                text: 'Equipos Europa'
+                text: ''
             },
             
             xAxis: {
                 categories: [
-                    'Coeficiente',
                     'Fed',
+                    'Coeficiente',
                     'Clasificación'
                 ],
                 plotBands: [{ // visualize the weekend
@@ -36,12 +36,12 @@
             },
             yAxis: {
                 title: {
-                    text: 'units'
+                    text: ''
                 }
             },
             tooltip: {
                 shared: true,
-                valueSuffix: ' units'
+                valueSuffix: ' '
             },
             credits: {
                 enabled: false
@@ -71,7 +71,7 @@
         <figure class="highcharts-figure">
             <div id="container"></div>
             <p class="highcharts-description">
-                En la gráfica podemos observar el número de: equipos, coeficientes y clasificaciones.
+                Comparación completa de todos los equipos en sus respectivos años mediante el fed, el coeficiente y la clasificación.
             </p>
         </figure>
     
