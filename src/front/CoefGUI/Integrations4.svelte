@@ -2,12 +2,12 @@
   import Button from "sveltestrap/src/Button.svelte";
   import { pop } from "svelte-spa-router";
 
-  //Grupo 10  ---> (Proxy)       https://sos1920-10.herokuapp.com/api/v2/global-marriages
+  //Grupo 10  ---> (Proxy)       https://sos1920-10.herokuapp.com/api/v3/global-marriages
 
 
   async function loadGraph() {
     const BASE_API_URL  = "/api/v3/global-coef";
-    const BASE_API_URL_10 = "/api/v2/global-marriages";
+    const BASE_API_URL_10 = "/api/v3/global-marriages";
     
 
     const resData = await fetch(BASE_API_URL);

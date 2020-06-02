@@ -86,10 +86,10 @@ module.exports = function (app) {
         req.pipe(request(url)).pipe(res);
     });
     app.use(express.static("."));
-    
+
 
   const URL_10 = "https://sos1920-10.herokuapp.com";
-    app.use("/api/v2/global-marriages", function (req, res) {
+    app.use("/api/v3/global-marriages", function (req, res) {
         console.log("GET API G10");
         var url = URL_10 + req.baseUrl + req.url;
         console.log("URL_G10: " + url);
