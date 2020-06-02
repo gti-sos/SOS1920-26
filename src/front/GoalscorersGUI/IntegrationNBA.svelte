@@ -28,7 +28,6 @@
     );
 
     if (resDataAPI.ok) {
-      console.log("Ok, api externa 1 cargada");
       const json = await resDataAPI.json();
       DataGraphAPI = json;
     } else {
@@ -41,8 +40,6 @@
         DataAPI.push({name: x.firstName + " " + x.lastName, y: 2020 - parseInt(x.startNba), drilldown: 'null'});
       }
     });
-    console.log(MyDataGraph);
-    console.log(DataAPI);
 
 Highcharts.chart('container', {
     chart: {

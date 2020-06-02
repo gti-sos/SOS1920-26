@@ -7,27 +7,17 @@
   
     async function loadGraph() {
       const BASE_API_URL  = "/api/v3/global-transfers";
-      
-      async function cargaApiExterna(){
-        fetch("https://montanaflynn-fifa-world-cup.p.rapidapi.com/teams", {
-	    "method": "GET",
-	    "headers": {
-		    "x-rapidapi-host": "montanaflynn-fifa-world-cup.p.rapidapi.com",
-		    "x-rapidapi-key": "bdae1e0e15mshd965fc5b898b015p1064f1jsn280cf3b661d7",
-		    "accepts": "json"
-	        }
-        })
-        .then(response => {
-	        console.log(response);
-        })
-        .catch(err => {
-    	    console.log(err);
-            });
-        }
-      
+           
   
       const resData = await fetch(BASE_API_URL);
-      const resDataEXT = await cargaApiExterna();
+      const resDataEXT = await fetch("https://api-football-v1.p.rapidapi.com/v2/transfers/team/33", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+		"x-rapidapi-key": "bdae1e0e15mshd965fc5b898b015p1064f1jsn280cf3b661d7"
+	}
+        });
+
       let MyDataGraph = [];
       let DataGraphEXT = [];
   
@@ -35,11 +25,27 @@
       let DataEXT = await resDataEXT.json();
   
       MyData.forEach(x => {
-        MyDataGraph.push({ name: x.team + " " + x.year, value: x.balance});
+        MyDataGraph.push({ name: x.team + " - " + x.year, value: x.balance});
       });
-  
-      DataEXT.forEach(x => {
-          DataGraphEXT.push({name: x.code + " - " + x.country_id, value: x.title});
+
+      let DataExterna = DataEXT.api;
+      let DataExternaFichajes = DataExterna.transfers;
+      console.log(DataExternaFichajes);
+
+      function extEquipoComp (x){
+          let aux = x.team_in
+          return aux.team_name
+
+      }
+
+      DataExternaFichajes.forEach(x => {
+          //let aux = x.team_in
+          //let equipoComprado = aux.team_name
+          //console.log(equipoComprado)
+          console.log(extEquipoComp(x))
+          if (x.type != null || x.type != "Loan" || x.type != "N/A"){
+          DataGraphEXT.push({name: extEquipoComp(x) + " : ", value: parseInt(x.type)});
+          }
       });
   
   
@@ -91,7 +97,10 @@
           },
           {
             name: "Equipos copa del mundo con su código",
-            data: DataGraphEXT
+            data: DataGraphEXT,
+            tooltip: {
+                    valueSuffix: ' M'
+            }
           }
         ]
       });
