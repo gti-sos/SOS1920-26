@@ -1,11 +1,12 @@
 //-----------------GOALSCORERS-------------
-module.exports = function(app) {
+module.exports = function (app) {
     console.log("Registering goalscorers API...");
     const dataStore = require("nedb");
     const path = require("path");
     const dbFileName = path.join(__dirname, "./goalscorers.db");
     const BASE_API_URL = "/api/v3";
-
+    const express = require("express");
+    const request = require("request");
 
     const db = new dataStore({
         filename: dbFileName,
@@ -14,69 +15,69 @@ module.exports = function(app) {
 
     //-------------GOALSCORERS-------------
     var initialGoalscorers = [{
-            name: "Cristiano",
-            country: "Portugal",
-            debut: 2002,
-            goals: 128,
-            matches: 167,
-            teams: 3
-        },
-        {
-            name: "Messi",
-            country: "Argentina",
-            debut: 2004,
-            goals: 114,
-            matches: 136,
-            teams: 1
-        },
-        {
-            name: "Benzema",
-            country: "France",
-            debut: 2005,
-            goals: 64,
-            matches: 115,
-            teams: 2
-        },
-        {
-            name: "Raul",
-            country: "Spain",
-            debut: 1995,
-            goals: 71,
-            matches: 144,
-            teams: 2
-        },
-        {
-            name: "Lewandowski",
-            country: "Poland",
-            debut: 2011,
-            goals: 64,
-            matches: 86,
-            teams: 2
-        },
-        {
-            name: "vanNistelrooy",
-            country: "Holland",
-            debut: 1998,
-            goals: 60,
-            matches: 81,
-            teams: 3
-        },
-        {
-            name: "Shevchenko",
-            country: "Ukraine",
-            debut: 1993,
-            goals: 59,
-            matches: 116,
-            teams: 3
-        },
-        {
-            name: "Henry",
-            country: "France",
-            debut: 1993,
-            goals: 51,
-            matches: 115,
-            teams: 3
-        }
+        name: "Cristiano",
+        country: "Portugal",
+        debut: 2002,
+        goals: 128,
+        matches: 167,
+        teams: 3
+    },
+    {
+        name: "Messi",
+        country: "Argentina",
+        debut: 2004,
+        goals: 114,
+        matches: 136,
+        teams: 1
+    },
+    {
+        name: "Benzema",
+        country: "France",
+        debut: 2005,
+        goals: 64,
+        matches: 115,
+        teams: 2
+    },
+    {
+        name: "Raul",
+        country: "Spain",
+        debut: 1995,
+        goals: 71,
+        matches: 144,
+        teams: 2
+    },
+    {
+        name: "Lewandowski",
+        country: "Poland",
+        debut: 2011,
+        goals: 64,
+        matches: 86,
+        teams: 2
+    },
+    {
+        name: "vanNistelrooy",
+        country: "Holland",
+        debut: 1998,
+        goals: 60,
+        matches: 81,
+        teams: 3
+    },
+    {
+        name: "Shevchenko",
+        country: "Ukraine",
+        debut: 1993,
+        goals: 59,
+        matches: 116,
+        teams: 3
+    },
+    {
+        name: "Henry",
+        country: "France",
+        debut: 1993,
+        goals: 51,
+        matches: 115,
+        teams: 3
+    }
     ];
 
     function deleteIDs(goalscorers) {
@@ -85,14 +86,25 @@ module.exports = function(app) {
         });
     }
 
+    //INTEGRACIONES
+    const URL_10 = "https://sos1920-10.herokuapp.com";
+    app.use("/api/v2/global-suicides", function (req, res) {
+        console.log("GET API G10");
+        var url = URL_10 + req.baseUrl + req.url;
+        console.log("URL_G10: " + url);
+        console.log("piped: " + req.baseUrl + req.url);
+        req.pipe(request(url)).pipe(res);
+    });
+    app.use(express.static("."));
+
 
     //LOADINITIALDATA GOALSCORERS
     app.get(BASE_API_URL + "/goalscorers/loadInitialData", (req, res) => {
-        db.remove({},{multi:true});
+        db.remove({}, { multi: true });
         console.log("New GET .../loadInitialData")
         db.insert(initialGoalscorers);;
         console.log("Initial goalscorers loaded: " + JSON.stringify(initialGoalscorers, null, 2));
-		res.send(JSON.stringify(initialGoalscorers,null,2));
+        res.send(JSON.stringify(initialGoalscorers, null, 2));
     });
 
     //POST GOALSCORERS 
@@ -100,19 +112,19 @@ module.exports = function(app) {
         var newGoalscorer = req.body;
         var newName = req.body.name;
 
-        db.find({"name":newName},(error, goalscorer) =>{
-            if(goalscorer.length!=0){
+        db.find({ "name": newName }, (error, goalscorer) => {
+            if (goalscorer.length != 0) {
                 console.log("Error 409. Ya existe un goleador con ese nombre");
                 res.sendStatus(409);
-            }else if((newGoalscorer == {}) ||
+            } else if ((newGoalscorer == {}) ||
                 (newGoalscorer.name == null) ||
                 (newGoalscorer.country == null) ||
                 (newGoalscorer.debut == null) ||
                 (newGoalscorer.goals == null) ||
                 (newGoalscorer.matches == null) ||
-                (newGoalscorer.teams == null)){
+                (newGoalscorer.teams == null)) {
                 res.sendStatus(400);
-            }else{
+            } else {
                 console.log("Dato introducido correctamente");
                 db.insert(newGoalscorer);
                 res.sendStatus(201);
@@ -166,11 +178,11 @@ module.exports = function(app) {
             limit = parseInt(req.query.limit);
             delete req.query.limit;
         }
-		
+
         db.find(parametros).skip(offset).limit(limit).exec((err, goalscorers) => {
 
             deleteIDs(goalscorers);
-			
+
             res.send(JSON.stringify(goalscorers, null, 2));
             console.log("RESOURCES DISPLAYED");
 
@@ -188,7 +200,7 @@ module.exports = function(app) {
     app.delete(BASE_API_URL + "/goalscorers", (req, res) => {
         db.remove({}, {
             multi: true
-        }, function(err, numRemoved) {
+        }, function (err, numRemoved) {
             if (numRemoved >= 1) {
                 res.sendStatus(200);
             } else {

@@ -32,6 +32,8 @@
 	import IntegrationsGoalscorers from './GoalscorersGUI/Integrations.svelte';
 	import IntegrationGoalscorersG22 from './GoalscorersGUI/IntegrationG22.svelte';
 	import IntegrationGoalscorersG21 from './GoalscorersGUI/IntegrationG21.svelte';
+	import IntegrationGoalscorersG12 from './GoalscorersGUI/IntegrationG12.svelte';
+	import IntegrationGoalscorersG10 from './GoalscorersGUI/IntegrationG10.svelte';
 //FIN INTEGRACIONES	
 
 
@@ -76,6 +78,8 @@
 		"/integrations/goalscorers": IntegrationsGoalscorers,
 		"/integrations/goalscorers/integrationG22": IntegrationGoalscorersG22,
 		"/integrations/goalscorers/integrationG21": IntegrationGoalscorersG21,
+		"/integrations/goalscorers/integrationG12": IntegrationGoalscorersG12,
+		"/integrations/goalscorers/integrationG10": IntegrationGoalscorersG10,
 		//FIN INTEGRACIONES
 
 

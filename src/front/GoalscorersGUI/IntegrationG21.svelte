@@ -94,6 +94,7 @@
     <div id="container" />
     <p class="highcharts-description" align="center">
       Los goleadores están de un color y los accidentes de tráfico según la comunidad autónoma y el año de otro color.
+      Integración hecha a la dirección http://sos1920-21.herokuapp.com/api/v2/traffic-injuries.
     </p>
   </figure>
 

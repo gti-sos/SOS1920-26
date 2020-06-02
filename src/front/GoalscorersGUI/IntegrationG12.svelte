@@ -2,7 +2,7 @@
   import { pop } from "svelte-spa-router";
   import Button from "sveltestrap/src/Button.svelte";
   let BASE_API_URL = "/api/v3";
-  let BASE_API_URL_G22 = "http://sos1920-22.herokuapp.com/api/v2/formula-stats";
+  let BASE_API_URL_G12 = "https://sos1920-12.herokuapp.com/api/v1/drug_offences";
   async function loadGraph() {
     let DataAPI = [];
     let MyData = [];
@@ -14,10 +14,10 @@
       MyDataGraph.push({ name: x.name, value: x.goals});
     });
 
-    const resDataAPI = await fetch(BASE_API_URL_G22);
+    const resDataAPI = await fetch(BASE_API_URL_G12);
     DataAPI = await resDataAPI.json();
     DataAPI.forEach(x => {
-        DataGraphAPI.push({name: x.country + ", " + x.year, value: x.totalpointnumber});
+        DataGraphAPI.push({name: x.country + ", " + x.year, value: x.offences_supply});
     });
 
     Highcharts.chart("container", {
@@ -26,7 +26,7 @@
         height: "30%"
       },
       title: {
-        text: "Gráfica con goleadores de la UCL y sus respectivos goles frente a los puntos obtenidos en F1 cada año por país."
+        text: "Gráfica con goleadores de la UCL y sus respectivos goles frente a delitos relacionados con el tráfico de drogas."
       },
       tooltip: {
         useHTML: true,
@@ -64,7 +64,7 @@
           data: MyDataGraph
         },
         {
-          name: "Puntos totales según año y país",
+          name: "Delitos según país y año",
           data: DataGraphAPI
         }
       ]
@@ -93,8 +93,8 @@
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description" align="center">
-      Los goleadores están de un color y los puntos de la F1 de otro color.
-      Integración hecha a la dirección http://sos1920-22.herokuapp.com/api/v2/formula-stats.
+      Los goleadores están de un color y los delitos de tráfico de drogas de otro.
+      Integración hecha a la dirección https://sos1920-12.herokuapp.com/api/v1/drug_offences.
     </p>
   </figure>
 

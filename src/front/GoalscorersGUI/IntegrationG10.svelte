@@ -2,7 +2,7 @@
   import { pop } from "svelte-spa-router";
   import Button from "sveltestrap/src/Button.svelte";
   let BASE_API_URL = "/api/v3";
-  let BASE_API_URL_G22 = "http://sos1920-22.herokuapp.com/api/v2/formula-stats";
+  let BASE_API_URL_G10 = "/api/v2/global-suicides";
   async function loadGraph() {
     let DataAPI = [];
     let MyData = [];
@@ -14,10 +14,10 @@
       MyDataGraph.push({ name: x.name, value: x.goals});
     });
 
-    const resDataAPI = await fetch(BASE_API_URL_G22);
+    const resDataAPI = await fetch(BASE_API_URL_G10);
     DataAPI = await resDataAPI.json();
     DataAPI.forEach(x => {
-        DataGraphAPI.push({name: x.country + ", " + x.year, value: x.totalpointnumber});
+        DataGraphAPI.push({name: x.country + ", " + x.year, value: x.average});
     });
 
     Highcharts.chart("container", {
@@ -26,7 +26,7 @@
         height: "30%"
       },
       title: {
-        text: "Gráfica con goleadores de la UCL y sus respectivos goles frente a los puntos obtenidos en F1 cada año por país."
+        text: "Gráfica con goleadores de la UCL y sus respectivos goles frente a suicidios según país y año."
       },
       tooltip: {
         useHTML: true,
@@ -64,7 +64,7 @@
           data: MyDataGraph
         },
         {
-          name: "Puntos totales según año y país",
+          name: "Media de suicidios según país y año",
           data: DataGraphAPI
         }
       ]
@@ -93,7 +93,8 @@
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description" align="center">
-      Los goleadores están de un color y los puntos de la F1 de otro color.
+      Los goleadores están de un color y los suicidios de otro.
+      Integración hecha mediante proxy a la dirección https://sos1920-10.herokuapp.com/api/v2/global-suicides.
     </p>
   </figure>
 
