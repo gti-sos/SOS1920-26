@@ -15,6 +15,7 @@
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
 	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte';
 	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte';
+	import GraphTransfer3 from './TransfersGUI/GraphTransfer3.svelte';
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
@@ -42,6 +43,7 @@
 	import IntegrationsTransferG24 from './TransfersGUI/Integrations5.svelte';
 	import IntegrationsTransferEXT1 from './TransfersGUI/IntegrationsExt1.svelte';
 	import IntegrationsTransferEXT2 from './TransfersGUI/IntegrationsExt2.svelte';
+	import IntegrationsTransferEXT3 from './TransfersGUI/IntegrationsExt3.svelte';
 
 //INTEGRACIONES GOALSCORERS
 	import IntegrationsGoalscorers from './GoalscorersGUI/Integrations.svelte';
@@ -92,6 +94,7 @@
 		"/integrations/global-transfers/IntegrationsG24": IntegrationsTransferG24,
 		"/integrations/global-transfers/IntegrationsExt1": IntegrationsTransferEXT1,
 		"/integrations/global-transfers/IntegrationsExt2": IntegrationsTransferEXT2,
+		"/integrations/global-transfers/IntegrationsExt3": IntegrationsTransferEXT3,
 
 		
 		//INTEGRACIONES Coef
