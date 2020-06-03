@@ -46,7 +46,7 @@ console.log(DataExterna);
         height: "30%"
       },
       title: {
-        text: "Integración entre los fichajes de los equipos por año en el mercado de fichajes, y los fichajes de algunos equipos por su nombre y valor"
+        text: "Integración entre los coeficientes uefa, y los valores energéticos de los alimentos"
       },
       tooltip: {
         useHTML: true,

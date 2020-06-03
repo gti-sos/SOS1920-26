@@ -53,7 +53,7 @@
 
         <button type="button" class="btn btn-danger"
             onclick="window.location.href='#/integrations/global-coef/integrationsExt2'"
-            style="margin-left: 0.5%; width: 25%;"> Integración MLB</button>
+            style="margin-left: 0.5%; width: 25%;"> Integración Desigualdad</button>
 
 
 
