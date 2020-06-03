@@ -2,7 +2,7 @@
     import Button from "sveltestrap/src/Button.svelte";
     import { pop } from "svelte-spa-router";
   
-    //API EXTERNA  --->     https://rapidapi.com/montanaflynn/api/fifa-world-cup
+    //API EXTERNA  --->     https://rapidapi.com/api-sports/api/api-football
   
   
     async function loadGraph() {
@@ -25,17 +25,27 @@
       let DataEXT = await resDataEXT.json();
   
       MyData.forEach(x => {
-        MyDataGraph.push({ name: x.team + " - " + x.year, value: x.balance});
+        MyDataGraph.push({ name: x.team + " - " + x.year, value: x.signing});
       });
 
       let DataExterna = DataEXT.api;
       let DataExternaFichajes = DataExterna.transfers;
-      console.log(DataExternaFichajes);
+      //console.log(DataExternaFichajes);
 
       function extEquipoComp (x){
           let aux = x.team_in
           return aux.team_name
+      }
 
+      function quitarcaracteres (x){
+        let aux = x.replace('€', '')
+        //aux = aux.replace('M', '')
+        if (aux.includes('K')){
+          let parseao = parseFloat(aux)
+          parseao = parseao * 0.001
+          return parseao
+        }
+        return aux
       }
 
       DataExternaFichajes.forEach(x => {
@@ -43,10 +53,13 @@
           //let equipoComprado = aux.team_name
           //console.log(equipoComprado)
           console.log(extEquipoComp(x))
-          if (x.type != null || x.type != "Loan" || x.type != "N/A"){
-          DataGraphEXT.push({name: extEquipoComp(x) + " : ", value: parseInt(x.type)});
+          if (x.type != null && x.type != "Loan" && x.type != "N/A" && x.type != "Swap" && x.type != "Free" ){
+          DataGraphEXT.push({name: extEquipoComp(x) + " - " + x.player_name, value: parseFloat(quitarcaracteres(x.type))});
           }
       });
+
+      DataGraphEXT = DataGraphEXT.slice(0, 20);
+      console.log(DataGraphEXT);
   
   
       Highcharts.chart("container", {
@@ -55,7 +68,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el balance de los equipos en el mercado de fichajes, y la demanda segun gobierno y año de las plazas universitarias en Andalucía"
+          text: "Integración entre los fichajes de los equipos por año en el mercado de fichajes, y los fichajes de algunos equipos por su nombre y valor"
         },
         tooltip: {
           useHTML: true,
@@ -63,8 +76,8 @@
         },
         plotOptions: {
           packedbubble: {
-            minSize: "80%",
-            maxSize: "120%",
+            minSize: "50%",
+            maxSize: "180%",
             zMin: 0,
             zMax: 1000,
             layoutAlgorithm: {
@@ -89,14 +102,14 @@
         },
         series: [
           {
-            name: "Balance total",
+            name: "Número de Fichajes",
             data: MyDataGraph,
             tooltip: {
-                    valueSuffix: ' M'
+                    valueSuffix: ' Fichajes'
             }
           },
           {
-            name: "Equipos copa del mundo con su código",
+            name: "Fichaje",
             data: DataGraphEXT,
             tooltip: {
                     valueSuffix: ' M'
@@ -128,7 +141,7 @@
     <figure class="highcharts-figure">
       <div id="container" />
       <p class="highcharts-description">
-          <a href="https://rapidapi.com/montanaflynn/api/fifa-world-cup" target="_blank"> Enlace a la API integrada (WorldCup) </a>
+          <a href="https://rapidapi.com/api-sports/api/api-football" target="_blank"> Enlace a la API integrada (APIFootball) </a>
       </p>
     </figure>
   
