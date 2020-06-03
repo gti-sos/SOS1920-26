@@ -5,15 +5,28 @@
     //Grupo 21  ---> (Cors)      https://sos1920-21.herokuapp.com/api/v2/driving-licenses
   
   
-    async function loadInitialData() {  //LoadInitialDatosG21 - NO BORRA LOS DATOS ANTERIORES
+  //El load Initial de este grupo no funcionaba correctamente, por lo que hemos utilizado 2 botones, uno de carga y otro de eliminar los datos.
+    async function loadInitialData() {
         const res = await fetch("https://sos1920-21.herokuapp.com/api/v2/driving-licenses/loadInitialData", {
             method: "GET"
         }).then(function (res) {
             if (res.ok) {
-                console.log("Los datos iniciales se han introducido correctamente.");
+                console.log()
                 location.reload()
             };
         });
+    }
+
+    async function deleteAll() {
+	    console.log("Deleting All DrivingLicenses ...");
+		const res = await fetch("https://sos1920-21.herokuapp.com/api/v2/driving-licenses", {
+			method: "DELETE"
+		}).then(function (res) {
+            if (res.ok) {
+                console.log()
+                location.reload()
+            };
+		});
     }
 
 
@@ -128,6 +141,8 @@
           <a href="https://sos1920-21.herokuapp.com/api/v2/driving-licenses" target="_blank"> Enlace a la API integrada (Grupo 21) </a>
       </p>
       <Button outline color="info" on:click={loadInitialData} > Carga Inicial Datos G21 </Button>
+      <Button outline color="danger" on:click={deleteAll} > Elimina Datos G21 </Button>
+      <p>Si haces click, varias veces en Load Initial, se duplicarán los datos</p>
     </figure>
     
   

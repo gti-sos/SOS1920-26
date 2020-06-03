@@ -4,7 +4,7 @@
 </script>
 
 <main>
-    <h2 style="text-align: center;">Integracion de APIs</h2>
+    <h2 style="text-align: center;"><i class="fas fa-info" aria-hidden="true"></i> Integracion de APIs</h2>
     <br><br>   
 
     <button type="button" class="btn btn-info" onclick="window.location.href='#/integrations/global-transfers'" style="margin-left: 12.5%; width: 25%;"> Mercado de Fichajes</button>
