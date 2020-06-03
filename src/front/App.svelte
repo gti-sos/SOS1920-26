@@ -51,6 +51,8 @@
 	import IntegrationGoalscorersG10 from './GoalscorersGUI/IntegrationG10.svelte';
 	import IntegrationGoalscorersNBA from './GoalscorersGUI/IntegrationNBA.svelte';
 	import IntegrationGoalscorersCOVID from './GoalscorersGUI/IntegrationCOVID.svelte';
+	import IntegrationGoalscorersWEBSEARCH from './GoalscorersGUI/IntegrationWEBSEARCH.svelte';
+	
 //FIN INTEGRACIONES	
 
 
@@ -110,6 +112,7 @@
 		"/integrations/goalscorers/integrationG10": IntegrationGoalscorersG10,
 		"/integrations/goalscorers/integrationNBA": IntegrationGoalscorersNBA,
 		"/integrations/goalscorers/integrationCOVID": IntegrationGoalscorersCOVID,
+		"/integrations/goalscorers/integrationWEBSEARCH": IntegrationGoalscorersWEBSEARCH,
 		//FIN INTEGRACIONES
 
 

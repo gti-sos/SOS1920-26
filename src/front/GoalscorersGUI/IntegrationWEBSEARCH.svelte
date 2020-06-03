@@ -7,19 +7,20 @@
     let MyData = [];
     let MyDataGraph = [];
     let DataGraphAPI = [];
-    var fallecidos;
-    let countries = [];
+    var apariciones;
     const resData = await fetch(BASE_API_URL + "/goalscorers");
     MyData = await resData.json();
     console.log(MyData);
     for (const dato of MyData) {
       const resDataAPI = await fetch(
-        "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=" +
-          dato.country,
+        "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?autoCorrect=true&pageNumber=1&pageSize=10&q=" +
+          dato.name +
+          "&safeSearch=false",
         {
           method: "GET",
           headers: {
-            "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+            "x-rapidapi-host":
+              "contextualwebsearch-websearch-v1.p.rapidapi.com",
             "x-rapidapi-key":
               "45a177f5c0msh64fa2c118add799p118a18jsn7e63bf635a62"
           }
@@ -32,12 +33,11 @@
       } else {
         console.log("ERROR");
       }
-      if (DataGraphAPI.message == "OK" && !countries.includes(dato.country)) {
-        fallecidos = DataGraphAPI.data.deaths;
-        countries.push(dato.country);
+      apariciones = DataGraphAPI.totalCount;
+      if (apariciones > 0) {
         MyDataGraph.push({
-          name: dato.country + " - " + dato.name ,
-          y: fallecidos,
+          name: dato.name,
+          y: apariciones,
           drilldown: "null"
         });
       }
@@ -48,7 +48,7 @@
         type: "column"
       },
       title: {
-        text: "Números de muertes por COVID según el país de un jugador"
+        text: "Números de apariciones del nombre del jugador en una búsqueda"
       },
       accessibility: {
         announceNewData: {
@@ -60,7 +60,7 @@
       },
       yAxis: {
         title: {
-          text: "Muertes totales"
+          text: "Apariciones del nombre del jugador"
         }
       },
       legend: {
@@ -79,12 +79,12 @@
       tooltip: {
         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
         pointFormat:
-          '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> fallecidos.<br/>'
+          '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> apariciones.<br/>'
       },
 
       series: [
         {
-          name: "País de un goleador",
+          name: "Apariciones",
           colorByPoint: true,
           dataSorting: {
             enabled: true
@@ -122,9 +122,14 @@
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description">
-      Integración de la API <a href="https://rapidapi.com/KishCom/api/covid-19-coronavirus-statistics" target="_blank">COVID-19 Coronavirus Statistics</a>.
-      Gráfico que muestra el número de muertes por país. Si un país de mi API no concuerda con la API externa, no se introduce el dato, y, si el país ya ha
-       sido introducido, no vuelve a introducirse. <b>Es posible que los datos tarden unos segundos en cargar.</b>
+      Integración de la API
+      <a
+        href="https://rapidapi.com/contextualwebsearch/api/web-search"
+        target="_blank">
+        Web Search
+      </a>
+      . Gráfico que muestra el número de veces que aparece el nombre de un jugador en las 10 webs de la primera página de una búsqueda web. <b>Es posible que los datos
+      tarden unos segundos en cargar.</b>
     </p>
   </figure>
   <Button outline color="secondary" on:click={pop}>
