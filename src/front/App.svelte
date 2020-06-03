@@ -2,7 +2,7 @@
 	import Router from 'svelte-spa-router';
 	import Home from './Home.svelte';
 	import Integrations from './Integrations.svelte';
-	//import Analytics from './Analytics.svelte';  
+	import Analytics from './Analytics.svelte';  
 	import NotFound from './NotFound.svelte';
 //API COEF-----------------------------------------------------------------
 	import globalCoef from './CoefGUI/App.svelte';  
@@ -51,7 +51,7 @@
 
 	const routes = {
 		"/": Home,
-		//"/analytics": Analytics,
+		"/analytics": Analytics,
 		"/integrations": Integrations,
 
 

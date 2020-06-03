@@ -7,6 +7,7 @@
 		<hr>
 		<div class="div">
 			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/integrations'"><i class="fas fa-info" aria-hidden="true"></i> Integraciones</button>
+			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/analytics'"><i class="fas fa-info" aria-hidden="true"></i> Gráfico conjunto</button>
 		</div>
 
 	</div>
