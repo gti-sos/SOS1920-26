@@ -41,7 +41,9 @@
 
 
     </div>
-    
+    <div class="row">
+        <hr>
+    </div>
     <h5 style="text-align: center;">APIs externas integradas:</h5>
     <div class="row">
         <button type="button" class="btn btn-success"
