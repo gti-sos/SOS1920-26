@@ -7,20 +7,18 @@
     let MyData = [];
     let MyDataGraph = [];
     let DataGraphAPI = [];
-    var apariciones;
+    let ciudades = [];
+    let paises = [];
     const resData = await fetch(BASE_API_URL + "/goalscorers");
     MyData = await resData.json();
     console.log(MyData);
     for (const dato of MyData) {
       const resDataAPI = await fetch(
-        "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/WebSearchAPI?autoCorrect=true&pageNumber=1&pageSize=10&q=" +
-          dato.name +
-          "&safeSearch=false",
+        "https://andruxnet-world-cities-v1.p.rapidapi.com/?query="+ dato.country +"&searchby=country",
         {
           method: "GET",
           headers: {
-            "x-rapidapi-host":
-              "contextualwebsearch-websearch-v1.p.rapidapi.com",
+            "x-rapidapi-host": "andruxnet-world-cities-v1.p.rapidapi.com",
             "x-rapidapi-key":
               "45a177f5c0msh64fa2c118add799p118a18jsn7e63bf635a62"
           }
@@ -33,14 +31,21 @@
       } else {
         console.log("ERROR");
       }
-      apariciones = DataGraphAPI.totalCount;
-      if (apariciones > 0) {
+      for (const datoAPI of DataGraphAPI){
+        if(!ciudades.includes(datoAPI.state)){
+          ciudades.push(datoAPI.state);
+        }
+      }
+      console.log(ciudades);
+      if (ciudades.length > 0 && !paises.includes(dato.country)) {
         MyDataGraph.push({
-          name: dato.name,
-          y: apariciones,
+          name: dato.country + " - " + dato.name,
+          y: ciudades.length,
           drilldown: "null"
         });
+        paises.push(dato.country);
       }
+      ciudades = [];
     }
 
     Highcharts.chart("container", {
@@ -48,7 +53,7 @@
         type: "column"
       },
       title: {
-        text: "Número de apariciones del nombre del jugador en una búsqueda"
+        text: "Números de ciudades en los países de cada jugador"
       },
       accessibility: {
         announceNewData: {
@@ -60,7 +65,7 @@
       },
       yAxis: {
         title: {
-          text: "Apariciones del nombre del jugador"
+          text: "Ciudades totales"
         }
       },
       legend: {
@@ -79,12 +84,12 @@
       tooltip: {
         headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
         pointFormat:
-          '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> apariciones.<br/>'
+          '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> ciudades.<br/>'
       },
 
       series: [
         {
-          name: "Apariciones",
+          name: "Ciudades",
           colorByPoint: true,
           dataSorting: {
             enabled: true
@@ -124,12 +129,13 @@
     <p class="highcharts-description">
       Integración de la API
       <a
-        href="https://rapidapi.com/contextualwebsearch/api/web-search"
+        href="https://rapidapi.com/andruxnet/api/world-cities"
         target="_blank">
-        Web Search
+        World Cities
       </a>
-      . Gráfico que muestra el número de veces que aparece el nombre de un jugador en las 10 webs de la primera página de una búsqueda web. <b>Es posible que los datos
-      tarden unos segundos en cargar.</b>
+      . Gráfico que muestra el número de ciudades que tiene el país de cada jugador.
+      Si el país es repetido o el nombre de país de las APIs no coinciden, no se añaden los datos.
+      <b>Es posible que los datos tarden unos segundos en cargar.</b>
     </p>
   </figure>
   <Button outline color="secondary" on:click={pop}>

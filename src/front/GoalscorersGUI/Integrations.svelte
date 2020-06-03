@@ -18,7 +18,9 @@
     <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationNBA'" style= "width: 20%;"> Integración con API-NBA </button>
     <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCOVID'" style= "width: 20%;"> Integración con COVID </button>
     <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationWEBSEARCH'" style= "width: 20%;"> Integración con WEB SEARCH </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCITIES'" style= "width: 20%;"> Integración con WORLD CITIES </button>
     </div>
+
     <br><br>
 
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
