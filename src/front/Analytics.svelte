@@ -2,7 +2,9 @@
   import { pop } from "svelte-spa-router";
   import Button from "sveltestrap/src/Button.svelte";
   let BASE_API_URL = "/api/v3";
-
+  function primeraLetraMayus(x) {
+    return x[0].toUpperCase() + x.slice(1);
+  }
   async function loadGraph() {
     let MyDataTotal = [];
     let MyDataGoalscorers = [];
@@ -18,20 +20,29 @@
     MyDataTransfers = await resDataTransfers.json();
 
     MyDataGoalscorers.forEach(x => {
-      MyDataTotal.push(['API 26', x.country]);
-      MyDataTotal.push([x.country, x.name]);
+      var pais = primeraLetraMayus(x.country);
+      MyDataTotal.push(["API 26", pais]);
+      MyDataTotal.push([pais, x.name]);
       MyDataTotal.push([x.name, x.goals + " goles"]);
       MyDataTotal.push([x.name, x.debut + " año de debut"]);
     });
     MyDataCoef.forEach(x => {
-      MyDataTotal.push(['Coef', x.team + ', ' + x.year]);
-      MyDataTotal.push([x.team + ', ' + x.year, x.coefficient + " puntos de coeficiente"]);
-      MyDataTotal.push([x.team + ', ' + x.year, x.fed + " fed"]);
+      var pais = primeraLetraMayus(x.country);
+      MyDataTotal.push(["API 26", pais]);
+      MyDataTotal.push([pais, x.team + ", " + x.year]);
+      MyDataTotal.push([
+        x.team + ", " + x.year,
+        x.coefficient + " puntos de coeficiente"
+      ]);
     });
     MyDataTransfers.forEach(x => {
-      MyDataTotal.push(['Transfers', x.team + ', ' + x.year]);
-      MyDataTotal.push([x.team + ', ' + x.year, x.balance + " millones de balance"]);
-
+      var pais = primeraLetraMayus(x.country);
+      MyDataTotal.push(["API 26", pais]);
+      MyDataTotal.push([pais, x.team + ", " + x.year]);
+      MyDataTotal.push([
+        x.team + ", " + x.year,
+        x.balance + " millones de balance"
+      ]);
     });
 
     console.log(MyDataTotal);
@@ -83,10 +94,10 @@
         height: "100%"
       },
       title: {
-        text: "The Indo-European Language Tree"
+        text: "Combinación de las 3 APIs del grupo 26."
       },
       subtitle: {
-        text: "A Force-Directed Network Graph in Highcharts"
+        text: "Valores de transferencias y coeficientes de equipos y goles de jugadores según países."
       },
       plotOptions: {
         networkgraph: {
@@ -104,8 +115,7 @@
             linkFormat: ""
           },
           id: "lang-tree",
-          data: 
-            MyDataTotal
+          data: MyDataTotal
         }
       ]
     });
@@ -129,12 +139,5 @@
 
   <figure class="highcharts-figure">
     <div id="container" />
-    <p class="highcharts-description">
-      This force directed graph shows an example of a network graph, where the
-      nodes represent languages and the language families they belong to. The
-      nodes can be dragged around and will be repositioned dynamically. Network
-      graphs are typically used to show relations in data. In this case, we are
-      showing a hierarchical structure.
-    </p>
   </figure>
 </main>
