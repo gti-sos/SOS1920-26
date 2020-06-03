@@ -107,7 +107,7 @@ Highcharts.chart('container', {
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description" align="center">
-      Integración de la API <a href="https://rapidapi.com/api-sports/api/api-nba" target="_blank">API-NBA</a>, se comparan los años pasados desde
+      Integración de la <a href="https://rapidapi.com/api-sports/api/api-nba" target="_blank">API-NBA</a>, se comparan los años pasados desde
       el debut de los jugadores del Atlanta Hawks y los años pasados desde el debut de los máximos goleadores de la UCL.
     </p>
   </figure>

@@ -16,6 +16,7 @@
     <h3 style="text-align: center;">Integraciones externas</h3> 
     <div align="center">
     <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationNBA'" style= "width: 20%;"> Integración con API-NBA </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCOVID'" style= "width: 20%;"> Integración con COVID </button>
     </div>
     <br><br>
 
