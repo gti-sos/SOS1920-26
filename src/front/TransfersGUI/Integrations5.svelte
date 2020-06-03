@@ -33,7 +33,7 @@
           height: "30%"
         },
         title: {
-          text: "Integración entre el balance de los equipos en el mercado de fichajes, y la demanda segun gobierno y año de las plazas universitarias en Andalucía"
+          text: "Integración entre el balance de los equipos en el mercado de fichajes, y la demanda según gobierno y año de las plazas universitarias en España"
         },
         tooltip: {
           useHTML: true,

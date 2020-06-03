@@ -30,8 +30,7 @@
       });
 
       let DataExterna = DataEXT.results;
-      console.log(DataExterna)
-      
+      DataExterna = DataExterna.slice(0, 20);
 
       function quitarcaracteres (x){
         let aux = x.replace('$', '')
@@ -44,9 +43,6 @@
         DataGraphEXT.push({name: x.asin, value: parseFloat(quitarcaracteres(x.price))});
         }
       });
-
-      DataGraphEXT = DataGraphEXT.slice(0, 20);
-      console.log(DataGraphEXT);
   
   
       Highcharts.chart("container", {
@@ -89,7 +85,7 @@
         },
         series: [
           {
-            name: "Número de Fichajes",
+            name: "Número de Ventas",
             data: MyDataGraph,
             tooltip: {
                     valueSuffix: ' Ventas'
