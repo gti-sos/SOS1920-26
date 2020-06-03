@@ -7,7 +7,8 @@
 		<hr>
 		<div class="div">
 			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/integrations'"><i class="fas fa-info" aria-hidden="true"></i> Integraciones</button>
-			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/analytics'"><i class="fas fa-info" aria-hidden="true"></i> Gráfico conjunto</button>
+			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/analytics'"><i class="fas fa-users" aria-hidden="true"></i> Gráfico conjunto</button>
+			<button type="button" class="btn btn-outline-danger"  onclick="window.location.href='#/about'"><i class="fa fa-video-camera" aria-hidden="true"></i> Vídeos</button>
 		</div>
 
 	</div>
