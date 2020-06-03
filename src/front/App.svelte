@@ -30,6 +30,8 @@
 	import IntegrationsCoefG24 from './CoefGUI/Integrations3.svelte';
 	import IntegrationsCoefG10 from './CoefGUI/Integrations4.svelte';
 	import IntegrationsCoefG30 from './CoefGUI/Integrations5.svelte';
+	import IntegrationsCoefEXT1 from './CoefGUI/IntegrationsExt1.svelte';
+	import IntegrationsCoefEXT2 from './CoefGUI/IntegrationsExt2.svelte';
 
 //INTEGRACIONES DIEGO
 	import IntegrationsTransfer from './TransfersGUI/Integrations.svelte';
@@ -96,6 +98,8 @@
 		"/integrations/global-coef/IntegrationsG24": IntegrationsCoefG24,
 		"/integrations/global-coef/IntegrationsG10": IntegrationsCoefG10,
 		"/integrations/global-coef/IntegrationsG30": IntegrationsCoefG30,
+		"/integrations/global-coef/IntegrationsExt1": IntegrationsCoefEXT1,
+		"/integrations/global-coef/IntegrationsExt2": IntegrationsCoefEXT2,
 
 		//INTEGRACIONES GOALSCORERS
 		"/integrations/goalscorers": IntegrationsGoalscorers,

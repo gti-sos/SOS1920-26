@@ -41,6 +41,21 @@
 
 
     </div>
+    
+    <h5 style="text-align: center;">APIs externas integradas:</h5>
+    <div class="row">
+        <button type="button" class="btn btn-success"
+            onclick="window.location.href='#/integrations/global-coef/integrationsExt1'"
+            style="margin-left: 12.5%; width: 25%;"> Integración Calorías</button>
+
+
+        <button type="button" class="btn btn-danger"
+            onclick="window.location.href='#/integrations/global-coef/integrationsExt2'"
+            style="margin-left: 0.5%; width: 25%;"> Integración MLB</button>
+
+
+
+    </div>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 
 </main>
