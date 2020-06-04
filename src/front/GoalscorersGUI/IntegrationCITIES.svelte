@@ -27,7 +27,6 @@
       if (resDataAPI.ok) {
         const json = await resDataAPI.json();
         DataGraphAPI = json;
-        console.log(DataGraphAPI);
       } else {
         console.log("ERROR");
       }
@@ -36,7 +35,6 @@
           ciudades.push(datoAPI.state);
         }
       }
-      console.log(ciudades);
       if (ciudades.length > 0 && !paises.includes(dato.country)) {
         MyDataGraph.push({
           name: dato.country + " - " + dato.name,

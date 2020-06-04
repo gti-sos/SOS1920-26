@@ -15,7 +15,6 @@
 	import EditTransfer from './TransfersGUI/EditTransfer.svelte';
 	import GraphTransfer from './TransfersGUI/GraphTransfer.svelte';
 	import GraphTransfer2 from './TransfersGUI/GraphTransfer2.svelte';
-	import GraphTransfer3 from './TransfersGUI/GraphTransfer3.svelte';
 //API GOALSCORES-----------------------------------------------------------
 	import goalscorers from './GoalscorersGUI/App.svelte';
 	import EditGoalscorer from './GoalscorersGUI/EditGoalscorer.svelte';
@@ -55,6 +54,7 @@
 	import IntegrationGoalscorersCOVID from './GoalscorersGUI/IntegrationCOVID.svelte';
 	import IntegrationGoalscorersWEBSEARCH from './GoalscorersGUI/IntegrationWEBSEARCH.svelte';
 	import IntegrationGoalscorersCITIES from './GoalscorersGUI/IntegrationCITIES.svelte';
+	import IntegrationGoalscorersTRANSLATE from './GoalscorersGUI/IntegrationTRANSLATE.svelte';
 
 //FIN INTEGRACIONES	
 
@@ -118,6 +118,7 @@
 		"/integrations/goalscorers/integrationCOVID": IntegrationGoalscorersCOVID,
 		"/integrations/goalscorers/integrationWEBSEARCH": IntegrationGoalscorersWEBSEARCH,
 		"/integrations/goalscorers/integrationCITIES": IntegrationGoalscorersCITIES,
+		"/integrations/goalscorers/integrationTRANSLATE": IntegrationGoalscorersTRANSLATE,
 		//FIN INTEGRACIONES
 
 
