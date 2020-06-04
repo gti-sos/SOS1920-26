@@ -140,4 +140,8 @@
   <figure class="highcharts-figure">
     <div id="container" />
   </figure>
+    <Button outline color="secondary" on:click={pop}>
+    <i class="fas fa-arrow-circle-left" />
+    Atrás
+  </Button>
 </main>
