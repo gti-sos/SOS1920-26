@@ -28,7 +28,8 @@
 <div class="row">
     
     <button type="button" class="btn btn-info" onclick="window.location.href='#/integrations/global-transfers/integrationsExt1'" style="margin-left: 12.5%; width: 25%;"> Integración API EXTERNA 1</button>
-    <button type="button" class="btn btn-danger" onclick="window.location.href='#/integrations/global-transfers/integrationsExt2'" style="margin-left: 26%; width: 25%;"> Integración API EXTERNA 2</button>
+    <button type="button" class="btn btn-success" onclick="window.location.href='#/integrations/global-transfers/integrationsExt2'" style="margin-left: 0.5%; width: 25%;"> Integración API EXTERNA 2</button>
+    <button type="button" class="btn btn-danger" onclick="window.location.href='#/integrations/global-transfers/integrationsExt3'" style="margin-left: 0.5%; width: 25%;"> Integración API EXTERNA 3</button>
 </div>
     <Button outline color="secondary" on:click="{pop}"> <i class="fas fa-arrow-circle-left"></i> Atrás </Button>
 
