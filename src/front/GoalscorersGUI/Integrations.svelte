@@ -15,11 +15,11 @@
     </div>
     <h3 style="text-align: center;">Integraciones externas</h3> 
     <div align="center">
-    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationNBA'" style= "width: 20%;"> Integración con API-NBA </button>
-    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCOVID'" style= "width: 20%;"> Integración con COVID </button>
-    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationWEBSEARCH'" style= "width: 20%;"> Integración con WEB SEARCH </button>
-    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCITIES'" style= "width: 20%;"> Integración con WORLD CITIES </button>
-    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationTRANSLATE'" style= "width: 20%;"> Integración con TRANSLATE </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationNBA'" style= "width: 15%;"> Integración con API-NBA </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCOVID'" style= "width: 15%;"> Integración con COVID </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationWEBSEARCH'" style= "width: 15%;"> Integración con WEB SEARCH </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationCITIES'" style= "width: 15%;"> Integración con WORLD CITIES </button>
+    <button type="button" class="btn btn-outline-info" onclick="window.location.href='#/integrations/goalscorers/integrationTRANSLATE'" style= "width: 15%;"> Integración con TRANSLATE </button>
     </div>
 
     <br><br>
