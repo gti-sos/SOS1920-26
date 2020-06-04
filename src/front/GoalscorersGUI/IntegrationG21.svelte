@@ -2,7 +2,23 @@
   import { pop } from "svelte-spa-router";
   import Button from "sveltestrap/src/Button.svelte";
   let BASE_API_URL = "/api/v3";
-  let BASE_API_URL_G21 = "http://sos1920-21.herokuapp.com/api/v2/traffic-injuries";
+  let BASE_API_URL_G21 =
+    "http://sos1920-21.herokuapp.com/api/v2/traffic-injuries";
+
+  async function loadInitialData() {
+    const res = await fetch(
+      "https://sos1920-21.herokuapp.com/api/v2/traffic-injuries/loadInitialData",
+      {
+        method: "GET"
+      }
+    ).then(function(res) {
+      if (res.ok) {
+        console.log();
+        location.reload();
+      }
+    });
+  }
+
   async function loadGraph() {
     let DataAPI = [];
     let MyData = [];
@@ -11,13 +27,13 @@
     const resData = await fetch(BASE_API_URL + "/goalscorers");
     MyData = await resData.json();
     MyData.forEach(x => {
-      MyDataGraph.push({ name: x.name, value: x.goals});
+      MyDataGraph.push({ name: x.name, value: x.goals });
     });
 
     const resDataAPI = await fetch(BASE_API_URL_G21);
     DataAPI = await resDataAPI.json();
     DataAPI.forEach(x => {
-        DataGraphAPI.push({name: x.auto_com + ", " + x.year, value: x.dead});
+      DataGraphAPI.push({ name: x.auto_com + ", " + x.year, value: x.dead });
     });
 
     Highcharts.chart("container", {
@@ -26,7 +42,8 @@
         height: "30%"
       },
       title: {
-        text: "Gráfica con goleadores de la UCL y sus respectivos goles frente a las muertes por accidentes de tráfico según la comunidad autónoma y el año."
+        text:
+          "Gráfica con goleadores de la UCL y sus respectivos goles frente a las muertes por accidentes de tráfico según la comunidad autónoma y el año."
       },
       tooltip: {
         useHTML: true,
@@ -93,13 +110,16 @@
   <figure class="highcharts-figure">
     <div id="container" />
     <p class="highcharts-description" align="center">
-      Los goleadores están de un color y los accidentes de tráfico según la comunidad autónoma y el año de otro color.
-      Integración hecha a la dirección http://sos1920-21.herokuapp.com/api/v2/traffic-injuries.
+      Los goleadores están de un color y los accidentes de tráfico según la
+      comunidad autónoma y el año de otro color. Integración hecha a la
+      dirección http://sos1920-21.herokuapp.com/api/v2/traffic-injuries.
     </p>
   </figure>
-
   <Button outline color="secondary" on:click={pop}>
     <i class="fas fa-arrow-circle-left" />
     Atrás
+  </Button>
+    <Button outline color="info" on:click={loadInitialData}>
+    Carga Inicial Datos G21
   </Button>
 </main>
