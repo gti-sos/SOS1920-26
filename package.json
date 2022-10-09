@@ -7,7 +7,9 @@
     "start": "node index",
     "test": "npx newman run tests/testGoalscorers-v3.json & npx newman run tests/testCoef-v3.json & npx newman run tests/testTransfers-v3.json",
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
@@ -31,9 +33,9 @@
   "homepage": "https://github.com/gti-sos/SOS1920-26#readme",
   "dependencies": {
     "billboard": "^1.0.0",
-    "billboard.js": "^1.12.10",
+    "billboard.js": "^3.1.0",
     "bundle": "^2.1.0",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "cool-ascii-faces": "^1.3.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -46,6 +48,8 @@
     "request": "^2.88.2",
     "svelte-fusioncharts": "^1.0.0",
     "svelte-spa-router": "^2.1.0",
-    "sveltestrap": "^3.3.3"
-  }
+    "sveltestrap": "^3.3.3",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
